@@ -1,0 +1,1 @@
+require("Marker.Scenario.ObjectiveBag")

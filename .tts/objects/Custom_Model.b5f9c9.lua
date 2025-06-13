@@ -1,0 +1,2 @@
+require("Game.Table.ZoneExtension")
+

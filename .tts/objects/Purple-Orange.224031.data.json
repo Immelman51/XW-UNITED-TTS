@@ -1,0 +1,66 @@
+{
+  "GUID": "224031",
+  "Name": "Custom_Model",
+  "Transform": {
+    "posX": 20.5142,
+    "posY": 1,
+    "posZ": 0,
+    "rotX": 0,
+    "rotY": 180,
+    "rotZ": 0,
+    "scaleX": 1.27,
+    "scaleY": 1.2,
+    "scaleZ": 1.27
+  },
+  "Nickname": "Purple-Orange",
+  "Description": "",
+  "GMNotes": "",
+  "Memo": "",
+  "AltLookAngle": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "ColorDiffuse": {
+    "r": 1,
+    "g": 1,
+    "b": 1
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": false,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "CustomMesh": {
+    "MeshURL": "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/models/basicmat.obj",
+    "DiffuseURL": "http://i.imgur.com/dczrasC.jpg",
+    "NormalURL": "",
+    "ColliderURL": "",
+    "Convex": true,
+    "MaterialIndex": 1,
+    "TypeIndex": 4,
+    "CustomShader": {
+      "SpecularColor": {
+        "r": 0.875,
+        "g": 0.812880337,
+        "b": 0.7463235
+      },
+      "SpecularIntensity": 0,
+      "SpecularSharpness": 2,
+      "FresnelStrength": 0
+    },
+    "CastShadows": true
+  },
+  "LuaScript": "require(\"Game.Table.Purple-Orange\")\r\n",
+  "LuaScriptState": "9",
+  "XmlUI": ""
+}

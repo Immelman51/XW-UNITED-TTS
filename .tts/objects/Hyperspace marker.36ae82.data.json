@@ -1,0 +1,205 @@
+{
+  "GUID": "36ae82",
+  "Name": "Custom_Model_Infinite_Bag",
+  "Transform": {
+    "posX": -45.94715,
+    "posY": 0.965942,
+    "posZ": -10.4879732,
+    "rotX": 0.00000146289767,
+    "rotY": 269.999176,
+    "rotZ": -3.71868879e-7,
+    "scaleX": 3.63,
+    "scaleY": 3.63,
+    "scaleZ": 3.63
+  },
+  "Nickname": "Hyperspace marker",
+  "Description": "",
+  "GMNotes": "",
+  "Memo": "",
+  "AltLookAngle": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "ColorDiffuse": {
+    "r": 1,
+    "g": 1,
+    "b": 1
+  },
+  "Tags": [
+    "NonDeletable"
+  ],
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "MaterialIndex": -1,
+  "MeshIndex": -1,
+  "CustomMesh": {
+    "MeshURL": "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/models/epic/hyperspacespawn.obj",
+    "DiffuseURL": "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/models/epic/hyperspacespawn12.jpg",
+    "NormalURL": "",
+    "ColliderURL": "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/models/epic/hyperspacespawn.obj",
+    "Convex": true,
+    "MaterialIndex": 3,
+    "TypeIndex": 7,
+    "CustomShader": {
+      "SpecularColor": {
+        "r": 1,
+        "g": 1,
+        "b": 1
+      },
+      "SpecularIntensity": 0,
+      "SpecularSharpness": 2,
+      "FresnelStrength": 0
+    },
+    "CastShadows": true
+  },
+  "LuaScript": "require(\"Marker.HyperspaceBag\")\r\n",
+  "LuaScriptState": "",
+  "XmlUI": "",
+  "ContainedObjects": [
+    {
+      "GUID": "672057",
+      "Name": "Custom_Model",
+      "Transform": {
+        "posX": -10.5,
+        "posY": 1.01272118,
+        "posZ": 10,
+        "rotX": -0.00000144384956,
+        "rotY": -4.83960829e-15,
+        "rotZ": 3.84096978e-7,
+        "scaleX": 3.63,
+        "scaleY": 3.63,
+        "scaleZ": 3.63
+      },
+      "Nickname": "Hyperspace 1/2",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "ColorDiffuse": {
+        "r": 1,
+        "g": 1,
+        "b": 1
+      },
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": false,
+      "Hands": false,
+      "CustomMesh": {
+        "MeshURL": "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/models/epic/hyperspacespawn.obj",
+        "DiffuseURL": "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/models/epic/hyperspacespawn12.jpg",
+        "NormalURL": "",
+        "ColliderURL": "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/models/epic/hyperspacespawn.obj",
+        "Convex": true,
+        "MaterialIndex": 3,
+        "TypeIndex": 0,
+        "CustomShader": {
+          "SpecularColor": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "SpecularIntensity": 0,
+          "SpecularSharpness": 2,
+          "FresnelStrength": 0
+        },
+        "CastShadows": true
+      },
+      "LuaScript": "require(\"Marker.Hyperspace\")\r\n",
+      "LuaScriptState": "{\"shipData\":{\"enabled\":false}}",
+      "XmlUI": "",
+      "States": {
+        "2": {
+          "GUID": "8e2b50",
+          "Name": "Custom_Model",
+          "Transform": {
+            "posX": -10.5,
+            "posY": 1.01272118,
+            "posZ": 10,
+            "rotX": 1.90480058e-8,
+            "rotY": 269.999176,
+            "rotZ": 1.22280932e-8,
+            "scaleX": 3.63,
+            "scaleY": 3.63,
+            "scaleZ": 3.63
+          },
+          "Nickname": "Hyperspace 3/4",
+          "Description": "",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "ColorDiffuse": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": false,
+          "Hands": false,
+          "CustomMesh": {
+            "MeshURL": "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/models/epic/hyperspacespawn.obj",
+            "DiffuseURL": "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/models/epic/hyperspacespawn34.jpg",
+            "NormalURL": "",
+            "ColliderURL": "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/models/epic/hyperspacespawn.obj",
+            "Convex": true,
+            "MaterialIndex": 3,
+            "TypeIndex": 0,
+            "CustomShader": {
+              "SpecularColor": {
+                "r": 1,
+                "g": 1,
+                "b": 1
+              },
+              "SpecularIntensity": 0,
+              "SpecularSharpness": 2,
+              "FresnelStrength": 0
+            },
+            "CastShadows": true
+          },
+          "LuaScript": "require(\"Marker.Hyperspace\")\r\n",
+          "LuaScriptState": "{\"shipData\":{\"enabled\":false}}",
+          "XmlUI": ""
+        }
+      }
+    }
+  ]
+}

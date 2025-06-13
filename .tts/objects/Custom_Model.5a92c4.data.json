@@ -1,0 +1,56 @@
+{
+  "GUID": "5a92c4",
+  "Name": "Custom_Model",
+  "Transform": {
+    "posX": 0,
+    "posY": -5,
+    "posZ": 0,
+    "rotX": 0,
+    "rotY": 0,
+    "rotZ": 180,
+    "scaleX": 0.00000189,
+    "scaleY": 4.99999942e-7,
+    "scaleZ": 0.00000123000007
+  },
+  "Nickname": "",
+  "Description": "",
+  "GMNotes": "",
+  "Memo": "",
+  "AltLookAngle": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "ColorDiffuse": {
+    "r": 1,
+    "g": 1,
+    "b": 1
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": false,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "CustomMesh": {
+    "MeshURL": "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/models/trayextension.obj",
+    "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/949592465030047822/AB48EAD0379830CA11C9F6E305161604254A40B5/",
+    "NormalURL": "",
+    "ColliderURL": "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/models/trayextension.obj",
+    "Convex": false,
+    "MaterialIndex": 3,
+    "TypeIndex": 4,
+    "CastShadows": true
+  },
+  "LuaScript": "require(\"Game.Table.ZoneExtension\")\r\n",
+  "LuaScriptState": "{\"extended\":false}",
+  "XmlUI": ""
+}
