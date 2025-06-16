@@ -85,35 +85,56 @@ tintColors[6] = Color(0.5, 0.25, 0.1, 1.0) -- Brown
 tintColors[7] = Color(1, 1, 1, 1.0)        -- White
 tintColors[8] = Color(0.5, 0.5, 0.5, 1.0)  -- Gray
 
--- FFG uses full name on factions, so a conversion is needed
 xwuFaction = {}
-xwuFaction[0] = 'Reb'
-xwuFaction[1] = 'Par'
-xwuFaction[2] = 'Phx'
-xwuFaction[3] = 'Iac'
-xwuFaction[4] = 'Isb'
-xwuFaction[5] = 'Ies'
-xwuFaction[6] = 'Smg'
-xwuFaction[7] = 'Hut'
-xwuFaction[8] = 'Bhg'
-xwuFaction[9] = 'Fed'
-xwuFaction[10] = 'Gov'
-xwuFaction[11] = 'Chs'
-xwuFaction[12] = 'Jdi'
-xwuFaction[13] = 'Cln'
-xwuFaction[14] = 'Nab'
-xwuFaction[15] = 'Res'
-xwuFaction[16] = 'Col'
-xwuFaction[17] = 'New'
-xwuFaction[18] = 'For'
-xwuFaction[19] = 'Spe'
-xwuFaction[20] = 'Rem'
-xwuFaction[21] = 'Man'
-xwuFaction[22] = 'Sun'
-xwuFaction[23] = 'Syn'
+xwuFaction[1].name = 'Rebel_Alliance',
+xwuFaction[1].dial = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/dial/skin/1/Rebel.png',
+xwuFaction[2].name = 'Partisans',
+xwuFaction[2].dial = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/dial/skin/1/Rebel.png',
+xwuFaction[3].name = 'Phoenix_Cell',
+xwuFaction[3].dial = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/dial/skin/1/Rebel.png',
+xwuFaction[4].name = 'Imperial_Academy',
+xwuFaction[4].dial = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/dial/skin/1/Empire.png',
+xwuFaction[5].name = 'ISB',
+xwuFaction[5].dial = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/dial/skin/1/Empire.png',
+xwuFaction[6].name = 'Imperial_Elite_Squadrons',
+xwuFaction[6].dial = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/dial/skin/1/Empire.png',
+xwuFaction[7].name = 'Pirates_and_Smugglers',
+xwuFaction[7].dial = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/dial/skin/1/Scum.png',
+xwuFaction[8].name = 'Hutt_Cartel',
+xwuFaction[8].dial = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/dial/skin/1/Scum.png',
+xwuFaction[9].name = 'Bounty_Hunters_Guild',
+xwuFaction[9].dial = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/dial/skin/1/Scum.png',
+xwuFaction[10].name = 'Separatist_Government',
+xwuFaction[10].dial = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/dial/skin/1/CIS.png',
+xwuFaction[11].name = 'Trade_Federation',
+xwuFaction[11].dial = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/dial/skin/1/CIS.png',
+xwuFaction[12].name = 'Agents_of_Chaos',
+xwuFaction[12].dial = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/dial/skin/1/CIS.png',
+xwuFaction[13].name = 'Jedi_Council',
+xwuFaction[13].dial = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/dial/skin/1/Republic.png',
+xwuFaction[14].name = 'Clone_Army',
+xwuFaction[14].dial = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/dial/skin/1/Republic.png',
+xwuFaction[15].name = 'Naboo_Defense_Force',
+xwuFaction[15].dial = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/dial/skin/1/Republic.png',
+xwuFaction[16].name = 'Resistance',
+xwuFaction[16].dial = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/dial/skin/1/Resistance.png',
+xwuFaction[17].name = 'Colossus',
+xwuFaction[17].dial = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/dial/skin/1/Resistance.png',
+xwuFaction[18].name = 'New_Republic',
+xwuFaction[18].dial = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/dial/skin/1/Resistance.png',
+xwuFaction[19].name = 'First_Order',
+xwuFaction[19].dial = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/dial/skin/1/FO.png',
+xwuFaction[20].name = 'Shadow_Specialists',
+xwuFaction[20].dial = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/dial/skin/1/FO.png',
+xwuFaction[21].name = 'Imperial_Remnants',
+xwuFaction[21].dial = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/dial/skin/1/FO.png',
+xwuFaction[22].name = 'Mandalorian_Clans',
+xwuFaction[22].dial = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/dial/skin/1/Scum.png',
+xwuFaction[23].name = 'Black_Sun',
+xwuFaction[23].dial = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/dial/skin/1/Scum.png',
+xwuFaction[24].name = 'Crime_Syndicates'
+xwuFaction[24].dial = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/dial/skin/1/Scum.png',
 
-
-cardBackDB = {}
   
 
 VERSION_DATA = {
@@ -171,30 +192,12 @@ function addResetButton()
 end
 
 
-
-function xwaPoints()
-    loadPoints("XWA")
-    spawnOptions("XWA")
-end
-
-
-
-function spawnOptions(versionversion)
-    self.clearButtons()
-    self.createButton({ click_function = 'xwsStart', function_owner = self, label = 'XWS Spawner', position = { 0.0, 0.45, -0.1 }, width = 1600, height = 380, font_size = 250, scale = { 0.25, 0.25, 0.25 } })
-    self.createButton({ click_function = 'spawnerStart', function_owner = self, label = 'TTS Spawner', position = { 0.0, 0.45, 0.2 }, width = 1600, height = 380, font_size = 250, scale = { 0.25, 0.25, 0.25 } })
-    if version ~= "X2PO" then
-        self.createButton({ click_function = 'builderStart', function_owner = self, label = 'Builder', position = { 0.0, 0.45, 0.5 }, width = 1600, height = 380, font_size = 250, scale = { 0.25, 0.25, 0.25 } })
-    end
-    addResetButton()
-end
-
 function scenario()
     self.clearButtons()
     self.createButton({
-        click_function = 'scenarioAssault',
+        click_function = 'scenarioSkirmish',
         function_owner = self,
-        label = 'Assault at the Sattelite Array',
+        label = 'The Skirmish',
         position = { 0.5, 0.45, -0.3 },
         width = 1750,
         height = 350,
@@ -202,9 +205,9 @@ function scenario()
         scale = { 0.25, 0.25, 0.25 }
     })
     self.createButton({
-        click_function = 'scenarioChance',
+        click_function = 'scenarioHunt',
         function_owner = self,
-        label = 'Chance Engagement',
+        label = 'The Hunt',
         position = { 0.5, 0.43, -0.05 },
         width = 1750,
         height = 350,
@@ -212,9 +215,9 @@ function scenario()
         scale = { 0.25, 0.25, 0.25 }
     })
     self.createButton({
-        click_function = 'scenarioSalvage',
+        click_function = 'scenarioEscort',
         function_owner = self,
-        label = 'Salvage Mission',
+        label = 'The Escort',
         position = { -0.45, 0.45, -0.3 },
         width = 1750,
         height = 350,
@@ -222,9 +225,9 @@ function scenario()
         scale = { 0.25, 0.25, 0.25 }
     })
     self.createButton({
-        click_function = 'scenarioScramble',
+        click_function = 'scenarioRescue',
         function_owner = self,
-        label = 'Scramble the Transmissions',
+        label = 'The Rescue',
         position = { -0.45, 0.43, -0.05 },
         width = 1750,
         height = 350,
@@ -232,35 +235,16 @@ function scenario()
         scale = { 0.25, 0.25, 0.25 }
     })
     self.createButton({
-        click_function = 'scenarioBoYavin',
+        click_function = 'scenarioAssault',
         function_owner = self,
-        label = 'Battle of Yavin',
+        label = 'The Assault',
         position = { 0.5, 0.43, 0.2 },
         width = 1750,
         height = 350,
         font_size = 140,
         scale = { 0.25, 0.25, 0.25 }
     })
-    self.createButton({
-        click_function = 'scenarioSoC',
-        function_owner = self,
-        label = 'Siege of Coruscant',
-        position = { -0.45, 0.43, 0.2 },
-        width = 1750,
-        height = 350,
-        font_size = 140,
-        scale = { 0.25, 0.25, 0.25 }
-    })
-    self.createButton({
-        click_function = 'scenarioAce',
-        function_owner = self,
-        label = "Ace's High",
-        position = { 0.025, 0.43, 0.45 },
-        width = 1750,
-        height = 350,
-        font_size = 140,
-        scale = { 0.25, 0.25, 0.25 }
-    })
+   
     self.createButton({
         click_function = 'initiate',
         function_owner = self,
@@ -273,23 +257,6 @@ function scenario()
     })
 end
 
-function scenarioAce()
-    initiate()
-    local red_blue_mat = getObjectFromGUID('0db84a')
-    red_blue_mat.call('SelectAH')
-end
-
-function scenarioSoC()
-    initiate()
-    local red_blue_mat = getObjectFromGUID('0db84a')
-    red_blue_mat.call("clearScenario", nil)
-    local custom = red_blue_mat.getCustomObject()
-    custom.diffuse = 'http://i.imgur.com/8tDK0x8.png'
-    red_blue_mat.setCustomObject(custom)
-    red_blue_mat = red_blue_mat.reload()
-    Wait.condition(function() red_blue_mat.call('SelectSoC') end,
-        function() return (not red_blue_mat.loading_custom) and (not red_blue_mat.spawning) end)
-end
 
 function scenarioAssault()
     initiate()
@@ -297,36 +264,30 @@ function scenarioAssault()
     red_blue_mat.call('SelectAssault')
 end
 
-function scenarioChance()
+function scenarioSkirmish()
     initiate()
     local red_blue_mat = getObjectFromGUID('0db84a')
-    red_blue_mat.call('SelectEngagment')
+    red_blue_mat.call('SelectSkirmish')
 end
 
-function scenarioSalvage()
+function scenarioHunt()
     initiate()
     local red_blue_mat = getObjectFromGUID('0db84a')
-    red_blue_mat.call('SelectSalvage')
+    red_blue_mat.call('SelectHunt')
 end
 
-function scenarioScramble()
+function scenarioRescue()
     initiate()
     local red_blue_mat = getObjectFromGUID('0db84a')
-    red_blue_mat.call('SelectScramble')
+    red_blue_mat.call('SelectRescue')
 end
 
-function scenarioBoYavin()
+function scenarioEscort()
     initiate()
     local red_blue_mat = getObjectFromGUID('0db84a')
-    red_blue_mat.call("clearScenario", nil)
-    local custom = red_blue_mat.getCustomObject()
-    custom.diffuse =
-    'https://steamusercontent-a.akamaihd.net/ugc/1863954854624717161/2BEED383E5A41762625D3C0A3D3F8AB7BF0B9863/'
-    red_blue_mat.setCustomObject(custom)
-    red_blue_mat = red_blue_mat.reload()
-    Wait.condition(function() red_blue_mat.call('SelectBoY') end,
-        function() return (not red_blue_mat.loading_custom) and (not red_blue_mat.spawning) end)
+    red_blue_mat.call('SelectEscort')
 end
+
 
 function configuration()
     local tokenSizeStr = { [1] = "Small", [2] = "Medium", [3] = "Large" }
@@ -342,9 +303,7 @@ function configuration()
         font_size = 240,
         scale = { 0.25, 0.25, 0.25 }
     })
-    self.createButton({ click_function = 'toggleAnnouncement', function_owner = self, label = 'Toggle announcement', position = { 0, 0.45, 0.0 }, width = 2600, height = 360, font_size = 240, scale = { 0.25, 0.25, 0.25 } })
-    self.createButton({ click_function = 'resetXwsData', function_owner = self, label = 'Fetch XWS values', position = { 0.0, 0.45, 0.2 }, width = 2600, height = 360, font_size = 240, scale = { 0.25, 0.25, 0.25 } })
-    self.createButton({ click_function = 'toggleStarForge', function_owner = self, label = 'Toggle StarForge', position = { 0.0, 0.45, 0.4 }, width = 2600, height = 360, font_size = 240, scale = { 0.25, 0.25, 0.25 } })
+   
     self.createButton({ click_function = 'initiate', function_owner = self, label = 'Back', position = { 0.3, 0.45, 0.7 }, width = 1800, height = 520, font_size = 240, scale = { 0.15, 0.15, 0.15 } })
 end
 
@@ -363,17 +322,6 @@ function toggleAnnouncement(obj, player_color, alt_click)
     configuration()
 end
 
-function toggleStarForge()
-    starforge = getObjectFromGUID("5500bc")
-    local hidden = starforge.getVar("hidden")
-    showStarForge = not showStarForge
-    if hidden then
-        starforge.call("show", {})
-    else
-        starforge.call("hide", {})
-    end
-    configuration()
-end
 
 --Spawn from XWS
 function xwsStart()
@@ -421,16 +369,7 @@ end
 
 
 
-factions =
-{
-    rebelalliance = 1,
-    galacticempire = 2,
-    scumandvillainy = 3,
-    resistance = 4,
-    firstorder = 5,
-    galacticrepublic = 6,
-    separatistalliance = 7
-}
+
 
 --Takes the XWS JSON and the xws <-> FFG ID map and constructs a parts list to pass to idSpawner
 function xwsSpawn(list, playerColor)
@@ -450,7 +389,7 @@ function xwsSpawn(list, playerColor)
         parts.Format = listToFormat(list.ruleset, list.version, list.vendor)
 
         for k, v in pairs(list.pilots) do
-            local pilotId = findByXws(masterPilotDB, v.id)
+            local pilotId = findByXws PilotDB, v.id)
             if pilotId == nil then
                 printToAll("Unable to find pilot with xws value: " .. v.id, { 1, 0, 0 })
                 break;
@@ -462,7 +401,7 @@ function xwsSpawn(list, playerColor)
                 local upgradeCount = 1
                 for slot, upgrades in pairs(v.upgrades) do
                     for i, upgrade in pairs(upgrades) do
-                        if masterUpgradesDB[upgrade] == nil then
+                        if UpgradesDB[upgrade] == nil then
                             printToAll("Unable to find upgrade with xws value: " .. upgrade, { 1, 0, 0 })
                             break;
                         end
@@ -555,14 +494,8 @@ extraAssets = {
             separatists = { label = "Separatists", tag = "separatistsmancards" },
             generic = { label = "Generic", tag = "mancard" },
         }
-    },
-    coop_assets = {
-        label = "HotAC/FGA",
-        items = {
-            { label = "Transport Freighter", tag = "transportfreighter" },
-            { label = "AI Squad Wing Tool",  tag = "formationtool" },
-        }
-    },
+    }
+   
 }
 
 extraAssetsGUID = "a3690e"
@@ -651,238 +584,57 @@ end
 function singleSpawner()
     self.clearInputs()
     self.clearButtons()
-    self.createButton({ click_function = 'DummyFFG', function_owner = self, label = 'Type a card name', position = { 0, 0.45, -0.37 }, width = 1800, height = 280, font_size = 200, scale = { 0.25, 0.25, 0.25 } })
-    self.createButton({ click_function = 'singleSearch', function_owner = self, label = 'Search', position = { 0.45, 0.45, -0.17 }, width = 1200, height = 320, font_size = 200, scale = { 0.15, 0.15, 0.15 } })
+    self.createButton({ click_function = 'DummyFFG', function_owner = self, label = 'Type your List Code', position = { 0, 0.45, -0.37 }, width = 1800, height = 280, font_size = 200, scale = { 0.25, 0.25, 0.25 } })
+    self.createButton({ click_function = 'spawnDisc', function_owner = self, label = 'Spawn', position = { 0.45, 0.45, -0.17 }, width = 1200, height = 320, font_size = 200, scale = { 0.15, 0.15, 0.15 } })
     self.createInput({ input_function = 'action3', function_owner = self, position = { -0.3, 0.45, -0.17 }, width = 1800, height = 200, font_size = 160, scale = { 0.25, 0.25, 0.25 } })
     self.createButton({ click_function = 'initiate', function_owner = self, label = 'Back', position = { 0.7, 0.45, 0.8 }, width = 1000, height = 300, font_size = 150, scale = { 0.21, 0.21, 0.21 } })
-    self.createButton({ click_function = 'DummyFFG', function_owner = self, label = 'Pilots', position = { -0.45, 0.45, -0.025 }, width = 1000, height = 280, font_size = 200, scale = { 0.20, 0.20, 0.20 } })
-    self.createButton({ click_function = 'DummyFFG', function_owner = self, label = 'Upgrades', position = { 0.45, 0.45, -0.025 }, width = 1000, height = 280, font_size = 200, scale = { 0.20, 0.20, 0.20 } })
+    
 end
 
-function singleSearch()
-    savingList = false
-    self.clearButtons()
-    self.clearInputs()
-    singleSpawner()
-    butPilCount = 0
-    butPilData = {}
-    butUpCount = 0
-    butUpData = {}
-    if single ~= nil then
-        for k, v in pairs(masterPilotDB) do
-            if string.find(string.lower(v.name), string.lower(single), 1, true) then
-                if butPilCount < 7 then
-                    butPilCount = butPilCount + 1
-                    local title = ''
-                    if v.title ~= nil then
-                        title = ' - ' .. v.title
-                    end
-                    self.createButton({
-                        click_function = 'singlePil' .. butPilCount,
-                        function_owner = self,
-                        label = v
-                            .name .. title .. ' (' .. masterShipDB[v.ship_type].name .. ')',
-                        position = { -0.45, 0.45, 0 + butPilCount * 0.09 },
-                        width = 2800,
-                        height = 230,
-                        font_size = 120,
-                        scale = { 0.15, 0.15, 0.15 }
-                    })
-                    butPilData[butPilCount] = k
-                end
-            end
-        end
-        for k, v in pairs(masterUpgradesDB) do
-            if string.find(string.lower(v.name), string.lower(single), 1, true) then
-                if butUpCount < 7 then
-                    butUpCount = butUpCount + 1
 
-                    local title = ''
-                    if v.title ~= nil then
-                        title = ' - ' .. v.title
-                    end
-                    local upName = v.name .. title
-                    if ffgSpecial[k] ~= nil then
-                        upName = upName .. title .. ' (' .. ffgSpecial[k] .. ')'
-                    end
 
-                    butUpData[butUpCount] = k
-                    self.createButton({ click_function = 'singleUp' .. butUpCount, function_owner = self, label = upName, position = { 0.45, 0.45, 0 + butUpCount * 0.09 }, width = 2800, height = 230, font_size = 120, scale = { 0.15, 0.15, 0.15 } })
-                end
-            end
-        end
-    else
-        print('Please type a card name')
-    end
-    single = nil
-end
 
-function singlePil1()
-    local pilotPick = butPilData[1]
-    singlePilotSpawn(pilotPick)
-end
 
-function singlePil2()
-    local pilotPick = butPilData[2]
-    singlePilotSpawn(pilotPick)
-end
-
-function singlePil3()
-    local pilotPick = butPilData[3]
-    singlePilotSpawn(pilotPick)
-end
-
-function singlePil4()
-    local pilotPick = butPilData[4]
-    singlePilotSpawn(pilotPick)
-end
-
-function singlePil5()
-    local pilotPick = butPilData[5]
-    singlePilotSpawn(pilotPick)
-end
-
-function singlePil6()
-    local pilotPick = butPilData[6]
-    singlePilotSpawn(pilotPick)
-end
-
-function singlePil7()
-    local pilotPick = butPilData[7]
-    singlePilotSpawn(pilotPick)
-end
-
-function singleUp1()
-    local upPick = butUpData[1]
-    singleUpSpawn(upPick)
-end
-
-function singleUp2()
-    local upPick = butUpData[2]
-    singleUpSpawn(upPick)
-end
-
-function singleUp3()
-    local upPick = butUpData[3]
-    singleUpSpawn(upPick)
-end
-
-function singleUp4()
-    local upPick = butUpData[4]
-    singleUpSpawn(upPick)
-end
-
-function singleUp5()
-    local upPick = butUpData[5]
-    singleUpSpawn(upPick)
-end
-
-function singleUp6()
-    local upPick = butUpData[6]
-    singleUpSpawn(upPick)
-end
-
-function singleUp7()
-    local upPick = butUpData[7]
-    singleUpSpawn(upPick)
-end
-
-function singlePilotSpawn(Id)
-    partList = {}
-    partList.spawnCard = self
-    partList.Pilots = {}
-    partList.Pilots[1] = Id
-    partList.Upgrades = {}
-    partList.Upgrades[1] = {}
-    partList.Faction = masterPilotDB[Id].Faction
-    partList.Format = "2.5"
-
-    idSpawner(partList)
-    singleSpawner()
-end
-
-function singleUpSpawn(upId)
-    partList = {}
-    partList.spawnCard = self
-    partList.Pilots = {}
-    partList.Pilots[1] = 0
-    partList.Upgrades = {}
-    partList.Upgrades[1] = {}
-    partList.Upgrades[1][1] = upId
-    partList.Faction = xwuFaction[0]
-    partList.Format = "2.5"
-    idSpawner(partList)
-    singleSpawner()
-end
-
---[[
-   id table should look like this:
-   idTable.Pilots = {[1]=id1, [2]=id2}
-   idTable.Upgrades = {[1] = {[1]=upId1, [2]=upId2},
-                       [2]={[1]=upId3, [2]=upId3}}
-   idTable.Faction = masterPilotDB[id1].Faction
-]]
-
-dialSkin = {
-    [1] = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/dial/skin/1/Rebel.png',
-    [2] = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/dial/skin/1/Empire.png',
-    [3] = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/dial/skin/1/Scum.png',
-    [4] = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/dial/skin/1/Resistance.png',
-    [5] = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/dial/skin/1/FO.png',
-    [6] = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/dial/skin/1/Republic.png',
-    [7] = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/dial/skin/1/CIS.png',
-}
-
-function calculateShipIndicators(idTable)
-    shipTable = {}
-    for k, v in pairs(idTable.Pilots) do
-        local ship = masterPilotDB[v].ship_type
-        if shipTable[ship] == nil then
-            shipTable[ship] = { k }
-        else
-            table.insert(shipTable[ship], k)
-        end
-    end
-    pilotIndicators = {}
-    local i = 1
-    for ship, pilots in pairs(shipTable) do
-        if #pilots > 1 then
-            for k, pilot in pairs(pilots) do
-                pilotIndicators[pilot] = i
-                i = i + 1
-            end
-        else
-            pilotIndicators[pilots[1]] = 0
-        end
-    end
-    return pilotIndicators
-end
+--function calculateShipIndicators(idTable)
+  --  shipTable = {}
+    --for k, v in pairs(idTable.Pilots) do
+      --  local ship = PilotDB[v].ship_type
+        --if shipTable[ship] == nil then
+          --  shipTable[ship] = { k }
+        --else
+          --  table.insert(shipTable[ship], k)
+        --end
+    --end
+    --pilotIndicators = {}
+    --local i = 1
+    --for ship, pilots in pairs(shipTable) do
+     --   if #pilots > 1 then
+      --      for k, pilot in pairs(pilots) do
+        --        pilotIndicators[pilot] = i
+          --      i = i + 1
+           -- end
+       -- else
+        --    pilotIndicators[pilots[1]] = 0
+       -- end
+    --end
+   -- return pilotIndicators
+--end
 
 function idSpawner(idTable)
     spawnedPilotList = {}
     fList = {}
-    fList.SqdExecOptions = {}
+    fList.Leader = idTable[1]
     fList.Pilots = {}
     fList.Upgrades = {}
     fList.Remotes = {}
-    fList.Obstacles = idTable.Obstacles
-    fList.Customization = {}
-    if idTable.Faction == nil then
-        fList.Faction = masterPilotDB[idTable.Pilots[1]].Faction
-    else
-        fList.Faction = idTable.Faction
-    end
-    fList.factionDial = dialSkin[fList.Faction]
-    fList.sqdAction = {}
-    local Format = idTable.Format or "2.5"
-    local repo = "eirikmun"
-    if Format == "2.0-legacy" then
-        repo = "SogeMoge"
-    end
+    --this is an array with all the factions available. The first one will indicate which dial the player wil use
+    fList.Factions = leaderDB[fList.leader].leaderfaction
+    fList.factionDial = xwuFaction[fList.Factions[1]]
+   
     pilotIndicators = calculateShipIndicators(idTable)
     for k, v in pairs(idTable.Pilots) do
         --print(tostring(k) .. " " .. v  )
-        local pilotName = masterPilotDB[v].name
+        local pilotName = PilotDB[v].name
         spawnedPilotList[pilotName] = spawnedPilotList[pilotName] or 0
         spawnedPilotList[pilotName] = spawnedPilotList[pilotName] + 1
         if spawnedPilotList[pilotName] > 1 then
@@ -892,61 +644,61 @@ function idSpawner(idTable)
         fList.Pilots[k].id = v
         fList.Pilots[k].name = pilotName
         local cost = 20
-        if VERSION_DATA.pilots[masterPilotDB[v].XWS] then
-            cost = VERSION_DATA.pilots[masterPilotDB[v].XWS].cost
+        if VERSION_DATA.pilots [PilotDB[v].XWS] then
+            cost = VERSION_DATA.pilots PilotDB[v].XWS].cost
         end
         fList.Pilots[k].cost = cost
-        fList.Customization[pilotName] = masterPilotDB[v].Customization or {}
+        fList.Customization[pilotName] = PilotDB[v].Customization or {}
         fList.Customization[pilotName].tint = tintColors[pilotIndicators[k]]
-        if (masterPilotDB[v].tintFriendly ~= nil) and (pilotIndicators[k] > 0) then
+        if  PilotDB[v].tintFriendly ~= nil) and (pilotIndicators[k] > 0) then
             fList.Customization[pilotName].modeltint = tintColors[pilotIndicators[k]]
-            fList.Customization[pilotName].texture = masterPilotDB[v].tintFriendly.texture
-            fList.Customization[pilotName].model = masterPilotDB[v].tintFriendly.mesh
+            fList.Customization[pilotName].texture = PilotDB[v].tintFriendly.texture
+            fList.Customization[pilotName].model = PilotDB[v].tintFriendly.mesh
         end
         --fList.Pilots[k].tint = tintColors[pilotIndicators[k]]
-        --fList.Pilots[k].card = masterPilotDB[v].card
+        --fList.Pilots[k].card = PilotDB[v].card
         fList.Pilots[k].card = "{verifycache}https://raw.githubusercontent.com/" ..
             repo .. "/x-wing2.0-project-goldenrod/" ..
-            Format .. "/src/images/En/pilots/" .. masterPilotDB[v].XWS .. ".png"
+            Format .. "/src/images/En/pilots/" .. PilotDB[v].XWS .. ".png"
         fList.Pilots[k].cardB = cardBackDB[xwuFaction[fList.Faction]]
-        fList.Pilots[k].standardized_loadout = masterPilotDB[v].standardized_loadout
-        fList.Pilots[k].standardized_upgrades = masterPilotDB[v].standardized_upgrades
-        local Ship = masterPilotDB[v].ship_type
+        fList.Pilots[k].standardized_loadout = PilotDB[v].standardized_loadout
+        fList.Pilots[k].standardized_upgrades = PilotDB[v].standardized_upgrades
+        local Ship = PilotDB[v].ship_type
         fList.Pilots[k].Ship = Ship
-        fList.Pilots[k].peg = masterShipDB[Ship].peg
-        fList.Pilots[k].Size = masterShipDB[Ship].size
-        fList.Pilots[k].Shield = masterPilotDB[v].Shield or masterShipDB[Ship].Shield
-        fList.Pilots[k].Hull = masterShipDB[Ship].Hull
-        fList.Pilots[k].list = pilotName .. ' - ' .. masterShipDB[Ship].name .. '\n'
-        fList.Pilots[k].newSpawner = masterShipDB[Ship].newSpawner or false
+        fList.Pilots[k].peg = ShipDB[Ship].peg
+        fList.Pilots[k].Size = ShipDB[Ship].size
+        fList.Pilots[k].Shield = PilotDB[v].Shield or ShipDB[Ship].Shield
+        fList.Pilots[k].Hull = ShipDB[Ship].Hull
+        fList.Pilots[k].list = pilotName .. ' - ' .. ShipDB[Ship].name .. '\n'
+        fList.Pilots[k].newSpawner = ShipDB[Ship].newSpawner or false
         fList.Pilots[k].bombD = 's1'
-        fList.Pilots[k].Docking = masterShipDB[Ship].Docking
+        fList.Pilots[k].Docking = ShipDB[Ship].Docking
         fList.Pilots[k].Data = {}
         fList.Pilots[k].Data.name = pilotName
-        fList.Pilots[k].Data.xws = masterPilotDB[v].XWS
-        fList.Pilots[k].Data.mesh = masterPilotDB[v].mesh or masterShipDB[Ship].mesh
-        fList.Pilots[k].Data.texture = masterPilotDB[v].texture
-        fList.Pilots[k].Data.textures = masterShipDB[Ship].textures
-        fList.Pilots[k].Data.limited = masterPilotDB[v].limited
+        fList.Pilots[k].Data.xws = PilotDB[v].XWS
+        fList.Pilots[k].Data.mesh = PilotDB[v].mesh or ShipDB[Ship].mesh
+        fList.Pilots[k].Data.texture = PilotDB[v].texture
+        fList.Pilots[k].Data.textures = ShipDB[Ship].textures
+        fList.Pilots[k].Data.limited = PilotDB[v].limited
         fList.Pilots[k].Data.shipId = Ship
-        fList.Pilots[k].Data.initiative = masterPilotDB[v].init
-        fList.Pilots[k].Data.moveSet = masterPilotDB[v].moveSet or masterShipDB[Ship].moveSet
-        fList.Pilots[k].Data.Config = masterShipDB[Ship].Config
-        fList.Pilots[k].Data.customization_parts = masterShipDB[Ship].customization_parts
-        fList.Pilots[k].Data.mountingPoints = masterShipDB[Ship].mountingPoints or { main = { 0, 0 } }
+        fList.Pilots[k].Data.initiative = PilotDB[v].init
+        fList.Pilots[k].Data.moveSet = PilotDB[v].moveSet or ShipDB[Ship].moveSet
+        fList.Pilots[k].Data.Config = ShipDB[Ship].Config
+        fList.Pilots[k].Data.customization_parts = ShipDB[Ship].customization_parts
+        fList.Pilots[k].Data.mountingPoints = ShipDB[Ship].mountingPoints or { main = { 0, 0 } }
 
-        if masterPilotDB[v].arcs then
-            fList.Pilots[k].Data.arcs = table.deepcopy(masterPilotDB[v].arcs)
+        if PilotDB[v].arcs then
+            fList.Pilots[k].Data.arcs = table.deepcopy PilotDB[v].arcs)
         else
-            fList.Pilots[k].Data.arcs = table.deepcopy(masterShipDB[Ship].arcs)
+            fList.Pilots[k].Data.arcs = table.deepcopy ShipDB[Ship].arcs)
         end
-        fList.Pilots[k].Data.actSet = table.deepcopy(masterPilotDB[v].actSet)
-        fList.Pilots[k].Data.executeOptions = masterPilotDB[v].executeOptions or {}
-        fList.Pilots[k].Data.movethrough = masterPilotDB[v].movethrough or false
-        fList.Pilots[k].Data.ProximityHider = masterShipDB[Ship].ProximityHider or false
+        fList.Pilots[k].Data.actSet = table.deepcopy PilotDB[v].actSet)
+        fList.Pilots[k].Data.executeOptions = PilotDB[v].executeOptions or {}
+        fList.Pilots[k].Data.movethrough = PilotDB[v].movethrough or false
+        fList.Pilots[k].Data.ProximityHider = ShipDB[Ship].ProximityHider or false
 
-        if masterPilotDB[v].sqdExecuteOptions ~= nil then
-            table.insert(fList.SqdExecOptions, masterPilotDB[v].sqdExecuteOptions)
+        if PilotDB[v].sqdExecuteOptions ~= nil then
+            table.insert(fList.SqdExecOptions, PilotDB[v].sqdExecuteOptions)
         end
 
         fList.Pilots[k].Data.Faction = fList.Faction
@@ -971,68 +723,68 @@ function idSpawner(idTable)
             fList.Pilots[k].bombD = fList.Pilots[k].bombD .. ':be1:br1'
         end
 
-        if masterPilotDB[v].Bomb then
+        if PilotDB[v].Bomb then
             fList.Pilots[k].Bomb = true
         end
 
         id = v
-        if masterPilotDB[id].Condition ~= nil then
-            fList.Pilots[k].Condition = masterPilotDB[id].Condition
+        if PilotDB[id].Condition ~= nil then
+            fList.Pilots[k].Condition = PilotDB[id].Condition
         end
-        for K, V in pairs(masterPilotDB[id].addSqdAction or {}) do
+        for K, V in pairs PilotDB[id].addSqdAction or {}) do
             table.insert(fList.sqdAction, V)
         end
 
-        fList.Pilots[k].Charge = (masterShipDB[Ship].Charge or 0) + (masterPilotDB[id].Charge or 0)
-        fList.Pilots[k].Force = masterPilotDB[id].Force or 0
-        fList.Pilots[k].Energy = masterShipDB[Ship].Energy or 0
+        fList.Pilots[k].Charge =  ShipDB[Ship].Charge or 0) +  PilotDB[id].Charge or 0)
+        fList.Pilots[k].Force = PilotDB[id].Force or 0
+        fList.Pilots[k].Energy = ShipDB[Ship].Energy or 0
         fList.Upgrades[k] = {}
         local skilled_bombardier = false
         local loadout = 0
         for key, value in pairs(idTable.Upgrades[k]) do
             --print("Upg[" .. tostring(k) .. "] = ".. tostring(value))
             value = dualUpgradeList[value] or value
-            local name = masterUpgradesDB[value].name
-            local upSlot = masterUpgradesDB[value].slot
+            local name = UpgradesDB[value].name
+            local upSlot = UpgradesDB[value].slot
             fList.Upgrades[k][key] = {}
             fList.Upgrades[k][key].name = name
             local cost = 0
-            local xws_data = VERSION_DATA.upgrades[masterUpgradesDB[value].XWS]
-            if xws_data and xws_data.cost and tonumber(VERSION_DATA.upgrades[masterUpgradesDB[value].XWS].cost) then
-                cost = VERSION_DATA.upgrades[masterUpgradesDB[value].XWS].cost
+            local xws_data = VERSION_DATA.upgrades UpgradesDB[value].XWS]
+            if xws_data and xws_data.cost and tonumber(VERSION_DATA.upgrades UpgradesDB[value].XWS].cost) then
+                cost = VERSION_DATA.upgrades UpgradesDB[value].XWS].cost
             end
             fList.Pilots[k].list = fList.Pilots[k].list .. '   ' .. name .. ' (' .. tostring(cost) .. ')\n'
             loadout = loadout + cost
 
-            --fList.Upgrades[k][key].card = masterUpgradesDB[value].card
+            --fList.Upgrades[k][key].card = UpgradesDB[value].card
             fList.Upgrades[k][key].card = "https://raw.githubusercontent.com/" ..
                 repo .. "/x-wing2.0-project-goldenrod/" ..
-                Format .. "/src/images/En/upgrades/" .. masterUpgradesDB[value].XWS .. ".png"
-            if masterUpgradesDB[value].dual == true then
+                Format .. "/src/images/En/upgrades/" .. UpgradesDB[value].XWS .. ".png"
+            if UpgradesDB[value].dual == true then
                 fList.Upgrades[k][key].cardB = "https://raw.githubusercontent.com/" ..
                     repo .. "/x-wing2.0-project-goldenrod/" ..
-                    Format .. "/src/images/En/upgrades/" .. masterUpgradesDB[value].XWS .. "-sideb.png"
-            elseif masterUpgradesDB[value].cardB == nil then
+                    Format .. "/src/images/En/upgrades/" .. UpgradesDB[value].XWS .. "-sideb.png"
+            elseif UpgradesDB[value].cardB == nil then
                 fList.Upgrades[k][key].cardB = cardBackDB[tostring(upSlot)]
             else
-                fList.Upgrades[k][key].cardB = masterUpgradesDB[value].cardB
+                fList.Upgrades[k][key].cardB = UpgradesDB[value].cardB
             end
-            for K, V in pairs(masterUpgradesDB[value].addAction or {}) do --Upgrades that adds an action to a ship
+            for K, V in pairs UpgradesDB[value].addAction or {}) do --Upgrades that adds an action to a ship
                 table.insert(fList.Pilots[k].Data.actSet, V)
             end
-            for K, V in pairs(masterUpgradesDB[value].addSqdAction or {}) do --upgrades that adds an action to the whole squad, sets up a list of actions that will be added later
+            for K, V in pairs UpgradesDB[value].addSqdAction or {}) do --upgrades that adds an action to the whole squad, sets up a list of actions that will be added later
                 table.insert(fList.sqdAction, V)
             end
 
-            if masterUpgradesDB[value].Charge ~= nil then
-                fList.Upgrades[k][key].Charge = masterUpgradesDB[value].Charge
+            if UpgradesDB[value].Charge ~= nil then
+                fList.Upgrades[k][key].Charge = UpgradesDB[value].Charge
             else
                 fList.Upgrades[k][key].Charge = 0
             end
-            if masterUpgradesDB[value].arcs then
-                if masterUpgradesDB[value].arcs.fixed then
+            if UpgradesDB[value].arcs then
+                if UpgradesDB[value].arcs.fixed then
                     fList.Pilots[k].Data.arcs.fixed = fList.Pilots[k].Data.arcs.fixed or { name = 'primary', type = {} }
-                    for new_arc_idx, new_arc in pairs(masterUpgradesDB[value].arcs.fixed.type) do
+                    for new_arc_idx, new_arc in pairs UpgradesDB[value].arcs.fixed.type) do
                         local found = false
                         for arc_idx, arc in pairs(fList.Pilots[k].Data.arcs.fixed.type) do
                             -- check if new arc allready in arc list
@@ -1046,64 +798,64 @@ function idSpawner(idTable)
                         end
                     end
                 end
-                if masterUpgradesDB[value].arcs.turret then
+                if UpgradesDB[value].arcs.turret then
                     local mounting_point = nil
                     local found = false
                     fList.Pilots[k].Data.arcs.turret = fList.Pilots[k].Data.arcs.turret or {}
                     for mount, pos in pairs(fList.Pilots[k].Data.mountingPoints) do
                         -- Find next available mounting point
                         if not found and not fList.Pilots[k].Data.arcs.turret[mount] then
-                            --print("Found mounting point " .. mount .. " for " .. masterUpgradesDB[value].arcs.turret.name )
+                            --print("Found mounting point " .. mount .. " for " .. UpgradesDB[value].arcs.turret.name )
                             mounting_point = mount
                             found = true
                         end
                     end
                     if found then
                         -- Add the turret to the available mounting point
-                        fList.Pilots[k].Data.arcs.turret[mounting_point] = masterUpgradesDB[value].arcs.turret
+                        fList.Pilots[k].Data.arcs.turret[mounting_point] = UpgradesDB[value].arcs.turret
                     end
                 end
             end
-            if masterUpgradesDB[value].Force ~= nil then
-                fList.Pilots[k].Force = fList.Pilots[k].Force + masterUpgradesDB[value].Force
+            if UpgradesDB[value].Force ~= nil then
+                fList.Pilots[k].Force = fList.Pilots[k].Force + UpgradesDB[value].Force
             end
-            if masterUpgradesDB[value].shd ~= nil then
-                fList.Pilots[k].Shield = fList.Pilots[k].Shield + masterUpgradesDB[value].shd
+            if UpgradesDB[value].shd ~= nil then
+                fList.Pilots[k].Shield = fList.Pilots[k].Shield + UpgradesDB[value].shd
             end
-            if masterUpgradesDB[value].Energy ~= nil then
-                fList.Pilots[k].Energy = fList.Pilots[k].Energy + masterUpgradesDB[value].Energy
+            if UpgradesDB[value].Energy ~= nil then
+                fList.Pilots[k].Energy = fList.Pilots[k].Energy + UpgradesDB[value].Energy
             end
-            if masterUpgradesDB[value].Hull ~= nil then
-                fList.Pilots[k].Hull = fList.Pilots[k].Hull + masterUpgradesDB[value].Hull
+            if UpgradesDB[value].Hull ~= nil then
+                fList.Pilots[k].Hull = fList.Pilots[k].Hull + UpgradesDB[value].Hull
             end
 
-            fList.Upgrades[k][key].Condition = masterUpgradesDB[value].Condition or nil
-            for i, r in pairs(masterUpgradesDB[value].remotes or {}) do
+            fList.Upgrades[k][key].Condition = UpgradesDB[value].Condition or nil
+            for i, r in pairs UpgradesDB[value].remotes or {}) do
                 table.insert(fList.Remotes, r)
             end
 
-            if masterUpgradesDB[value].Bomb then
+            if UpgradesDB[value].Bomb then
                 fList.Pilots[k].Bomb = true
             elseif upSlot == 18 then
                 fList.Upgrades[k][key].Config = true
             end
-            if masterUpgradesDB[value].Docking ~= nil then
-                fList.Pilots[k].Docking = masterUpgradesDB[value].Docking
+            if UpgradesDB[value].Docking ~= nil then
+                fList.Pilots[k].Docking = UpgradesDB[value].Docking
             end
-            fList.Pilots[k].Data.movethrough = masterUpgradesDB[value].movethrough or fList.Pilots[k].Data.movethrough
-            if masterUpgradesDB[value].wingleader ~= nil then
-                fList.Pilots[k].wingleader = masterUpgradesDB[value].wingleader
+            fList.Pilots[k].Data.movethrough = UpgradesDB[value].movethrough or fList.Pilots[k].Data.movethrough
+            if UpgradesDB[value].wingleader ~= nil then
+                fList.Pilots[k].wingleader = UpgradesDB[value].wingleader
             end
-            --print("Test value:".. tostring(value) .. " name:" .. masterUpgradesDB[value].name .. tostring(masterUpgradesDB[value].executeOptions))
-            if masterUpgradesDB[value].executeOptions ~= nil then
+            --print("Test value:".. tostring(value) .. " name:" .. UpgradesDB[value].name .. tostring UpgradesDB[value].executeOptions))
+            if UpgradesDB[value].executeOptions ~= nil then
                 --print("Got upgrade execute options")
-                local newexecuteoptions = masterUpgradesDB[value].executeOptions(idTable, idTable.Pilots[k])
-                --print("Test " .. masterUpgradesDB[value].name)
+                local newexecuteoptions = UpgradesDB[value].executeOptions(idTable, idTable.Pilots[k])
+                --print("Test " .. UpgradesDB[value].name)
                 combineExecuteOptions(fList.Pilots[k].Data.executeOptions, newexecuteoptions)
             end
 
-            if masterUpgradesDB[value].sqdExecuteOptions ~= nil then
-                table.insert(fList.SqdExecOptions, masterUpgradesDB[value].sqdExecuteOptions)
+            if UpgradesDB[value].sqdExecuteOptions ~= nil then
+                table.insert(fList.SqdExecOptions, UpgradesDB[value].sqdExecuteOptions)
             end
 
             if value == 'skilledbombardier' then -- Skilled Bombardier special drops
@@ -1137,9 +889,9 @@ function idSpawner(idTable)
             fList.Pilots[k].bombD = bombD
         end
         local loadout_string = ''
-        if VERSION_DATA.pilots[masterPilotDB[v].XWS] then
+        if VERSION_DATA.pilots PilotDB[v].XWS] then
             loadout_string = '\nLoadout: ' ..
-                tostring(loadout) .. '/' .. tostring(VERSION_DATA.pilots[masterPilotDB[v].XWS].loadout)
+                tostring(loadout) .. '/' .. tostring(VERSION_DATA.pilots PilotDB[v].XWS].loadout)
         end
         fList.Pilots[k].list = fList.Pilots[k].list ..
             loadout_string ..
@@ -1400,7 +1152,7 @@ function addShip()
     local aux = 1
     local auxB = 0
     availableShips = {}
-    for i, shipModel in pairs(masterShipDB) do
+    for i, shipModel in pairs ShipDB) do
         for k, fac in pairs(shipModel.Fac) do
             if k == partList.Faction then
                 Font = 100
@@ -1437,7 +1189,7 @@ function selectModelGeneric(arg)
     local aux = 0
     local auxB = 0
     local index = 1
-    for k, v in pairs(masterPilotDB) do
+    for k, v in pairs PilotDB) do
         if v.ship_type == chosenModel then
             local validOption = true
             if v.limited ~= nil then
@@ -1453,7 +1205,7 @@ function selectModelGeneric(arg)
                     loadout = VERSION_DATA.pilots[v.XWS].loadout
                 end
                 availablePilots[index] = { id = k, name = v.name, cost = cost, loadout = loadout, keywords = {}, upgrades = {} }
-                for _, keyword in pairs(masterShipDB[chosenModel].keywords or {}) do
+                for _, keyword in pairs ShipDB[chosenModel].keywords or {}) do
                     table.insert(availablePilots[index].keywords, keyword)
                 end
                 local title = ''
@@ -1604,7 +1356,7 @@ function setPilotGeneric(arg)
     partList.nameCounts[name] = (partList.nameCounts[name] or 0) + 1
     table.insert(partList.Pilots, availablePilots[arg])
     shipIndex = #partList.Pilots
-    for _, keyword in pairs(masterPilotDB[availablePilots[arg].id].keywords or {}) do
+    for _, keyword in pairs PilotDB[availablePilots[arg].id].keywords or {}) do
         table.insert(partList.Pilots[shipIndex].keywords, keyword)
     end
     availablePilots = nil
@@ -1797,7 +1549,7 @@ end
 function selectShipGeneric(arg)
     self.clearButtons()
     shipIndex = arg
-    local pilot = masterPilotDB[partList.Pilots[shipIndex].id]
+    local pilot = PilotDB[partList.Pilots[shipIndex].id]
     local free_slots = {}
     local loadout_value = 0
     local cost = 0
@@ -1818,7 +1570,7 @@ function selectShipGeneric(arg)
     -- Alter free slots depending on equipped upgrades
     for i, upgrade in pairs(partList.Pilots[shipIndex].upgrades) do
         --print("Upgrade " .. tostring(upgrade.name))
-        local upgrade_entry = masterUpgradesDB[upgrade.id]
+        local upgrade_entry = UpgradesDB[upgrade.id]
         table.insert(slot_buttons, { slot_name = slotName[upgrade_entry.slot], upgrade = upgrade })
         loadout_cost = loadout_cost + upgrade.cost
         loadout_value = loadout_value + upgrade.loadout_modifier
@@ -2015,7 +1767,7 @@ function selectSlotGeneric(slotIndex)
     local row = 1
     local column = 0
     self.createButton({ click_function = 'selectUpNone', label = 'None (0)', function_owner = self, position = { -0.45, 0.45, -0.2 }, width = 1500, height = 220, font_size = 120, scale = { 0.25, 0.25, 0.25 } })
-    for id, up in pairs(masterUpgradesDB) do
+    for id, up in pairs UpgradesDB) do
         if up.slot == slotId then
             local up_cost = up.cost or 0
             if VERSION_DATA.upgrades[up.XWS] and VERSION_DATA.upgrades[up.XWS].cost then
@@ -2032,27 +1784,27 @@ function selectSlotGeneric(slotIndex)
                     end
                 end
                 if up.restriction.Size ~= nil then
-                    if up.restriction.Size[masterShipDB[masterPilotDB[partList.Pilots[shipIndex].id].ship_type].size] ~= true then
+                    if up.restriction.Size ShipDB PilotDB[partList.Pilots[shipIndex].id].ship_type].size] ~= true then
                         validUp = false
                     end
                 end
                 if up.restriction.ship ~= nil then
-                    if up.restriction.ship[masterPilotDB[partList.Pilots[shipIndex].id].ship_type] ~= true then
+                    if up.restriction.ship PilotDB[partList.Pilots[shipIndex].id].ship_type] ~= true then
                         validUp = false
                     end
                 end
                 if up.restriction.InitiativeGreaterThan ~= nil then
-                    if masterPilotDB[partList.Pilots[shipIndex].id].init <= up.restriction.InitiativeGreaterThan then
+                    if PilotDB[partList.Pilots[shipIndex].id].init <= up.restriction.InitiativeGreaterThan then
                         validUp = false
                     end
                 end
                 if up.restriction.IsLimited ~= nil then
-                    if up.restriction.IsLimited ~= ((masterPilotDB[partList.Pilots[shipIndex].id].limited or 0) > 0) then
+                    if up.restriction.IsLimited ~= ( PilotDB[partList.Pilots[shipIndex].id].limited or 0) > 0) then
                         validUp = false
                     end
                 end
                 if up.restriction.HasForce ~= nil then
-                    if up.restriction.HasForce ~= ((masterPilotDB[partList.Pilots[shipIndex].id].Force or 0) > 0) then
+                    if up.restriction.HasForce ~= ( PilotDB[partList.Pilots[shipIndex].id].Force or 0) > 0) then
                         validUp = false
                     end
                 end
@@ -2557,9 +2309,9 @@ obstacleNames = {
     gascloud4 = "Gas Cloud 6",
     gascloud5 = "Gas Cloud 4",
     gascloud6 = "Gas Cloud 5",
-    pomasteroid1 = "POM Asteroid 1",
-    pomasteroid2 = "POM Asteroid 2",
-    pomasteroid3 = "POM Asteroid 3",
+    p oid1 = "POM Asteroid 1",
+    p oid2 = "POM Asteroid 2",
+    p oid3 = "POM Asteroid 3",
     pomdebris1 = "POM Debris Cloud 1",
     pomdebris2 = "POM Debris Cloud 2",
     pomdebris3 = "POM Debris Cloud 3",
@@ -2615,7 +2367,7 @@ function parseList()
                     finalList.Aux[pilotIndex] = {}
                     finalList.AuxU[pilotIndex] = {}
                     local found = false
-                    for id, pilot in pairs(masterPilotDB) do
+                    for id, pilot in pairs PilotDB) do
                         if (string.lower(pilot.name) == string.lower(cardN)) and (pilot.Faction == finalList.Faction) then
                             Aux = Aux + 1
                             finalList.Aux[pilotIndex][Aux] = id
@@ -2637,7 +2389,7 @@ function parseList()
                     finalList.AuxU[pilotIndex][k] = {}
                     local found = false
                     local restricted = false
-                    for id, upg in pairs(masterUpgradesDB) do
+                    for id, upg in pairs UpgradesDB) do
                         if string.lower(upg.name) == string.lower(cardN) then
                             if (upg.restriction == nil) or (upg.restriction.Faction == nil) or (upg.restriction.Faction[finalList.Faction] == true) then
                                 Aux = Aux + 1
@@ -2731,7 +2483,7 @@ end
 
 -- Fifth Step: If pilots with several options of ships are present, for each pilot will create an inquire asking wich ship the pilot is in.
 function pilotChoice(options)
-    local name = (masterPilotDB[options[1]].name)
+    local name =  PilotDB[options[1]].name)
     self.clearButtons()
     self.createButton({
         click_function = 'Dummy2',
@@ -2747,11 +2499,11 @@ function pilotChoice(options)
     self.createButton({ click_function = 'Dummy2', function_owner = self, label = name, position = { 0, 0.45, -0.1 }, width = 1600, height = 380, font_size = 200, scale = { 0.25, 0.25, 0.25 } })
 
     for i, option in pairs(options) do
-        local name = masterPilotDB[option].name
-        if masterPilotDB[option].title ~= nil then
-            name = name .. ' - ' .. masterPilotDB[option].title .. '\n'
+        local name = PilotDB[option].name
+        if PilotDB[option].title ~= nil then
+            name = name .. ' - ' .. PilotDB[option].title .. '\n'
         end
-        name = name .. ' (' .. masterShipDB[masterPilotDB[option].ship_type].name .. ')'
+        name = name .. ' (' .. ShipDB PilotDB[option].ship_type].name .. ')'
         self.createButton({ click_function = 'setShip' .. i, function_owner = self, label = name, position = { 0, 0.45, -0.1 + i * 0.2 }, width = 3000, height = 380, font_size = 160, scale = { 0.25, 0.25, 0.25 } })
     end
 end
@@ -2895,17 +2647,17 @@ slot_to_id['Weapon HardPoint'] = 99
 
 -- Sixth Step: If Upgrades with several options in the same faction are present, for each upgrade will create an inquire asking wich slot the upgrade is in.
 function upChoice(options)
-    local name = (masterUpgradesDB[options[currIndex][currSlot][1]].name)
+    local name =  UpgradesDB[options[currIndex][currSlot][1]].name)
     local title1 = ''
-    if masterUpgradesDB[options[currIndex][currSlot][1]].title then
-        title1 = masterUpgradesDB[options[currIndex][currSlot][1]].title .. " - "
+    if UpgradesDB[options[currIndex][currSlot][1]].title then
+        title1 = UpgradesDB[options[currIndex][currSlot][1]].title .. " - "
     end
-    local Up1 = title1 .. slotName[masterUpgradesDB[options[currIndex][currSlot][1]].slot]
+    local Up1 = title1 .. slotName UpgradesDB[options[currIndex][currSlot][1]].slot]
     local title2 = ''
-    if masterUpgradesDB[options[currIndex][currSlot][2]].title then
-        title2 = masterUpgradesDB[options[currIndex][currSlot][2]].title .. " - "
+    if UpgradesDB[options[currIndex][currSlot][2]].title then
+        title2 = UpgradesDB[options[currIndex][currSlot][2]].title .. " - "
     end
-    local Up2 = title2 .. slotName[masterUpgradesDB[options[currIndex][currSlot][2]].slot]
+    local Up2 = title2 .. slotName UpgradesDB[options[currIndex][currSlot][2]].slot]
     self.clearButtons()
     self.createButton({
         click_function = 'Dummy4',
@@ -2922,7 +2674,7 @@ function upChoice(options)
     self.createButton({ click_function = 'setUp1', function_owner = self, label = Up1, position = { 0, 0.45, 0.1 }, width = 1800, height = 380, font_size = 180, scale = { 0.25, 0.25, 0.25 } })
     self.createButton({ click_function = 'setUp2', function_owner = self, label = Up2, position = { 0, 0.45, 0.3 }, width = 1800, height = 380, font_size = 180, scale = { 0.25, 0.25, 0.25 } })
     if options == 3 then
-        local Up3 = slotName[masterUpgradesDB[options[currIndex][currSlot][3]].slot]
+        local Up3 = slotName UpgradesDB[options[currIndex][currSlot][3]].slot]
         self.createButton({ click_function = 'setUp3', function_owner = self, label = Up3, position = { 0, 0.45, 0.8 }, width = 1200, height = 380, font_size = 180, scale = { 0.25, 0.25, 0.25 } })
     end
 end
@@ -3060,261 +2812,246 @@ end
 
 end)
 
-__bundle_register("Game.Component.Spawner.UpgradeDb", function(require, _LOADED, __bundle_register, __bundle_modules)
-masterUpgradesDB = {}
-return masterUpgradesDB
+__bundle_register("Game.Component.Spawner.UpgradeDb", function(require, _LOADED, __bundle_register, __bundle_modules) UpgradesDB = {}
+return UpgradesDB
 end)
 
 
 __bundle_register("Game.Component.Spawner.XwaPilotDb", function(require, _LOADED, __bundle_register, __bundle_modules)
 PilotDb = {}
-return masterPilotDB
+return PilotDB
 end)
 
 
 __bundle_register("Game.Component.Spawner.ShipDb", function(require, _LOADED, __bundle_register, __bundle_modules)
-
-masterShipDB = {}
-
-masterShipDB['starviperclassattackplatform'] = {
+ ShipDB = {}
+ ShipDB['starviperclassattackplatform'] = {
        textures = {
         red =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/starviperclassattackplatform/Textures/blacksunassassin.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/starviperclassattackplatform/Textures/blacksunassassin.jpg',
         white =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/starviperclassattackplatform/Textures/blacksunenforcer.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/starviperclassattackplatform/Textures/blacksunenforcer.jpg',
     },
    
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/starviperclassattackplatform/starviper2.obj'
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/starviperclassattackplatform/starviper2.obj'
 }
-
-masterShipDB['scurrgh6bomber'] = {
+ ShipDB['scurrgh6bomber'] = {
         textures = {
         orange =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/scurrgh6bomber/Textures/orange.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/scurrgh6bomber/Textures/orange.png',
         red =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/scurrgh6bomber/Textures/red.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/scurrgh6bomber/Textures/red.png',
     },
      mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/scurrgh6bomber/scurrg.obj'
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/scurrgh6bomber/scurrg.obj'
 }
-
-masterShipDB['yt2400lightfreighter'] = {
+ ShipDB['yt2400lightfreighter'] = {
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/yt2400lightfreighter/Textures/standard.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/yt2400lightfreighter/Textures/standard.jpg',
     },
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/yt2400lightfreighter/yt2400.obj'
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/yt2400lightfreighter/yt2400.obj'
     keywords = { 'Freighter' }
 }
-
-masterShipDB['auzituckgunship'] = {
+ ShipDB['auzituckgunship'] = {
        textures = {
         orange =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/auzituckgunship/Textures/orange.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/auzituckgunship/Textures/orange.jpg',
         cream =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/auzituckgunship/Textures/cream.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/auzituckgunship/Textures/cream.jpg',
     },
 
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/auzituckgunship/auzituck.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/auzituckgunship/auzituck.obj',
 }
-
-masterShipDB['kihraxzfighter'] = {
+ ShipDB['kihraxzfighter'] = {
        textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/kihraxzfighter/Textures/standard.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/kihraxzfighter/Textures/standard.jpg',
         green =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/kihraxzfighter/Textures/green.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/kihraxzfighter/Textures/green.jpg',
         orange =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/kihraxzfighter/Textures/orange.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/kihraxzfighter/Textures/orange.jpg',
         blacksun =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/kihraxzfighter/Textures/blacksun.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/kihraxzfighter/Textures/blacksun.jpg',
         talonbane =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/kihraxzfighter/Textures/talonbane.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/kihraxzfighter/Textures/talonbane.jpg',
     },
     
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/kihraxzfighter/khiraxz.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/kihraxzfighter/khiraxz.obj',
 }
-
-masterShipDB['sheathipedeclassshuttle'] = {
+ ShipDB['sheathipedeclassshuttle'] = {
     
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/sheathipedeclassshuttle/Textures/standard.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/sheathipedeclassshuttle/Textures/standard.jpg',
     },
    
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/sheathipedeclassshuttle/Sheathipede2.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/sheathipedeclassshuttle/Sheathipede2.obj',
 }
-
-masterShipDB['quadrijettransferspacetug'] = {
+ ShipDB['quadrijettransferspacetug'] = {
     
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/quadrijettransferspacetug/Textures/standard.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/quadrijettransferspacetug/Textures/standard.jpg',
         mining =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/quadrijettransferspacetug/Textures/mining.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/quadrijettransferspacetug/Textures/mining.jpg',
     },
     
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/quadrijettransferspacetug/quadjumper.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/quadrijettransferspacetug/quadjumper.obj',
 }
-
-masterShipDB['firesprayclasspatrolcraft'] = {
+ ShipDB['firesprayclasspatrolcraft'] = {
   
     textures = {
         bountyhunter =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/firesprayclasspatrolcraft/Textures/1/bountyhunter.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/firesprayclasspatrolcraft/Textures/1/bountyhunter.jpg',
         boba =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/firesprayclasspatrolcraft/Textures/1/boba.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/firesprayclasspatrolcraft/Textures/1/boba.jpg',
         emon =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/firesprayclasspatrolcraft/Textures/1/emon.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/firesprayclasspatrolcraft/Textures/1/emon.jpg',
         jango =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/firesprayclasspatrolcraft/Textures/1/jango.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/firesprayclasspatrolcraft/Textures/1/jango.jpg',
         kath =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/firesprayclasspatrolcraft/Textures/1/kath.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/firesprayclasspatrolcraft/Textures/1/kath.jpg',
         koshka =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/firesprayclasspatrolcraft/Textures/1/koshka.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/firesprayclasspatrolcraft/Textures/1/koshka.jpg',
         krassis =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/firesprayclasspatrolcraft/Textures/1/krassis.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/firesprayclasspatrolcraft/Textures/1/krassis.jpg',
         zam =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/firesprayclasspatrolcraft/Textures/1/zam.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/firesprayclasspatrolcraft/Textures/1/zam.jpg',
         blue =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/firesprayclasspatrolcraft/Textures/1/blue.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/firesprayclasspatrolcraft/Textures/1/blue.jpg',
         merc =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/firesprayclasspatrolcraft/Textures/1/mercenary.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/firesprayclasspatrolcraft/Textures/1/mercenary.jpg',
         sabine =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/firesprayclasspatrolcraft/Textures/1/sabine.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/firesprayclasspatrolcraft/Textures/1/sabine.jpg',
         white =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/firesprayclasspatrolcraft/Textures/1/white.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/firesprayclasspatrolcraft/Textures/1/white.jpg',
         plain =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/firesprayclasspatrolcraft/Textures/1/plain.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/firesprayclasspatrolcraft/Textures/1/plain.jpg',
         skull =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/firesprayclasspatrolcraft/Textures/1/skull.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/firesprayclasspatrolcraft/Textures/1/skull.jpg',
     },
    
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/firesprayclasspatrolcraft/firesprayV2.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/firesprayclasspatrolcraft/firesprayV2.obj',
     customization_parts = {
         canopy = {
             model =
-            'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/firesprayclasspatrolcraft/firesprayV3-canopy.obj',
+            'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/firesprayclasspatrolcraft/firesprayV3-canopy.obj',
             specular_sharpness = 6,
             specular_intensity = 0.9,
             tintable = true
         }
     }
 }
-
-masterShipDB['tielnfighter'] = {
+ ShipDB['tielnfighter'] = {
   
     textures = {
         blue =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tielnfighter/textures/Tie-Fighter-Blue2.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tielnfighter/textures/Tie-Fighter-Blue2.jpg',
         grey =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tielnfighter/textures/Tie-Fighter-Grey2.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tielnfighter/textures/Tie-Fighter-Grey2.jpg',
         inferno =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tielnfighter/textures/Tie-Fighter-Inferno2.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tielnfighter/textures/Tie-Fighter-Inferno2.jpg',
         rebel =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tielnfighter/textures/Tie-Fighter-Rebel.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tielnfighter/textures/Tie-Fighter-Rebel.jpg',
     },
     
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tielnfighter/TIE_LN.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tielnfighter/TIE_LN.obj',
 }
-
-masterShipDB['btla4ywing'] = {
+ ShipDB['btla4ywing'] = {
    
     textures = {
         gold =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/btla4ywing/Textures/gold.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/btla4ywing/Textures/gold.png',
         grey =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/btla4ywing/Textures/grey.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/btla4ywing/Textures/grey.png',
         horton =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/btla4ywing/Textures/hortonsalm.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/btla4ywing/Textures/hortonsalm.png',
         amaxine =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/btla4ywing/Textures/amaxine.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/btla4ywing/Textures/amaxine.png',
         crymorah =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/btla4ywing/Textures/crymorah.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/btla4ywing/Textures/crymorah.png',
         drea =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/btla4ywing/Textures/drearenthal.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/btla4ywing/Textures/drearenthal.png',
         norra =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/btla4ywing/Textures/norrawexley.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/btla4ywing/Textures/norrawexley.png',
         hiredgun =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/btla4ywing/Textures/hiredgun.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/btla4ywing/Textures/hiredgun.png',
         jinata =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/btla4ywing/Textures/JinataSecurityOfficer.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/btla4ywing/Textures/JinataSecurityOfficer.png',
         kavil =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/btla4ywing/Textures/kavil.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/btla4ywing/Textures/kavil.png',
         padric =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/btla4ywing/Textures/padric.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/btla4ywing/Textures/padric.png',
         blank =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/btla4ywing/Textures/blank.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/btla4ywing/Textures/blank.png',
     },
   
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/btla4ywing/btla4_ywingv2.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/btla4ywing/btla4_ywingv2.obj',
 }
-
-masterShipDB['tieadvancedx1'] = {
+ ShipDB['tieadvancedx1'] = {
     
     textures = {
         blue =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tieadvancedx1/textures/1/tieadvancedx1blue.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tieadvancedx1/textures/1/tieadvancedx1blue.jpg',
         grey =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tieadvancedx1/textures/1/tieadvancedx1grey.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tieadvancedx1/textures/1/tieadvancedx1grey.jpg',
     },
    
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tieadvancedx1/tieadvancedx1v2.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tieadvancedx1/tieadvancedx1v2.obj',
     
 }
-
-masterShipDB['alphaclassstarwing'] = {
+ ShipDB['alphaclassstarwing'] = {
     
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/alphaclassstarwing/textures/standard.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/alphaclassstarwing/textures/standard.png',
     },
    
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/alphaclassstarwing/Alpha%20Class2.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/alphaclassstarwing/Alpha%20Class2.obj',
 }
-
-masterShipDB['ut60duwing'] = {
+ ShipDB['ut60duwing'] = {
    
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/ut60duwing/Textures/standard.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/ut60duwing/Textures/standard.jpg',
         captain =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/ut60duwing/Textures/captain.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/ut60duwing/Textures/captain.jpg',
         renegade =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/ut60duwing/Textures/renegade.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/ut60duwing/Textures/renegade.jpg',
         yellow =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/ut60duwing/Textures/yellow.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/ut60duwing/Textures/yellow.jpg',
         plain =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/ut60duwing/Textures/plain.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/ut60duwing/Textures/plain.jpg',
         rebel =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/ut60duwing/Textures/rebel.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/ut60duwing/Textures/rebel.jpg',
     },
    
-    --mesh = 'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/ut60duwing/UWing_Base.obj',
+    --mesh = 'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/ut60duwing/UWing_Base.obj',
     Config = {
         States = {
             [1] = {
                 Name = "Pivot Wing (Open)",
                 Model =
-                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/ut60duwing/UwingOpen.obj",
+                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/ut60duwing/UwingOpen.obj",
                 ZRot = 0,
                 Message = " opened their wings.",
             },
             [2] = {
                 Name = "Pivot Wing (Closed)",
                 Model =
-                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/ut60duwing/UwingClose.obj",
+                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/ut60duwing/UwingClose.obj",
                 ZRot = 180,
                 Message = " closed their wings.",
             }
@@ -3323,59 +3060,57 @@ masterShipDB['ut60duwing'] = {
         Token = "http://nnxwing.com/Content/TTS/Config/UWing.png"
     }
 }
-
-masterShipDB['tieskstriker'] = {
+ ShipDB['tieskstriker'] = {
    
     textures = {
         blue =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tieskstriker/textures/tieskstrikerblue.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tieskstriker/textures/tieskstrikerblue.jpg',
         grey =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tieskstriker/textures/tieskstrikergrey.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tieskstriker/textures/tieskstrikergrey.jpg',
     },
    
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tieskstriker/tiestriker.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tieskstriker/tiestriker.obj',
 }
-
-masterShipDB['asf01bwing'] = {
+ ShipDB['asf01bwing'] = {
     
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/asf01bwing/bwing-base.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/asf01bwing/bwing-base.obj',
     
     peg = 'bwing',
     textures = {
         blue =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/asf01bwing/textures/blue.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/asf01bwing/textures/blue.png',
         blade =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/asf01bwing/textures/blade.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/asf01bwing/textures/blade.png',
         gina =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/asf01bwing/textures/gina.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/asf01bwing/textures/gina.png',
         hera =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/asf01bwing/textures/hera.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/asf01bwing/textures/hera.png',
         braylen =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/asf01bwing/textures/braylen.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/asf01bwing/textures/braylen.png',
         blade =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/asf01bwing/textures/blade.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/asf01bwing/textures/blade.png',
         netrem =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/asf01bwing/textures/netrem.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/asf01bwing/textures/netrem.png',
         tennumb =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/asf01bwing/textures/tennumb.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/asf01bwing/textures/tennumb.png',
         plain =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/asf01bwing/textures/plain.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/asf01bwing/textures/plain.png',
     },
     Config = {
         States = {
             [1] = {
                 Name = "S-Foils (Open)",
                 Model =
-                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/asf01bwing/bwing-open.obj",
+                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/asf01bwing/bwing-open.obj",
                 ZRot = 0,
                 Message = " opened their S-Foils.",
             },
             [2] = {
                 Name = "S-Foils (Closed)",
                 Model =
-                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/asf01bwing/bwing-closed.obj",
+                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/asf01bwing/bwing-closed.obj",
                 ZRot = 180,
                 Message = " closed their S-Foils.",
             }
@@ -3384,268 +3119,252 @@ masterShipDB['asf01bwing'] = {
         Token = "http://nnxwing.com/Content/TTS/Config/BWing.png"
     }
 }
-
-masterShipDB['tiededefender'] = {
+ ShipDB['tiededefender'] = {
    
     textures = {
         blue =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tiededefender/textures/tiededefenderblue.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tiededefender/textures/tiededefenderblue.jpg',
         grey =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tiededefender/textures/tiededefendergrey.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tiededefender/textures/tiededefendergrey.jpg',
         red =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tiededefender/textures/tiededefenderred.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tiededefender/textures/tiededefenderred.jpg',
         skystrike =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tiededefender/textures/tiededefenderss.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tiededefender/textures/tiededefenderss.jpg',
         vader =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tiededefender/textures/tiededefendervader.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tiededefender/textures/tiededefendervader.jpg',
         kyber =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tiededefender/textures/Kyber.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tiededefender/textures/Kyber.jpg',
     },
    
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tiededefender/defender.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tiededefender/defender.obj',
 }
-
-masterShipDB['tiesabomber'] = {
+ ShipDB['tiesabomber'] = {
    
     textures = {
         blue =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tiesabomber/textures/tiesabomberblue.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tiesabomber/textures/tiesabomberblue.jpg',
         grey =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tiesabomber/textures/tiesabombergrey.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tiesabomber/textures/tiesabombergrey.jpg',
     },
    
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tiesabomber/tiebomber.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tiesabomber/tiebomber.obj',
 }
-
-masterShipDB['tiecapunisher'] = {
+ ShipDB['tiecapunisher'] = {
    
     textures = {
         blue =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/tiecapunisher/textures/tiecapunisherblue.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/tiecapunisher/textures/tiecapunisherblue.jpg',
         grey =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/tiecapunisher/textures/tiecapunishergrey.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/tiecapunisher/textures/tiecapunishergrey.jpg',
     },
    
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/tiecapunisher/TiePunisher.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/tiecapunisher/TiePunisher.obj',
 }
-
-masterShipDB['aggressorassaultfighter'] = {
+ ShipDB['aggressorassaultfighter'] = {
    
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/aggressorassaultfighter/Textures/standard.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/aggressorassaultfighter/Textures/standard.jpg',
     },
   
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/aggressorassaultfighter/aggressor.obj'
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/aggressorassaultfighter/aggressor.obj'
 }
-
-masterShipDB['g1astarfighter'] = {
+ ShipDB['g1astarfighter'] = {
     
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/g1astarfighter/Textures/standard.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/g1astarfighter/Textures/standard.png',
     },
     
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/g1astarfighter/g1a.obj'
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/g1astarfighter/g1a.obj'
 }
-
-masterShipDB['vcx100lightfreighter'] = {
+ ShipDB['vcx100lightfreighter'] = {
    
     ProximityHider = true,
    
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/vcx100lightfreighter/Textures/standard.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/vcx100lightfreighter/Textures/standard.jpg',
     },
    
     Docking = true,
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/vcx100lightfreighter/vcx100.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/vcx100lightfreighter/vcx100.obj',
 }
-
-masterShipDB['yv666lightfreighter'] = {
+ ShipDB['yv666lightfreighter'] = {
     
     ProximityHider = true,
     
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/yv666lightfreighter/Textures/1/standard.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/yv666lightfreighter/Textures/1/standard.jpg',
         moralo =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/yv666lightfreighter/Textures/1/moralo.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/yv666lightfreighter/Textures/1/moralo.jpg',
         grey =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/yv666lightfreighter/Textures/1/grey.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/yv666lightfreighter/Textures/1/grey.jpg',
         aphra =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/yv666lightfreighter/Textures/1/aphra.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/yv666lightfreighter/Textures/1/aphra.jpg',
         blacksun =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/yv666lightfreighter/Textures/1/blacksun.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/yv666lightfreighter/Textures/1/blacksun.jpg',
         mytho =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/yv666lightfreighter/Textures/1/mytho.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/yv666lightfreighter/Textures/1/mytho.jpg',
     },
    
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/yv666lightfreighter/yv666v2.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/yv666lightfreighter/yv666v2.obj',
 }
-
-masterShipDB['tieadvancedv1'] = {
+ ShipDB['tieadvancedv1'] = {
    
     textures = {
         blue =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tieadvancedv1/textures/1/tieadvancedv1blue.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tieadvancedv1/textures/1/tieadvancedv1blue.jpg',
         grey =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tieadvancedv1/textures/1/tieadvancedv1grey.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tieadvancedv1/textures/1/tieadvancedv1grey.jpg',
     },
    
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tieadvancedv1/tieadvv1v2.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tieadvancedv1/tieadvv1v2.obj',
 }
-
-masterShipDB['lambdaclasst4ashuttle'] = {
+ ShipDB['lambdaclasst4ashuttle'] = {
     
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/lambdaclasst4ashuttle/textures/standard.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/lambdaclasst4ashuttle/textures/standard.png',
     },
     
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/lambdaclasst4ashuttle/lambda.obj'
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/lambdaclasst4ashuttle/lambda.obj'
 }
-
-masterShipDB['tiephphantom'] = {
+ ShipDB['tiephphantom'] = {
    
     textures = {
         blue =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tiephphantom/textures/tiephphantomblue.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tiephphantom/textures/tiephphantomblue.jpg',
         grey =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tiephphantom/textures/tiephphantomgrey.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tiephphantom/textures/tiephphantomgrey.jpg',
         sigma =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tiephphantom/textures/tiephphantomsigma.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tiephphantom/textures/tiephphantomsigma.jpg',
         echo =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tiephphantom/textures/tiephphantomwhite.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tiephphantom/textures/tiephphantomwhite.jpg',
     },
    
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tiephphantom/Tie%20Phantom.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tiephphantom/Tie%20Phantom.obj',
 }
-
-masterShipDB['vt49decimator'] = {
+ ShipDB['vt49decimator'] = {
     
     ProximityHider = true,
    
     textures = {
         grey =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/vt49decimator/textures/grey.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/vt49decimator/textures/grey.jpg',
         black =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/vt49decimator/textures/black.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/vt49decimator/textures/black.jpg',
     },
     
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/vt49decimator/vt49decimator.obj'
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/vt49decimator/vt49decimator.obj'
 }
-
-masterShipDB['tieagaggressor'] = {
+ ShipDB['tieagaggressor'] = {
     
     textures = {
         blue =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tieagaggressor/textures/tieagaggressorblue.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tieagaggressor/textures/tieagaggressorblue.jpg',
         grey =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tieagaggressor/textures/tieagaggressorgrey.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tieagaggressor/textures/tieagaggressorgrey.jpg',
     },
    
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tieagaggressor/tieagaggressor.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tieagaggressor/tieagaggressor.obj',
 }
-
-masterShipDB['btls8kwing'] = {
+ ShipDB['btls8kwing'] = {
     
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/btls8kwing/Textures/standard.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/btls8kwing/Textures/standard.png',
         miranda =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/btls8kwing/Textures/MirandaDoni.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/btls8kwing/Textures/MirandaDoni.png',
         esege =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/btls8kwing/Textures/EsegeTuketu.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/btls8kwing/Textures/EsegeTuketu.png',
     },
   
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/btls8kwing/kwing.obj'
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/btls8kwing/kwing.obj'
 }
-
-masterShipDB['arc170starfighter'] = {
+ ShipDB['arc170starfighter'] = {
    
     textures = {
         rebel =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/arc170starfighter/Textures/rebel.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/arc170starfighter/Textures/rebel.jpg',
         republic =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/arc170starfighter/Textures/republicred.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/arc170starfighter/Textures/republicred.jpg',
         blue =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/arc170starfighter/Textures/republicblue.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/arc170starfighter/Textures/republicblue.jpg',
         black =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/arc170starfighter/Textures/black.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/arc170starfighter/Textures/black.jpg',
     },
    
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/arc170starfighter/arc.obj'
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/arc170starfighter/arc.obj'
 }
-
-masterShipDB['attackshuttle'] = {
+ ShipDB['attackshuttle'] = {
    
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/attackshuttle/Textures/standard.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/attackshuttle/Textures/standard.jpg',
     },
    
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/attackshuttle/attackshuttle.obj'
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/attackshuttle/attackshuttle.obj'
 }
-
-masterShipDB['t65xwing'] = {
+ ShipDB['t65xwing'] = {
   
     textures = {
         red =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/t65xwing/Textures/2/red.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/t65xwing/Textures/2/red.jpg',
         redder =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/t65xwing/Textures/2/redder.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/t65xwing/Textures/2/redder.jpg',
         blue =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/t65xwing/Textures/2/blue.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/t65xwing/Textures/2/blue.jpg',
         renegade =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/t65xwing/Textures/2/cavernangels.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/t65xwing/Textures/2/cavernangels.jpg',
         biggs =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/t65xwing/Textures/2/biggs.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/t65xwing/Textures/2/biggs.jpg',
         garven =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/t65xwing/Textures/2/garven.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/t65xwing/Textures/2/garven.jpg',
         porkins =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/t65xwing/Textures/2/porkins.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/t65xwing/Textures/2/porkins.jpg',
         luke =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/t65xwing/Textures/2/luke.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/t65xwing/Textures/2/luke.jpg',
         thane =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/t65xwing/Textures/2/thane.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/t65xwing/Textures/2/thane.jpg',
         wedge =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/t65xwing/Textures/2/wedge.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/t65xwing/Textures/2/wedge.jpg',
         wes =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/t65xwing/Textures/2/wes.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/t65xwing/Textures/2/wes.jpg',
     },
    
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/t65xwing/xwingbasev3.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/t65xwing/xwingbasev3.obj',
     keywords = { 'X-Wing' },
     Config = {
         States = {
             [1] = {
                 Name = "S-Foils (Open)",
                 Model =
-                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/t65xwing/xwingopenv3.obj",
+                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/t65xwing/xwingopenv3.obj",
                 ZRot = 0,
                 Message = " opened their wings.",
             },
             [2] = {
                 Name = "S-Foils (Closed)",
                 Model =
-                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/t65xwing/xwingclosedv3.obj",
+                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/t65xwing/xwingclosedv3.obj",
                 ZRot = 180,
                 Message = " closed their wings.",
             }
@@ -3654,401 +3373,383 @@ masterShipDB['t65xwing'] = {
         Token = "http://nnxwing.com/Content/TTS/Config/T65.png"
     }
 }
-
-masterShipDB['hwk290lightfreighter'] = {
+ ShipDB['hwk290lightfreighter'] = {
    
     textures = {
         brown =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/hwk290lightfreighter/Textures/1/brown.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/hwk290lightfreighter/Textures/1/brown.jpg',
         black =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/hwk290lightfreighter/Textures/1/black.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/hwk290lightfreighter/Textures/1/black.jpg',
         kyber =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/hwk290lightfreighter/Textures/1/kyber.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/hwk290lightfreighter/Textures/1/kyber.jpg',
         plain =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/hwk290lightfreighter/Textures/1/plain.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/hwk290lightfreighter/Textures/1/plain.jpg',
         white =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/hwk290lightfreighter/Textures/1/white.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/hwk290lightfreighter/Textures/1/white.jpg',
         mytho =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/hwk290lightfreighter/Textures/1/mytho.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/hwk290lightfreighter/Textures/1/mytho.jpg',
     },
     
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/hwk290lightfreighter/hwkv2.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/hwk290lightfreighter/hwkv2.obj',
 }
-
-masterShipDB['rz1awing'] = {
+ ShipDB['rz1awing'] = {
     
     textures = {
         arvel =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/rz1awing/Textures/arvel.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/rz1awing/Textures/arvel.jpg',
         shara =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/rz1awing/Textures/shara.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/rz1awing/Textures/shara.jpg',
         green =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/rz1awing/Textures/green.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/rz1awing/Textures/green.jpg',
         jake =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/rz1awing/Textures/blue.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/rz1awing/Textures/blue.jpg',
         sabines =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/rz1awing/Textures/sabines.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/rz1awing/Textures/sabines.jpg',
         hera =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/rz1awing/Textures/hera.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/rz1awing/Textures/hera.jpg',
         blank =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/rz1awing/Textures/plain.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/rz1awing/Textures/plain.jpg',
         kyber =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/rz1awing/Textures/kyber.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/rz1awing/Textures/kyber.jpg',
         keo =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/rz1awing/Textures/keo.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/rz1awing/Textures/keo.jpg',
     },
     
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/rz1awing/rz1awing.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/rz1awing/rz1awing.obj',
 }
-
-masterShipDB['fangfighter'] = {
+ ShipDB['fangfighter'] = {
    
     textures = {
         blank =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/fangfighter/textures/Blank.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/fangfighter/textures/Blank.jpg',
         bodica =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/fangfighter/textures/Bodica.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/fangfighter/textures/Bodica.jpg',
         dirk =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/fangfighter/textures/Dirk.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/fangfighter/textures/Dirk.jpg',
         new =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/fangfighter/textures/New.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/fangfighter/textures/New.jpg',
         original =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/fangfighter/textures/Original.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/fangfighter/textures/Original.jpg',
         rebelfenn =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/fangfighter/textures/Rebel-Fenn.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/fangfighter/textures/Rebel-Fenn.jpg',
         volunteer =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/fangfighter/textures/Volunteer.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/fangfighter/textures/Volunteer.jpg',
         red =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/fangfighter/textures/red.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/fangfighter/textures/red.jpg',
         sabine =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/fangfighter/textures/Sabine-Fang.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/fangfighter/textures/Sabine-Fang.jpg',
     },
    
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/fangfighter/ship-base.obj'
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/fangfighter/ship-base.obj'
 }
-
-masterShipDB['z95af4headhunter'] = {
+ ShipDB['z95af4headhunter'] = {
     
     textures = {
         bandit =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/z95af4headhunter/Textures/1/bandit.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/z95af4headhunter/Textures/1/bandit.jpg',
         tala =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/z95af4headhunter/Textures/1/tala.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/z95af4headhunter/Textures/1/tala.jpg',
         pirate =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/z95af4headhunter/Textures/1/binayre.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/z95af4headhunter/Textures/1/binayre.jpg',
         blacksun =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/z95af4headhunter/Textures/1/blacksun.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/z95af4headhunter/Textures/1/blacksun.jpg',
         plain =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/z95af4headhunter/Textures/1/plain.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/z95af4headhunter/Textures/1/plain.jpg',
         nashtah =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/z95af4headhunter/Textures/1/nashtah.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/z95af4headhunter/Textures/1/nashtah.jpg',
         bossk =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/z95af4headhunter/Textures/1/bossk.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/z95af4headhunter/Textures/1/bossk.jpg',
         ndru =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/z95af4headhunter/Textures/1/ndru.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/z95af4headhunter/Textures/1/ndru.jpg',
         red =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/z95af4headhunter/Textures/1/red.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/z95af4headhunter/Textures/1/red.jpg',
         blue =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/z95af4headhunter/Textures/1/blue.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/z95af4headhunter/Textures/1/blue.jpg',
         orange =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/z95af4headhunter/Textures/1/orange.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/z95af4headhunter/Textures/1/orange.jpg',
     },
   
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/z95af4headhunter/Z95v3.obj'
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/z95af4headhunter/Z95v3.obj'
 }
-
-masterShipDB['m12lkimogilafighter'] = {
+ ShipDB['m12lkimogilafighter'] = {
    
     textures = {
         cartel =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/m12lkimogilafighter/Textures/CartelExecutioner.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/m12lkimogilafighter/Textures/CartelExecutioner.png',
         dalan =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/m12lkimogilafighter/Textures/DalanOberos.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/m12lkimogilafighter/Textures/DalanOberos.png',
         torani =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/m12lkimogilafighter/Textures/ToraniKulda.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/m12lkimogilafighter/Textures/ToraniKulda.png',
     },
    
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/m12lkimogilafighter/kimogila.obj'
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/m12lkimogilafighter/kimogila.obj'
 }
-
-masterShipDB['ewing'] = {
+ ShipDB['ewing'] = {
     
     textures = {
         rogue =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/ewing/Textures/RogueSquadronEscort.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/ewing/Textures/RogueSquadronEscort.jpg',
         knave =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/ewing/Textures/KnaveSquadronEscort.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/ewing/Textures/KnaveSquadronEscort.jpg',
         gavin =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/ewing/Textures/GavinDarklighter.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/ewing/Textures/GavinDarklighter.jpg',
         corran =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/ewing/Textures/CorranHorn.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/ewing/Textures/CorranHorn.jpg',
     },
    
-    mesh = 'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/ewing/ewing.obj'
+    mesh = 'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/ewing/ewing.obj'
 }
-
-masterShipDB['tieininterceptor'] = {
+ ShipDB['tieininterceptor'] = {
   
     textures = {
         blue =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tieininterceptor/textures/tieininterceptorblue.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tieininterceptor/textures/tieininterceptorblue.jpg',
         grey =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tieininterceptor/textures/tieininterceptorgrey.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tieininterceptor/textures/tieininterceptorgrey.jpg',
         red =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tieininterceptor/textures/tieininterceptorred.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tieininterceptor/textures/tieininterceptorred.jpg',
         skystrike =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tieininterceptor/textures/tieininterceptorss.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tieininterceptor/textures/tieininterceptorss.jpg',
         the181 =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tieininterceptor/textures/tieinterceptor181.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tieininterceptor/textures/tieinterceptor181.jpg',
     },
    
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tieininterceptor/tieinterceptor.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tieininterceptor/tieinterceptor.obj',
 }
-
-masterShipDB['lancerclasspursuitcraft'] = {
+ ShipDB['lancerclasspursuitcraft'] = {
    
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/lancerclasspursuitcraft/Textures/Standard.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/lancerclasspursuitcraft/Textures/Standard.jpg',
     },
     
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/lancerclasspursuitcraft/lancer.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/lancerclasspursuitcraft/lancer.obj',
 }
-
-masterShipDB['tierereaper'] = {
+ ShipDB['tierereaper'] = {
    
     textures = {
         blue =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/tierereaper/textures/tierereaperblue.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/tierereaper/textures/tierereaperblue.jpg',
         grey =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/tierereaper/textures/tierereapergrey.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/tierereaper/textures/tierereapergrey.jpg',
     },
    
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/tierereaper/tiereaper.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/tierereaper/tiereaper.obj',
 }
-
-masterShipDB['m3ainterceptor'] = {
+ ShipDB['m3ainterceptor'] = {
     
     textures = {
         cartel =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/m3ainterceptor/Textures/CartelSpacer.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/m3ainterceptor/Textures/CartelSpacer.jpg',
         tansarii =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/m3ainterceptor/Textures/TansariiPointVeteran.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/m3ainterceptor/Textures/TansariiPointVeteran.jpg',
         gargor =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/m3ainterceptor/Textures/G4rG0r.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/m3ainterceptor/Textures/G4rG0r.jpg',
         sunny =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/m3ainterceptor/Textures/SunnyBounder.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/m3ainterceptor/Textures/SunnyBounder.jpg',
         genesis =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/m3ainterceptor/Textures/GenesisRed.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/m3ainterceptor/Textures/GenesisRed.jpg',
     },
     
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/m3ainterceptor/m3a.obj'
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/m3ainterceptor/m3a.obj'
 }
-
-masterShipDB['jumpmaster5000'] = {
+ ShipDB['jum 5000'] = {
     
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/jumpmaster5000/Textures/standard.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/jum 5000/Textures/standard.jpg',
         tel =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/jumpmaster5000/Textures/teltrevura.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/jum 5000/Textures/teltrevura.jpg',
         plain =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/jumpmaster5000/Textures/plain.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/jum 5000/Textures/plain.jpg',
         scout =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/jumpmaster5000/Textures/scout.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/jum 5000/Textures/scout.jpg',
         nom =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/jumpmaster5000/Textures/nomlumb.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/jum 5000/Textures/nomlumb.jpg',
     },
     
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/jumpmaster5000/jm2k.obj'
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/jum 5000/jm2k.obj'
 }
-
-masterShipDB['yt1300lightfreighter'] = {
+ ShipDB['yt1300lightfreighter'] = {
    
 
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/customizedyt1300lightfreighter/Textures/1/standard.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/customizedyt1300lightfreighter/Textures/1/standard.jpg',
         blacksun =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/customizedyt1300lightfreighter/Textures/1/blacksun.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/customizedyt1300lightfreighter/Textures/1/blacksun.jpg',
         mytho =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/customizedyt1300lightfreighter/Textures/1/mytho.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/customizedyt1300lightfreighter/Textures/1/mytho.jpg',
         maul =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/customizedyt1300lightfreighter/Textures/1/maul.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/customizedyt1300lightfreighter/Textures/1/maul.jpg',
         dark =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/customizedyt1300lightfreighter/Textures/1/dark.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/customizedyt1300lightfreighter/Textures/1/dark.jpg',
         red =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/customizedyt1300lightfreighter/Textures/1/red.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/customizedyt1300lightfreighter/Textures/1/red.jpg',
         blue =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/customizedyt1300lightfreighter/Textures/1/blue.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/customizedyt1300lightfreighter/Textures/1/blue.jpg',
         yellow =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/customizedyt1300lightfreighter/Textures/1/yellow.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/customizedyt1300lightfreighter/Textures/1/yellow.jpg',
         brown =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/customizedyt1300lightfreighter/Textures/1/brown.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/customizedyt1300lightfreighter/Textures/1/brown.jpg',
         plain =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/customizedyt1300lightfreighter/Textures/1/plain.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/customizedyt1300lightfreighter/Textures/1/plain.jpg',
     },
     
     Docking = true,
     
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/customizedyt1300lightfreighter/yt1300customized.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/customizedyt1300lightfreighter/yt1300customized.obj',
 
     -- That was supposed to be the 'classic' YT1300. I still don't know how it works. So I'm keeping a trace of it for the moment
 
      --mesh =
-    --'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/modifiedyt1300lightfreighter/yt1300modified.obj'
+    --'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/modifiedyt1300lightfreighter/yt1300modified.obj'
     --ProximityHider = true,
     --textures = {
     --    standard =
-    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/modifiedyt1300lightfreighter/Textures/1/standard.jpg',
+    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/modifiedyt1300lightfreighter/Textures/1/standard.jpg',
     --    dirty =
-    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/modifiedyt1300lightfreighter/Textures/1/dirty.jpg',
+    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/modifiedyt1300lightfreighter/Textures/1/dirty.jpg',
     --    plain =
-    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/modifiedyt1300lightfreighter/Textures/1/plain.jpg',
+    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/modifiedyt1300lightfreighter/Textures/1/plain.jpg',
     --    rebel =
-    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/modifiedyt1300lightfreighter/Textures/1/rebel.jpg',
+    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/modifiedyt1300lightfreighter/Textures/1/rebel.jpg',
     --    sabine =
-    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/modifiedyt1300lightfreighter/Textures/1/sabine.jpg',
+    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/modifiedyt1300lightfreighter/Textures/1/sabine.jpg',
     --    red =
-    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/modifiedyt1300lightfreighter/Textures/1/red.jpg',
+    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/modifiedyt1300lightfreighter/Textures/1/red.jpg',
     --    blue =
-    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/modifiedyt1300lightfreighter/Textures/1/blue.jpg',
+    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/modifiedyt1300lightfreighter/Textures/1/blue.jpg',
     --    dark =
-    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/modifiedyt1300lightfreighter/Textures/1/dark.jpg',
+    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/modifiedyt1300lightfreighter/Textures/1/dark.jpg',
     --    yellow =
-    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/modifiedyt1300lightfreighter/Textures/1/yellow.jpg',
+    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/modifiedyt1300lightfreighter/Textures/1/yellow.jpg',
     --    brown =
-    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/modifiedyt1300lightfreighter/Textures/1/brown.jpg',
+    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/modifiedyt1300lightfreighter/Textures/1/brown.jpg',
     --},
 
     -- That was suppoed to be the Scavenged YT1300 for the resistance.
 
     --textures = {
     --    standard =
-    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/scavengedyt1300lightfreighter/Textures/1/standard.jpg',
+    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/scavengedyt1300lightfreighter/Textures/1/standard.jpg',
     --    classic =
-    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/scavengedyt1300lightfreighter/Textures/1/classic.jpg',
+    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/scavengedyt1300lightfreighter/Textures/1/classic.jpg',
     --    plain =
-    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/scavengedyt1300lightfreighter/Textures/1/plain.jpg',
+    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/scavengedyt1300lightfreighter/Textures/1/plain.jpg',
     --    blackone =
-    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/scavengedyt1300lightfreighter/Textures/1/blackone.jpg',
+    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/scavengedyt1300lightfreighter/Textures/1/blackone.jpg',
     --    rebel =
-    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/scavengedyt1300lightfreighter/Textures/1/rebel.jpg',
+    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/scavengedyt1300lightfreighter/Textures/1/rebel.jpg',
     --    sabine =
-    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/scavengedyt1300lightfreighter/Textures/1/sabine.jpg',
+    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/scavengedyt1300lightfreighter/Textures/1/sabine.jpg',
     --    dark =
-    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/scavengedyt1300lightfreighter/Textures/1/dark.jpg',
+    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/scavengedyt1300lightfreighter/Textures/1/dark.jpg',
     --    red =
-    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/scavengedyt1300lightfreighter/Textures/1/red.jpg',
+    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/scavengedyt1300lightfreighter/Textures/1/red.jpg',
     --    blue =
-    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/scavengedyt1300lightfreighter/Textures/1/blue.jpg',
+    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/scavengedyt1300lightfreighter/Textures/1/blue.jpg',
     --    yellow =
-    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/scavengedyt1300lightfreighter/Textures/1/yellow.jpg',
+    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/scavengedyt1300lightfreighter/Textures/1/yellow.jpg',
     --    brown =
-    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/scavengedyt1300lightfreighter/Textures/1/brown.jpg',
+    --    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/scavengedyt1300lightfreighter/Textures/1/brown.jpg',
     --},
     
     --mesh =
-    --'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/scavengedyt1300lightfreighter/yt1300scavenged.obj',
+    --'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/scavengedyt1300lightfreighter/yt1300scavenged.obj',
     
 }
-
-masterShipDB['escapecraft'] = {
+ ShipDB['escapecraft'] = {
     
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/escapecraft/Textures/standard.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/escapecraft/Textures/standard.jpg',
     },
     
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/escapecraft/escapecraft1.obj'
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/escapecraft/escapecraft1.obj'
 }
-
-masterShipDB['tiefofighter'] = {
+ ShipDB['tiefofighter'] = {
     
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tiefofighter/Textures/2/standard.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tiefofighter/Textures/2/standard.jpg',
     },
     
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tiefofighter/TieFOv2.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tiefofighter/TieFOv2.obj',
 }
-
-masterShipDB['tiesffighter'] = {
+ ShipDB['tiesffighter'] = {
    
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tiesffighter/Textures/1/standard.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tiesffighter/Textures/1/standard.jpg',
     },
   
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tiesffighter/TieSFv2.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tiesffighter/TieSFv2.obj',
 }
-
-masterShipDB['upsilonclasscommandshuttle'] = {
+ ShipDB['upsilonclasscommandshuttle'] = {
     
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/upsilonclasscommandshuttle/Textures/standard.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/upsilonclasscommandshuttle/Textures/standard.jpg',
         red =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/upsilonclasscommandshuttle/Textures/red.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/upsilonclasscommandshuttle/Textures/red.jpg',
     },
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/upsilonclasscommandshuttle/Upsilon_Shuttle.obj'
-}
-masterShipDB['tievnsilencer'] = {
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/upsilonclasscommandshuttle/Upsilon_Shuttle.obj'
+} ShipDB['tievnsilencer'] = {
    
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tievnsilencer/Textures/1/standard.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tievnsilencer/Textures/1/standard.jpg',
     },
     
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tievnsilencer/Tie_VN2.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tievnsilencer/Tie_VN2.obj',
 }
-
-masterShipDB['t70xwing'] = {
+ ShipDB['t70xwing'] = {
    
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/t70xwing/Textures/1/blue.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/t70xwing/Textures/1/blue.jpg',
         snap =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/t70xwing/Textures/1/snap.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/t70xwing/Textures/1/snap.jpg',
         commanderpoe =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/t70xwing/Textures/1/poeHoH.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/t70xwing/Textures/1/poeHoH.jpg',
         blackone =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/t70xwing/Textures/1/poe.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/t70xwing/Textures/1/poe.jpg',
         plain =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/t70xwing/Textures/1/plain.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/t70xwing/Textures/1/plain.jpg',
     },
    
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/t70xwing/t70_basev2.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/t70xwing/t70_basev2.obj',
     Config = {
         States = {
             [1] = {
                 Name = "S-Foils (Open)",
                 Model =
-                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/t70xwing/t70_openv2.obj",
+                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/t70xwing/t70_openv2.obj",
                 ZRot = 0,
                 Message = " opened their wings.",
             },
             [2] = {
                 Name = "S-Foils (Closed)",
                 Model =
-                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/t70xwing/t70_closedv2.obj",
+                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/t70xwing/t70_closedv2.obj",
                 ZRot = 180,
                 Message = " closed their wings.",
             }
@@ -4057,76 +3758,72 @@ masterShipDB['t70xwing'] = {
         Token = "http://nnxwing.com/Content/TTS/Config/T70.png"
     }
 }
-
-masterShipDB['rz2awing'] = {
+ ShipDB['rz2awing'] = {
     
     textures = {
         green =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/rz2awing/Textures/green.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/rz2awing/Textures/green.png',
         red =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/rz2awing/Textures/red.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/rz2awing/Textures/red.png',
         orange =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/rz2awing/Textures/orange.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/rz2awing/Textures/orange.png',
         blue =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/rz2awing/Textures/blue.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/rz2awing/Textures/blue.png',
     },
    
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/rz2awing/res_awing.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/rz2awing/res_awing.obj',
    
 }
-
-masterShipDB['mg100starfortress'] = {
+ ShipDB['mg100starfortress'] = {
    
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/mg100starfortress/Textures/Standard.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/mg100starfortress/Textures/Standard.jpg',
         vennie =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/mg100starfortress/Textures/Vennie.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/mg100starfortress/Textures/Vennie.jpg',
         paige =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/mg100starfortress/Textures/PaigeTico.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/mg100starfortress/Textures/PaigeTico.jpg',
     },
     
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/mg100starfortress/starfortress.obj'
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/mg100starfortress/starfortress.obj'
 }
-
-masterShipDB['modifiedtielnfighter'] = {
+ ShipDB['modifiedtielnfighter'] = {
     
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/modifiedtielnfighter/Textures/standard.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/modifiedtielnfighter/Textures/standard.png',
     },
     
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/modifiedtielnfighter/miningguildtie.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/modifiedtielnfighter/miningguildtie.obj',
 }
-
-masterShipDB['delta7aethersprite'] = {
+ ShipDB['delta7aethersprite'] = {
     
     textures = {
         ahsoka =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/delta7aethersprite/Textures/AhsokaTano.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/delta7aethersprite/Textures/AhsokaTano.jpg',
         anakin =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/delta7aethersprite/Textures/AnakinSkywalker.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/delta7aethersprite/Textures/AnakinSkywalker.jpg',
         barriss =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/delta7aethersprite/Textures/BarrissOffee.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/delta7aethersprite/Textures/BarrissOffee.jpg',
         knight =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/delta7aethersprite/Textures/JediKnight.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/delta7aethersprite/Textures/JediKnight.jpg',
         lumi =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/delta7aethersprite/Textures/LuminaraUnduli.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/delta7aethersprite/Textures/LuminaraUnduli.jpg',
         mace =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/delta7aethersprite/Textures/MaceWindu.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/delta7aethersprite/Textures/MaceWindu.jpg',
         obi =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/delta7aethersprite/Textures/Obi-WanKenobi.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/delta7aethersprite/Textures/Obi-WanKenobi.jpg',
         plo =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/delta7aethersprite/Textures/PloKoon.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/delta7aethersprite/Textures/PloKoon.jpg',
         saesee =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/delta7aethersprite/Textures/SaeseeTiin.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/delta7aethersprite/Textures/SaeseeTiin.jpg',
     },
     
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/delta7aethersprite/Delta7.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/delta7aethersprite/Delta7.obj',
     Config = {
         States = {
             [1] = {
@@ -4138,7 +3835,7 @@ masterShipDB['delta7aethersprite'] = {
             [2] = {
                 Name = "Hyperspace ring mounted",
                 Model =
-                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships/Small/GRP_Hyperspace_Ring/hyperspace_ring_attachment.obj",
+                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships/Small/GRP_Hyperspace_Ring/hyperspace_ring_attachment.obj",
                 ZRot = 180,
                 Message = " mounted an hyperspace ring.",
             }
@@ -4146,36 +3843,35 @@ masterShipDB['delta7aethersprite'] = {
         ContextText = "Mount/unmount hyperspace ring",
     }
 }
-
-masterShipDB['delta7baethersprite'] = {
+ ShipDB['delta7baethersprite'] = {
     
     textures = {
         ahsoka =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/delta7aethersprite/Textures/AhsokaTano.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/delta7aethersprite/Textures/AhsokaTano.jpg',
         anakin =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/delta7aethersprite/Textures/AnakinSkywalker.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/delta7aethersprite/Textures/AnakinSkywalker.jpg',
         barriss =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/delta7aethersprite/Textures/BarrissOffee.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/delta7aethersprite/Textures/BarrissOffee.jpg',
         knight =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/delta7aethersprite/Textures/JediKnight.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/delta7aethersprite/Textures/JediKnight.jpg',
         lumi =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/delta7aethersprite/Textures/LuminaraUnduli.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/delta7aethersprite/Textures/LuminaraUnduli.jpg',
         mace =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/delta7aethersprite/Textures/MaceWindu.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/delta7aethersprite/Textures/MaceWindu.jpg',
         obi =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/delta7aethersprite/Textures/Obi-WanKenobi.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/delta7aethersprite/Textures/Obi-WanKenobi.jpg',
         plo =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/delta7aethersprite/Textures/PloKoon.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/delta7aethersprite/Textures/PloKoon.jpg',
         saesee =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/delta7aethersprite/Textures/SaeseeTiin.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/delta7aethersprite/Textures/SaeseeTiin.jpg',
         plain =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/delta7aethersprite/Textures/plain.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/delta7aethersprite/Textures/plain.jpg',
         black =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/delta7aethersprite/Textures/plain.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/delta7aethersprite/Textures/plain.jpg',
     },
    
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/delta7aethersprite/Delta7.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/delta7aethersprite/Delta7.obj',
     Config = {
         States = {
             [1] = {
@@ -4187,7 +3883,7 @@ masterShipDB['delta7baethersprite'] = {
             [2] = {
                 Name = "Hyperspace ring mounted",
                 Model =
-                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships/Small/GRP_Hyperspace_Ring/hyperspace_ring_attachment.obj",
+                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships/Small/GRP_Hyperspace_Ring/hyperspace_ring_attachment.obj",
                 ZRot = 180,
                 Message = " mounted an hyperspace ring.",
             }
@@ -4195,40 +3891,38 @@ masterShipDB['delta7baethersprite'] = {
         ContextText = "Mount/unmount hyperspace ring",
     }
 }
-
-masterShipDB['v19torrentstarfighter'] = {
+ ShipDB['v19torrentstarfighter'] = {
     
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/v19torrentstarfighter/Textures/1/red.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/v19torrentstarfighter/Textures/1/red.jpg',
         blue =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/v19torrentstarfighter/Textures/1/blue.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/v19torrentstarfighter/Textures/1/blue.jpg',
         plain =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/v19torrentstarfighter/Textures/1/plain.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/v19torrentstarfighter/Textures/1/plain.jpg',
         logo =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/v19torrentstarfighter/Textures/1/logo.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/v19torrentstarfighter/Textures/1/logo.jpg',
         black =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/v19torrentstarfighter/Textures/1/black.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/v19torrentstarfighter/Textures/1/black.jpg',
     },
    
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/v19torrentstarfighter/V-19_Torrentv2.obj'
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/v19torrentstarfighter/V-19_Torrentv2.obj'
 }
 
-
-masterShipDB['vultureclassdroidfighter'] = {
+ ShipDB['vultureclassdroidfighter'] = {
     
     textures = {
         drone =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/vultureclassdroidfighter/Textures/SeperatistDrone.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/vultureclassdroidfighter/Textures/SeperatistDrone.png',
         hunter =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/vultureclassdroidfighter/Textures/PreciseHunter.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/vultureclassdroidfighter/Textures/PreciseHunter.png',
         proto =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/vultureclassdroidfighter/Textures/HaorChallPrototype.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/vultureclassdroidfighter/Textures/HaorChallPrototype.png',
         dfs311 =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/vultureclassdroidfighter/Textures/DFS-311.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/vultureclassdroidfighter/Textures/DFS-311.png',
         dfs081 =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/vultureclassdroidfighter/Textures/DFS-081.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/vultureclassdroidfighter/Textures/DFS-081.png',
     },
    
     Config = {
@@ -4236,14 +3930,14 @@ masterShipDB['vultureclassdroidfighter'] = {
             [1] = {
                 Name = "Struts (Closed)",
                 Model =
-                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/vultureclassdroidfighter/Vulture_Closed.obj",
+                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/vultureclassdroidfighter/Vulture_Closed.obj",
                 ZRot = 0,
                 Message = " closed their struts.",
             },
             [2] = {
                 Name = "Struts (Open)",
                 Model =
-                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/vultureclassdroidfighter/Vulture_Open.obj",
+                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/vultureclassdroidfighter/Vulture_Open.obj",
                 ZRot = 180,
                 Message = " opened their struts.",
             }
@@ -4251,84 +3945,79 @@ masterShipDB['vultureclassdroidfighter'] = {
         ContextText = "Open/Close Struts",
         Token = "http://nnxwing.com/Content/TTS/Config/VultureDroid.png?1.0.1"
     }
-}
-masterShipDB['belbulab22starfighter'] = {
+} ShipDB['belbulab22starfighter'] = {
     
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/belbulab22starfighter/Textures/standard.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/belbulab22starfighter/Textures/standard.jpg',
         wat =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/belbulab22starfighter/Textures/WatTambor.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/belbulab22starfighter/Textures/WatTambor.jpg',
         trench =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/belbulab22starfighter/Textures/HotRod.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/belbulab22starfighter/Textures/HotRod.jpg',
         white =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/belbulab22starfighter/Textures/white.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/belbulab22starfighter/Textures/white.jpg',
     },
     
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/belbulab22starfighter/Belbullab1.obj'
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/belbulab22starfighter/Belbullab1.obj'
 }
-
-masterShipDB['sithinfiltrator'] = {
+ ShipDB['sithinfiltrator'] = {
    
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/sithinfiltrator/Textures/standard.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/sithinfiltrator/Textures/standard.jpg',
         maul =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/sithinfiltrator/Textures/maul.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/sithinfiltrator/Textures/maul.jpg',
         red =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/sithinfiltrator/Textures/red.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/sithinfiltrator/Textures/red.jpg',
         white =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/sithinfiltrator/Textures/white.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/sithinfiltrator/Textures/white.jpg',
     },
     
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/sithinfiltrator/sithinfiltrator.obj'
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/sithinfiltrator/sithinfiltrator.obj'
 }
-
-masterShipDB['resistancetransport'] = {
+ ShipDB['resistancetransport'] = {
     
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/resistancetransport/Textures/standard.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/resistancetransport/Textures/standard.jpg',
         red =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/resistancetransport/Textures/red.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/resistancetransport/Textures/red.jpg',
         plain =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/resistancetransport/Textures/plain.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/resistancetransport/Textures/plain.jpg',
     },
     
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/resistancetransport/transport2.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/resistancetransport/transport2.obj',
 }
-
-masterShipDB['resistancetransportpod'] = {
+ ShipDB['resistancetransportpod'] = {
    
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/resistancetransportpod/Textures/standard2.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/resistancetransportpod/Textures/standard2.jpg',
         plain =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/resistancetransportpod/Textures/plain2.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/resistancetransportpod/Textures/plain2.jpg',
         red =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/resistancetransportpod/Textures/red2.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/resistancetransportpod/Textures/red2.jpg',
     },
    
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/resistancetransportpod/pod2.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/resistancetransportpod/pod2.obj',
 }
-
-masterShipDB['hyenaclassdroidbomber'] = {
+ ShipDB['hyenaclassdroidbomber'] = {
     
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/hyenaclassdroidbomber/Textures/1/standard.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/hyenaclassdroidbomber/Textures/1/standard.jpg',
         fourohfour =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/hyenaclassdroidbomber/Textures/1/fourohfour.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/hyenaclassdroidbomber/Textures/1/fourohfour.jpg',
         baktoid =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/hyenaclassdroidbomber/Textures/1/baktoid.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/hyenaclassdroidbomber/Textures/1/baktoid.jpg',
         white =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/hyenaclassdroidbomber/Textures/1/white.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/hyenaclassdroidbomber/Textures/1/white.jpg',
         plain =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/hyenaclassdroidbomber/Textures/1/plain.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/hyenaclassdroidbomber/Textures/1/plain.jpg',
     },
     
     Config = {
@@ -4336,14 +4025,14 @@ masterShipDB['hyenaclassdroidbomber'] = {
             [1] = {
                 Name = "Struts (Closed)",
                 Model =
-                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/hyenaclassdroidbomber/Hyena_Closedv2.obj",
+                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/hyenaclassdroidbomber/Hyena_Closedv2.obj",
                 ZRot = 0,
                 Message = " closed their struts.",
             },
             [2] = {
                 Name = "Struts (Open)",
                 Model =
-                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/hyenaclassdroidbomber/Hyena_Openv2.obj",
+                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/hyenaclassdroidbomber/Hyena_Openv2.obj",
                 ZRot = 180,
                 Message = " opened their struts.",
             }
@@ -4353,115 +4042,109 @@ masterShipDB['hyenaclassdroidbomber'] = {
 
     }
 }
-
-masterShipDB['nabooroyaln1starfighter'] = {
+ ShipDB['nabooroyaln1starfighter'] = {
   
     textures = {
         yellow =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/nabooroyaln1starfighter/Textures/yellow.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/nabooroyaln1starfighter/Textures/yellow.jpg',
         silver =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/nabooroyaln1starfighter/Textures/silver.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/nabooroyaln1starfighter/Textures/silver.jpg',
         black =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/nabooroyaln1starfighter/Textures/black.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/nabooroyaln1starfighter/Textures/black.jpg',
         jinata =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/nabooroyaln1starfighter/Textures/jinata.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/nabooroyaln1starfighter/Textures/jinata.jpg',
         red =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/nabooroyaln1starfighter/Textures/red.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/nabooroyaln1starfighter/Textures/red.jpg',
         blue =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/nabooroyaln1starfighter/Textures/blue.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/nabooroyaln1starfighter/Textures/blue.jpg',
         mandalorian =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/nabooroyaln1starfighter/Textures/mandalorian.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/nabooroyaln1starfighter/Textures/mandalorian.jpg',
     },
    
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/nabooroyaln1starfighter/N1.obj'
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/nabooroyaln1starfighter/N1.obj'
 }
-
-masterShipDB['nantexclassstarfighter'] = {
+ ShipDB['nantexclassstarfighter'] = {
     
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/nantexclassstarfighter/Textures/newstandard.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/nantexclassstarfighter/Textures/newstandard.jpg',
         white =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/nantexclassstarfighter/Textures/white.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/nantexclassstarfighter/Textures/white.jpg',
         blue =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/nantexclassstarfighter/Textures/blue.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/nantexclassstarfighter/Textures/blue.png',
     },
    
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/nantexclassstarfighter/Nantex2.obj'
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/nantexclassstarfighter/Nantex2.obj'
 }
-
-masterShipDB['btlbywing'] = {
+ ShipDB['btlbywing'] = {
    
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/btlbywing/Textures/1/standard.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/btlbywing/Textures/1/standard.jpg',
         red =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/btlbywing/Textures/1/red.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/btlbywing/Textures/1/red.jpg',
         blue =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/btlbywing/Textures/1/blue.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/btlbywing/Textures/1/blue.jpg',
         green =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/btlbywing/Textures/1/green.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/btlbywing/Textures/1/green.jpg',
         black =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/btlbywing/Textures/1/black.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/btlbywing/Textures/1/black.jpg',
         plain =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/btlbywing/Textures/1/plain.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/btlbywing/Textures/1/plain.jpg',
     },
     
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/btlbywing/BTLB_YWINGv2.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/btlbywing/BTLB_YWINGv2.obj',
 }
-
-masterShipDB['fireball'] = {
+ ShipDB['fireball'] = {
     
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/fireball/Textures/standard.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/fireball/Textures/standard.jpg',
     },
     
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/fireball/fireball.obj'
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/fireball/fireball.obj'
 }
 
-
-masterShipDB['tiebainterceptor'] = {
+ ShipDB['tiebainterceptor'] = {
     
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tiebainterceptor/Textures/standard.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tiebainterceptor/Textures/standard.jpg',
         white =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tiebainterceptor/Textures/white.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tiebainterceptor/Textures/white.jpg',
         black =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tiebainterceptor/Textures/black.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tiebainterceptor/Textures/black.jpg',
         jank =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tiebainterceptor/Textures/jank.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tiebainterceptor/Textures/jank.jpg',
     },
     
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tiebainterceptor/TieBaron.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tiebainterceptor/TieBaron.obj',
     
 }
-
-masterShipDB['nimbusclassvwing'] = {
+ ShipDB['nimbusclassvwing'] = {
     
     textures = {
         red =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/nimbusclassvwing/Textures/red.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/nimbusclassvwing/Textures/red.jpg',
         blue =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/nimbusclassvwing/Textures/blue.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/nimbusclassvwing/Textures/blue.jpg',
         plain =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/nimbusclassvwing/Textures/plain.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/nimbusclassvwing/Textures/plain.jpg',
         jinata =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/nimbusclassvwing/Textures/jinata.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/nimbusclassvwing/Textures/jinata.jpg',
         contrail =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/nimbusclassvwing/Textures/contrail.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/nimbusclassvwing/Textures/contrail.jpg',
         black =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/nimbusclassvwing/Textures/black.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/nimbusclassvwing/Textures/black.jpg',
     },
    
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/nimbusclassvwing/vwing.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/nimbusclassvwing/vwing.obj',
     
     Config = {
         States = {
@@ -4474,7 +4157,7 @@ masterShipDB['nimbusclassvwing'] = {
             [2] = {
                 Name = "Hyperspace ring mounted",
                 Model =
-                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships/Small/GRP_Hyperspace_Ring/hyperspace_ring_attachment.obj",
+                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships/Small/GRP_Hyperspace_Ring/hyperspace_ring_attachment.obj",
                 ZRot = 180,
                 Message = " mounted an hyperspace ring.",
             }
@@ -4483,70 +4166,66 @@ masterShipDB['nimbusclassvwing'] = {
     }
 
 }
-
-masterShipDB['tierbheavy'] = {
+ ShipDB['tierbheavy'] = {
     
     textures = {
         blue =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/tierbheavy/textures/tierbheavyblue.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/tierbheavy/textures/tierbheavyblue.jpg',
         grey =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/tierbheavy/textures/tierbheavygrey.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/tierbheavy/textures/tierbheavygrey.jpg',
     },
    
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/tierbheavy/tieheavy.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/tierbheavy/tieheavy.obj',
    
 }
-
-masterShipDB['xiclasslightshuttle'] = {
+ ShipDB['xiclasslightshuttle'] = {
     
     textures = {
         light =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/xiclasslightshuttle/Textures/Light.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/xiclasslightshuttle/Textures/Light.jpg',
         dark =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/xiclasslightshuttle/Textures/Dark.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/xiclasslightshuttle/Textures/Dark.jpg',
     },
     
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/xiclasslightshuttle/XiClassLightShuttle.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/xiclasslightshuttle/XiClassLightShuttle.obj',
 }
-
-masterShipDB['laatigunship'] = {
+ ShipDB['laatigunship'] = {
     
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/laatigunship/Textures/1/standard.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/laatigunship/Textures/1/standard.jpg',
         blue =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/laatigunship/Textures/1/blue.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/laatigunship/Textures/1/blue.jpg',
         hound1 =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/laatigunship/Textures/1/hound1.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/laatigunship/Textures/1/hound1.jpg',
         hound2 =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/laatigunship/Textures/1/hound2.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/laatigunship/Textures/1/hound2.jpg',
         munilist =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/laatigunship/Textures/1/munilist.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/laatigunship/Textures/1/munilist.jpg',
         nosecrumb =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/laatigunship/Textures/1/nosecrumb.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/laatigunship/Textures/1/nosecrumb.jpg',
         nosenexu =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/laatigunship/Textures/1/nosenexu.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/laatigunship/Textures/1/nosenexu.jpg',
         red =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/laatigunship/Textures/1/red.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/laatigunship/Textures/1/red.jpg',
         stealth =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/laatigunship/Textures/1/stealth.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/laatigunship/Textures/1/stealth.jpg',
         warthog =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/laatigunship/Textures/1/warthog.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/laatigunship/Textures/1/warthog.jpg',
         black =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/laatigunship/Textures/1/black.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/laatigunship/Textures/1/black.jpg',
     },
     
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/laatigunship/LAATv2.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/laatigunship/LAATv2.obj',
 }
-
-masterShipDB['hmpdroidgunship'] = {
+ ShipDB['hmpdroidgunship'] = {
     
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/hmpdroidgunship/Textures/standard.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/hmpdroidgunship/Textures/standard.png',
     },
    
     Config = {
@@ -4554,14 +4233,14 @@ masterShipDB['hmpdroidgunship'] = {
             [1] = {
                 Name = "Stabalizers (Inactive)",
                 Model =
-                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/hmpdroidgunship/HMP_GunshipStable.obj",
+                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/hmpdroidgunship/HMP_GunshipStable.obj",
                 ZRot = 0,
                 Message = " deactivated their stabilizers.",
             },
             [2] = {
                 Name = "Stabalizers (Active)",
                 Model =
-                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/hmpdroidgunship/HMP_GunshipSlipping.obj",
+                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/hmpdroidgunship/HMP_GunshipSlipping.obj",
                 ZRot = 180,
                 Message = " activated their stabilizers.",
             }
@@ -4570,28 +4249,27 @@ masterShipDB['hmpdroidgunship'] = {
         Token = "http://nnxwing.com/Content/TTS/Config/HMPGunship.png"
     }
 }
-
-masterShipDB['eta2actis'] = {
+ ShipDB['eta2actis'] = {
    
     textures = {
         jedi =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/eta2actis/Textures/JediGeneral.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/eta2actis/Textures/JediGeneral.jpg',
         obi =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/eta2actis/Textures/ObiWanKenobi.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/eta2actis/Textures/ObiWanKenobi.jpg',
         anakin =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/eta2actis/Textures/AnakinSkywalker.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/eta2actis/Textures/AnakinSkywalker.jpg',
         aayla =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/eta2actis/Textures/AaylaSecura.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/eta2actis/Textures/AaylaSecura.jpg',
         shaak =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/eta2actis/Textures/ShaakTi.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/eta2actis/Textures/ShaakTi.jpg',
         kit =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/eta2actis/Textures/kit.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/eta2actis/Textures/kit.jpg',
         yoda =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/eta2actis/Textures/Yoda.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/eta2actis/Textures/Yoda.jpg',
     },
    
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/eta2actis/eta2actis.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/eta2actis/eta2actis.obj',
     Config = {
         States = {
             [1] = {
@@ -4603,7 +4281,7 @@ masterShipDB['eta2actis'] = {
             [2] = {
                 Name = "Hyperspace ring mounted",
                 Model =
-                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships/Small/GRP_Hyperspace_Ring/hyperspace_ring_attachment.obj",
+                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships/Small/GRP_Hyperspace_Ring/hyperspace_ring_attachment.obj",
                 ZRot = 180,
                 Message = " mounted an hyperspace ring.",
             }
@@ -4611,112 +4289,107 @@ masterShipDB['eta2actis'] = {
         ContextText = "Mount/unmount hyperspace ring",
     }
 }
-
-masterShipDB['droidtrifighter'] = {
+ ShipDB['droidtrifighter'] = {
    
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/droidtrifighter/Textures/standard.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/droidtrifighter/Textures/standard.png',
     },
     
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/droidtrifighter/CIS_Tri-Fighter.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/droidtrifighter/CIS_Tri-Fighter.obj',
     
 }
-
-masterShipDB['tiewiwhispermodifiedinterceptor'] = {
+ ShipDB['tiewiwhispermodifiedinterceptor'] = {
     
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tiewiwhispermodifiedinterceptor/Textures/1/standard.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tiewiwhispermodifiedinterceptor/Textures/1/standard.jpg',
     },
     
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tiewiwhispermodifiedinterceptor/TIE_Wiv2.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tiewiwhispermodifiedinterceptor/TIE_Wiv2.obj',
     
 }
-
-masterShipDB['tiesebomber'] = {
+ ShipDB['tiesebomber'] = {
    
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tiesebomber/Textures/1/standard.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tiesebomber/Textures/1/standard.jpg',
     },
     
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/tiesebomber/tie_sev2.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/tiesebomber/tie_sev2.obj',
     
 }
-
-masterShipDB['btanr2ywing'] = {
+ ShipDB['btanr2ywing'] = {
     
     textures = {
         plain =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/btanr2ywing/Textures/plain.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/btanr2ywing/Textures/plain.png',
         red =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/btanr2ywing/Textures/red.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/btanr2ywing/Textures/red.png',
         blue =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/btanr2ywing/Textures/blue.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/btanr2ywing/Textures/blue.png',
         cai =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/btanr2ywing/Textures/caithrenalli.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/btanr2ywing/Textures/caithrenalli.png',
         corus =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/btanr2ywing/Textures/coruskapellim.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/btanr2ywing/Textures/coruskapellim.png',
         lega =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/btanr2ywing/Textures/legafossang.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/btanr2ywing/Textures/legafossang.png',
         teza =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/btanr2ywing/Textures/tezanasz.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/btanr2ywing/Textures/tezanasz.png',
         wilsa =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/btanr2ywing/Textures/wilsateshlo.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/btanr2ywing/Textures/wilsateshlo.png',
     },
    
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/btanr2ywing/RIS_Y-Wing.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/btanr2ywing/RIS_Y-Wing.obj',
   
 }
-
-masterShipDB['gauntletfighter'] = {
+ ShipDB['gauntletfighter'] = {
     
     ProximityHider = true,
    
     textures = {
         bokatan =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/gauntletfighter/textures/BoKatan.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/gauntletfighter/textures/BoKatan.jpg',
         bokatancis =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/gauntletfighter/textures/BoKatanCIS.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/gauntletfighter/textures/BoKatanCIS.jpg',
         deathwatch =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/gauntletfighter/textures/Deathwatch.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/gauntletfighter/textures/Deathwatch.jpg',
         default =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/gauntletfighter/textures/Default.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/gauntletfighter/textures/Default.jpg',
         imperial =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/gauntletfighter/textures/Imperial.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/gauntletfighter/textures/Imperial.jpg',
         maul =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/gauntletfighter/textures/Maul.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/gauntletfighter/textures/Maul.jpg',
         plain =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/gauntletfighter/textures/Plain.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/gauntletfighter/textures/Plain.jpg',
         previzsla =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/gauntletfighter/textures/PreVizla.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/gauntletfighter/textures/PreVizla.jpg',
         scum =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/gauntletfighter/textures/ScumColours.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/gauntletfighter/textures/ScumColours.jpg',
         red =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/gauntletfighter/textures/red.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/gauntletfighter/textures/red.jpg',
         rebel =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/gauntletfighter/textures/rebel.jpg'
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/gauntletfighter/textures/rebel.jpg'
     },
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/gauntletfighter/ship-base.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/gauntletfighter/ship-base.obj',
     Config = {
         States = {
             [1] = {
                 Name = "Swivel Wing (Down)",
                 Model =
-                'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/gauntletfighter/wings-normal.obj',
+                'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/gauntletfighter/wings-normal.obj',
                 ZRot = 0,
                 Message = " lowered their swivel wing.",
             },
             [2] = {
                 Name = "Swivel Wing (Up)",
                 Model =
-                'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/large/gauntletfighter/wings-pivot.obj',
+                'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/large/gauntletfighter/wings-pivot.obj',
                 ZRot = 0,
                 Message = " raised their swivel wing.",
             }
@@ -4725,129 +4398,120 @@ masterShipDB['gauntletfighter'] = {
         Token = "http://nnxwing.com/Content/TTS/Config/GauntletFighter.png"
     }
 }
-
-masterShipDB['st70assaultship'] = {
+ ShipDB['st70assaultship'] = {
     
     textures = {
         guildbountyhunter =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/st70assaultship/textures/guildbountyhunter.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/st70assaultship/textures/guildbountyhunter.jpg',
         mandalorian =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/st70assaultship/textures/mandalorian.png',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/st70assaultship/textures/mandalorian.png',
         plain =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/st70assaultship/textures/plain.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/st70assaultship/textures/plain.jpg',
     },
   
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/medium/st70assaultship/razorcrest.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/medium/st70assaultship/razorcrest.obj',
 }
-
-masterShipDB['rogueclassstarfighter'] = {
+ ShipDB['rogueclassstarfighter'] = {
     textures = {
         grey =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/rogueclassstarfighter/textures/Rogue-Class-Grey.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/rogueclassstarfighter/textures/Rogue-Class-Grey.jpg',
         green =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/rogueclassstarfighter/textures/Rogue-Class-Green.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/rogueclassstarfighter/textures/Rogue-Class-Green.jpg',
         plain =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/rogueclassstarfighter/textures/plain.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/rogueclassstarfighter/textures/plain.jpg',
         CIS =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/rogueclassstarfighter/textures/CIS.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/rogueclassstarfighter/textures/CIS.jpg',
         white =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/rogueclassstarfighter/textures/white.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/rogueclassstarfighter/textures/white.jpg',
         durge =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/rogueclassstarfighter/textures/durge.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/rogueclassstarfighter/textures/durge.jpg',
     },
    
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/rogueclassstarfighter/rogueclass2.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/rogueclassstarfighter/rogueclass2.obj',
 }
-
-masterShipDB['clonez95headhunter'] = {
+ ShipDB['clonez95headhunter'] = {
    
     textures = {
         plain =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/clonez95headhunter/textures/plain.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/clonez95headhunter/textures/plain.jpg',
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/clonez95headhunter/textures/standard.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/clonez95headhunter/textures/standard.jpg',
         blue =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/clonez95headhunter/textures/blue.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/clonez95headhunter/textures/blue.jpg',
         black =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/clonez95headhunter/textures/black.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/clonez95headhunter/textures/black.jpg',
     },
    
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/clonez95headhunter/CloneZ95.obj'
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/small/clonez95headhunter/CloneZ95.obj'
 }
 
--- Huge ships
-masterShipDB['cr90corvette'] = {
+-- Huge ships ShipDB['cr90corvette'] = {
     
     mountingPoints = { front = { 0, -2.63 }, rear = { 0, 2.63 } },
     
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/huge/cr90corelliancorvette/cr90.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/huge/cr90corelliancorvette/cr90.obj',
     textures = {
         blue =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/huge/cr90corelliancorvette/Textures/blue.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/huge/cr90corelliancorvette/Textures/blue.jpg',
         red =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/huge/cr90corelliancorvette/Textures/red.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/huge/cr90corelliancorvette/Textures/red.jpg',
     },
 }
-
-masterShipDB['croccruiser'] = {
+ ShipDB['croccruiser'] = {
    
     mountingPoints = { front = { 0, -2.63 }, rear = { 0, 2.63 } },
     
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/huge/croccruiser/croc.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/huge/croccruiser/croc.obj',
     textures = {
         standard =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/huge/croccruiser/Textures/standard.jpg',
+        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/huge/croccruiser/Textures/standard.jpg',
     },
 }
-
-masterShipDB['gozanticlasscruiser'] = {
+ ShipDB['gozanticlasscruiser'] = {
     
     mountingPoints = { front = { 0, -2.63 }, rear = { 0, 2.63 } },
     
-    mesh = 'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/huge/gozanticlasscruiser/gozanti.obj',
+    mesh = 'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/huge/gozanticlasscruiser/gozanti.obj',
     textures = {
-        standard = 'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/huge/gozanticlasscruiser/Textures/standard.jpg',
+        standard = 'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/huge/gozanticlasscruiser/Textures/standard.jpg',
     },
 }
-
-masterShipDB['gr75mediumtransport'] = {
+ ShipDB['gr75mediumtransport'] = {
    
     mountingPoints = { front = { 0, -2.05 }, rear = { 0, 2.05 } },
    
-    mesh = 'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/huge/gr75mediumtransport/gr75.obj',
+    mesh = 'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/huge/gr75mediumtransport/gr75.obj',
     textures = {
-        standard = 'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/huge/gr75mediumtransport/Textures/standard.jpg',
+        standard = 'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/huge/gr75mediumtransport/Textures/standard.jpg',
     },
 }
-
-masterShipDB['raiderclasscorvette'] = {
+ ShipDB['raiderclasscorvette'] = {
    
     mountingPoints = { front = { 0, -2.63 }, rear = { 0, 2.63 } },
     
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/huge/raiderclasscorvette/raider.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/huge/raiderclasscorvette/raider.obj',
     textures = {
-        standard = 'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/huge/raiderclasscorvette/Textures/standard.jpg',
+        standard = 'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/huge/raiderclasscorvette/Textures/standard.jpg',
     },
 }
-
-masterShipDB['tridentclassassaultship'] = {
+ ShipDB['tridentclassassaultship'] = {
    
     mountingPoints = { front = { 0, -2.63 }, rear = { 0, 2.63 } },
     
     mesh =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/huge/tridentclassassaultship/trident.obj',
+    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/huge/tridentclassassaultship/trident.obj',
     textures = {
-        standard = 'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/huge/tridentclassassaultship/Textures/standard.jpg',
+        standard = 'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0 /assets/ships-v2/huge/tridentclassassaultship/Textures/standard.jpg',
     },
 }
 
-return masterShipDB
+return ShipDB
 end)
 
 
