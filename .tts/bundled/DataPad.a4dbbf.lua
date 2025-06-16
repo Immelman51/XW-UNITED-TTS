@@ -45,6 +45,7 @@ local __bundle_require, __bundle_loaded, __bundle_register, __bundle_modules = (
 
 	return require, loaded, register, modules
 end)(nil)
+
 __bundle_register("DataPad.a4dbbf.lua", function(require, _LOADED, __bundle_register, __bundle_modules)
 require("Game.Component.Spawner.DataPad")
 
@@ -115,13 +116,6 @@ xwuFaction[23] = 'Syn'
 cardBackDB = {}
   
 
-
-masterShipDB = require("Game.Component.Spawner.ShipDb")
-
-
-masterUpgradesDB = require("Game.Component.Spawner.UpgradeDb")
-
-
 VERSION_DATA = {
     ruleset = "none",
     pilots = {},
@@ -149,19 +143,19 @@ function initiate()
     self.createButton({ click_function = 'assetSpawn', function_owner = self, label = "Asset Spawner", position = { 0.5, 0.45, 0.15 }, width = 1600, height = 380, font_size = 200, scale = { 0.25, 0.25, 0.25 } })
     self.createButton({ click_function = 'configuration', function_owner = self, label = "Configuration", position = { -0.5, 0.45, -0.1 }, width = 1600, height = 380, font_size = 200, scale = { 0.25, 0.25, 0.25 } })
     self.createButton({ click_function = 'scenario', function_owner = self, label = "Scenario Setup", position = { 0.5, 0.45, -0.1 }, width = 1600, height = 380, font_size = 200, scale = { 0.25, 0.25, 0.25 } })
-    self.createButton({ click_function = 'spawnStart', function_owner = self, label = 'Spawn List', position = { 0, 0.45, 0.45 }, width = 2000, height = 500, font_size = 200, scale = { 0.25, 0.25, 0.25 } })
+   
     if hasSpawned then
         self.createButton({ click_function = 'relocateSpawned', function_owner = self, label = 'Move To Player', position = { 0.6, 0.45, 0.8 }, width = 1600, height = 380, font_size = 200, scale = { 0.15, 0.15, 0.15 } })
     end
 end
 
-function spawnStart()
-    self.clearButtons()
-    self.createButton({ click_function = 'amgPoints', function_owner = self, label = "AMG Points", position = { 0, 0.45, -0.1 }, width = 1600, height = 380, font_size = 200, scale = { 0.25, 0.25, 0.25 } })
-    self.createButton({ click_function = 'xwaPoints', function_owner = self, label = "XWA Points", position = { 0, 0.45, 0.2 }, width = 1600, height = 380, font_size = 200, scale = { 0.25, 0.25, 0.25 } })
-    self.createButton({ click_function = 'x2poPoints', function_owner = self, label = "Legacy Points", position = { 0, 0.45, 0.5 }, width = 1600, height = 380, font_size = 200, scale = { 0.25, 0.25, 0.25 } })
-    addResetButton()
-end
+--function spawnStart()
+    --self.clearButtons()
+    --self.createButton({ click_function = 'amgPoints', function_owner = self, label = "AMG Points", position = { 0, 0.45, -0.1 }, width = 1600, height = 380, font_size = 200, scale = { 0.25, 0.25, 0.25 } })
+   -- self.createButton({ click_function = 'xwaPoints', function_owner = self, label = "XWA Points", position = { 0, 0.45, 0.2 }, width = 1600, height = 380, font_size = 200, scale = { 0.25, 0.25, 0.25 } })
+    --self.createButton({ click_function = 'x2poPoints', function_owner = self, label = "Legacy Points", position = { 0, 0.45, 0.5 }, width = 1600, height = 380, font_size = 200, scale = { 0.25, 0.25, 0.25 } })
+   -- addResetButton()
+--end
 
 function addResetButton()
     self.createButton({
@@ -176,20 +170,14 @@ function addResetButton()
     })
 end
 
-function amgPoints()
-    loadPoints("AMG")
-    spawnOptions("AMG")
-end
+
 
 function xwaPoints()
     loadPoints("XWA")
     spawnOptions("XWA")
 end
 
-function x2poPoints()
-    loadPoints("X2PO")
-    spawnOptions("X2PO")
-end
+
 
 function spawnOptions(versionversion)
     self.clearButtons()
@@ -431,115 +419,7 @@ function xwsLoad(playerColor)
     end
 end
 
-function loadPoints(ruleset)
-    if VERSION_DATA.ruleset == ruleset then
-        return
-    end
-    VERSION_DATA = {
-        pilots = {},
-        upgrades = {},
-        ruleset = ruleset
-    }
-    if ruleset ~= "X2PO" then
-        loadVersion(ruleset)
-    end
-end
 
-function loadVersion(ruleset)
-    WebRequest.get('https://raw.githubusercontent.com/eirikmun/xwing-points/main/points-version.json',
-        function(request)
-            if request.is_error then
-                print("Failed to load X-Wing points manifest.")
-            elseif request.is_done then
-                loadVersionData(ruleset, json.parse(request.text))
-            end
-        end)
-end
-
-function loadVersionData(ruleset, point_versions)
-    if point_versions[ruleset] then
-        WebRequest.get(
-            'https://raw.githubusercontent.com/eirikmun/xwing-points/main/' .. point_versions[ruleset].location,
-            function(request)
-                if request.is_error then
-                    print("Failed to load X-Wing points data for " .. ruleset .. " points version")
-                elseif request.is_done then
-                    loadVersionRevisions(ruleset, json.parse(request.text))
-                end
-            end)
-    else
-        print("Data for " .. ruleset .. " is not available")
-    end
-end
-
-function loadVersionRevisions(ruleset, version_revisions)
-    if version_revisions.current_revision then
-        WebRequest.get(
-            'https://raw.githubusercontent.com/eirikmun/xwing-points/main/' .. version_revisions.current_revision,
-            function(request)
-                if request.is_error then
-                    print("Failed to load X-Wing points data for " .. ruleset .. " points version")
-                elseif request.is_done then
-                    loadVersionRevision(ruleset, json.parse(request.text))
-                end
-            end)
-    else
-        print("Current revision for " + ruleset + " is not available")
-    end
-end
-
-function loadVersionRevision(ruleset, version_revision)
-    for file, path in pairs(version_revision.files) do
-        URL = 'https://raw.githubusercontent.com/eirikmun/xwing-points/main/' .. path
-        WebRequest.get('https://raw.githubusercontent.com/eirikmun/xwing-points/main/' .. path,
-            function(request)
-                if request.is_error then
-                    print("Failed to " .. file .. " points data for " .. ruleset .. " points version")
-                elseif request.is_done then
-                    if file == "upgrades" then
-                        loadUpgrades(json.parse(request.text))
-                    else
-                        loadPilots(json.parse(request.text))
-                    end
-                end
-            end)
-    end
-end
-
-function loadUpgrades(upgrades)
-    for xws, upgrade in pairs(upgrades) do
-        if upgrade.cost then
-            VERSION_DATA.upgrades[xws] = upgrade
-        end
-    end
-end
-
-function loadPilots(ships)
-    for ship_xws, ship in pairs(ships) do
-        for pilot_xws, pilot in pairs(ship) do
-            if pilot.cost then
-                VERSION_DATA.pilots[pilot_xws] = pilot
-            end
-        end
-    end
-end
-
-function findByXws(table, xws_id)
-    for i, record in pairs(table) do
-        if record.XWS and record.XWS == xws_id then
-            return i
-        end
-    end
-    return nil
-end
-
-function listToFormat(ruleset, version, vendor)
-    if version and string.find(version, '2.0.') then
-        return "2.0-legacy"
-    else
-        return "2.5"
-    end
-end
 
 factions =
 {
