@@ -11,3 +11,27 @@
 
     <Text id="Name" font="font/Bank Gothic Light Regular" position="0 -88 0"  height="30" fontSize="16" color="#FFFFFF">• Fenn Rau</Text>
 </Panel>
+
+<!-- X-Wing United : fiche du pilote (pilote, capacité, améliorations).
+     Affichée/masquée via le menu contextuel du vaisseau ; taille et
+     position ajustées par setupUnitedInfo() dans CompositeBase.lua. -->
+<Panel id="UnitedInfo"
+    active="false"
+    width="440"
+    height="300"
+    position="340 0 -15"
+    rotation="180 180 0"
+    color="#101418E6"
+    outline="#D9A61A"
+    outlineSize="2 2">
+    <Text id="UnitedInfoText"
+        rectAlignment="UpperLeft"
+        alignment="UpperLeft"
+        offsetXY="12 -10"
+        width="416"
+        height="280"
+        fontSize="13"
+        color="#FFFFFF"
+        horizontalOverflow="Wrap"
+        verticalOverflow="Overflow"></Text>
+</Panel>

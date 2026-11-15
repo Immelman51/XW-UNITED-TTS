@@ -11,6 +11,10 @@ isHiding = false
 
 function initContextMenu()
     self.clearContextMenu()
+    local unitedData = self.getTable("Data")
+    if unitedData and unitedData.United then
+        self.addContextMenuItem("Fiche pilote (United)", ToggleUnitedInfo, false)
+    end
     if finished_setup then
         if self.getTable("Data") then
             for type, arc in pairs(self.getTable("Data").arcs or {}) do
@@ -61,9 +65,15 @@ function initContextMenu()
             end
         end
     else
-        self.addContextMenuItem("Next Texture", NextTexture, true)
+        local data = self.getTable("Data") or {}
+        -- Les vaisseaux X-Wing United sans modèle 3D n'ont ni textures ni maillage
+        if data.textures then
+            self.addContextMenuItem("Next Texture", NextTexture, true)
+        end
         self.addContextMenuItem("Toggle Peg", TogglePeg, true)
-        self.addContextMenuItem("Spawn Customizer", SpawnCustomizer, false)
+        if data.mesh then
+            self.addContextMenuItem("Spawn Customizer", SpawnCustomizer, false)
+        end
     end
 end
 
@@ -488,8 +498,53 @@ function setupUI()
         self.UI.setAttribute("Name", "position", NamePos[size])
         self.setName(self.getTable("UiData").name)
     end
+    setupUnitedInfo()
     DisableAttachedColliders()
     Wait.time(DisableAttachedColliders, 5)
+end
+
+-- X-Wing United : fiche du pilote affichée à côté du socle
+unitedInfoVisible = false
+
+local unitedInfoHalfWidth = { small = 100, medium = 150, large = 200, huge = 260 }
+local UNITED_INFO_WIDTH = 440
+local UNITED_INFO_CHARS_PER_LINE = 58
+local UNITED_INFO_LINE_HEIGHT = 17
+
+local function utf8Length(text)
+    local _, count = string.gsub(text, "[^\128-\191]", "")
+    return count
+end
+
+function setupUnitedInfo()
+    local data = self.getTable("Data")
+    if data == nil or data.United == nil or data.United.text == nil then
+        return
+    end
+    local text = data.United.text
+    local lines = 0
+    for line in (text .. "\n"):gmatch("(.-)\n") do
+        local visible = line:gsub("<[^>]+>", "")
+        lines = lines + math.max(1, math.ceil(utf8Length(visible) / UNITED_INFO_CHARS_PER_LINE))
+    end
+    local height = lines * UNITED_INFO_LINE_HEIGHT + 30
+    local size = data.Size or "small"
+    local x = (unitedInfoHalfWidth[size] or 100) + UNITED_INFO_WIDTH / 2 + 20
+    self.UI.setValue("UnitedInfoText", text)
+    self.UI.setAttribute("UnitedInfoText", "height", tostring(height - 20))
+    self.UI.setAttribute("UnitedInfo", "height", tostring(height))
+    self.UI.setAttribute("UnitedInfo", "position", tostring(x) .. " 0 -15")
+    self.UI.setAttribute("UnitedInfo", "active", unitedInfoVisible and "true" or "false")
+end
+
+function ToggleUnitedInfo()
+    unitedInfoVisible = not unitedInfoVisible
+    if unitedInfoVisible then
+        setupUnitedInfo()
+        self.UI.show("UnitedInfo")
+    else
+        self.UI.hide("UnitedInfo")
+    end
 end
 
 function NextTexture()

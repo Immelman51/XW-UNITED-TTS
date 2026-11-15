@@ -59,7 +59,9 @@ function assignShip(ship)
 
     local dataPad = getObjectFromGUID(dataPadId)
     local shipDB = dataPad.getTable("masterShipDB")
-    Name = shipDB[shipData.shipId].name
+    -- Les vaisseaux X-Wing United sans modèle 3D ne sont pas dans masterShipDB
+    local shipEntry = shipDB and shipDB[shipData.shipId]
+    Name = (shipEntry and shipEntry.name) or (shipData.United and shipData.name) or tostring(shipData.shipId)
     self.setName(Name)
 
     local pilotDB = dataPad.getTable("masterPilotDB")

@@ -422,6 +422,65 @@ local function spawnPilotResourceTokens(session, pilot, spawnCard, tokens, hasMo
     end
 end
 
+-- X-Wing United : les améliorations n'ont pas de carte, leurs charges sont
+-- posées en rangées devant le vaisseau (une rangée par amélioration).
+local function spawnPilotExtraCharges(session, pilot, spawnCard, tokens)
+    local row = 0
+    for _, extra in ipairs(pilot.ExtraCharges or {}) do
+        for chargeIndex = 1, extra.count do
+            local token = cloneSpawnerToken(
+                session,
+                tokens.Charge,
+                LocalPos(spawnCard, { 0.9 - 0.7 * (chargeIndex - 1), 1, 5.0 + 0.8 * row }),
+                "charge_owner",
+                pilot.name,
+                extra.name
+            )
+            token.setScale(token.getScale() * 0.75)
+        end
+        row = row + 1
+    end
+end
+
+-- X-Wing United : le leader est matérialisé par une note posée sur la table
+-- (nom, factions, logistique, capacité) et ses éventuelles charges.
+local function spawnUnitedLeader(session, leader, spawnCard, tokens)
+    if leader == nil then
+        return
+    end
+    local fr = leader.lang ~= "ENG"
+    local lines = {}
+    if #leader.factions > 0 then
+        table.insert(lines, (fr and "Factions : " or "Factions: ") .. table.concat(leader.factions, ", "))
+    end
+    table.insert(lines, (fr and "Logistique : " or "Logistic: ") .. tostring(leader.logistic))
+    if leader.charge > 0 then
+        table.insert(lines, (fr and "Charges : " or "Charges: ") .. tostring(leader.charge) ..
+            (leader.recurring and (fr and " (récurrentes)" or " (recurring)") or ""))
+    end
+    if leader.ability ~= "" then
+        table.insert(lines, "")
+        table.insert(lines, leader.ability)
+    end
+
+    local position = LocalPos(spawnCard, { -1.5, 1, 4 })
+    local note = session:track(spawnObject({
+        type = "Notecard",
+        position = position,
+        rotation = spawnCard.getRotation(),
+        sound = false,
+    }))
+    note.setName("Leader : " .. leader.name)
+    note.setDescription(table.concat(lines, "\n"))
+    note.addTag("UnitedLeader")
+
+    for chargeIndex = 1, leader.charge do
+        cloneSpawnerToken(session, tokens.Charge, LocalPos(spawnCard, { -0.2 - 0.9 * (chargeIndex - 1), 1, 1.2 }),
+            "charge_owner", leader.name, leader.name)
+    end
+    spawnCard.setPosition(LocalPos(spawnCard, { -4.5, 0, 0 }))
+end
+
 local function cloneSpawnerAccessory(session, accessoryContext, accessory, position, rotation)
     local source = takeSpawnerAccessorySource(accessoryContext, {
         position = position,
@@ -453,6 +512,7 @@ local function spawnAssignableAccessories(session, accessoryContext, accessoryNa
 end
 
 local function spawnPilotAccessories(session, pilot, spawnCard, accessoryContext, faction, rotation, arcPosition)
+    faction = pilot.Data.Faction or faction
     for mount, turret in pairs(pilot.Data.arcs.turret or {}) do
         local indicatorName = 'Arc Indicator' .. tostring(faction)
         if turret.type[1] == 'doubleturret' then
@@ -570,7 +630,7 @@ local function spawnPilotCardAndDial(context, pilot, pilotName, pilotCustomizati
     local session = context.session
     local accessoryContext = context.accessoryContext
     local spawnCard = context.spawnCard
-    local dialSkin = context.dialSkin
+    local dialSkin = pilot.dialSkin or context.dialSkin
     local pilotCardScript = context.pilotCardScript
 
     local card = pilotCustomization.face or pilot.card
@@ -634,7 +694,8 @@ local function spawnPilotCardAndDial(context, pilot, pilotName, pilotCustomizati
                 newDial.setPosition(pos)
                 returnSpawnerAccessorySource(accessoryContext, dial)
                 local conditionFunc = function()
-                    return pilotCard ~= nil and (not pilotCard.spawning) and (not newDial.spawning)
+                    -- X-Wing United : pas de carte pilote, le cadran ne doit pas l'attendre
+                    return (pilotCard == nil or not pilotCard.spawning) and (not newDial.spawning)
                 end
                 local executeFunc = function()
                     newDial.setCustomObject({ ['diffuse'] = dialSkin })
@@ -697,7 +758,8 @@ local function spawnCompositeShipBase(context, pilot, pilotName, texture, modelt
     end
     local rot = spawnCard.getRotation()
     local base_prototype = getObjectFromGUID(CompositeBase_GUID)
-    local factionName = factionnames[faction]
+    local pilotFaction = pilot.Data.Faction or faction
+    local factionName = factionnames[pilotFaction]
     if factionName == nil then
         print("Missing faction base texture for faction " .. tostring(faction) .. " on " .. tostring(pilotName))
         factionName = factionnames[1]
@@ -729,7 +791,7 @@ local function spawnCompositeShipBase(context, pilot, pilotName, texture, modelt
     end
     newShip.setTable("UiData", {
         name = base_name_str,
-        icon = pilot.Ship,
+        icon = pilot.Icon or pilot.Ship,
         init = "init" .. pilot.Data.initiative
     })
 
@@ -976,6 +1038,7 @@ local function spawnPilotBundle(context, pilot, upgradeResult)
     spawnPilotAccessories(session, pilot, spawnCard, accessoryContext, faction, shipBundleResult.shipRotation,
         shipBundleResult.shipPosition)
     spawnPilotResourceTokens(session, pilot, spawnCard, tokens, hasMob)
+    spawnPilotExtraCharges(session, pilot, spawnCard, tokens)
 end
 
 local function isExtendedWidthUpgrade(upgrade)
@@ -1138,7 +1201,9 @@ local function spawnPilotUpgrades(context, pilot, upgrades)
 end
 
 local function advancePilotSpawnCursor(spawnCard, pilot, upgradeLayoutCursor)
-    if pilot.standardized_loadout then
+    if pilot.SpawnSpacing then
+        spawnCard.setPosition(LocalPos(spawnCard, { -pilot.SpawnSpacing, 0, 0 }))
+    elseif pilot.standardized_loadout then
         local charges = 0
         for _, upgrade in pairs(pilot.standardized_upgrades) do
             charges = math.max(charges, upgrade.charge)
@@ -1206,6 +1271,8 @@ local function spawnSquad(request, pilotCardScript)
         local UPGRADE_EXTENDED_WIDTH_STEP = UPGRADE_STEP_X + UPGRADE_EXTENDED_WIDTH_TUCK
         local CONFIG_CARD_ANCHOR_X = 1.42
         local CONFIG_CARD_SHIFT_X = -1.9
+
+        spawnUnitedLeader(session, listTable.Leader, spawnCard, tokens)
 
         local shipIndex = 1 --Sets index of ship being spawned
 

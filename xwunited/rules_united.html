@@ -1,0 +1,444 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"xw-United"</title>
+    <link rel="stylesheet" href="rules_united.css">
+   
+   
+</head>
+
+<body>
+    <header>
+        <div id='general' class="general">
+            <div><a href="index.html">BACK</a></div>
+            <div><a href="#tacticpoint">Planning</a></div>
+            <div><a href="#activation_phase">Activation</a></div>
+            <div><a href="#engagement_order">Engagement</a></div>
+            <div><a href="#end_effects">Fin</a></div>
+            <div><select id="language"><option value='FRA' selected>FRA</option><option value='ENG'>ENG</option></select></div>
+            <div><a href="#general">TOP</a></div>
+        </div>
+        <div id='squadBuilding' class="squadbuilding">
+            <div><a href="#squadbuilding1">Squad Building</a></div>
+            <div><a href="#faction">Faction</a></div>
+            <div><a href="#leader">Leader</a></div>
+            <div><a href="#upgrades">Upgrades</a></div>
+            <div><a href="#logistic">Logistic</a></div>
+            <div><a href="#scenario">Scenario</a></div>
+            <div><a href="#environement">Environnement</a></div>
+            <div><a href="#event">Evênement</a></div>
+        </div>
+        <div id='planningPhase' class="planningphase">
+            <div><a href="#tacticpoint">Tactic Points</a></div>
+            <div><a href="#firstplayer">First Player</a></div>
+            <div><a href="#dialsAndManeuvers">Dials & Maneuvers</a></div>
+        </div>
+        <div id='systemPhase' class="systemphase">
+            <div><a href="#system_order">System Order</a></div>            
+            <div><a href="#stopping_reinforcement">Stopping Reinforcement</a></div>            
+            <div><a href="#payload">Payload</a></div>
+            <div><a href="#relocate">Relocate</a></div>
+        </div>
+        <div id='activationPhase' class="activationphase">
+            <div><a href="#activation_phase">Activation Phase</a></div>
+            <div><a href="#activation_order">Activation Order</a></div>
+            <div><a href="#configurations">Configurations</a></div>
+            <div><a href="#executing_maneuvers">Execute a Maneuver</a></div>
+            <div><a href="#bumpingships">Bumping into ships</a></div>
+            <div><a href="#actions">Perform an action</a></div>
+            <div><a href="#obstacles">Obstacles</a></div>
+        </div>
+        <div id='engagementPhase' class="engagementphase">
+            <div><a href="#engagement_order">Engagement Order</a></div>
+            <div><a href="#declareAttack">Declare an Attack</a></div>
+            <div><a href="#rollingattackdice">Roll Attack Dice</a></div>
+            <div><a href="#rollingdefensedice">Roll Defense Dice</a></div>
+            <div><a href="#cancelresults">Cancel Results</a></div>
+            <div><a href="#bonusattack">Bonus Attack</a></div>
+            <div><a href="#range0">Range 0</a></div>
+            <div><a href="#destroyedships">Destroyed Ships</a></div>
+
+        </div>
+        <div id='endPhase' class="endphase">
+            <div><a href="#end_effects">End Effects</a></div>
+            <div><a href="#check_victory">Check Victory Conditions</a></div>
+            <div><a href="#clearing_tokens">Clearing Tokens</a></div>
+        </div>
+        
+        <div id='general_information' class="general_information"></div>
+            <div><a href="#tournaments">Tournaments</a></div>
+            <div><a href="#turn_phases">Turn Phases</a></div>
+            
+            <div id='faqsummary' class="faq"></div>
+                <div><a href="#faq">FAQ</a></div>
+                <div><a href="#faq_pilots">Pilotes</a></div>
+                <div><a href="#faq_upgrades">Améliorations</a></div>
+    </header>
+<p>
+    <div id='squadbuilding1' class="title">Préparation de partie/Squadbuilding</div>
+    <div class="txt">Etape 1 : Choisir un Leader. Les Leaders donnent accès aux vaisseaux/ pilotes/ améliorations des factions indiquées. Chaque Leader peut disposer également d'une capacité utilisable durant la partie. Enfin, chaque leader dispose d'une valeur de logistique qui permet d'intégrer plus ou moins des améliorations de vaisseau dans l'escadron.<br>Etape 2 : Construire son escadron en 30 points en utilisant des vaisseaux / pilotes de factions autorisés par votre Leader.<br>Chaque pilote coûte un certain nombre de points d'escadron. Vous pouvez l'équiper avec des améliorations Pilote et Vaisseau en respectant les restrictions indiquées, et en de dépassant pas la valeur de logistique du leader.<br>Etape 3 : Imprimer la liste et préparer les vaisseaux.<br>Etape 4 : Choisir un Scénario et l'installer.
+    </div>
+</p>
+<p>
+    <div id='faction' class="title">Factions</div>
+    <div class="txt">Chaque faction dispose de certains chassis, qui disposent de certains pilotes, et aussi de certaines améliorations. Elles sont au nombre de 24.<br>Pour le moment les factions disponibles sont : Alliance Rebelle, Académie Impériale, Clans Mandaloriens, Pirates & Contrebandiers, Guilde des Chasseurs de Primes, Cellule Phénix, Fédération du Commerce, Résistance, Premier Ordre, Conseil Jedi.<br>Futures Factions : Escadrons d'Elite Impériaux, Partisans, Spécialistes de l'Ombre (Premier Ordre Elite), Nouvelle République, Cartel Hutt, Agents du Chaos (C.I.S Sith), Armée Clone, Résidus de l'Empire, Soleil Noir, Syndicats du Crime, B.S.I, Colossus, Forces de Défense Naboo, Gouvernement Séparatiste</div>
+</p>
+<p>
+    <div id='leader' class="title">Leaders</div>
+    <div class="txt">Les leaders sont la base de votre escadron. Pour chacune des factions, il existe un leader dédié (on l'appellera leader monofaction). Il existe aussi des leaders qui donne accès à 2 factions (leader bifaction), voire 3 factions (leader trifaction). Les leaders trifaction donnent accès à peu près aux factions qui existaient dans les versions offcielles du jeu depuis la 2.0 (Rebelles, Empire, Racailles, Séparatiste, République, Résistance, Premier Ordre), mais ajoute 1 nouvelle grande famille : le Collectif de l'Ombre mené par Maul (en rajoutant des vaisseaux et en divisant la faction racailles qui disposait de plus de vaisseaux que les autres factions). Les familles de la prélogie et de la postlogie ont aussi été étoffées.<br>Tous les leaders monofaction disposent d'une capacité qui leur permettent de gagner des points de scénario (objectifs pour gagner une partie), alors que celle des autres leaders, qui disposeront de plus de choix pour le squad building auront des capacités plus orientées tactique.<br>Si vous choisissez un leader multifaction, il est possible d'utiliser des améliorations réservées à une faction (comme le talent unique d'une faction) sur des vaisseaux ou pilotes d'une autre faction disponible. Par exemple, si je choisis le leader Amiral Ackbar qui me permet de piocher dans les factions 'Alliance Rebelle' et 'Pirates et Contrebandiers', je peux choisir Han Solo dans son faucon, et placer le canonnier 'Luke Skywalker' à l'intérieur, et lui donner le talent 'Altruisme'.</div>
+</p>
+
+<p>
+    <div id='upgrades' class="title">Améliorations</div>
+    <div class="txt">Il faut distinguer 2 catégories d'amélioration :<br>
+        - Les améliorations 'Talent' (Tir, Pilotage, Commandement, Elite) et 'Force' (Light, Dark, Base) que l'on peut qualifier d'<span style= "text-decoration: underline; ">amélioration Pilote,</span><br>
+        - Les autres améliorations que l'on peut qualifier de d'<span style= "text-decoration: underline; ">amélioration Vaisseau.</span><br>
+Les améliorations Vaisseau ont un coût de Logistique. Chaque fois qu'on équipe un pilote d'une amélioration Vaisseau (ex : Missile, Senseur, Illicit, Modification...), il faut dépenser de la logistique. La valeur de logistique ne doit pas descendre sous 0.<br>
+Les améliorations Pilote ont un coût de Talent. La somme des coûts des Talents/Force ne doit pas dépasser la valeur d'initiative du pilote. Il n'est pas possible d'équiper plusieurs fois le même Talent/Force sur un même pilote.
+   </div>
+</p>
+<p>
+    <div id='logistic' class="title">Logistique</div>
+    <div class="txt">La logistique est la valeur maximale d'emport d'améliorations que votre escadron peut emporter. Elle est fixée par le leader que vous sélectionnez. Certaines améliorations peuvent rajouter des points de logistique supplémentaire. Toutes les améliorations pilote ('Talent' et 'Force') ne nécessitent pas de dépenser de logistique. La valeur de logistique ne doit pas descendre sous 0.</div>
+</p>
+<p>
+    <div id='scenario' class="title">Scénario</div>
+    <div class="txt">Avant de mettre en place une partie, et une fois que les escadrons ont été choisis, il faut sélectionner un scénario parmi les 5 disponibles. Il suffit de mélanger les 5 cartes scénario et d'en prendre une au hasard. Une fois le scénario choisi, on met en place les éléments de scénario si possible. Les scenarii demandent aux joueurs de réaliser certains objectifs pour gagner des points de scenario. A la fin de la partie, le joueur qui a le plus de point de scenario remporte la partie. En cas d'égalité, c'est le joueur qui a le plus de points tactique qui remporte la partie.<br>Après avoir sélectionné le scénario, il faut sélectionner une carte environnement.</div>
+</p>
+<p>
+    <div id='environment' class="title">Environnement</div>
+    <div class="txt">Une fois que le scenario a été sélectionné, il faut choisir une carte environnement parmi les 5 disponibles. Elle est tirée au hasard. Une fois la carte tirée, les joueurs suivent les instructions de la carte pour placer les obstacles sur l'aire de jeu. Il faut ensuite sélectionner une carte évênement.</div>
+</p>
+<p>
+    <div id='event' class="title">Evênement</div>
+    <div class="txt">Une fois que l'environnement a été sélectionné et mis en place, il faut choisir une carte évênement parmi les 5 disponibles. Elle est tirée au hasard. Une fois la carte tirée, les joueurs suivent les instructions de la carte et placer éventuellement les éléments de scénario. On passe alors à la phase 'placer les forces' (placer les vaisseaux sur l'aire de jeu).</div>
+</p>
+
+<!--PHASE DE PLANNIFICATION-->
+<p>
+    <div id='tacticpoint' class="title">Points Tactique</div>
+    <div class="txt">Placez un dé 6 à côté de l'aire de jeu, et placez le sur sa face 3. Les points tactique permettent de déterminer quel joueur a 'l'ascendant tactique' sur l'autre joueur. Le joueur qui a l'ascendant tactique (aussi appelé joueur 'Tacticien') peut déterminer au début de chaque phase de Planification qui sera le premier joueur sur le tour en cours. En cas d'égalité en fin de partie, le joueur qui a l'ascendant tactique remporte la partie.<br>
+        Lorsque le joueur 1 gagne un point tactique, il baisse la valeur du dé 6 de 1. Si le dé est déjà sur sa face 1, il ne se passe rien. Lorsque le joueur 2 gagne 1 point tactique, il augmente la valeur du dé 6 de 1 ; si le dé est déjà sur sa valeur 6, il ne se passe rien.<br>
+        Ainsi, tant que le dé 6 indique les valeurs 1, 2, ou 3, le joueur 1 a l'ascendant tactique. Tant que le dé 6 indique les valeurs 4, 5 ou 6, le joueur 2 a l'ascendant tactique.</div>
+</p>
+<p>
+    <div id='firstplayer' class="title">Gestion du premier joueur</div>
+    <div class="txt">En début de partie, le joueur qui a le plus de pilotes à initiative 6 devient le joueur 1 (voir points tactique) et prend l'ascendant tactique. En cas d'égalité, on compare le nombre de pilotes à initiative 5 etc... <br>Des évênements peuvent ammener des pertes/gains de points tactiques en cours de partie:<br>- Survoler/chevaucher un obstacle : -1 point tactique<br>- Chevaucher un vaisseau : -1 point tactique<br>- Gagner 1 ou plusieurs points de scénario par une action ou un fait de jeu: +1 point tactique<br>Au début de la phase de Planification, le joueur qui a l'ascendant décide qui sera le premier joueur pour le tour en cours (A initiative égale, il se déplace en premier, et tire en premier).
+    </div>
+</p>
+
+
+<p>
+    <div id='dialsAndManeuvers' class="title">Planification des maneouvres</div>
+    <div class="txt"></div>
+</p>
+
+<!--PHASE SYSTEME-->
+<p>
+    <div id='system_order' class="title">Ordre en phase système</div>
+    <div class="txt">The System Phase is the second phase of a round. During this phase, the sequence of play starts with the ship with the lowest initiative and continues in ascending order.<br>
+    During this phase, each ship gets an opportunity to choose and resolve any abilities that are explicitly resolved during the System Phase.<br>
+        - Without having specific upgrades, abilities, or tokens, most ships have no effects that can be resolved during this phase. Some abilities that can be used at this time include dropping and launching devices, decloaking, and deploying and docking ships.</div>
+        - If a player has multiple ships with the same initiative value, the player resolves abilities in any order; resolving any abilities for one ship before resolving abilities for another ship of the same initiative value.<br>
+        - If multiple players have ships with the same initiative value, player order is used to determine the sequence. The first player resolves any abilities of their ships with that initiative value in any order, then the second player resolves any abilities of their ships with that initiative value in any order, and so on.
+
+    </p>
+<p>
+    <div id='decloaking' class="title">Désoccultation</div>
+    <div class="txt">During the System Phase, each cloaked ship may spend its cloak token to decloak. When a small ship decloaks, it must choose one of the following effects: <br>
+    1. Barrel roll using the [2 #straight#] template.<br>
+    2. Boost using the [2 #straight#] template.<br>
+When a medium or large ship decloaks, it must choose one of the following effects:<br>
+    1. Barrel roll using the [1 #straight#] template.<br>
+    2. Boost using the [1 #straight#] template.<br>
+• Decloaking does not count as executing a maneuver or performing an action but does count as a move.<br>
+• A ship can decloak even while stressed.<br>
+• When a player declares to decloak a ship, that player must declare which type of boost or barrel roll it is going to perform before placing a template on the play area.<br>
+• If a decloak fails, the ship is returned to its prior position before it attempted the decloak and the cloak token is not removed.<br>
+• Each ship cannot drop or launch a device during the same phase that it decloaked.</div>
+</p>
+<p>
+    <div id='stopping_reinforcement' class="title">Arrêt de Renforcement</div>
+    <div class="txt">En phase système, vous devez décider si vous arrêtez votre renforcement ou si vous le conservez. Si vous l'arrêtez, défausser votre jeton renforcement. Si vous le conservez, assignez au vaisseau renforcé un jeton d'épuisement.<br></div>
+</p>
+<p>
+    <div id='payload' class="title">Engins</div>
+    <div class="txt"></div>
+</p>
+<p>
+    <div id='relocate' class="title">Relocalisation</div>
+    <div class="txt">If an effect Relocates a remote, its controlling player picks it up and places it in the new location as instructed by the effect. Additionally:<br>
+• An effect might instruct a player to relocate a remote using a specific template (or a choice of several templates). To do this, the player places the listed template at the remote's front or rear guides, picks up the remote, and places the remote's rear guides at the other end of the template.<br>
+• If a remote would be relocated such that any part of it is outside of the play area, it flees in the same manner as a ship, and is removed.</div>
+</p>
+
+
+<!--PHASE D'ACTIVATION-->
+<p>
+    <div id='activation_phase' class="title">Phase d'Activation</div>
+    The Activation Phase is the third phase of a round. Each ship activates by resolving the following steps in order:<br>
+    1. Reveal Dial: The ship’s assigned dial is Revealed by flipping it faceup and then placing it next to its ship card.<br>
+    2. Execute Maneuver: The ship executes the maneuver selected on the revealed dial.<br>
+    3. Perform Action: The ship may perform one action.<br>
+• When a ship activates, if it skips the Reveal Dial step, it cannot resolve any abilities that trigger after the ship reveals its dial.<br>
+• If a stressed ship attempts to execute a red maneuver, the ship executes a stRess maneUveR instead. The stress maneuver is a white [#straight# 2] maneuver. The bearing, difficulty, and speed of this maneuver cannot be changed unless an ability explicitly affects the stress maneuver.<br>
+• If a ship with no active #force# attempts to perform a purple maneuver, it executes a stress maneuver instead.
+</p>
+
+<p>
+    <div id='activation_order' class="subtitle">Ordre d'activation</div>
+    <div class="txt">During this phase, each ship activates, one at a time, starting with the ship with the lowest initiative and continuing in ascending order. 
+    If a player has multiple ships with the same initiative value, that player activates them in any order—finishing the entire activation for one ship before activating another ship of the same initiative value.<br>
+    If multiple players have ships with the same initiative value, player order is used to determine the sequence. The first player activates all of their ships with that initiative value in any order, then the second player activates all of their ships with that initiative value in any order.<br>
+    </div>
+</p>
+<p>
+    <div id='configurations' class="subtitle">Configurations</div>
+    <div class="txt">Certains vaisseaux (par exemple le T65 X-Wing) possèdent 2 configurations matérialisées par un marqueur charge actif ou inactif. Selon la face visible de ce marqueur charge, le chassis du vaisseau a des propriétés différentes (ailes ouvertes ou ailes fermées du T65 X-Wing).<br>
+    Cette configuration peut être modifiée pendant l'activation du vaisseau (à tout moment de l'activation, avant d'effectuer la maneuvre ou après).
+    </div>
+</p>
+<p>
+    <div id='bumpingships' class="title">Chevaucher un vaisseau</div>
+    <div class="txt"></div>
+</p>
+<p>
+    <div id='actions' class="title">Effectuer une action</div>
+    <div class="txt">A stressed ship cannot execute red maneuvers or perform actions.<br>
+</div>
+</p>
+<p><div id='reinforce_action' class="subtitle">Renforcement</div>
+    <div class="txt">Les pilotes peuvent renforcer pour incliner leurs boucliers déflecteurs et augmenter leur défense sur une partie de leur vaisseau. Lorsqu’un vaisseau effectue l’action #RF#, il gagne un marqueur de renforcement avec soit le côté proue, soit le côté poupe visible.<br>
+        Un vaisseau est renforcé tant qu’il a un marqueur de renforcement sur lui.<br>
+        Les marqueurs de renforcement sont des marqueurs circulaires bleus.<br>
+        Lorsqu’un vaisseau renforcé défend, si l’attaquant est situé dans l’arc entier spécifié par le marqueur de renforcement et pas dans l’autre arc entier, le marqueur produit un effet. L’attaquant doit être dans l’arc #F180# du défenseur pour le marqueur de renforcement de proue et il doit être dans l’arc #B180# du défenseur pour le marqueur de renforcement de poupe<br>
+        Durant l’étape « Neutraliser les résultats », si l’attaque est censée toucher et qu’il y a plus d’un résultat #hit#/#crit# restant, un résultat #evd# est ajouté pour annuler un résultat.<br>
+        Un vaisseau ne peut pas avoir plusieurs marqueurs de renforcement. Si un vaisseau venait à avoir un deuxième jeton renforcement, celui ci doit en choisir un des deux et défausser l'autre.<br>
+        Lorsqu’un vaisseau gagne un marqueur de renforcement, sauf précision contraire, le joueur qui contrôle le vaisseau choisit s’il gagne un marqueur de renforcement de proue ou de poupe.<br>
+        Un vaisseau ne dépense pas le marqueur de renforcement quand son effet est appliqué.<br>
+        Si une capacité indique à un vaisseau de gagner un marqueur de renforcement, ceci est différent d’effectuer une action #RF#. Un vaisseau qui gagne le marqueur sans effectuer l’action peut toujours effectuer l’action #RF# à ce round.<br>
+        En fin de tour, les marqueurs de renforcement (comme les autres jetons bleus) ne sont pas défaussés.<br>
+        Tant que vous êtes renforcé, vous ne pouvez pas effectuer d'attaque bonus.</div>
+    
+</p>
+<p>
+    <div id='unload_action' class="subtitle">Déchargement (Action)</div>
+    <div class="txt">L'action déchargement permet de larguer les engins (en suivant les règles de largage standard), ou de lancer une torpille.<br>Il est possible de larguer 1 engin en phase système et 1 pendant la phase d'activation de la même ronde en utilisant l'action de Déchargement.<br>Les déchargements de torpilles suivent toutes les règles des attaques spéciales, et sont considérées comme des attaques spéciales.<br>Un vaisseau ne peut pas décharger une torpille si un jeton désarmement lui est assigné.</div>
+</p>
+<p><div id='cloak_action' class="subtitle">Occultation</div>
+    <div class="txt">Lorsqu'un vaisseau s'occulte, il casse tous les verrouillages qu'il a sur lui, et il ne peut pas être verrouillé tant qu'il est occulté.<br>
+        Un vaisseau occulté ne peut pas attaquer.<br>
+        Un vaisseau occulté lance 2 dés de défense spplémentaires lorsqu'il défend.<br>
+        En phase système, un vaisseau peut dépenser son jeton d'occultation : dans ce cas :<br>
+        •Si c'est un petit vaisseau, il peut effectuer un tonneau ou une accélération avec le gabarit droit de vitesse 2<br>
+        •Si c'est un vaisseau moyen ou gros, il peut effectuer une accélération avec le gabarit droit de vitesse 1, ou il peut effectuer un tonneau avec le gabarit droit de vitesse 1 mais avec le petit côté du gabarit (comme lorsqu'un petit vaisseau fait un tonneau).</div>
+</p>
+<p>
+    <div id='jam_action' class="subtitle">Brouillage</div>
+    <div class="txt">Lorsqu'un vaisseau est à portée 0-1 d'un autre vaisseau ou à portée 2 dans son #bulls#, il peut effectuer une action de brouillage #jam#. Le joueur qui effectue l'action choisit : <br>
+        - Il peut retirer un jeton vert ou bleu de son choix appartenent au vaisseau ciblé.<br>
+        - Il peut lui attribuer un jeton brouillage. Dans ce cas, le vaisseau ciblé ne peut pas être coordonné et son initiative est diminuée de 1. On dit alors que ce vaisseau est brouillé.</div>
+</p>    
+<p>
+<div id='obstacles' class="title">Obstacles</div>
+<div class="txt">Lorsque le gabarit ou le socle d'un vaisseau touche un obstacle, le vaisseau va subir des effets négatifs décrits ci-dessous.<br>
+    Si un vaisseau se trouve sur un obstacle au début de sa phase d'activation, et qu'une manoeuvre l'ammène à traverser ce même obstacle, alors il l'ignore (il n'est pas ignoré si manoeuvre l'ammène à re-chevaucher cet obstacle).<br>
+    Lorsqu'un obstacle obstrue une attaque, le défenseur lance 1 dé de défense supplémentaire pour chaque obstacle qui obstrue l'attaque.<br>
+    Lorsqu'un vaisseau termine son mouvement sur un obstacle, il saute sa phase "effectuer une action".<br>
+    Lorsqu'un vaisseau se déplace à travers ou sur plus d'un obstacle, il subit les effets de chaque obstacle, en commençant par l'obstacle le plus près de sa position de départ puis en procédant le long du gabarit.<br>
+    
+</div>
+<div class="subtitle">Astéroïdes</div>
+<div class="txt">Phase d'Activation : Lorsqu'un vaisseau traverse ou chevauche un astéroïde, il subit 1 dégât #hit#. Il lance 1 dé rouge : sur un résultat #hit#/#crit#, il subit un dégât #hit# supplémentaire. S'il chevauche un astéroïde il ignore également sa phase exécuter une action. <br>
+    Toutes les Phases : Si un vaisseau est à portée 0 d'un astéroïde, alors il ne peut pas effectuer d'attaque.</div>
+<div class="subtitle">Débris</div>
+<div class="txt">Phase d'Activation : Lorsqu'un vaisseau traverse ou chevauche un débris, il reçoit un jeton stress, puis il lance un dé rouge : sur un résultat #hit# / #crit#, il reçoit un dégât correspondant au résultat.<br>
+    Toutes les Phases : Si un vaisseau est à portée 0 d'un débris, alors il ne peut pas effectuer d'attaque.</div>
+<div class="subtitle">Nuage de Gaz</div>
+<div class="txt">Phase d'Activation : Lorsqu'un vaisseau traverse ou chevauche un nuage de gaz, il retire tous ses jetons bleus et casse tous les verrouillages qui le ciblent, puis il reçoit un jeton contrainte. Il lance 1 dé rouge : sur un résultat #hit#, le vaisseau reçoit un jeton ion ; sur un résultat #crit#, il reçoit 3 jetons ion. <br>
+    Toutes les Phases : Si un vaisseau est à portée 0 d'un nuage de gaz, il ne peut gagner aucun jeton bleu, et aucun vaisseau ne peut l'acquisitionner. Il ne peut pas non plus effectuer d'attaque.
+    </div>
+</p>
+
+<!--PHASE D'ENGAGEMENT-->
+<p>
+    <div id='engagement_order' class="title">Ordre d'engagement</div>
+    <div class="txt"></div>
+</p>
+<p>
+<div id='declareAttack' class="title">Attaque</div>
+<div class="subtitle">Attaque Principale et Attaque Spéciale</div>
+<div class="txt">La valeur d'attaque imprimée sur la carte du pilote correspond à l'attaque principale de ce vaisseau. Lorsqu'un vaisseau effectue une attaque PRINCIPALE à portée 1, il dispose d'un bonus de portée et peut lancer 1 dé d'attaque supplémentaire. Lorsqu'un vaisseau effectue une attaque PRINCIPALE à portée 3, la cible dispose d'un bonus de portée et peut lancer 1 dé de défense supplémentaire.<br>Lorsqu'un vaisseau effectue une attaque SPECIALE (Amélioration Tourelle, Amélioration Cannon, Torpille, Missile), aucun bonus de portée n'est appliqué.</div>
+</p>
+<p>
+<div id='upgradeDie' class="subtitle">Améliorer un dé</div>
+<div class="txt">Lorsqu'une capacité vous demande d'améliorer un dé d'attaque, vous pouvez modifier le résultat de ce dé:<br>•un résultat vierge devient un résultat #eye#<br>•un résultat #eye# devient un résultat #hit#<br>•un résultat #hit# devient un résultat #crit#<br>Lorsqu'une capacité vous demande d'améliorer un dé de défense, vous pouvez modifier le résultat de ce dé:<br>•un résultat vierge devient un résultat #eye#<br>•un résultat #eye# devient un résultat #evd#<br></div>
+</p>
+<p>
+<div id='degradeDie' class="subtitle">Dégrader un dé</div>
+<div class="txt">Lorsqu'une capacité vous demande de dégrader un dé d'attaque, vous devez modifier le résultat de ce dé:<br>•un résultat vierge est annulé<br>•un résultat #eye# devient un résultat vierge<br>•un résultat #hit# devient un résultat #eye#<br>•Un résultat #crit# devient un résultat #hit#<br>Lorsqu'une capacité vous demande de dégrader un dé de défense, vous devez modifier le résultat de ce dé:<br>•un résultat vierge est annulé<br>•un résultat #eye# devient un résultat vierge<br>•un résultat #evd# devient un résultat #eye#</div>
+</p>
+<p>
+<div id='rollingattackdice' class="subtitle">Modifier des dés d'attaque</div>
+<div class="txt">Un dé d'attaque peut être modifié de plusieurs façons différentes : ajouter un résultat, changer un résultat de dé, relancer un dé, dépenser un résultat de dé.<br>
+Il n'est pas possible de relancer plus d'une fois un dé.<br>
+Annuler/retirer/ajouter des dés n'est pas considéré comme une modification de dé.<br>
+</div>
+</p>
+<p>
+    <div id='rollingdefensedice' class="title">Modifier des dés de défense</div>
+    <div class="txt"></div>
+</p>
+<p>
+    <div id='cancelresults' class="title">Annuler des résultats</div>
+    <div class="txt"></div>
+</p>
+<p>
+    <div id='bonusattack' class="title">Attaque Bonus</div>
+    <div class="txt">Certaines capacité ou améliorations permettent d'effectuer des attaques bonus. Chaque vaisseau peut effectuer une attaque bonus maximum. Sauf si le contraire est spécifié, il n'est pas possible d'effectuer une attaque avec la même arme 2 fois dans un tour.</div>
+</p>
+<p>
+<div class="subtitle">Portée 0</div>
+<div class="txt">Il est impossible de tirer à portée 0, sauf si une compétence ne précise le contraire. Une attaque à portée 0 est alors considérée comme une attaque à portée 1.
+</div>
+</p>
+<p>
+    <div id='engagement_order' class="title">Ordre d'engagement</div>
+    <div class="txt">Les vaisseaux s'engagent dans l'ordre des initiatives décroissantes. En cas d'égalité, ce sont les vaisseaux du premier joueur qui s'engage en premier. Si ce joueur possède plusieurs vaisseaux de même initiative, il choisit l'ordre d'engagement.</div>
+</p>
+
+<p>
+    
+   
+    
+    
+    
+    <div class="subtitle">Attaque Précise ou Imprécise</div>
+    <div class="txt">Lorsqu'une attaque est "Précise", vous devez améliorer tous les dés d'attaque avant tout autre modification.<br>Lorsqu'une attaque est "Imprécise", vous devez dégrader tous les dés avant toute autre modification. </div>
+    
+</p>
+<p>
+    <div class="title">Mouvement</div>
+    <div id='bumpingships' class="subtitle">Chevauchement</div>
+    <div class="txt">Lorsqu'un mouvement vous ammène à chevaucher 1 ou plusieurs vaisseaux, effectuez votre mouvement en faisant glisser votre vaisseau de façon à rester toujours bien au centre du gabarit de manoeuvre, jusqu'à ce que le socle touche le ou les socles des vaisseaux que vous alliez chevaucher.<br>Vous sautez ensuite votre phase d'action, et vous perdez 1 point tactique.</div>
+</p>
+<p>
+    <div class="title">Jetons</div>
+    <div class="subtitle">Jetons rouges</div>
+    <div class="txt">Jetons Stress #stress# : <br>Jetons Contrainte #strain# :<br>Jetons Epuisement #deplete# :<br>Jetons Ionisation #ion# :</div>
+    <div class="subtitle">Jetons oranges</div>
+    <div class="txt">Jetons Brouillage #jam# :<br>Jetons Tractage #tractored# :<br>Jetons Désarmement #disarmed# :<br></div>
+    <div class="subtitle">Jetons bleus</div>
+    <div class="txt">Jetons Occultation #cloak# :<br>Jetons Renforcement #reinforce# :<br>Jetons Acquisition #targetlock# : Les jetons acquisition rouges ne sont pas considérés comme étant des jetons rouges ou bleus, et ne servent qu'à indiquer la cible d'une acquisition.</div>
+    <div class="subtitle">Jetons verts</div>
+    <div class="txt">Jetons Concentration #focus# :<br>Jetons Evasion #evade# :<br>Jetons Calcul #calculate# :<br></div>
+</p>
+<p>
+    <div class="title">Jeton Stress</div>
+    <div class="txt"></div>
+    <div class="title">Jeton Contrainte</div>
+    <div class="txt">Un vaisseau est 'contraint' lorsqu'il possède au moins un jeton contrainte. Lorsqu'un vaisseau contraint défend, l'attaquant DOIT dépenser au moins un de ces jetons contraintes pour dégrader un dé de défense par jeton dépensé (il est donc possible de dépenser plusieurs jetons contrainte en une seule fois, autant qu'il y a de dés de défense). S'il n'y a pas de dé de défense, alors un jeton contrainte doit être dépensé pour rien.</div>
+    <div class="title">Jeton Epuisement</div>
+    <div class="txt">Un vaisseau est 'épuisé' lorsqu'il possède au moins un jeton épuisement. Lorsqu'un vaisseau épuisé attaque, le défenseur DOIT dépenser au moins un de ces jetons épuisement pour dégrader un dé d'attaque par jeton dépensé (il est donc possible de dépenser plusieurs jetons épuisement en une seule fois, autant qu'il y a de dés d'attaque).</div>
+    <div class="title">Jeton Ionisation</div>
+    <div class="txt"></div>
+    <div class="title">Jeton Brouillage</div>
+    <div class="txt">Le joueur qui assigne les jetons brouillage décide : <br>- Il peut retirer un jeton vert ou bleu de son choix appartenent au vaisseau ciblé.<br>- Il peut lui attribuer un jeton brouillage. Dans ce cas, le vaisseau ciblé ne peut pas être coordonné et son initiative est diminuée de 1. On dit alors que ce vaisseau est brouillé.</div>
+    <div class="title">Jeton Tractage</div>
+    <div class="txt">Lorsqu'un vaisseau reçoit 1 ou plusieurs jetons tractage, on dit que ce vaisseau est tracté si :<br>•C'est un petit vaisseau et il a au moins 1 jeton tractage<br>•C'est un vaisseau moyen et il a au moins 2 jetons tractage<br>•C'est un gros vaisseau, et il a au moins 3 jetons tractage.<br>Les vaisseaux énormes ne peuvent pas être tractés.<br>Lorsqu'un vaisseau est tracté, le joueur qui a infligé les jetons peut lui faire effectuer un tonneau ou une accélération avec le gabarit droit de vitesse 1 ; s'il ne le fait pas, il aura à nouveau l'opportunité de le faire si ce vaisseau tracté reçoit à nouveau des jetons tractage ; il est possible pour ce joueur de dépenser les jetons tractage supplémentaires à son tractage pour lui faire effectuer ces mêmes mouvements mais sur des obstacles (par exemple, un petit vaisseau reçoit 2 jetons tractage, le joueur peut alors dépenser 1 jeton tractage de ce vaisseau pour lui faire faire un tonneau sur un astéroïde).<br>Un vaisseau tracté lance un dé de moins lorsqu'il défend.</div>
+    <div class="title">Jeton Désarmement</div>
+    <div class="txt">Lorsqu'un vaisseau reçoit un jeton désarmement, on dit que ce vaisseau est désarmé. Ce vaisseau ne peut pas effectuer d'attaque ce tour.</div>
+    <div class="title">Jeton Occultation</div>
+    <div class="txt">Lorsqu'un vaisseau possède un jeton occultation, on dit qu'il est occulté. Lorsqu'un vaisseau s'occulte, il casse tous les verrouillages qu'il a sur lui, et il ne peut pas être verrouillé tant qu'il est occulté.<br>Un vaisseau occulté ne peut pas attaquer.<br>Un vaisseau occulté lance 2 dés de défense spplémentaires lorsqu'il défend.<br></div>
+    <div class="title">Jeton Renforcement</div>
+    <div class="txt">Un vaisseau est renforcé tant qu’il a un marqueur de renforcement sur lui. Les marqueurs de renforcement sont des marqueurs circulaires bleus. Lorsqu’un vaisseau renforcé défend, si l’attaquant est situé dans l’arc entier spécifié par le marqueur de renforcement et pas dans l’autre arc entier, le marqueur produit un effet. L’attaquant doit être dans l’arc #F180# du défenseur pour le marqueur de renforcement de proue et il doit être dans l’arc #B180# du défenseur pour le marqueur de renforcement de poupe<br>Durant l’étape « Neutraliser les résultats », si l’attaque est censée toucher et qu’il y a plus d’un résultat #hit#/#crit# restant, un résultat #evd# est ajouté pour annuler un résultat.<br>•Un vaisseau ne peut pas avoir plusieurs marqueurs de renforcement. Si un vaisseau venait à avoir un deuxième jeton renforcement, celui ci doit en choisir un des deux et défausser l'autre.<br>•Lorsqu’un vaisseau gagne un marqueur de renforcement, sauf précision contraire, le joueur qui contrôle le vaisseau choisit s’il gagne un marqueur de renforcement de proue ou de poupe.<br>Un vaisseau ne dépense pas le marqueur de renforcement quand son effet est appliqué.<br>En fin de tour, les marqueurs de renforcement (comme les autres jetons bleus) ne sont pas défaussés.<br>Tant que vous êtes renforcé, vous ne pouvez pas effectuer d'attaque bonus.</div>
+    <div class="title">Jeton/Action Acquisition/Verrouillage</div>
+    <div class="txt">Lorsqu'un vaisseau doit verrouiller un vaisseau, il doit suivre ces étapes :<br>•Déclarer sans mesurer la cible du verrouillage<br>•Il vérifie si le vaisseau ciblé se trouve à portée 3 ou moins. A cette occasion, il peut vérifier la portée avec tous les objets l'entourant<br>•Si la cible se trouve à portée 3 ou moins, le vaisseau qui verrouille reçoit un jeton bleu verrouillage ; il faut que ce jeton permette d'identifier clairement quel est le vaisseau verrouillé (par exemple en plaçant un jeton avec le même identifiant à côté du vaisseau verrouillé).<br>•Si la cible se trouve au delà de la portée 3, alors le verrouillage échoue (si c'était via une action de verrouillage, alors l'action échoue).<br>Lorsqu'un vaisseau attaque un vaisseau qu'il a verrouillé, il peut à l'étape 'modifier les dés d'attaque' dépenser son jeton verrouillage : dans ce cas, il peut relancer en 1 fois autant de dés d'attaque qu'il le souhaite.<br>Certaines armes secondaires nécessitent que le vaisseau soit verrouillé pour pouvoir être utilisées.</div>
+    <div class="title">Jeton/Action Concentration</div>
+    <div class="txt"></div>
+    <div class="title">Jeton/Action Evasion</div>
+    <div class="txt"></div>
+    <div class="title">Jeton/Action Calcul</div>
+    <div class="txt"></div>
+</p>
+
+<!--PHASE DE FIN-->
+
+<p>
+    <div class="title" id="end_effects">Effets de Fin</div>
+    <div class="txt"></div>
+</p>
+
+<p>
+    <div class="title" id="check_victory">Vérification des conditions de victoire</div>
+    <div class="txt"></div>
+</p>
+
+<p>
+    <div class="title" id="clearing_tokens">Nettoyage des Jetons</div>
+    <div class="txt">A la fin de chaque tour, tous les jetons verts et oranges sont retirés des vaisseaux. Tous les jetons rouges et bleus restent sur les vaisseaux.</div>
+
+
+
+
+<!-- General Information -->
+
+<p>
+    <div class="title" id="tournaments">Tournois</div>
+    <div class="subtitle">Points de Tournoi</div>
+    <div class="txt">Lors d'un tournoi, les joueurs vont gagner des points de tournoi à l'issue de leurs matchs.<br>
+    Une victoire rapporte 2 points de tournoi.<br>
+    Sous conditions particulières dépendant du scénario, il est possible de gagner des points de tournoi. Pour chaque scénario, le perdant a l'opportunité de gagner 1 point de tournoi si la condition "Bonus de Combativité" est remplie.<br>
+    Le gagnant a l'opportunité de gagner 1 point de tournoi suplémentaire si la condition "bonus de domination" est remplie.</div>
+</p>
+
+<p>
+    <div class="title" id="turn_phases">Phases et Déroulement d'un tour</div>
+    <div class="subtitle">Phase de début</div>
+    <div class="txt">Désignation du premier joueur par le joueur 'Tacticien'</div>
+    <div class="subtitle">Phase de Planification</div>
+    <div class="txt">Planification secrète des manoeuvres des vaisseaux via la préparation des cadrans</div>
+    <div class="subtitle">Phase Système</div>
+    <div class="txt">Le premier joueur déclenche d'abord tous ses effets qui se déclenchent en phase système dans le sens croissant des initiatives (ex: largage d'engin, désoccultation...), puis c'est ensuite au tour du deuxième joueur.</div>
+    <div class="subtitle">Phase d'Activation</div>
+    <div class="txt">Les vaisseaux s'activent de la plus faible initiative à la plus haute initiative. En cas d'initiatives identiques, le premier joueur active d'abord ses vaisseaux, puis l'autre joueur active les siens.<br>
+    1. Etape "révéler la roue de maneuvre<br>
+    2. Etape "exécuter une manoeuvre<br>
+    2.1 Sous-Etape "déplacer le vaisseau"*<br>
+    2.2 Sous-Etape "vérifier la difficulté de la manoeuvre"<br>
+    3. Etape "effectuer une action"<br><br>
+    *Si un vaisseau stressé devrait effectuer une manoeuvre rouge, il effectue une manoeuvre blanche 2 #straight# à la place.<br>
+    Si un vaisseau sans #force# active devrait effectuer une manoeuvre violette, il effectue sa manoeuvre et reçoit un stress.
+    </div>
+    <div class="subtitle">Phase d'Engagement</div>
+    <div class="txt">Les vaisseaux s'engagent de la plus haute initiative à la plus faible initiative. En cas d'initiatives identiques, le premier joueur engage d'abord ses vaisseaux, puis l'autre joueur engage les siens.<br>
+    1. Etape Déclarer un attaquant<br>
+    2. Etape Choisir une Arme<br>
+    3. Etape Lancer les dés d'attaque<br>
+    4. Etape Modification des dés d'attaque par le défenseur<br>
+    5. Etape Modification des dés d'attaque par l'attaquant<br>
+    6. Etape Lancer les dés de défense<br>
+    7. Etape Modification des dés de défense par l'attaquant<br>
+    8. Etape Modification des dés de défense par le défenseur<br>
+    9.Etape Annuler les dés d'attaque<br>
+    10.Etape Attribution des dégats<br>
+    11.Etape Vérification de l'intégrité du vaisseau défenseur<br>
+    </div>
+    <div class="subtitle">Phase de fin</div>
+    1. Etape Début de phase de fin
+    2. Etape Vérification des conditions de victoire
+    3. Etape Nettoyage des jetons
+</p>
+
+<p>
+<div id='faq' class="title">FAQ</div>
+<div id='faq_pilots' class="subtitle">Pilotes FAQ</div>
+<div class="txt"></div>
+<div id='faq_upgrades' class="subtitle">Améliorations FAQ</div>
+<div class="txt">Soeurs de la Nuit : Les soeurs de la nuit ne peuvent cibler qu'un vaisseau allié qui a déjà été détruit. En phase système, si elles ne dépensent pas de force, les vaisseaux détruits sont retirés de la partie immédiatement.</div>
+</p>
+</body>
+</html>

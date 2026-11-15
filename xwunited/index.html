@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"xw-United"</title>
+    <link rel="stylesheet" href="style.css">
+   
+   
+</head>
+
+
+
+<body>
+    
+    <div id="overlay"></div>
+
+    <!-- Menu latéral -->
+    <nav id="sideMenu">
+        <ul>
+            <li><a id='printsquadMenu'>Print</a></li>
+            <li><a href="rules_united.html">Rules</a></li>
+            <li><a href="scenario.html">Scénarii</a></li>
+            
+            <!-- MENU A DEUX NIVEAUX -->
+                    <li id="factionsButton" class="submenu-title">Factions ▸</li>
+                    
+            <li><a href="generic_upgrades.html">Generic Upgrades</a></li>
+            <li><a href="https://github.com/Immelman51/xwunited">Code/Report</a></li>
+            <li><a id='codeMenu' href="#">Save/Load</a></li>
+        </ul>
+
+    </nav>
+    <!-- panneau de niveau 2 -->
+    <nav id="subMenuPanel">
+        <div class="submenu-header">
+            <span id="subMenuBack">◂ Retour</span>
+            <span>Factions</span>
+        </div>
+
+        <ul class="submenu-list">
+            <li><a href="faction_cards.html#Agents_of_Chaos">Agents_of_Chaos</a></li>
+            <li><a href="faction_cards.html#Black_Sun">Black_Sun</a></li>
+            <li><a href="faction_cards.html#Bounty_Hunters_Guild">Bounty_Hunters_Guild</a></li>
+            <li><a href="faction_cards.html#Clone_Army">Clone_Army</a></li>
+            <li><a href="faction_cards.html#Colossus">Colossus</a></li>
+            <li><a href="faction_cards.html#Crime_Syndicates">Crime_Syndicates</a></li>
+            <li><a href="faction_cards.html#First_Order_Vanguard">First_Order_Vanguard</a></li>
+            <li><a href="faction_cards.html#Heroes_of_the_Resistance">Heroes_of_the_Resistance</a></li>
+            <li><a href="faction_cards.html#Hutt_Cartel">Hutt_Cartel</a></li>
+            <li><a href="faction_cards.html#Imperial_Academy">Imperial_Academy</a></li>
+            <li><a href="faction_cards.html#Imperial_Elite_Squadrons">Imperial_Elite_Squadrons</a></li>
+            <li><a href="faction_cards.html#Imperial_Remnants">Imperial_Remnants</a></li>
+            <li><a href="faction_cards.html#ISB">ISB</a></li>
+            <li><a href="faction_cards.html#Jedi_Order">Jedi_Order</a></li>
+            <li><a href="faction_cards.html#Mandalorian_Clans">Mandalorian_Clans</a></li>
+            <li><a href="faction_cards.html#New_Republic_Patrol">New_Republic_Patrol</a></li>
+            <li><a href="faction_cards.html#Partisans">Partisans</a></li>
+            <li><a href="faction_cards.html#Phoenix_Cell">Phoenix_Cell</a></li>
+            <li><a href="faction_cards.html#Pirates_and_Smugglers">Pirates_and_Smugglers</a></li>
+            <li><a href="faction_cards.html#Rebel_Alliance">Rebel_Alliance</a></li>
+            <li><a href="faction_cards.html#Separatist_Government">Separatist_Government</a></li>
+            <li><a href="faction_cards.html#Shadow_Specialists">Shadow_Specialists</a></li>
+
+        </ul>
+        </nav>
+    
+    
+<header>
+    
+   
+    
+    <form method="get" action="">
+    <select name="menu_leader" id="menu_leader"></select>  
+    <select name="language" id="language">
+        <option selected value="FRA">FRA</option>
+        <option value="ENG">ENG</option>
+    </select>
+    </form>
+   
+   <!-- Bouton burger (visible sur mobile) -->
+   
+   <div id="burgerButton">☰</div>
+    
+    
+</header>
+
+
+
+
+    <div class="descriptleader">
+        <div class="box one"><img id="faction1logo" src="img/mini.png" alt="" /></div><div id="faction1txt" class="box two faction1 tit"></div>
+        <div class="box three"><img id="faction2logo" src="img/mini.png" alt="" /></div><div id="factionétxt" class="box four faction2 tit"></div>
+        <div class="box five"><img id="faction3logo" src="img/mini.png" alt="" /></div><div id="faction3txt" class="box six faction3 tit"></div>
+        
+    </div>
+    <div class="descriptleader abilityLeader"></div>
+    
+    <form method="get" action="" id="squad">
+    
+
+</form>
+<p>
+<div class="center">
+        <button id="addshipbutton" class="bouton" type="button">Add ship</button>
+</div>
+        
+    
+</p>
+    
+    <p>
+    <div class="descriptionUpg">
+        <div class="description" id="descript_upg"></div><div class="logistic total" id="logisticCounter"></div><div class="count total" id="totalcost"></div>
+    </div>
+    </p>
+
+    <footer class="printing_option">
+        <div><a id='printsquad'><span style="text-decoration: underline;font-size:x-large;cursor:pointer;">Print</span></a></div>
+        <div><a id='code' href="#" style="text-decoration: underline;font-size:x-large;cursor:pointer;">Import/Save</a></div>
+
+        
+    </footer>
+    <div class="hidden" id="popupOverlay">
+      <div class="popupCode">
+        <div id="codeText"></div>
+        <button class="btn" id="copyBtn">Copier</button>
+        <button class="btn" id="closeBtn">Fermer</button>
+        <form>
+          <div>
+            <label for="loadingCode">Rentrer votre code ici pour charger un escadron :</label>
+            <input type="text" id="loadingCode" name="name" />
+          </div>
+          <div>
+            <button class="btn" id='loadBtn'>Charger</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    
+    <script>
+    const sideMenu = document.getElementById("sideMenu");
+    const subMenu = document.getElementById("subMenuPanel");
+    const burger = document.getElementById("burgerButton");
+    const overlay = document.getElementById("overlay");
+
+    // Ouvrir le menu principal
+    burger.addEventListener("click", () => {
+        sideMenu.classList.toggle("open");
+        overlay.classList.toggle("active", sideMenu.classList.contains("open"));
+    });
+
+    // Ouvrir le sous-menu
+    document.getElementById("factionsButton").addEventListener("click", () => {
+        subMenu.classList.add("open");
+        overlay.classList.add("active");
+    });
+
+    // Bouton retour du sous-menu
+    document.getElementById("subMenuBack").addEventListener("click", () => {
+        subMenu.classList.remove("open");
+        overlay.classList.remove("active");
+    });
+
+    // Clic en dehors (sur overlay)
+    overlay.addEventListener("click", () => {
+        sideMenu.classList.remove("open");
+        subMenu.classList.remove("open");
+        overlay.classList.remove("active");
+    });
+    </script>
+    <script>
+    /* Ces lignes permettent de garder le même comportement
+       que les éléments du footer */
+    document.getElementById("printsquadMenu").addEventListener("click", () => {
+        document.getElementById("printsquad").click();
+    });
+
+    document.getElementById("codeMenu").addEventListener("click", () => {
+        document.getElementById("code").click();
+    });
+    </script>
+    
+  
+
+    
+    
+    <script src="scriptleader.js">
+    </script>
+    <script src="scriptship.js">
+    </script>
+ 
+    
+</body>
+</html>

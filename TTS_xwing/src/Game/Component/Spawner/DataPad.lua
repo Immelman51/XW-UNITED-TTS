@@ -17,6 +17,8 @@ require("TTS_Lib.Util.String")
 local Vect = require("TTS_lib.Vector.Vector")
 local Sequence = require("TTS_lib.Sequence.Sequence")
 local PlayerArea = require("Player.PlayerArea")
+local UnitedData = require("Game.Component.Spawner.United.UnitedData")
+local UnitedSquad = require("Game.Component.Spawner.United.UnitedSquad")
 
 self.interactable = false
 
@@ -170,6 +172,7 @@ function initiate()
     self.createButton({ click_function = 'configuration', function_owner = self, label = "Configuration", position = { -0.5, 0.45, -0.1 }, width = 1600, height = 380, font_size = 200, scale = { 0.25, 0.25, 0.25 } })
     self.createButton({ click_function = 'scenario', function_owner = self, label = "Scenario Setup", position = { 0.5, 0.45, -0.1 }, width = 1600, height = 380, font_size = 200, scale = { 0.25, 0.25, 0.25 } })
     self.createButton({ click_function = 'spawnStart', function_owner = self, label = 'Spawn List', position = { 0, 0.45, 0.45 }, width = 2000, height = 500, font_size = 200, scale = { 0.25, 0.25, 0.25 } })
+    self.createButton({ click_function = 'unitedStart', function_owner = self, label = 'X-Wing United', position = { 0, 0.45, -0.38 }, width = 2000, height = 420, font_size = 220, scale = { 0.25, 0.25, 0.25 }, color = { 0.85, 0.65, 0.1 }, tooltip = "Faire apparaître un escadron à partir d'un code du squad builder X-Wing United" })
     if hasSpawned then
         self.createButton({ click_function = 'relocateSpawned', function_owner = self, label = 'Move To Player', position = { 0.6, 0.45, 0.8 }, width = 1600, height = 380, font_size = 200, scale = { 0.15, 0.15, 0.15 } })
     end
@@ -421,6 +424,86 @@ function xwsStart()
     self.createButton({ click_function = 'xwsSave', function_owner = self, label = 'Spawn as Disk', position = { 0.3, 0.45, 0.6 }, width = 1800, height = 520, font_size = 240, scale = { 0.15, 0.15, 0.15 } })
     self.createInput({ input_function = 'xwsAction', function_owner = self, position = { 0, 0.45, 0.2 }, width = 1000, height = 500, font_size = 50, scale = { 0.5, 0.5, 0.5 } })
     self.createButton({ click_function = 'initiate', function_owner = self, label = 'Back', position = { -0.5, 0.45, 0.8 }, width = 1000, height = 300, font_size = 150, scale = { 0.21, 0.21, 0.21 } })
+end
+
+---------------------------------------------------------------------------
+-- X-Wing United : spawn à partir du code d'escadron du squad builder
+---------------------------------------------------------------------------
+unitedCode = nil
+unitedBusy = false
+
+function unitedStart()
+    self.clearButtons()
+    self.clearInputs()
+    self.createButton({ click_function = 'DummyFFG', function_owner = self, label = "Coller le code d'escadron", position = { 0, 0.45, -0.3 }, width = 1800, height = 520, font_size = 200, scale = { 0.25, 0.25, 0.25 } })
+    self.createInput({ input_function = 'unitedAction', function_owner = self, value = unitedCode or "", label = "ex. 1,155u200u12,4u0,FRA", position = { 0, 0.45, 0.15 }, width = 1700, height = 300, font_size = 120, scale = { 0.25, 0.25, 0.25 } })
+    self.createButton({ click_function = 'unitedClick', function_owner = self, label = 'Spawn', position = { -0.3, 0.45, 0.55 }, width = 1800, height = 520, font_size = 240, scale = { 0.15, 0.15, 0.15 } })
+    self.createButton({ click_function = 'unitedReload', function_owner = self, label = 'Recharger données', position = { 0.3, 0.45, 0.55 }, width = 1800, height = 520, font_size = 200, scale = { 0.15, 0.15, 0.15 }, tooltip = "Retélécharger les JSON depuis GitHub (après une mise à jour du builder)" })
+    self.createButton({ click_function = 'initiate', function_owner = self, label = 'Back', position = { -0.5, 0.45, 0.8 }, width = 1000, height = 300, font_size = 150, scale = { 0.21, 0.21, 0.21 } })
+end
+
+function unitedAction(obj, playerColor, value, editing)
+    if not editing then
+        unitedCode = value
+    else
+        local nl_index = string.find(value, '\n')
+        if nl_index ~= nil then
+            unitedCode = string.sub(value, 1, nl_index - 1)
+            unitedSpawn(playerColor)
+        end
+    end
+end
+
+function unitedClick(obj, playerColor, alt_click)
+    unitedSpawn(playerColor)
+end
+
+function unitedReload(obj, playerColor, alt_click)
+    printToAll("X-Wing United : rechargement des données…", { 0.85, 0.65, 0.1 })
+    UnitedData.load(function(data, err)
+        if err then
+            printToAll("X-Wing United : " .. err, { 1, 0.2, 0.2 })
+        else
+            printToAll("X-Wing United : données à jour.", { 0.85, 0.65, 0.1 })
+        end
+    end, true)
+end
+
+function unitedSpawn(playerColor)
+    if unitedCode == nil or unitedCode == "" then
+        broadcastToColor("Collez d'abord le code d'escadron du squad builder.", playerColor, { 1, 0.6, 0.2 })
+        return
+    end
+    if unitedBusy then
+        return
+    end
+    unitedBusy = true
+    if not UnitedData.isLoaded() then
+        printToAll("X-Wing United : téléchargement des données…", { 0.85, 0.65, 0.1 })
+    end
+    local code = unitedCode
+    UnitedData.load(function(data, err)
+        unitedBusy = false
+        if err then
+            printToAll("X-Wing United : " .. err, { 1, 0.2, 0.2 })
+            return
+        end
+        local fList, buildErr, warnings = UnitedSquad.build(code, data, masterShipDB)
+        if fList == nil then
+            broadcastToColor("Code d'escadron invalide : " .. tostring(buildErr), playerColor, { 1, 0.2, 0.2 })
+            return
+        end
+        for _, warning in ipairs(warnings or {}) do
+            print("X-Wing United : " .. warning)
+        end
+        fList.spawnCard = self
+        spawnNow(fList)
+
+        local player = Player[playerColor]
+        local who = (player and player.steam_name) or tostring(playerColor)
+        printToAll(who .. " a fait apparaître un escadron X-Wing United (leader : " .. fList.Leader.name ..
+            ", " .. tostring(fList.listCost) .. " pts).", { 0.85, 0.65, 0.1 })
+    end)
 end
 
 --XWS spawner input field

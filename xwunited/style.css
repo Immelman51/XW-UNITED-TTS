@@ -1,0 +1,593 @@
+
+
+/* Overlay invisible par défaut */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: none;
+    z-index: 1997;
+}
+
+/* visible quand un menu est ouvert */
+#overlay.active {
+    display: block;
+    z-index: 1997;
+
+}
+
+
+
+body {
+    background-color: rgb(58, 54, 63);
+    margin: 0 auto;
+    place-content: center;
+    max-width: 1000px;
+}
+
+/* ----------- MENU PRINCIPAL ------------ */
+
+#sideMenu {
+    position: fixed;
+    top: 0;
+    left: -160px;
+    width: 160px;
+    height: 100vh;
+    background-color: #222;
+    padding-top: 80px;
+    z-index: 1999;
+}
+
+#sideMenu.open {
+    left: 0px;
+}
+
+#sideMenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#sideMenu li {
+    padding: 12px 20px;
+    color: white;
+    cursor: pointer;
+}
+
+#sideMenu a {
+    color: white;
+    text-decoration: none;
+}
+
+/* ----------- PANNEAU DE NIVEAU 2 ------------ */
+
+#subMenuPanel {
+    position: fixed;
+    top: 0;
+    left: -220px;      /* caché hors écran */
+    width: 220px;       /* largeur du panneau */
+    height: 100%;
+    background: #111;
+    color: white;
+    overflow-y: auto;
+    transition: left 0.3s ease;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ouvert */
+#subMenuPanel.open {
+    left: 160px;
+}
+
+/* header du panneau */
+.submenu-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    font-size: 18px;
+    background-color: #444;
+    color: white;
+}
+
+/* bouton retour */
+#subMenuBack {
+    cursor: pointer;
+}
+
+/* liste scrollable */
+.submenu-list {
+    overflow-y: auto;
+    flex-grow: 1;
+    list-style: none;
+    padding: 0;
+}
+
+.submenu-list li {
+    padding: 12px 20px;
+}
+
+.submenu-list a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+
+
+
+/* ----- BOUTON BURGER ----- */
+
+#burgerButton {
+    position: fixed;
+    top: 2px;
+    left: 10px;
+    font-size: 35px;
+    cursor: pointer;
+    z-index: 2500;
+    display: none; /* caché par défaut */
+}
+
+/* ----- RESPONSIVE ----- */
+
+@media (max-width: 900px) {
+    #burgerButton {
+        display: block;
+        position: relative; /* important */
+        top: 0;
+        left: 0;
+        flex-shrink: 0;
+    }
+
+    footer.printing_option {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    /* garde le comportement du header en mobile */
+    header {
+        gap: 10px;
+    }
+
+    
+    #subMenuPanel {
+            left: -100%;
+        }
+    #subMenuPanel.open {
+            left: 0; /* slide depuis la gauche */
+        }
+}
+
+
+@media (min-width: 901px) {
+        /* Menu ouvert en permanence sur grand écran */
+        #sideMenu {
+            left: 0;
+        }
+
+        #burgerButton {
+            display: none;
+        }
+
+        /* footer masqué sur grand écran */
+        footer.printing_option {
+            display: none;
+        }
+
+        /* Décale le contenu sur grand écran avec la largeur exacte du sideMenu */
+        body {
+            margin-left: 160px; /* fait correspondre au width:160px du sideMenu */
+        }
+
+    #burgerButton {
+        display: none;
+    }
+
+    /* footer masqué sur grand écran */
+    footer.printing_option {
+        display: none;
+    }
+
+    body {
+        margin-left: 160px; /* on décale le contenu */
+    }
+}
+
+
+/* ---------- header & selects (fix flex shrink) ---------- */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 5px 10px;
+    background-color: black;
+    color: white;
+}
+
+
+.descriptleader {
+    display: flex ;
+    flex-wrap: nowrap;
+    gap: 2px;
+    background-color: black;
+    justify-content: center;
+    align-content: center;
+    color:antiquewhite;
+   
+      
+}
+
+.box{
+    align-content: left;
+    height: 26px;
+}
+
+.description {
+    justify-content: center;
+    align-content: center;
+    font-size: clamp(11px, 2vw, 26px);
+    background-color: white;
+    color: black;
+   
+
+}
+
+.tit {
+    justify-items:right;
+    align-items: center;
+    font-size: small;
+    max-width: 150px;
+}
+
+
+
+#menu_leader {
+    
+    text-align: center;
+    max-width: 70%;
+
+    
+}
+
+.logo {
+    height: 15px;
+
+}
+.chargeforceimg{
+    height: 15px;
+    width: 15px;
+    resize: both;
+}
+
+/* ##################"BODY ##############################*/
+.new {
+    margin: 20px 0 ;
+    background-color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: double rgb(236, 236, 241);
+    width: auto;
+    
+}
+
+.center{
+    text-align: center;
+}
+#addshipbutton{
+    margin-left: auto;
+      margin-right: auto;
+}
+
+/*######### First Line##########" */
+.ship {
+    
+    display:grid;
+    grid-template-columns: 4fr 4fr 2fr 1fr 1fr;
+    gap: 2px;
+    justify-content: center;
+    align-content: center;
+     
+}
+
+.shipmenu {
+    grid-column: 1;
+    justify-content: center;
+    align-content: center;
+      
+}
+.pilotmenu {
+    grid-column: 2;
+}
+
+.initiative {
+    grid-column: 3;
+    color: aliceblue;
+}
+
+
+.removeB {
+    grid-column: 4;
+    background-color: brown;
+    color: white
+}
+
+.points {
+    grid-column: 5;
+    color: rgb(255, 255, 0);
+    font-size: x-large;
+    align-self: center;
+    justify-self: center;
+    text-align: right;
+}
+
+/* ###### Second Line ######### */
+
+.zone {
+    background-color: black;
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.chassis {
+    min-width: 0;
+    flex-shrink: 1;
+    flex-grow: 0.4;
+    overflow: hidden;
+    text-align: center;
+    color: rgb(130, 169, 202);
+     cursor: pointer;
+     border-color: rgb(130, 169, 202);
+    border-style: solid;
+    border-width: 2px;
+}
+
+.title {
+    color:rgb(189, 97, 197);
+    min-width: 0;
+    flex-shrink: 1;
+    flex-grow: 0.3;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    border-color: rgb(189, 97, 197);
+    border-style: solid;
+    border-width: 2px;
+}
+
+
+.chassis:empty{
+    /*flex: 0 0 0;*/
+    display: none;
+}
+
+.title:empty{
+     /*flex: 0 0 0;*/
+    display: none;
+}
+
+.overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* assombrissement */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+}
+.chassisTitleWindow {
+  padding: 30px;
+  max-width: 80%;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  cursor: pointer;
+  z-index: 3001;
+}
+
+/* ###### Third Line ######### */
+
+.hidden {
+  display: none;
+}
+
+.toggle-button {
+  background-color: #bdeebe; /* vert par exemple */
+  color: black;
+  cursor: pointer;
+  max-width: 210px;
+}
+.toggle-button.unvalid {
+  background-color: red;
+  color: black;
+  cursor: pointer
+}
+.toggle-button.active {
+  background-color: grey; /* gris clair par exemple */
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.toggle-button.active.unvalid{
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* ## Beyond the third line ## */
+
+.slot {
+    display:grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+    align-content: center;
+    }
+.slot button,
+.slot select {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+select.talent{
+    background-color:lightblue;
+}
+
+/* #### Description Zone ######### */
+
+.descriptionUpg {
+    padding-top:5px;
+    padding-bottom: 5px;;
+    min-height: 50px;
+    background-color: black;
+    color:antiquewhite;
+    position: sticky;
+    bottom:0;
+    display: grid;
+    grid-template-columns: auto 40px 40px;
+}
+
+.loadout {
+    color: rgb(76, 173, 101)
+}
+
+.total {
+  
+    align-self: center;
+    justify-self: center;
+    
+   
+}
+.count {
+    color:yellow;
+}
+.logistic{
+    color: orange;
+}
+
+.unvalid{
+    background-color: red;
+}
+
+select {
+    overflow: auto;
+    max-width: 210px;
+}
+
+
+
+/* ## Bottom of the page ##*/
+.printing_option {
+    padding-top:20px;
+    padding-bottom: 20px;
+    background-color: azure;
+    display: flex;
+    justify-content: space-evenly;
+    
+
+}
+.printing_option div {
+    padding: 3px;
+    width : 25%;
+    text-align: center;
+}
+
+
+
+.popupCode {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    #codeText {
+      background: #f0f0f0;
+      padding: 10px;
+      margin-bottom: 15px;
+      font-family: monospace;
+    }
+.btn {
+      padding: 8px 12px;
+      margin: 5px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #3498db;
+      color: white;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background-color: #2980b9;
+    }
+
+.container.actionBar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    max-height: 80px;
+    min-height: 20px;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    
+   }
+
+
+.linkedimg {
+    max-height: 15px; /* Ajuste la largeur maximale pour tenir dans la grille */
+    object-fit: contain; /* Assure que les images ne sont pas déformées */
+    width:calc(20%);
+}
+.linkedcontainer {
+    display: flex;
+    flex-wrap: nowrap;
+    max-height: 15px;
+    align-items: center;
+    width:calc(20%);
+}
+.linkedimgarrow{
+    max-height: 15px; /* Ajuste la largeur maximale pour tenir dans la grille */
+    object-fit: contain; /* Assure que les images ne sont pas déformées */
+    width:calc(5%);
+}
+
+.chargeforceimg{
+    height: 15px;
+    width: 15px;
+    resize: both;
+    margin-left: 2px;
+
+}
+
+.inline-img, .action {
+  display: inline;
+  vertical-align: middle;
+  width: 15px;
+  height: 15px;
+  object-fit: contain;
+  margin-left: 2px;
+  margin-right: 2px;
+  
+}
+
+
+

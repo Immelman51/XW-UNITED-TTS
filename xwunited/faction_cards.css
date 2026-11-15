@@ -1,0 +1,601 @@
+header {
+    display: table;
+    width: 100%;
+    
+    color:rgb(0, 0, 0) ; 
+   
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    max-width: 25cm;
+    position: sticky;
+    top: 0;
+    width: 100%; /* Make sure the container takes up the full width */
+    
+}
+
+a {
+    flex-grow: 1; /* Allows each section to grow and take up equal space */
+    flex-basis: 0; /* Ensures sections start from zero width and grow equally */
+    padding: 5px; /* Optional: adds padding around each section */
+    text-align: center; /* Optional: centers text within each section */
+    border: 2px solid black;
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+    background-color: rgb(98, 255, 190);
+    color:rgb(0, 0, 0);
+}
+
+
+
+.leader {
+    background-color: black;
+    padding: 5px;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2px;
+    max-width: 25cm;
+    justify-content: center;
+    align-content: center;
+    color:aliceblue ; 
+     
+}
+.leader.name {
+    grid-column: 1 / 4;
+    grid-row: 1;
+    font-weight: bolder;
+    font-size: larger;
+    text-align: center; /* Center the text horizontally */
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Center the text vertically */
+    justify-content: center; /* Center the text horizontally */
+
+}
+
+.ability {
+    display: flex; /* added for centering content */
+    align-items: center; /* centers content vertically */
+}
+.leader.ability {
+    grid-area: 2 / 1 / 3 / 5;
+}
+
+.leader.charge {
+    grid-column: 4;
+    grid-row: 1;
+    align-items: center; /* centers content vertically */
+    text-align: center;
+}
+.ship {
+    background-color: rgb(179, 43, 43);
+    padding: 5px;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 2fr;
+    grid-template-rows: auto auto minmax(30px 100px) 40px 40px 40px;
+    gap: 2px;
+    max-width: 25cm;
+    color: aliceblue;
+    justify-content: center;
+    align-content: center;    
+    overflow: hidden;
+    page-break-inside: avoid;  /* ancienne syntaxe */
+    break-inside: avoid;       /* standard */
+     
+}
+
+.pilot {
+    background-color: rgb(189, 141, 141);
+    
+    display:grid;
+    grid-template-columns: 1fr 6fr 2fr ;
+    grid-template-rows: 22px auto;
+    gap: 2px;
+    max-width: 25cm;
+    padding: 5px;
+    justify-content: center;
+    align-content: center;
+    color:rgb(0, 0, 0) ; 
+    page-break-inside: avoid;  /* ancienne syntaxe */
+    break-inside: avoid;       /* standard */
+     
+}
+.upgrade{
+    page-break-inside: avoid;  /* ancienne syntaxe */
+  break-inside: avoid;       /* standard */
+}
+
+.upgrade.faction {
+    background-color: rgb(67, 73, 160);
+    padding: 5px;
+    display:grid;
+    grid-template-columns: 1fr 5fr 3fr ;
+    gap: 2px;
+    max-width: 25cm;
+    justify-content: center;
+    align-content: center;
+    color:aliceblue ; 
+     
+}
+
+.upgrade.generic {
+    background-color: rgb(160, 165, 236);
+    padding: 5px;
+    display:grid;
+    grid-template-columns: 1fr 5fr 3fr  ;
+    gap: 2px;
+    max-width: 25cm;
+    justify-content: center;
+    align-content: center;
+    color:rgb(0, 0, 0) ; 
+     
+}
+
+.ship.name {
+    box-sizing: border-box;
+    grid-area: 1 / 1 / 2 / 7;
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Center the text vertically */
+    justify-content: center; /* Center the text horizontally */
+
+}
+.attack,
+.agility,
+.hull,
+.shield {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    
+}
+
+.agility,
+.hull,
+.shield {
+    object-fit: contain;
+    max-width: calc(90% - 1px);
+    flex: 1 1 calc(90% - 1px);
+}
+.attack.container{
+    grid-area: 2 / 1 / 3 / 2;
+}
+.agility.container{
+    grid-area: 2 / 2 / 3 / 3;
+}
+.hull.container{
+    grid-area: 2 / 3 / 3 / 4;
+}
+.shield.container{
+    grid-area: 2 / 4 / 3 / 5;
+}
+.size{
+    grid-area: 1 / 6 / 2 / 7;
+    box-sizing: border-box;
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Center the text vertically */
+    justify-content: flex-end; 
+
+}
+.slots{
+    display: flex;
+    flex-wrap: wrap;
+    grid-area: 3 / 1 / 4 / 3;
+    max-height: 80px;
+    min-height: 22px;
+    justify-content: space-around;
+    flex: 1 1 calc(25% - 2px);
+    object-fit: contain;
+}
+.slotpilot{
+   justify-content: right;
+   object-fit: contain;
+   height: 22px;
+}
+.container.actionBar{
+    grid-area: 3 / 3 / 4 / 5;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-height: 80px;
+    min-height: 20px;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    
+   }
+
+.actionlogo{
+max-height: 40px; /* Ajuste la largeur maximale pour tenir dans la grille */
+object-fit: contain; /* Assure que les images ne sont pas déformées */
+width: calc(25%);
+}
+
+
+.linkedimg {
+    max-height: 40px; /* Ajuste la largeur maximale pour tenir dans la grille */
+    object-fit: contain; /* Assure que les images ne sont pas déformées */
+    width:calc(40%);
+}
+.linkedcontainer {
+    display: flex;
+    flex-wrap: nowrap;
+    max-height: 25px;
+    align-items: center;
+    width:calc(30%);
+}
+.linkedimgarrow{
+    max-height: 40px; /* Ajuste la largeur maximale pour tenir dans la grille */
+    object-fit: contain; /* Assure que les images ne sont pas déformées */
+    width:calc(20%);   
+}
+
+
+.maneuvers{
+    grid-area: 2 / 5 / 4 / 7;
+    border: 1px solid black; /* Border to visualize the grid item */
+    display: grid;
+    width: 100%; /* Occupe la largeur totale de la case */
+    max-height: 220px;
+    grid-template-columns: repeat(auto-fit, minmax(0, 50px)); /* Colonnes dynamiques */
+    grid-template-rows: repeat(auto-fit, minmax(0,1fr));
+    /*grid-auto-rows: minmax(0, 1fr); */
+    box-sizing: border-box; /* Inclut les bordures et paddings */
+  
+   
+}
+
+.maneuvers > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.manlogo{
+    object-fit:fill ;
+    width: 100%;
+    height: 100%;
+}
+.manSpeed{
+    object-fit: fill;
+    height: 100%;
+    width: 40px;
+}
+
+.man0sp{
+    grid-area: 6 / 1 / 7 / 2;
+}
+.man1sp{
+    grid-area: 5 / 1 / 6 / 2; 
+}
+.man2sp{
+    grid-area: 4 / 1 / 5 / 2; 
+}
+.man3sp{
+    grid-area: 3 / 1 / 4 / 2; 
+}
+.man4sp{
+    grid-area: 2 / 1 / 3 / 2; 
+}
+.man5sp{
+    grid-area: 1 / 1 / 2 / 2; 
+}
+
+.man00{
+    grid-area: 6 / 2 / 7 / 3;
+}
+.man10{
+    grid-area: 5 / 2 / 6 / 3; 
+}
+.man20{
+    grid-area: 4 / 2 / 5 / 3; 
+}
+.man30{
+    grid-area: 3 / 2 / 4 / 3; 
+}
+.man40{
+    grid-area: 2 / 2 / 3 / 3; 
+}
+.man50{
+    grid-area: 1 / 2 / 2 / 3; 
+}
+
+.man01{
+    grid-area: 6 / 3 / 7 / 4;
+}
+.man11{
+    grid-area: 5 / 3 / 6 / 4; 
+}
+.man21{
+    grid-area: 4 / 3 / 5 / 4; 
+}
+.man31{
+    grid-area: 3 / 3 / 4 / 4; 
+}
+.man41{
+    grid-area: 2 / 3 / 3 / 4; 
+}
+.man51{
+    grid-area: 1 / 3 / 2 / 4; 
+}
+
+.man02{
+    grid-area: 6 / 4 / 7 / 5;
+}
+.man12{
+    grid-area: 5 / 4 / 6 / 5; 
+}
+.man22{
+    grid-area: 4 / 4 / 5 / 5; 
+}
+.man32{
+    grid-area: 3 / 4 / 4 / 5; 
+}
+.man42{
+    grid-area: 2 / 4 / 3 / 5; 
+}
+.man52{
+    grid-area: 1 / 4 / 2 / 5; 
+}
+
+.man03{
+    grid-area: 6 / 5 / 7 / 6;
+}
+.man13{
+    grid-area: 5 / 5 / 6 / 6; 
+}
+.man23{
+    grid-area: 4 / 5 / 5 / 6; 
+}
+.man33{
+    grid-area: 3 / 5 / 4 / 6; 
+}
+.man43{
+    grid-area: 2 / 5 / 3 / 6; 
+}
+.man53{
+    grid-area: 1 / 5 / 2 / 6; 
+}
+
+.man04{
+    grid-area: 6 / 6 / 7 / 7;
+}
+.man14{
+    grid-area: 5 / 6 / 6 / 7; 
+}
+.man24{
+    grid-area: 4 / 6 / 5 / 7; 
+}
+.man34{
+    grid-area: 3 / 6 / 4 / 7; 
+}
+.man44{
+    grid-area: 2 / 6 / 3 / 7; 
+}
+.man54{
+    grid-area: 1 / 6 / 2 / 7; 
+}
+
+.man05{
+    grid-area: 6 / 7 / 7 / 8;
+}
+.man15{
+    grid-area: 5 / 7 / 6 / 8; 
+}
+.man25{
+    grid-area: 4 / 7 / 5 / 8; 
+}
+.man35{
+    grid-area: 3 / 7 / 4 / 8; 
+}
+.man45{
+    grid-area: 2 / 7 / 3 / 8; 
+}
+.man55{
+    grid-area: 1 / 7 / 2 / 8; 
+}
+
+.man06{
+    grid-area: 6 / 8 / 7 / 9;
+}
+.man16{
+    grid-area: 5 / 8 / 6 / 9; 
+}
+.man26{
+    grid-area: 4 / 8 / 5 / 9; 
+}
+.man36{
+    grid-area: 3 / 8 / 4 / 9; 
+}
+.man46{
+    grid-area: 2 / 8 / 3 / 9; 
+}
+.man56{
+    grid-area: 1 / 8 / 2 / 9; 
+}
+
+.man07{
+    grid-area: 6 / 9 / 7 / 10;
+}
+.man17{
+    grid-area: 5 / 9 / 6 / 10; 
+}
+.man27{
+    grid-area: 4 / 9 / 5 / 10; 
+}
+.man37{
+    grid-area: 3 / 9 / 4 / 10; 
+}
+.man47{
+    grid-area: 2 / 9 / 3 / 10; 
+}
+.man57{
+    grid-area: 1 / 9 / 2 / 10; 
+}
+
+.man08{
+    grid-area: 6 / 10 /7 / 11;
+}
+.man18{
+    grid-area: 5 / 10/ 6 / 11; 
+}
+.man28{
+    grid-area: 4 / 10/ 5 / 11; 
+}
+.man38{
+    grid-area: 3 / 10/ 4 / 11; 
+}
+.man48{
+    grid-area: 2 / 10/ 3 / 11; 
+}
+.man58{
+    grid-area: 1 / 10/ 2 / 11; 
+}
+
+.man09{
+    grid-area: 6 / 11 /7 / 12;
+}
+.man19{
+    grid-area: 5 / 11 /6 / 12; 
+}
+.man29{
+    grid-area: 4 / 11/ 5 / 12; 
+}
+.man39{
+    grid-area: 3 / 11/ 4 / 12; 
+}
+.man49{
+    grid-area: 2 / 11/ 3 / 12; 
+}
+.man59{
+    grid-area: 1 / 11/ 2 / 12; 
+}
+.man110{
+    grid-area: 5 / 12/ 6 / 13; 
+
+}
+.man210{
+    grid-area: 4 / 12/ 5 / 13; 
+
+}
+.man111{
+    grid-area: 5 / 13/ 6 / 14; 
+
+}
+.man211{
+    grid-area: 4 / 13/ 5 / 14; 
+
+}
+.man112{
+    grid-area: 5 / 14/ 6 / 15; 
+
+}
+.man212{
+    grid-area: 4 / 14/ 5 / 15; 
+
+}
+
+
+.chassisShip{
+    grid-area: 4 / 1 / 5 / 7;
+}
+.chargeimg{
+    max-width: 1cm;
+}
+
+.upgrade.type{
+    grid-area: 1 / 3 / 2 / 4;
+    display: flex;
+    justify-content: center;
+}
+
+
+.pilot.name {
+    grid-area: 1 / 2 / 2 / 3 ;
+    display: flex; /* added for centering content */
+    align-items: center; /* centers content vertically */
+}
+.pilot.ability{
+    grid-area: 3 / 1 / 4 / 4;
+    display: flex;
+    align-items:  center;
+}
+.pilot.slots{
+    grid-area: 1 / 3 / 2 / 4;
+}
+.pilot.title {
+    grid-area: 2 / 2 / 3 / 3;
+    text-align: center; /* Center the text horizontally */
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Center the text vertically */
+    justify-content: center; /* Center the text horizontally */
+    background-color: black;
+    color: white;
+
+
+}
+.pilot.force{
+    grid-area: 2 / 3 / 3 / 4;
+    
+}
+
+.points{
+    grid-column: 1;
+    grid-row: 1;
+    border: 1px solid rgb(201, 28, 28); /* Border to visualize the grid item */
+    font-weight: bold;
+    color: rgb(201, 28, 28);
+    display: flex;
+    align-items: center;
+    align-content: center;
+    padding: 5px;
+    justify-content: center;
+    align-content: center;
+    
+}
+.upgrade.name{
+    grid-area: 1 / 2 / 2 / 3;
+    display: flex;
+    justify-content: center;
+}
+.upgrade.ability{
+    grid-area: 2 / 1 / 3 / 4;
+}
+.upgrade.points{
+    color: yellow;
+}
+
+
+.value {
+    margin-left: 2px; /* Adjust margin as needed */
+    font-size: large;
+    color: black;
+}
+
+
+
+
+.container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    justify-content: center;
+}
+.chargeforceimg{
+    height: 15px;
+    width: 15px;
+    resize: both;
+}
+.pilot,
+.ship,
+.upgrade,
+.bloc,
+.squad,
+img {
+  page-break-inside: avoid;  /* ancienne syntaxe */
+  break-inside: avoid;       /* standard */
+}
+.inline-img{
+    display: inline;
+      height: 1em;
+      width: auto;
+   /*   vertical-align: middle;
+*/      margin: 0 2px;
+}

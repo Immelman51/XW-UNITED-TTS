@@ -1,0 +1,45 @@
+body{
+    max-width: 29cm;
+}
+header {
+    
+    top:0;
+    padding: 3px;
+    z-index: 1000;
+    position: sticky;
+    transition: top 0.3s ease;
+    
+    
+}
+header.hide {
+    top: -100px;
+}
+
+.scenario, .environment, .wildcard{
+    display: flex;`
+    flex-wrap: wrap;
+}
+.scenario{
+    background-color: rgb(140, 140, 236);
+}
+.environment{
+    background-color: rgb(16, 134, 89);
+}
+.wildcard{
+    background-color: rgb(216, 38, 38);
+}
+.wildcardbody{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.title{
+    display: flex;
+
+}
+
+.card{
+    width: 6.2cm;
+    height: 8.7cm;
+    border: solid;
+}
