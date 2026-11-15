@@ -178,6 +178,9 @@ local function createSpawnSession(spawnCard, anchorPosition, anchorRotation)
     function session:tryComplete()
         if not self.failed and self.synchronousPhaseComplete and self.pendingWaits == 0 then
             self.complete = true
+            if self.onComplete then
+                pcall(self.onComplete)
+            end
             self.spawnedGUIDs = {}
             self.spawnedGUIDLookup = {}
         end
@@ -422,63 +425,229 @@ local function spawnPilotResourceTokens(session, pilot, spawnCard, tokens, hasMo
     end
 end
 
--- X-Wing United : les améliorations n'ont pas de carte, leurs charges sont
--- posées en rangées devant le vaisseau (une rangée par amélioration).
-local function spawnPilotExtraCharges(session, pilot, spawnCard, tokens)
-    local row = 0
-    for _, extra in ipairs(pilot.ExtraCharges or {}) do
-        for chargeIndex = 1, extra.count do
-            local token = cloneSpawnerToken(
-                session,
-                tokens.Charge,
-                LocalPos(spawnCard, { 0.9 - 0.7 * (chargeIndex - 1), 1, 5.0 + 0.8 * row }),
-                "charge_owner",
-                pilot.name,
-                extra.name
-            )
-            token.setScale(token.getScale() * 0.75)
-        end
-        row = row + 1
+-- X-Wing United : fiches (leader, pilotes, améliorations) qui remplacent les
+-- cartes. Chaque fiche est un bloc plat portant UnitedFicheScript ; sa taille
+-- dépend de son texte. Les jetons de charge / Force sont posés dessus.
+-- Disposition : une colonne par pilote (fiche pilote puis ses améliorations
+-- en dessous), la colonne du leader en premier, devant la place du joueur.
+-- Les positions sont calculées AVANT la création des objets : les fiches
+-- apparaissent directement à leur place, verrouillées (pas de chute).
+local UnitedFicheScript = require("Game.Component.Spawner.United.UnitedFicheScript")
+local UNITED_FICHE_GAP = 0.3        -- espace entre deux fiches
+local UNITED_FICHE_ROW_WIDTH = 36   -- largeur max d'une rangée de colonnes
+local UNITED_FICHE_THICKNESS = 0.06 -- doit correspondre à UnitedFicheScript
+local UNITED_TOKEN_SCALE = 0.75     -- taille des jetons posés sur les fiches
+local UNITED_TOKEN_STEP = 0.8       -- écart entre deux jetons
+local UNITED_TOKEN_DROP = 0.25      -- hauteur de laquelle les jetons sont lâchés
+
+local function collectUnitedLeader(leader, fiches)
+    if leader ~= nil and leader.fiche ~= nil then
+        table.insert(fiches, { fiche = leader.fiche, column = 1 })
     end
 end
 
--- X-Wing United : le leader est matérialisé par une note posée sur la table
--- (nom, factions, logistique, capacité) et ses éventuelles charges.
-local function spawnUnitedLeader(session, leader, spawnCard, tokens)
-    if leader == nil then
+local function collectUnitedPilotFiches(pilot, fiches)
+    if pilot.UnitedFiche == nil then
         return
     end
-    local fr = leader.lang ~= "ENG"
-    local lines = {}
-    if #leader.factions > 0 then
-        table.insert(lines, (fr and "Factions : " or "Factions: ") .. table.concat(leader.factions, ", "))
+    local column = 1
+    for _, entry in ipairs(fiches) do
+        column = math.max(column, entry.column + 1)
     end
-    table.insert(lines, (fr and "Logistique : " or "Logistic: ") .. tostring(leader.logistic))
-    if leader.charge > 0 then
-        table.insert(lines, (fr and "Charges : " or "Charges: ") .. tostring(leader.charge) ..
-            (leader.recurring and (fr and " (récurrentes)" or " (recurring)") or ""))
+    table.insert(fiches, { fiche = pilot.UnitedFiche, column = column })
+    for _, fiche in ipairs(pilot.UnitedUpgradeFiches or {}) do
+        table.insert(fiches, { fiche = fiche, column = column })
     end
-    if leader.ability ~= "" then
-        table.insert(lines, "")
-        table.insert(lines, leader.ability)
+end
+
+-- Hauteur de la surface (table, tapis...) sous un point
+local function unitedSurfaceY(x, z, fallback)
+    local ok, hits = pcall(Physics.cast, {
+        origin = { x, 30, z },
+        direction = { 0, -1, 0 },
+        type = 1,
+        max_distance = 60,
+    })
+    if not ok or hits == nil then
+        return fallback
+    end
+    local best = nil
+    for _, hit in ipairs(hits) do
+        local object = hit.hit_object
+        local ignored = object ~= nil and (object.type == "Scripting" or object.type == "Hand"
+            or object.type == "Fog" or object.type == "Layout" or object.type == "Randomize")
+        if not ignored and hit.point ~= nil and (best == nil or hit.distance < best.distance) then
+            best = hit
+        end
+    end
+    return best and best.point.y or fallback
+end
+
+-- Calcule centre, taille et position des jetons de chaque fiche
+local function computeUnitedLayout(fiches, anchor)
+    local right = Vector(anchor.right[1], anchor.right[2], anchor.right[3]):normalized()
+    local forward = Vector(anchor.forward[1], anchor.forward[2], anchor.forward[3]):normalized()
+    local origin = Vector(anchor.position[1], 0, anchor.position[3])
+
+    local columns, order = {}, {}
+    for _, entry in ipairs(fiches) do
+        entry.width = entry.fiche.widthPx * entry.fiche.k
+        entry.depth = entry.fiche.heightPx * entry.fiche.k
+        local column = columns[entry.column]
+        if column == nil then
+            column = { entries = {}, width = 0, depth = 0 }
+            columns[entry.column] = column
+            table.insert(order, column)
+        end
+        table.insert(column.entries, entry)
+        column.width = math.max(column.width, entry.width)
+        column.depth = column.depth + entry.depth + ((#column.entries > 1) and UNITED_FICHE_GAP or 0)
     end
 
-    local position = LocalPos(spawnCard, { -1.5, 1, 4 })
-    local note = session:track(spawnObject({
-        type = "Notecard",
-        position = position,
-        rotation = spawnCard.getRotation(),
-        sound = false,
-    }))
-    note.setName("Leader : " .. leader.name)
-    note.setDescription(table.concat(lines, "\n"))
-    note.addTag("UnitedLeader")
-
-    for chargeIndex = 1, leader.charge do
-        cloneSpawnerToken(session, tokens.Charge, LocalPos(spawnCard, { -0.2 - 0.9 * (chargeIndex - 1), 1, 1.2 }),
-            "charge_owner", leader.name, leader.name)
+    -- Rangées : la première a son bord haut sur la ligne d'ancrage, les
+    -- suivantes sont placées au-dessus (vers le centre de la table)
+    local rows, current = {}, { columns = {}, width = 0, depth = 0 }
+    for _, column in ipairs(order) do
+        local needed = (#current.columns > 0) and (current.width + UNITED_FICHE_GAP + column.width) or column.width
+        if #current.columns > 0 and needed > UNITED_FICHE_ROW_WIDTH then
+            table.insert(rows, current)
+            current = { columns = {}, width = 0, depth = 0 }
+            needed = column.width
+        end
+        table.insert(current.columns, column)
+        current.width = needed
+        current.depth = math.max(current.depth, column.depth)
     end
-    spawnCard.setPosition(LocalPos(spawnCard, { -4.5, 0, 0 }))
+    table.insert(rows, current)
+
+    local rowTop = 0
+    for rowIndex, row in ipairs(rows) do
+        if rowIndex > 1 then
+            rowTop = rowTop + row.depth + UNITED_FICHE_GAP
+        end
+        local left = -row.width / 2
+        for _, column in ipairs(row.columns) do
+            local x = left + column.width / 2
+            local top = rowTop
+            for _, entry in ipairs(column.entries) do
+                local center = origin + right * x + forward * (top - entry.depth / 2)
+                local surface = unitedSurfaceY(center.x, center.z, anchor.surfaceY or 1)
+                entry.surface = surface
+                entry.position = Vector(center.x, surface + UNITED_FICHE_THICKNESS / 2, center.z)
+                entry.tokenPositions = {}
+                local count = (entry.fiche.charge or 0) + (entry.fiche.force or 0)
+                for index = 1, count do
+                    local tokenX, tokenY
+                    if entry.fiche.tokenRow then
+                        -- rangée en bas de la fiche, de gauche à droite
+                        tokenX = x - entry.width / 2 + 0.5 + (index - 1) * UNITED_TOKEN_STEP
+                        tokenY = top - entry.depth + 0.55
+                    else
+                        -- côté droit de la fiche, de droite à gauche
+                        tokenX = x + entry.width / 2 - 0.5 - (index - 1) * UNITED_TOKEN_STEP
+                        tokenY = top - entry.depth / 2
+                    end
+                    local p = origin + right * tokenX + forward * tokenY
+                    table.insert(entry.tokenPositions, Vector(p.x, surface, p.z))
+                end
+                top = top - entry.depth - UNITED_FICHE_GAP
+            end
+            left = left + column.width + UNITED_FICHE_GAP
+        end
+    end
+end
+
+-- Crée les fiches à leur place, puis les jetons au-dessus, puis :
+--   1) dimensionne chaque fiche (setFiche) une fois son script chargé,
+--   2) pose les jetons juste au-dessus de leur fiche et les libère.
+local function spawnUnitedFiches(session, fiches, anchor, spawnCard, tokens)
+    if #fiches == 0 then
+        return
+    end
+    if anchor == nil then
+        -- Spectateur : fiches devant le DataPad
+        local origin = LocalPos(spawnCard, { 0, 0, -4 })
+        local r = spawnCard.getTransformRight()
+        local f = spawnCard.getTransformForward()
+        anchor = {
+            position = origin,
+            rotation = spawnCard.getRotation(),
+            right = { r.x, 0, r.z },
+            forward = { -f.x, 0, -f.z },
+        }
+    end
+    computeUnitedLayout(fiches, anchor)
+
+    local allTokens = {}
+    for _, entry in ipairs(fiches) do
+        local object = session:track(spawnObject({
+            type = "BlockSquare",
+            position = entry.position,
+            rotation = anchor.rotation,
+            scale = { 1, 1, 1 },
+            sound = false,
+        }))
+        object.setLock(true)
+        object.setColorTint({ 0.06, 0.08, 0.09 })
+        object.setName(entry.fiche.title or "")
+        object.setLuaScript(UnitedFicheScript)
+        object.addTag("UnitedFiche")
+        entry.object = object
+
+        entry.tokens = {}
+        local templates = {}
+        for _ = 1, entry.fiche.charge or 0 do
+            table.insert(templates, { tokens.Charge, "charge_owner" })
+        end
+        for _ = 1, entry.fiche.force or 0 do
+            table.insert(templates, { tokens.Force, "force_owner" })
+        end
+        for index, template in ipairs(templates) do
+            local p = entry.tokenPositions[index]
+            -- Créé en hauteur et immobilisé tant que la fiche n'a pas sa taille
+            local token = cloneSpawnerToken(session, template[1], { p.x, p.y + 3, p.z }, template[2],
+                entry.fiche.owner, entry.fiche.title)
+            token.setLock(true)
+            token.setRotation(anchor.rotation)
+            token.setScale(token.getScale() * UNITED_TOKEN_SCALE)
+            table.insert(entry.tokens, { object = token, position = p })
+            table.insert(allTokens, token)
+        end
+    end
+
+    local function dropTokens()
+        for _, entry in ipairs(fiches) do
+            for _, token in ipairs(entry.tokens) do
+                local p = token.position
+                token.object.setPositionSmooth({ p.x, entry.surface + UNITED_FICHE_THICKNESS + UNITED_TOKEN_DROP, p.z },
+                    false, true)
+                token.object.setLock(false)
+            end
+        end
+    end
+
+    local function sizeFiches()
+        for _, entry in ipairs(fiches) do
+            entry.object.call("setFiche", entry.fiche)
+        end
+        session:waitFrames(dropTokens, 10)
+    end
+
+    session:waitCondition(function()
+        session:waitFrames(sizeFiches, 10)
+    end, function()
+        for _, entry in ipairs(fiches) do
+            if entry.object.spawning then
+                return false
+            end
+        end
+        for _, token in ipairs(allTokens) do
+            if token.spawning then
+                return false
+            end
+        end
+        return true
+    end)
 end
 
 local function cloneSpawnerAccessory(session, accessoryContext, accessory, position, rotation)
@@ -1038,7 +1207,7 @@ local function spawnPilotBundle(context, pilot, upgradeResult)
     spawnPilotAccessories(session, pilot, spawnCard, accessoryContext, faction, shipBundleResult.shipRotation,
         shipBundleResult.shipPosition)
     spawnPilotResourceTokens(session, pilot, spawnCard, tokens, hasMob)
-    spawnPilotExtraCharges(session, pilot, spawnCard, tokens)
+    collectUnitedPilotFiches(pilot, context.unitedFiches)
 end
 
 local function isExtendedWidthUpgrade(upgrade)
@@ -1256,6 +1425,17 @@ local function spawnSquad(request, pilotCardScript)
     local storePos = request.anchorPosition
     local storeRot = request.anchorRotation
     local session = createSpawnSession(spawnCard, storePos, storeRot)
+    if listTable.United then
+        local function now()
+            local ok, t = pcall(function() return Time.time end)
+            return (ok and type(t) == "number") and t or os.time()
+        end
+        local spawnStart = now()
+        session.onComplete = function()
+            print(string.format("X-Wing United : escadron posé en %.1f s (objets, modèles 3D, jetons)",
+                now() - spawnStart))
+        end
+    end
     local accessoryContext = { tokens = {} }
 
     local spawnSuccess, spawnError = pcall(function()
@@ -1272,7 +1452,8 @@ local function spawnSquad(request, pilotCardScript)
         local CONFIG_CARD_ANCHOR_X = 1.42
         local CONFIG_CARD_SHIFT_X = -1.9
 
-        spawnUnitedLeader(session, listTable.Leader, spawnCard, tokens)
+        local unitedFiches = {}
+        collectUnitedLeader(listTable.Leader, unitedFiches)
 
         local shipIndex = 1 --Sets index of ship being spawned
 
@@ -1307,6 +1488,7 @@ local function spawnSquad(request, pilotCardScript)
                 spawnPrefix = spawnPrefix,
                 factionnames = factionnames,
                 tokens = tokens,
+                unitedFiches = unitedFiches,
             }, pilot, upgradeResult)
 
 
@@ -1315,6 +1497,8 @@ local function spawnSquad(request, pilotCardScript)
         end
 
         spawnCard.setPosition(LocalPos(spawnCard, { 0, 0, 5.5 }))
+
+        spawnUnitedFiches(session, unitedFiches, listTable.NotesAnchor, spawnCard, tokens)
 
         spawnSpawnerRemotes(session, listTable.Remotes, spawnCard, accessoryContext)
 

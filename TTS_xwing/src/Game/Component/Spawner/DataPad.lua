@@ -438,7 +438,7 @@ function unitedStart()
     self.createButton({ click_function = 'DummyFFG', function_owner = self, label = "Coller le code d'escadron", position = { 0, 0.45, -0.3 }, width = 1800, height = 520, font_size = 200, scale = { 0.25, 0.25, 0.25 } })
     self.createInput({ input_function = 'unitedAction', function_owner = self, value = unitedCode or "", label = "ex. 1,155u200u12,4u0,FRA", position = { 0, 0.45, 0.15 }, width = 1700, height = 300, font_size = 120, scale = { 0.25, 0.25, 0.25 } })
     self.createButton({ click_function = 'unitedClick', function_owner = self, label = 'Spawn', position = { -0.3, 0.45, 0.55 }, width = 1800, height = 520, font_size = 240, scale = { 0.15, 0.15, 0.15 } })
-    self.createButton({ click_function = 'unitedReload', function_owner = self, label = 'Recharger données', position = { 0.3, 0.45, 0.55 }, width = 1800, height = 520, font_size = 200, scale = { 0.15, 0.15, 0.15 }, tooltip = "Retélécharger les JSON depuis GitHub (après une mise à jour du builder)" })
+    self.createButton({ click_function = 'unitedReload', function_owner = self, label = 'MAJ GitHub', position = { 0.3, 0.45, 0.55 }, width = 1800, height = 520, font_size = 200, scale = { 0.15, 0.15, 0.15 }, tooltip = "Retélécharger les données depuis GitHub sans reconstruire le mod (lent : ~2 min). Normalement, relancer plutôt tools/build_save.py." })
     self.createButton({ click_function = 'initiate', function_owner = self, label = 'Back', position = { -0.5, 0.45, 0.8 }, width = 1000, height = 300, font_size = 150, scale = { 0.21, 0.21, 0.21 } })
 end
 
@@ -459,7 +459,7 @@ function unitedClick(obj, playerColor, alt_click)
 end
 
 function unitedReload(obj, playerColor, alt_click)
-    printToAll("X-Wing United : rechargement des données…", { 0.85, 0.65, 0.1 })
+    printToAll("X-Wing United : téléchargement depuis GitHub… (environ 2 minutes, TTS peut sembler figé)", { 0.85, 0.65, 0.1 })
     UnitedData.load(function(data, err)
         if err then
             printToAll("X-Wing United : " .. err, { 1, 0.2, 0.2 })
@@ -467,6 +467,29 @@ function unitedReload(obj, playerColor, alt_click)
             printToAll("X-Wing United : données à jour.", { 0.85, 0.65, 0.1 })
         end
     end, true)
+end
+
+-- Emplacement des notes (leader + pilotes) : devant la place du joueur,
+-- d'après la zone de main de sa couleur. Ajuster UNITED_NOTES_DISTANCE si les
+-- notes sont trop près ou trop loin du bord de table.
+UNITED_NOTES_DISTANCE = 17 -- bord haut des fiches, depuis la place du joueur
+
+function unitedNotesAnchor(playerColor)
+    local player = Player[playerColor]
+    if player == nil or playerColor == "Grey" or playerColor == "Black" then
+        return nil
+    end
+    local ok, hand = pcall(function() return player.getHandTransform() end)
+    if not ok or hand == nil or hand.position == nil then
+        return nil
+    end
+    local position = hand.position + hand.forward * UNITED_NOTES_DISTANCE
+    return {
+        position = { position.x, 1.5, position.z },
+        rotation = { 0, hand.rotation.y, 0 },
+        right = { hand.right.x, 0, hand.right.z },
+        forward = { hand.forward.x, 0, hand.forward.z },
+    }
 end
 
 function unitedSpawn(playerColor)
@@ -488,7 +511,9 @@ function unitedSpawn(playerColor)
             printToAll("X-Wing United : " .. err, { 1, 0.2, 0.2 })
             return
         end
+        local buildStart = UnitedData.cpu()
         local fList, buildErr, warnings = UnitedSquad.build(code, data, masterShipDB)
+        print(string.format("X-Wing United : liste construite en %.2f s", UnitedData.cpu() - buildStart))
         if fList == nil then
             broadcastToColor("Code d'escadron invalide : " .. tostring(buildErr), playerColor, { 1, 0.2, 0.2 })
             return
@@ -497,6 +522,7 @@ function unitedSpawn(playerColor)
             print("X-Wing United : " .. warning)
         end
         fList.spawnCard = self
+        fList.NotesAnchor = unitedNotesAnchor(playerColor)
         spawnNow(fList)
 
         local player = Player[playerColor]

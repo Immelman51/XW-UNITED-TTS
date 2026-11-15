@@ -1,16 +1,37 @@
--- X-Wing United : chargement des données du squad builder depuis GitHub.
+-- X-Wing United : chargement des données du squad builder.
 --
--- Les fichiers JSON sont téléchargés une seule fois par session (WebRequest),
--- puis indexés par identifiant. Les données ne sont jamais modifiées ni
--- renvoyées vers le dépôt.
+-- Par défaut, les données viennent du module UnitedDataEmbedded, généré par
+-- tools/build_save.py à partir des JSON du dépôt : rien à télécharger ni à
+-- décoder dans TTS. Le bouton « MAJ GitHub » du DataPad permet malgré tout de
+-- les retélécharger en jeu (lent : le décodage JSON de TTS prend ~2 min).
+-- Les données ne sont jamais modifiées ni renvoyées vers le dépôt.
 
 local UnitedMapping = require("Game.Component.Spawner.United.UnitedMapping")
+local UnitedDataEmbedded = require("Game.Component.Spawner.United.UnitedDataEmbedded")
 
 local UnitedData = {}
 
 local cache = nil        -- données indexées une fois le chargement terminé
 local loading = false
 local waiting = {}       -- callbacks en attente pendant le téléchargement
+
+-- Horloge (secondes) pour mesurer les temps de chargement
+function UnitedData.now()
+    local ok, t = pcall(function() return Time.time end)
+    if ok and type(t) == "number" then
+        return t
+    end
+    return os.time()
+end
+
+-- Temps processeur (mesure les traitements faits dans une seule frame)
+function UnitedData.cpu()
+    local ok, t = pcall(os.clock)
+    if ok and type(t) == "number" then
+        return t
+    end
+    return 0
+end
 
 local function normalizeName(name)
     return string.lower(tostring(name or "")):gsub("[^%w]", "")
@@ -72,6 +93,14 @@ function UnitedData.load(callback, forceReload)
         callback(cache, nil)
         return
     end
+    if not forceReload and UnitedDataEmbedded ~= nil then
+        local start = UnitedData.cpu()
+        cache = UnitedData.index(UnitedDataEmbedded)
+        print(string.format("X-Wing United : données intégrées (générées le %s) prêtes en %.2f s",
+            tostring(UnitedDataEmbedded.generated), UnitedData.cpu() - start))
+        callback(cache, nil)
+        return
+    end
     table.insert(waiting, callback)
     if loading then
         return
@@ -81,6 +110,8 @@ function UnitedData.load(callback, forceReload)
     local raw = {}
     local remaining = #UnitedMapping.DATA_FILES
     local failed = nil
+    local startTime = UnitedData.now()
+    local decodeTime = 0
 
     for _, name in ipairs(UnitedMapping.DATA_FILES) do
         local url = UnitedMapping.DATA_BASE_URL .. name .. ".json"
@@ -88,7 +119,9 @@ function UnitedData.load(callback, forceReload)
             if request.is_error then
                 failed = failed or ("téléchargement impossible de " .. name .. ".json : " .. tostring(request.error))
             elseif request.is_done then
+                local decodeStart = UnitedData.cpu()
                 local ok, decoded = pcall(JSON.decode, request.text)
+                decodeTime = decodeTime + (UnitedData.cpu() - decodeStart)
                 if ok and type(decoded) == "table" then
                     raw[name] = decoded
                 else
@@ -103,6 +136,8 @@ function UnitedData.load(callback, forceReload)
                     finish(failed)
                 else
                     cache = UnitedData.index(raw)
+                    print(string.format("X-Wing United : données chargées en %.1f s (dont décodage JSON %.1f s)",
+                        UnitedData.now() - startTime, decodeTime))
                     finish(nil)
                 end
             end

@@ -510,10 +510,26 @@ local unitedInfoHalfWidth = { small = 100, medium = 150, large = 200, huge = 260
 local UNITED_INFO_WIDTH = 440
 local UNITED_INFO_CHARS_PER_LINE = 58
 local UNITED_INFO_LINE_HEIGHT = 17
+local UNITED_INFO_SCALE = 3 -- agrandissement du panneau (1 = taille d'origine)
 
-local function utf8Length(text)
-    local _, count = string.gsub(text, "[^\128-\191]", "")
-    return count
+-- Longueur visible d'une ligne (balises <b>, <i>... exclues).
+-- Pas de motifs Lua ici : MoonSharp (le Lua de TTS) lève « pattern too
+-- complex » sur les textes longs.
+local function visibleLength(line)
+    local length, pos = 0, 1
+    while pos <= #line do
+        local open = string.find(line, "<", pos, true)
+        if open == nil then
+            return length + (#line - pos + 1)
+        end
+        length = length + (open - pos)
+        local close = string.find(line, ">", open, true)
+        if close == nil then
+            return length + (#line - open + 1)
+        end
+        pos = close + 1
+    end
+    return length
 end
 
 function setupUnitedInfo()
@@ -523,17 +539,21 @@ function setupUnitedInfo()
     end
     local text = data.United.text
     local lines = 0
-    for line in (text .. "\n"):gmatch("(.-)\n") do
-        local visible = line:gsub("<[^>]+>", "")
-        lines = lines + math.max(1, math.ceil(utf8Length(visible) / UNITED_INFO_CHARS_PER_LINE))
+    local pos = 1
+    while pos <= #text + 1 do
+        local stop = string.find(text, "\n", pos, true) or (#text + 1)
+        local line = string.sub(text, pos, stop - 1)
+        lines = lines + math.max(1, math.ceil(visibleLength(line) / UNITED_INFO_CHARS_PER_LINE))
+        pos = stop + 1
     end
     local height = lines * UNITED_INFO_LINE_HEIGHT + 30
     local size = data.Size or "small"
-    local x = (unitedInfoHalfWidth[size] or 100) + UNITED_INFO_WIDTH / 2 + 20
+    local x = (unitedInfoHalfWidth[size] or 100) + UNITED_INFO_SCALE * UNITED_INFO_WIDTH / 2 + 20
     self.UI.setValue("UnitedInfoText", text)
     self.UI.setAttribute("UnitedInfoText", "height", tostring(height - 20))
     self.UI.setAttribute("UnitedInfo", "height", tostring(height))
     self.UI.setAttribute("UnitedInfo", "position", tostring(x) .. " 0 -15")
+    self.UI.setAttribute("UnitedInfo", "scale", UNITED_INFO_SCALE .. " " .. UNITED_INFO_SCALE .. " 1")
     self.UI.setAttribute("UnitedInfo", "active", unitedInfoVisible and "true" or "false")
 end
 

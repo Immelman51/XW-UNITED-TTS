@@ -338,6 +338,120 @@ local function chassisLines(data, ship, lang)
     return lines
 end
 
+-- Fiches posées devant le joueur (voir UnitedFicheScript.lua).
+-- widthPx/fontSize/lineHeight : mise en page en pixels d'UI
+-- charsPerLine : estimation du nombre de caractères par ligne (hauteur)
+-- k : unités de table par pixel (0.013 => fiche de ~5,5 unités de large)
+-- flip : true si le texte apparaît à l'envers pour le joueur
+UnitedSquad.FICHE = {
+    widthPx = 420,
+    fontSize = 16,
+    lineHeight = 21,
+    charsPerLine = 50,
+    k = 0.013,
+    flip = true,
+    titleSize = 26,      -- taille de police du titre (valeur de pilotage + nom)
+    tokenRowPx = 80,     -- hauteur réservée aux jetons posés sur la fiche
+}
+
+-- Longueur visible (balises exclues), sans motifs Lua (limite de MoonSharp)
+local function visibleLength(line)
+    local length, pos = 0, 1
+    while pos <= #line do
+        local open = string.find(line, "<", pos, true)
+        if open == nil then
+            return length + (#line - pos + 1)
+        end
+        length = length + (open - pos)
+        local close = string.find(line, ">", open, true)
+        if close == nil then
+            return length + (#line - open + 1)
+        end
+        pos = close + 1
+    end
+    return length
+end
+
+function UnitedSquad.lineCount(text, charsPerLine)
+    local lines, pos = 0, 1
+    while pos <= #text + 1 do
+        local stop = string.find(text, "\n", pos, true) or (#text + 1)
+        local line = string.sub(text, pos, stop - 1)
+        lines = lines + math.max(1, math.ceil(visibleLength(line) / charsPerLine))
+        pos = stop + 1
+    end
+    return lines
+end
+
+-- Titre en gros caractères (première ligne de la fiche)
+function UnitedSquad.ficheTitle(text)
+    return "<size=" .. UnitedSquad.FICHE.titleSize .. "><b>" .. text .. "</b></size>"
+end
+
+-- opts : description (infobulle), charge, force (jetons posés sur la fiche),
+--        owner (nom du vaisseau propriétaire des jetons)
+function UnitedSquad.fiche(title, text, opts)
+    local f = UnitedSquad.FICHE
+    opts = opts or {}
+    local charge = opts.charge or 0
+    local force = opts.force or 0
+    local height = UnitedSquad.lineCount(text, f.charsPerLine) * f.lineHeight + 30
+    if string.find(text, "<size=", 1, true) == 1 then
+        height = height + (f.titleSize - f.fontSize) * 1.4
+    end
+    -- Rangée de jetons en bas des fiches pilote / leader uniquement ; sur les
+    -- améliorations, les jetons se placent à droite sans agrandir la fiche
+    if opts.tokenRow and charge + force > 0 then
+        height = height + f.tokenRowPx
+    end
+    return {
+        title = title,
+        text = text,
+        description = opts.description or "",
+        widthPx = f.widthPx,
+        heightPx = math.floor(height),
+        fontSize = f.fontSize,
+        k = f.k,
+        flip = f.flip,
+        charge = charge,
+        force = force,
+        owner = opts.owner or title,
+        tokenRow = opts.tokenRow and true or false,
+    }
+end
+
+-- Fiche du pilote : valeur de pilotage + nom en titre, sans améliorations
+-- (elles ont chacune leur fiche, placée en dessous).
+local function buildPilotFicheText(info, lang)
+    local fr = lang ~= "ENG"
+    local out = {}
+    table.insert(out, UnitedSquad.ficheTitle(tostring(info.skill) .. "  " .. info.pilotName))
+    table.insert(out, info.shipName .. "  ·  " .. tostring(info.points) .. " pts")
+    local stats = {}
+    if info.attackText ~= "" then
+        table.insert(stats, (fr and "Att " or "Atk ") .. info.attackText)
+    end
+    table.insert(stats, "Agi " .. tostring(info.agility))
+    table.insert(stats, (fr and "Coque " or "Hull ") .. tostring(info.hull))
+    table.insert(stats, (fr and "Boucl. " or "Shld ") .. tostring(info.shields))
+    if info.ownForce > 0 then
+        table.insert(stats, "Force " .. tostring(info.ownForce))
+    end
+    if info.charge ~= "" then
+        table.insert(stats, info.charge)
+    end
+    table.insert(out, table.concat(stats, "  ·  "))
+    if info.ability ~= "" then
+        table.insert(out, "")
+        table.insert(out, info.ability)
+    end
+    for _, line in ipairs(info.chassis) do
+        table.insert(out, "")
+        table.insert(out, "<i>" .. line .. "</i>")
+    end
+    return table.concat(out, "\n")
+end
+
 -- Texte affiché dans le panneau d'information du vaisseau
 local function buildInfoText(info, lang)
     local fr = lang ~= "ENG"
@@ -487,7 +601,7 @@ function UnitedSquad.build(code, data, shipDb)
 
         -- Améliorations : pas de cartes, mais charges, Force et actions
         local upgradeInfos = {}
-        local extraCharges = {}
+        local upgradeFiches = {}
         local points = tonumber(pilot.points) or 0
         for _, upgradeId in ipairs(item.entry.upgrades) do
             local upgrade = data.upgrades[upgradeId]
@@ -496,17 +610,23 @@ function UnitedSquad.build(code, data, shipDb)
             else
                 local name = localized(upgrade, "name", lang)
                 local count, recurring = chargeValue(upgrade.charge)
-                if count > 0 then
-                    table.insert(extraCharges, { name = name, count = count })
-                end
-                force = force + (tonumber(upgrade.force) or 0)
+                local upgradeForce = tonumber(upgrade.force) or 0
+                force = force + upgradeForce
                 upgradeAddedActions(upgrade, actions)
-                table.insert(upgradeInfos, {
+                local upgradeInfo = {
                     name = name,
                     slot = tostring(upgrade.slot or ""),
                     charge = chargeLabel(count, recurring, lang),
                     effect = UnitedSquad.cleanText(localized(upgrade, "effect", lang), lang),
-                })
+                }
+                table.insert(upgradeInfos, upgradeInfo)
+                table.insert(upgradeFiches, UnitedSquad.fiche(name,
+                    "<b>" .. name .. "</b>\n<i>" .. upgradeInfo.slot .. "</i>", {
+                        description = upgradeInfo.effect,
+                        charge = count,
+                        force = upgradeForce,
+                        owner = pilotName,
+                    }))
             end
         end
 
@@ -520,6 +640,7 @@ function UnitedSquad.build(code, data, shipDb)
             hull = tonumber(ship.hull) or 0,
             shields = tonumber(ship.shields) or 0,
             force = force,
+            ownForce = tonumber(pilot.force) or 0,
             charge = chargeLabel(pilotCharge, pilotRecurring, lang),
             ability = UnitedSquad.cleanText(localized(pilot, "ability", lang), lang),
             chassis = chassisLines(data, ship, lang),
@@ -527,10 +648,6 @@ function UnitedSquad.build(code, data, shipDb)
         }
 
         local textures = model and model.textures or nil
-        local maxCharges = pilotCharge
-        for _, extra in ipairs(extraCharges) do
-            maxCharges = math.max(maxCharges, extra.count)
-        end
 
         local spawnPilot = {
             id = "united-" .. tostring(pilot.id),
@@ -546,11 +663,19 @@ function UnitedSquad.build(code, data, shipDb)
             list = "",
             bombD = "s1",
             Docking = model and model.docking or nil,
-            Charge = pilotCharge,
-            Force = force,
+            -- Charges et Force sont posées sur les fiches, pas près du vaisseau
+            Charge = 0,
+            Force = 0,
             Energy = 0,
-            ExtraCharges = extraCharges,
-            SpawnSpacing = math.max(SHIP_SPACING[size] or 4, 1.5 + 0.9 * math.max(maxCharges, 3)),
+            SpawnSpacing = SHIP_SPACING[size] or 4,
+            UnitedFiche = UnitedSquad.fiche(pilotName, buildPilotFicheText(info, lang), {
+                description = ship.name,
+                tokenRow = true,
+                charge = pilotCharge,
+                force = tonumber(pilot.force) or 0,
+                owner = pilotName,
+            }),
+            UnitedUpgradeFiches = upgradeFiches,
             dialSkin = DIAL_SKIN_BASE .. (DIAL_SKINS[skin] or DIAL_SKINS.scumandvillainy),
             Data = {
                 name = pilotName,
@@ -597,14 +722,32 @@ function UnitedSquad.build(code, data, shipDb)
             table.insert(factions, (faction:gsub("_", " ")))
         end
     end
+    local fr = lang ~= "ENG"
+    local leaderName = localized(leader, "leadername", lang)
+    local leaderAbility = UnitedSquad.cleanText(localized(leader, "leaderability", lang), lang)
+    local leaderLines = { UnitedSquad.ficheTitle("Leader : " .. leaderName) }
+    if #factions > 0 then
+        table.insert(leaderLines, (fr and "Factions : " or "Factions: ") .. table.concat(factions, ", "))
+    end
+    table.insert(leaderLines, (fr and "Logistique : " or "Logistic: ") .. tostring(tonumber(leader.logistic) or 0)
+        .. "  ·  " .. (fr and "Total escadron : " or "Squad total: ") .. tostring(fList.listCost) .. " pts")
+    if leaderCharge > 0 then
+        table.insert(leaderLines, chargeLabel(leaderCharge, leaderRecurring, lang))
+    end
+    if leaderAbility ~= "" then
+        table.insert(leaderLines, "")
+        table.insert(leaderLines, leaderAbility)
+    end
     fList.Leader = {
-        name = localized(leader, "leadername", lang),
-        ability = UnitedSquad.cleanText(localized(leader, "leaderability", lang), lang),
-        factions = factions,
-        logistic = tonumber(leader.logistic) or 0,
+        name = leaderName,
         charge = leaderCharge,
-        recurring = leaderRecurring,
         lang = lang,
+        fiche = UnitedSquad.fiche("Leader : " .. leaderName, table.concat(leaderLines, "\n"), {
+            description = leaderAbility,
+            tokenRow = true,
+            charge = leaderCharge,
+            owner = leaderName,
+        }),
     }
 
     return fList, nil, warnings
