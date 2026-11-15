@@ -1,0 +1,95 @@
+masterUpgradesDB = {}
+
+masterUpgradesDB['outrider2023'] = {
+    name = 'Outrider (2023)',
+    slot = 'Title',
+    restriction = { ship = { ['yt2400lightfreighter2023'] = true } }
+}
+
+masterUpgradesDB['tiedefenderelite'] = {
+    name = "TIE Defender Elite",
+    slot = 'Configuration',
+    restriction = {
+        faction = { ['galacticempire'] = true },
+        ship = { ['tiededefender'] = true }
+    }
+}
+
+-- RSL Salvage pack
+
+masterUpgradesDB['leebo-rsl'] = {
+    name = 'Leebo',
+    slot = 'Crew',
+    limited = 1,
+    restriction = {
+        faction = { ['scumandvillainy'] = true, ['rebelalliance'] = true }
+    }
+}
+
+masterUpgradesDB['roilinganger-rsl'] = {
+    name = 'Roiling Anger',
+    slot = 'Force Power',
+    restriction = {
+        keywords = { 'Dark Side' }
+    }
+}
+
+masterUpgradesDB['chaffparticles-rsl'] = {
+    name = 'Chaff Particles',
+    slot = 'Illicit',
+    charge = 1,
+    restriction = { size = { small = true } }
+}
+
+masterUpgradesDB['fuelinjectionoverride-rsl'] = {
+    name = 'Fuel Injection Override',
+    slot = 'Illicit',
+    charge = 1,
+}
+
+masterUpgradesDB['seekermissiles-rsl'] = {
+    name = 'Seeker Missiles',
+    slot = 'Missile',
+    limited = 2,
+    charge = 2
+}
+
+masterUpgradesDB['contingencyprotocol-rsl'] = {
+    name = 'Contingency Protocol',
+    slot = 'Modification',
+    restriction = {
+        faction = { ['separatistalliance'] = true },
+        keywords = { 'Droid' },
+        equipped = { 'Tactical Relay' }
+    }
+}
+
+masterUpgradesDB['noescape-rsl'] = {
+    name = 'No Escape',
+    slot = 'Talent',
+    restriction = {
+        faction = { ['galacticempire'] = true },
+        ship = { ['tielnfighter'] = true }
+    }
+}
+
+masterUpgradesDB['silenthunter-rsl'] = {
+    name = 'Silent Hunter',
+    slot = 'Talent',
+}
+
+masterUpgradesDB['partinggift-rsl'] = {
+    name = 'Parting Gift',
+    slot = 'Talent',
+}
+
+masterUpgradesDB['formedup-rsl'] = {
+    name = 'Formed Up',
+    slot = 'Talent',
+    limited = 3,
+    restriction = {
+        ship = { ['tielnfighter'] = true }
+    }
+}
+
+return masterUpgradesDB

@@ -1,0 +1,1141 @@
+
+masterPilotDB = {}
+
+-- Battle of Yavin
+masterPilotDB['darthvader-battleofyavin-lsl'] = {
+    name = 'Darth Vader',
+    title = 'Battle of Yavin',
+    faction = 'galacticempire',
+    ship_type = 'tieadvancedx1',
+    slots = { 'Sensor', 'Missile', 'Force Power' },
+    shield = 3,
+    initiative = 6,
+    force = 3,
+    action_set = { 'F', 'TL', 'BR' },
+    keywords = { 'Dark Side', 'Sith', 'TIE' }
+}
+
+masterPilotDB['idenversio-battleofyavin-lsl'] = {
+    name = 'Iden Versio',
+    title = 'Battle of Yavin',
+    faction = 'galacticempire',
+    ship_type = 'tieininterceptor',
+    slots = { 'Talent', 'Modification' },
+    shield = 1,
+    initiative = 4,
+    charge = 2,
+    action_set = { 'F', 'E', 'BR', 'B' },
+    keywords = { 'TIE' }
+}
+
+masterPilotDB['sigma4-battleofyavin-lsl'] = {
+    name = 'Sigma 4',
+    title = 'Battle of Yavin',
+    faction = 'galacticempire',
+    ship_type = 'tieininterceptor',
+    slots = { 'Talent', 'Modification' },
+    initiative = 4,
+    charge = 2,
+    action_set = { 'F', 'E', 'BR', 'B' },
+    keywords = { 'TIE' }
+}
+
+masterPilotDB['sigma5-battleofyavin-lsl'] = {
+    name = 'Sigma 5',
+    title = 'Battle of Yavin',
+    faction = 'galacticempire',
+    ship_type = 'tieininterceptor',
+    slots = { 'Talent', 'Modification' },
+    initiative = 4,
+    charge = 2,
+    action_set = { 'F', 'E', 'BR', 'B' },
+    keywords = { 'TIE' }
+}
+
+masterPilotDB['sigma6-battleofyavin-lsl'] = {
+    name = 'Sigma 6',
+    title = 'Battle of Yavin',
+    faction = 'galacticempire',
+    ship_type = 'tieininterceptor',
+    slots = { 'Talent', 'Modification' },
+    initiative = 4,
+    charge = 2,
+    action_set = { 'F', 'E', 'BR', 'B' },
+    keywords = { 'TIE' }
+}
+
+masterPilotDB['sigma7-battleofyavin-lsl'] = {
+    name = 'Sigma 7',
+    title = 'Battle of Yavin',
+    faction = 'galacticempire',
+    ship_type = 'tieininterceptor',
+    slots = { 'Talent' },
+    initiative = 4,
+    charge = 2,
+    action_set = { 'F', 'E', 'BR', 'B', 'TL' },
+    keywords = { 'TIE' }
+}
+
+masterPilotDB['backstabber-battleofyavin-lsl'] = {
+    name = '"Backstabber"',
+    title = 'Battle of Yavin',
+    faction = 'galacticempire',
+    ship_type = 'tielnfighter',
+    slots = { 'Talent' },
+    initiative = 5,
+    action_set = { 'F', 'E', 'BR' },
+    keywords = { 'TIE' }
+}
+
+masterPilotDB['darkcurse-battleofyavin-lsl'] = {
+    name = '"Dark Curse"',
+    title = 'Battle of Yavin',
+    faction = 'galacticempire',
+    ship_type = 'tielnfighter',
+    slots = { 'Talent' },
+    initiative = 6,
+    action_set = { 'F', 'E', 'BR' },
+    keywords = { 'TIE' }
+}
+
+masterPilotDB['maulermithel-battleofyavin-lsl'] = {
+    name = '"Mauler" Mithel',
+    title = 'Battle of Yavin',
+    faction = 'galacticempire',
+    ship_type = 'tielnfighter',
+    slots = { 'Talent' },
+    initiative = 5,
+    action_set = { 'F', 'E', 'BR' },
+    keywords = { 'TIE' }
+}
+
+masterPilotDB['wampa-battleofyavin-lsl'] = {
+    name = '"Wampa"',
+    title = 'Battle of Yavin',
+    faction = 'galacticempire',
+    ship_type = 'tielnfighter',
+    slots = {  },
+    initiative = 1,
+    charge = 1,
+    action_set = { 'F', 'E', 'BR' },
+    keywords = { 'TIE' }
+}
+
+masterPilotDB['dextiree-battleofyavin-lsl'] = {
+    name = 'Dex Tiree',
+    title = 'Battle of Yavin',
+    faction = 'rebelalliance',
+    ship_type = 'btla4ywing',
+    slots = { 'Turret', 'Torpedo', 'Astromech', 'Payload', 'Modification', 'Missile' },
+    initiative = 2,
+    action_set = { 'F', 'TL', 'BR' },
+    keywords = { 'Y-wing' }
+}
+
+masterPilotDB['dutchvander-battleofyavin-lsl'] = {
+    name = '"Dutch" Vander',
+    title = 'Battle of Yavin',
+    faction = 'rebelalliance',
+    ship_type = 'btla4ywing',
+    slots = { 'Turret', 'Torpedo', 'Astromech', 'Payload', 'Modification', 'Missile' },
+    initiative = 4,
+    action_set = { 'F', 'TL', 'BR' },
+    keywords = { 'Y-wing' }
+}
+
+masterPilotDB['holokand-battleofyavin-lsl'] = {
+    name = 'Hol Okand',
+    title = 'Battle of Yavin',
+    faction = 'rebelalliance',
+    ship_type = 'btla4ywing',
+    slots = { 'Turret', 'Torpedo', 'Astromech', 'Payload', 'Modification', 'Missile' },
+    initiative = 4,
+    action_set = { 'F', 'TL', 'BR' },
+    keywords = { 'Y-wing' }
+}
+
+masterPilotDB['popskrail-battleofyavin-lsl'] = {
+    name = '"Pops" Krail',
+    title = 'Battle of Yavin',
+    faction = 'rebelalliance',
+    ship_type = 'btla4ywing',
+    slots = { 'Turret', 'Torpedo', 'Astromech', 'Payload', 'Modification', 'Missile' },
+    initiative = 4,
+    action_set = { 'F', 'TL', 'BR' },
+    keywords = { 'Y-wing' }
+}
+
+masterPilotDB['hansolo-battleofyavin-lsl'] = {
+    name = 'Han Solo',
+    title = 'Battle of Yavin',
+    faction = 'rebelalliance',
+    ship_type = 'modifiedyt1300lightfreighter',
+    slots = { 'Talent', 'Missile', 'Crew', 'Crew', 'Modification', 'Modification', 'Title', 'Gunner' },
+    initiative = 6,
+    charge = 4,
+    action_set = { 'F', 'TL', 'B' },
+    keywords = { 'Freighter', 'YT-1300' }
+}
+
+masterPilotDB['biggsdarklighter-battleofyavin-lsl'] = {
+    name = 'Biggs Darklighter',
+    title = 'Battle of Yavin',
+    faction = 'rebelalliance',
+    ship_type = 't65xwing',
+    slots = { 'Torpedo', 'Astromech', 'Modification', 'Configuration' },
+    initiative = 3,
+    action_set = { 'F', 'TL', 'BR' },
+    keywords = { 'X-wing' }
+}
+
+masterPilotDB['garvendreis-battleofyavin-lsl'] = {
+    name = 'Garven Dreis',
+    title = 'Battle of Yavin',
+    faction = 'rebelalliance',
+    ship_type = 't65xwing',
+    slots = { 'Torpedo', 'Astromech', 'Modification', 'Configuration' },
+    initiative = 4,
+    action_set = { 'F', 'TL', 'BR' },
+    keywords = { 'X-wing' }
+}
+
+masterPilotDB['jekporkins-battleofyavin-lsl'] = {
+    name = 'Jek Porkins',
+    title = 'Battle of Yavin',
+    faction = 'rebelalliance',
+    ship_type = 't65xwing',
+    slots = { 'Torpedo', 'Astromech', 'Modification', 'Configuration' },
+    initiative = 4,
+    action_set = { 'F', 'TL', 'BR' },
+    keywords = { 'X-wing' }
+}
+
+masterPilotDB['lukeskywalker-battleofyavin-lsl'] = {
+    name = 'Luke Skywalker',
+    title = 'Battle of Yavin',
+    faction = 'rebelalliance',
+    ship_type = 't65xwing',
+    slots = { 'Force Power', 'Torpedo', 'Astromech', 'Modification', 'Configuration' },
+    initiative = 5,
+    force = 2,
+    action_set = { 'F', 'TL', 'BR' },
+    keywords = { 'X-wing' }
+}
+
+masterPilotDB['wedgeantilles-battleofyavin-lsl'] = {
+    name = 'Wedge Antilles',
+    title = 'Battle of Yavin',
+    faction = 'rebelalliance',
+    ship_type = 't65xwing',
+    slots = { 'Torpedo', 'Astromech', 'Modification', 'Configuration' },
+    initiative = 5,
+    action_set = { 'F', 'TL', 'BR' },
+    keywords = { 'X-wing' }
+}
+
+-- Battle Over Endor
+masterPilotDB['captainyorr-battleoverendor-lsl'] = {
+    name = 'Captain Yorr',
+    title = 'Battle Over Endor',
+    faction = 'galacticempire',
+    ship_type = 'tiededefender',
+    slots = { 'Talent', 'Sensor', 'Cannon', 'Missile' },
+    initiative = 4,
+    charge = 2,
+    action_set = { 'F', 'E', 'TL', 'BR', 'B' },
+}
+
+masterPilotDB['coloneljendon-battleoverendor-lsl'] = {
+    name = 'Colonel Jendon',
+    title = 'Battle Over Endor',
+    faction = 'galacticempire',
+    ship_type = 'tiededefender',
+    slots = { 'Talent', 'Sensor', 'Cannon', 'Missile' },
+    initiative = 6,
+    action_set = { 'F', 'E', 'TL', 'BR', 'B' },
+}
+
+masterPilotDB['sapphire2-battleoverendor-lsl'] = {
+    name = 'Sapphire 2',
+    title = 'Battle Over Endor',
+    faction = 'galacticempire',
+    ship_type = 'tieininterceptor',
+    slots = { 'Modification', 'Modification' },
+    initiative = 1,
+    action_set = { 'F', 'E', 'BR', 'B' },
+    keywords = { 'TIE' }
+}
+
+masterPilotDB['soontirfel-battleoverendor-lsl'] = {
+    name = 'Soontir Fel',
+    title = 'Battle Over Endor',
+    faction = 'galacticempire',
+    ship_type = 'tieininterceptor',
+    slots = { 'Talent', 'Modification', 'Modification' },
+    initiative = 6,
+    charge = 2,
+    action_set = { 'F', 'E', 'BR', 'B' },
+    keywords = { 'TIE' }
+}
+
+masterPilotDB['mausmonare-battleoverendor-lsl'] = {
+    name = 'Maus Monare',
+    title = 'Battle Over Endor',
+    faction = 'galacticempire',
+    ship_type = 'tieininterceptor',
+    slots = { 'Talent', 'Modification', 'Modification' },
+    shield = 1,
+    initiative = 3,
+    action_set = { 'F', 'E', 'BR', 'B' },
+    keywords = { 'TIE' }
+}
+
+masterPilotDB['lieutenanthebsly-battleoverendor-lsl'] = {
+    name = 'Lieutenant Hebsly',
+    title = 'Battle Over Endor',
+    faction = 'galacticempire',
+    ship_type = 'tielnfighter',
+    slots = { 'Talent' },
+    initiative = 3,
+    action_set = { 'F', 'E', 'BR', 'B' },
+    keywords = { 'TIE' }
+}
+
+masterPilotDB['scythe6-battleoverendor-lsl'] = {
+    name = 'Scythe 6',
+    title = 'Battle Over Endor',
+    faction = 'galacticempire',
+    ship_type = 'tielnfighter',
+    slots = {  },
+    initiative = 2,
+    action_set = { 'F', 'E', 'BR' },
+    keywords = { 'TIE' }
+}
+
+masterPilotDB['majormianda-battleoverendor-lsl'] = {
+    name = 'Major Mianda',
+    title = 'Battle Over Endor',
+    faction = 'galacticempire',
+    ship_type = 'tielnfighter',
+    slots = { 'Talent' },
+    shield = 1,
+    initiative = 5,
+    action_set = { 'F', 'E', 'BR' },
+    keywords = { 'TIE' }
+}
+
+masterPilotDB['scimitar1-battleoverendor-lsl'] = {
+    name = 'Scimitar 1',
+    title = 'Battle Over Endor',
+    faction = 'galacticempire',
+    ship_type = 'tiesabomber',
+    slots = { 'Talent', 'Torpedo', 'Missile', 'Missile', 'Payload', 'Payload', 'Modification', 'Gunner' },
+    initiative = 3,
+    charge = 2,
+    action_set = { 'F', 'TL', 'BR' },
+    keywords = { 'TIE' }
+}
+
+masterPilotDB['scimitar3-battleoverendor-lsl'] = {
+    name = 'Scimitar 3',
+    title = 'Battle Over Endor',
+    faction = 'galacticempire',
+    ship_type = 'tiesabomber',
+    slots = { 'Talent', 'Torpedo', 'Missile', 'Missile', 'Payload', 'Payload', 'Modification', 'Gunner' },
+    initiative = 4,
+    charge = 2,
+    action_set = { 'F', 'TL', 'BR' },
+    keywords = { 'TIE' }
+}
+
+masterPilotDB['adonfox-battleoverendor-lsl'] = {
+    name = 'Adon Fox',
+    title = 'Battle Over Endor',
+    faction = 'rebelalliance',
+    ship_type = 'asf01bwing',
+    slots = { 'Sensor', 'Cannon', 'Cannon', 'Torpedo', 'Modification', 'Title', 'Configuration' },
+    initiative = 1,
+    charge = 2,
+    action_set = { 'F', 'TL', 'BR' },
+    keywords = { 'B-wing' }
+}
+
+masterPilotDB['ginamoonsong-battleoverendor-lsl'] = {
+    name = 'Gina Moonsong',
+    title = 'Battle Over Endor',
+    faction = 'rebelalliance',
+    ship_type = 'asf01bwing',
+    slots = { 'Talent', 'Sensor', 'Cannon', 'Cannon', 'Torpedo', 'Title', 'Configuration' },
+    shield = 5,
+    initiative = 5,
+    charge = 2,
+    action_set = { 'F', 'TL', 'BR' },
+    keywords = { 'B-wing' }
+}
+
+masterPilotDB['braylenstramm-battleoverendor-lsl'] = {
+    name = 'Braylen Stramm',
+    title = 'Battle Over Endor',
+    faction = 'rebelalliance',
+    ship_type = 'asf01bwing',
+    slots = { 'Talent', 'Sensor', 'Cannon', 'Cannon', 'Torpedo', 'Title', 'Configuration' },
+    shield = 5,
+    initiative = 4,
+    charge = 2,
+    action_set = { 'F', 'TL', 'BR' },
+    keywords = { 'B-wing' }
+}
+
+masterPilotDB['landocalrissian-battleoverendor-lsl'] = {
+    name = 'Lando Calrissian',
+    title = 'Battle Over Endor',
+    faction = 'rebelalliance',
+    ship_type = 'modifiedyt1300lightfreighter',
+    slots = { 'Talent', 'Missile', 'Crew', 'Crew', 'Modification', 'Modification', 'Title', 'Gunner' },
+    initiative = 5,
+    charge = 2,
+    action_set = { 'F', 'TL', 'E', 'B', 'Rot' },
+    keywords = { 'Freighter', 'YT-1300' }
+}
+
+masterPilotDB['arvelcrynyd-battleoverendor-lsl'] = {
+    name = 'Arvel Crynyd',
+    title = 'Battle Over Endor',
+    faction = 'rebelalliance',
+    ship_type = 'rz1awing',
+    slots = { 'Talent', 'Talent', 'Missile' },
+    shield = 3,
+    initiative = 3,
+    action_set = { 'F', 'TL', 'E', 'BR', 'B' },
+    keywords = { 'A-wing' }
+}
+
+masterPilotDB['tychocelchu-battleoverendor-lsl'] = {
+    name = 'Tycho Celchu',
+    title = 'Battle Over Endor',
+    faction = 'rebelalliance',
+    ship_type = 'rz1awing',
+    slots = { 'Talent', 'Talent', 'Missile' },
+    shield = 3,
+    initiative = 5,
+    action_set = { 'F', 'TL', 'E', 'BR', 'B' },
+    keywords = { 'A-wing' }
+}
+
+masterPilotDB['gemmersojan-battleoverendor-lsl'] = {
+    name = 'Gemmer Sojan',
+    title = 'Battle Over Endor',
+    faction = 'rebelalliance',
+    ship_type = 'rz1awing',
+    slots = { 'Talent', 'Missile' },
+    shield = 2,
+    initiative = 2,
+    action_set = { 'F', 'TL', 'E', 'BR', 'B' },
+    keywords = { 'A-wing' }
+}
+
+masterPilotDB['wedgeantilles-battleoverendor-lsl'] = {
+    name = 'Wedge Antilles',
+    title = 'Battle Over Endor',
+    faction = 'rebelalliance',
+    ship_type = 't70xwing',
+    slots = { 'Talent', 'Torpedo', 'Astromech' },
+    shield = 3,
+    initiative = 6,
+    action_set = { 'F', 'TL', 'BR', 'B' },
+    keywords = { 'X-wing' }
+}
+
+masterPilotDB['yendor-battleoverendor-lsl'] = {
+    name = 'Yendor',
+    title = 'Battle Over Endor',
+    faction = 'rebelalliance',
+    ship_type = 't70xwing',
+    slots = { 'Talent', 'Torpedo', 'Astromech', 'Modification' },
+    initiative = 5,
+    action_set = { 'F', 'TL', 'BR', 'B' },
+    keywords = { 'X-wing' }
+}
+
+masterPilotDB['kendyidele-battleoverendor-lsl'] = {
+    name = 'Kendy Idele',
+    title = 'Battle Over Endor',
+    faction = 'rebelalliance',
+    ship_type = 't70xwing',
+    slots = { 'Talent', 'Torpedo', 'Astromech', 'Modification' },
+    initiative = 4,
+    action_set = { 'F', 'TL', 'BR', 'B' },
+    keywords = { 'X-wing' }
+}
+
+-- TIE/sa expansion pack
+masterPilotDB['deathfire-swz98-lsl'] = {
+    name = '"Deathfire"',
+    title = 'Obstinate Bombardier',
+    faction = 'galacticempire',
+    ship_type = 'tiesabomber',
+    slots = { 'Torpedo', 'Missile', 'Missile', 'Payload', 'Payload', 'Modification', 'Gunner' },
+    initiative = 2,
+    charge = 2,
+    action_set = { 'F', 'TL', 'BR' },
+    keywords = { 'TIE' }
+}
+
+masterPilotDB['captainjonus-swz98-lsl'] = {
+    name = 'Captain Jonus',
+    title = 'Top Cover',
+    faction = 'galacticempire',
+    ship_type = 'tiesabomber',
+    slots = { 'Talent', 'Torpedo', 'Missile', 'Missile', 'Payload', 'Payload', 'Modification', 'Gunner' },
+    initiative = 4,
+    action_set = { 'F', 'TL', 'BR' },
+    keywords = { 'TIE' }
+}
+
+masterPilotDB['tomaxbren-swz98-lsl'] = {
+    name = 'Tomax Bren',
+    title = 'Scimitar Veteran',
+    faction = 'galacticempire',
+    ship_type = 'tiesabomber',
+    slots = { 'Talent', 'Torpedo', 'Missile', 'Missile', 'Payload', 'Payload', 'Modification', 'Gunner' },
+    initiative = 5,
+    charge = 2,
+    action_set = { 'F', 'TL', 'BR' },
+    keywords = { 'TIE' }
+}
+
+masterPilotDB['majorrhymer-swz98-lsl'] = {
+    name = 'Major Rhymer',
+    title = 'Precision Destruction',
+    faction = 'galacticempire',
+    ship_type = 'tiesabomber',
+    slots = { 'Talent', 'Torpedo', 'Missile', 'Missile', 'Payload', 'Payload', 'Modification', 'Gunner' },
+    initiative = 4,
+    action_set = { 'F', 'TL', 'BR' },
+    keywords = { 'TIE' }
+}
+
+-- Siege of Coruscant
+masterPilotDB['oddball-siegeofcoruscant-lsl'] = {
+    name = '"Odd Ball"',
+    title = 'Siege of Coruscant',
+    faction = 'galacticrepublic',
+    ship_type = 'arc170starfighter',
+    slots = { 'Talent', 'Torpedo', 'Crew', 'Astromech', 'Gunner' },
+    shield = 4,
+    initiative = 5,
+    action_set = { 'F', 'TL', 'BR' },
+    keywords = { 'Clone' }
+}
+
+masterPilotDB['wolffe-siegeofcoruscant-lsl'] = {
+    name = '"Wolffe"',
+    title = 'Siege of Coruscant',
+    faction = 'galacticrepublic',
+    ship_type = 'arc170starfighter',
+    slots = { 'Talent', 'Torpedo', 'Crew', 'Astromech', 'Modification', 'Gunner' },
+    initiative = 4,
+    charge = 1,
+    action_set = { 'F', 'TL', 'BR' },
+    keywords = { 'Clone' }
+}
+
+masterPilotDB['jag-siegeofcoruscant-lsl'] = {
+    name = '"Jag"',
+    title = 'Siege of Coruscant',
+    faction = 'galacticrepublic',
+    ship_type = 'arc170starfighter',
+    slots = { 'Torpedo', 'Crew', 'Astromech', 'Modification', 'Gunner' },
+    initiative = 3,
+    action_set = { 'F', 'TL', 'BR' },
+    keywords = { 'Clone' }
+}
+
+masterPilotDB['anakinskywalker-siegeofcoruscant-lsl'] = {
+    name = 'Anakin Skywalker',
+    title = 'Siege of Coruscant',
+    faction = 'galacticrepublic',
+    ship_type = 'delta7aethersprite',
+    slots = { 'Talent', 'Force Power', 'Astromech', 'Modification' },
+    initiative = 6,
+    force = 3,
+    action_set = { 'F', 'E', 'TL', 'BR', 'B' },
+    keywords = { 'Dark Side', 'Jedi', 'Light Side' }
+}
+
+masterPilotDB['obiwankenobi-siegeofcoruscant-lsl'] = {
+    name = 'Obi-Wan Kenobi',
+    title = 'Siege of Coruscant',
+    faction = 'galacticrepublic',
+    ship_type = 'delta7aethersprite',
+    slots = { 'Talent', 'Force Power', 'Astromech', 'Modification' },
+    initiative = 5,
+    force = 3,
+    action_set = { 'F', 'E', 'TL', 'BR', 'B' },
+    keywords = { 'Jedi', 'Light Side' }
+}
+
+masterPilotDB['shaakti-siegeofcoruscant-lsl'] = {
+    name = 'Shaak Ti',
+    title = 'Siege of Coruscant',
+    faction = 'galacticrepublic',
+    ship_type = 'delta7aethersprite',
+    slots = { 'Talent', 'Force Power', 'Astromech', 'Modification' },
+    initiative = 4,
+    force = 2,
+    action_set = { 'F', 'E', 'TL', 'BR', 'B' },
+    keywords = { 'Jedi', 'Light Side' }
+}
+
+masterPilotDB['klick-siegeofcoruscant-lsl'] = {
+    name = '"Klick"',
+    title = 'Siege of Coruscant',
+    faction = 'galacticrepublic',
+    ship_type = 'nimbusclassvwing',
+    slots = { 'Talent', 'Astromech', 'Modification', 'Configuration' },
+    shield = 3,
+    initiative = 4,
+    charge = 1,
+    action_set = { 'F', 'TL', 'BR', 'B' },
+    keywords = { 'Clone', 'TIE' }
+}
+
+masterPilotDB['contrail-siegeofcoruscant-lsl'] = {
+    name = '"Contrail"',
+    title = 'Siege of Coruscant',
+    faction = 'galacticrepublic',
+    ship_type = 'nimbusclassvwing',
+    slots = { 'Talent', 'Astromech', 'Modification', 'Configuration' },
+    initiative = 5,
+    action_set = { 'F', 'TL', 'BR', 'B' },
+    keywords = { 'Clone', 'TIE' }
+}
+
+masterPilotDB['kickback-siegeofcoruscant-lsl'] = {
+    name = '"Kickback"',
+    title = 'Siege of Coruscant',
+    faction = 'galacticrepublic',
+    ship_type = 'v19torrentstarfighter',
+    slots = { 'Talent', 'Missile' },
+    initiative = 5,
+    action_set = { 'F', 'E', 'TL', 'BR' },
+    keywords = { 'Clone' }
+}
+
+masterPilotDB['axe-siegeofcoruscant-lsl'] = {
+    name = '"Axe"',
+    title = 'Siege of Coruscant',
+    faction = 'galacticrepublic',
+    ship_type = 'v19torrentstarfighter',
+    slots = { 'Talent', 'Missile' },
+    initiative = 3,
+    action_set = { 'F', 'E', 'TL', 'BR' },
+    keywords = { 'Clone' }
+}
+
+masterPilotDB['dis347-siegeofcoruscant-lsl'] = {
+    name = 'DIS-347',
+    title = 'Siege of Coruscant',
+    faction = 'separatistalliance',
+    ship_type = 'droidtrifighter',
+    slots = { 'Talent', 'Sensor', 'Missile', 'Modification', 'Configuration' },
+    initiative = 3,
+    action_set = { 'C', 'E', 'TL', 'BR', 'B' },
+    keywords = { 'Droid' }
+}
+
+masterPilotDB['dist81-siegeofcoruscant-lsl'] = {
+    name = 'DIS-T81',
+    title = 'Siege of Coruscant',
+    faction = 'separatistalliance',
+    ship_type = 'droidtrifighter',
+    slots = { 'Talent', 'Sensor', 'Missile', 'Modification', 'Configuration' },
+    initiative = 4,
+    action_set = { 'C', 'E', 'TL', 'BR', 'B' },
+    keywords = { 'Droid' }
+}
+
+masterPilotDB['phlacarphoccprototype-siegeofcoruscant-lsl'] = {
+    name = 'Phlac-Arphocc Prototype',
+    title = 'Siege of Coruscant',
+    faction = 'separatistalliance',
+    ship_type = 'droidtrifighter',
+    slots = { 'Talent', 'Sensor', 'Missile', 'Modification', 'Configuration' },
+    initiative = 5,
+    action_set = { 'C', 'E', 'TL', 'BR', 'B' },
+    keywords = { 'Droid' }
+}
+
+masterPilotDB['dbs32c-siegeofcoruscant-lsl'] = {
+    name = 'DBS-32C',
+    title = 'Siege of Coruscant',
+    faction = 'separatistalliance',
+    ship_type = 'hyenaclassdroidbomber',
+    slots = { 'Sensor', 'Relay', 'Modification', 'Configuration' },
+    initiative = 3,
+    charge = 2,
+    action_set = { 'C', 'TL', 'BR' },
+    keywords = { 'Droid' }
+}
+
+masterPilotDB['dbs404-siegeofcoruscant-lsl'] = {
+    name = 'DBS-404',
+    title = 'Siege of Coruscant',
+    faction = 'separatistalliance',
+    ship_type = 'hyenaclassdroidbomber',
+    slots = { 'Torpedo', 'Missile', 'Payload', 'Modification', 'Configuration' },
+    initiative = 4,
+    action_set = { 'C', 'TL', 'BR' },
+    keywords = { 'Droid' }
+}
+
+masterPilotDB['baktoidprototype-siegeofcoruscant-lsl'] = {
+    name = 'Baktoid Prototype',
+    title = 'Siege of Coruscant',
+    faction = 'separatistalliance',
+    ship_type = 'hyenaclassdroidbomber',
+    slots = { 'Sensor', 'Missile', 'Missile', 'Modification', 'Configuration' },
+    initiative = 1,
+    action_set = { 'C', 'TL', 'BR' },
+    keywords = { 'Droid' }
+}
+
+masterPilotDB['countdooku-siegeofcoruscant-lsl'] = {
+    name = 'Count Dooku',
+    title = 'Siege of Coruscant',
+    faction = 'separatistalliance',
+    ship_type = 'sithinfiltrator',
+    slots = { 'Cannon', 'Torpedo', 'Crew', 'Crew', 'Payload', 'Modification', 'Title', 'Force Power', 'Relay' },
+    initiative = 5,
+    force = 3,
+    action_set = { 'F', 'TL', 'BR', 'CL' },
+    keywords = { 'Dark Side', 'Sith' }
+}
+
+masterPilotDB['dfs081-siegeofcoruscant-lsl'] = {
+    name = 'DFS-081',
+    title = 'Siege of Coruscant',
+    faction = 'separatistalliance',
+    ship_type = 'vultureclassdroidfighter',
+    slots = { 'Missile', 'Modification', 'Configuration' },
+    initiative = 3,
+    charge = 2,
+    action_set = { 'C', 'BR', 'TL' },
+    keywords = { 'Droid' }
+}
+
+masterPilotDB['dfs311-siegeofcoruscant-lsl'] = {
+    name = 'DFS-311',
+    title = 'Siege of Coruscant',
+    faction = 'separatistalliance',
+    ship_type = 'vultureclassdroidfighter',
+    slots = { 'Missile', 'Modification', 'Configuration' },
+    initiative = 1,
+    action_set = { 'C', 'BR', 'TL' },
+    keywords = { 'Droid' }
+}
+
+masterPilotDB['haorchallprototype-siegeofcoruscant-lsl'] = {
+    name = 'Haor Chall Prototype',
+    title = 'Siege of Coruscant',
+    faction = 'separatistalliance',
+    ship_type = 'vultureclassdroidfighter',
+    slots = { 'Missile', 'Modification', 'Configuration' },
+    initiative = 1,
+    action_set = { 'C', 'BR', 'TL' },
+    keywords = { 'Droid' }
+}
+
+-- YT-2400 (2018)
+masterPilotDB['leebo'] = {
+    name = '"Leebo"',
+    title = 'Dry-Witted Droid',
+    faction = 'rebelalliance',
+    ship_type = 'yt2400lightfreighter',
+    slots = { 'Talent', 'Missile', 'Illicit', 'Illicit', 'Modification', 'Title' },
+    initiative = 3,
+    action_set = { 'C', 'TL', 'BR', 'Rot' },
+    keywords = { 'Droid', 'Freighter' }
+}
+
+masterPilotDB['dashrendar'] = {
+    name = 'Dash Rendar',
+    title = 'Hotshot Mercenary',
+    faction = 'rebelalliance',
+    ship_type = 'yt2400lightfreighter',
+    slots = { 'Talent', 'Missile', 'Crew', 'Crew', 'Illicit', 'Modification', 'Title' },
+    initiative = 5,
+    action_set = { 'F', 'TL', 'BR', 'Rot' },
+    keywords = { 'Freighter' }
+}
+
+masterPilotDB['wildspacefringer'] = {
+    name = 'Wild Space Fringer',
+    faction = 'rebelalliance',
+    ship_type = 'yt2400lightfreighter',
+    slots = { 'Missile', 'Crew', 'Crew', 'Illicit', 'Modification', 'Title' },
+    initiative = 1,
+    action_set = { 'F', 'TL', 'BR', 'Rot' },
+    keywords = { 'Freighter' }
+}
+
+-- YT-2400 (2023)
+masterPilotDB['dashrendar-swz103-rebelalliance'] = {
+    name = 'Dash Rendar',
+    title = 'Freighter for Hire',
+    faction = 'rebelalliance',
+    ship_type = 'yt2400lightfreighter2023',
+    slots = { 'Talent', 'Missile', 'Crew', 'Crew', 'Illicit', 'Modification', 'Title' },
+    initiative = 5,
+    action_set = { 'F', 'TL', 'BR', 'Rot' },
+    keywords = { 'Freighter' }
+}
+
+masterPilotDB['dashrendar-swz103-lsl-rebelalliance'] = {
+    name = 'Dash Rendar',
+    title = 'In it for Himself',
+    faction = 'rebelalliance',
+    ship_type = 'yt2400lightfreighter2023',
+    slots = { 'Talent', 'Missile', 'Crew', 'Crew', 'Illicit', 'Modification', 'Title' },
+    initiative = 5,
+    action_set = { 'F', 'TL', 'BR', 'Rot' },
+    keywords = { 'Droid', 'Freighter' }
+}
+
+masterPilotDB['leebo-swz103-rebelalliance'] = {
+    name = '"Leebo"',
+    title = 'Wisdom of Ages',
+    faction = 'rebelalliance',
+    ship_type = 'yt2400lightfreighter2023',
+    slots = { 'Talent', 'Missile', 'Illicit', 'Illicit', 'Modification', 'Title' },
+    initiative = 3,
+    action_set = { 'C', 'TL', 'BR', 'Rot' },
+    keywords = { 'Droid', 'Freighter' }
+}
+
+masterPilotDB['leebo-swz103-lsl-rebelalliance'] = {
+    name = '"Leebo"',
+    title = 'He Thinks He\'s Funny',
+    faction = 'rebelalliance',
+    ship_type = 'yt2400lightfreighter2023',
+    slots = { 'Talent', 'Crew', 'Missile', 'Illicit', 'Modification', 'Title' },
+    initiative = 3,
+    action_set = { 'C', 'TL', 'BR', 'Rot' },
+    keywords = { 'Droid', 'Freighter' }
+}
+
+masterPilotDB['dashrendar-swz103-lsl-scumandvillainy'] = {
+    name = 'Dash Rendar',
+    title = 'In it for Himself',
+    faction = 'scumandvillainy',
+    ship_type = 'yt2400lightfreighter2023',
+    slots = { 'Talent', 'Missile', 'Crew', 'Crew', 'Illicit', 'Modification', 'Title' },
+    initiative = 5,
+    action_set = { 'F', 'TL', 'BR', 'Rot' },
+    keywords = { 'Droid', 'Freighter' }
+}
+
+masterPilotDB['leebo-swz103-lsl-scumandvillainy'] = {
+    name = '"Leebo"',
+    title = 'He Thinks He\'s Funny',
+    faction = 'scumandvillainy',
+    ship_type = 'yt2400lightfreighter2023',
+    slots = { 'Talent', 'Crew', 'Missile', 'Illicit', 'Modification', 'Title' },
+    initiative = 3,
+    action_set = { 'C', 'TL', 'BR', 'Rot' },
+    keywords = { 'Droid', 'Freighter' }
+}
+
+-- Standard Loadout Pilots from YT-2400 (2023)
+masterPilotDB['dashrendar-swz103-sl-rebelalliance'] = {
+    name = 'Dash Rendar',
+    faction = 'rebelalliance',
+    ship_type = 'yt2400lightfreighter2023',
+    initiative = 5,
+    standardized_loadout = true,
+    action_set = {'F', 'TL', 'BR', 'Rot'},
+    keywords = {'Droid', 'Freighter'}
+}
+
+masterPilotDB['leebo-swz103-sl-rebelalliance'] = {
+    name = '"Leebo"',
+    faction = 'rebelalliance',
+    ship_type = 'yt2400lightfreighter2023',
+    initiative = 3,
+    standardized_loadout = true,
+    action_set = {'C', 'TL', 'BR', 'Rot'},
+    keywords = {'Droid', 'Freighter'}
+}
+
+masterPilotDB['dashrendar-swz103-sl-scumandvillainy'] = {
+    name = 'Dash Rendar',
+    faction = 'scumandvillainy',
+    ship_type = 'yt2400lightfreighter2023',
+    initiative = 5,
+    standardized_loadout = true,
+   action_set = {'F', 'TL', 'BR', 'Rot'},
+    keywords = {'Droid', 'Freighter'}
+}
+
+masterPilotDB['leebo-swz103-sl-scumandvillainy'] = {
+    name = '"Leebo"',
+    faction = 'scumandvillainy',
+    ship_type = 'yt2400lightfreighter2023',
+    initiative = 3,
+    standardized_loadout = true,
+    action_set = {'C', 'TL', 'BR', 'Rot'},
+    keywords = {'Droid', 'Freighter'}
+}
+-- Warriors and Turncoats Reinforcements Pack (2025)
+masterPilotDB['00muplinkprototype-wat1'] = {
+    name = '00M Uplink Prototype',
+    faction = 'separatistalliance',
+    limited = 1,
+    ship_type = 'vultureclassdroidfighter',
+    slots = { 'Command', 'Missile', 'Modification', 'Configuration' },
+    initiative = 1,
+    texture = 'p00m',
+    action_set = { 'C', 'BR', 'TL' },
+    keywords = { 'Droid' },
+}
+
+masterPilotDB['dfs420-wat1'] = {
+    name = 'DFS-420',
+    faction = 'separatistalliance',
+    limited = 1,
+    ship_type = 'vultureclassdroidfighter',
+    slots = { 'Command', 'Talent', 'Missile', 'Modification', 'Configuration' },
+    initiative = 4,
+    texture = 'dfs420',
+    action_set = { 'C', 'BR', 'TL' },
+    keywords = { 'Droid' },
+}
+
+masterPilotDB['halliobas-wat1'] = {
+    name = 'Hallio Bas',
+    faction = 'separatistalliance',
+    limited = 1,
+    ship_type = 'belbulab22starfighter',
+    slots = { 'Command', 'Talent', 'Modification', 'Title', 'Relay' },
+    charge = 1,
+    initiative = 5,
+    texture = 'bas',
+    action_set = { 'F', 'TL', 'B', 'BR' },
+}
+
+masterPilotDB['blacksunbodyguard-wat1'] = {
+    name = 'Black Sun Bodyguard',
+    faction = 'scumandvillainy',
+    limited = 2,
+    ship_type = 'kihraxzfighter',
+    slots = { 'Command', 'Talent', 'Missile', 'Illicit', 'Illicit', 'Modification', 'Modification' },
+    charge = 2,
+    initiative = 4,
+    texture = 'vaksai',
+    action_set = { 'F', 'TL', 'BR' },
+}
+
+masterPilotDB['januskasmir-wat1'] = {
+    name = 'Janus Kasmir',
+    faction = 'scumandvillainy',
+    limited = 1,
+    ship_type = 'hwk290lightfreighter',
+    slots = { 'Command', 'Talent', 'Crew', 'Payload', 'Illicit', 'Modification', 'Modification', 'Title' },
+    initiative = 4,
+    texture = 'kasmir',
+    action_set = { 'F', 'TL', 'B', 'Rot' },
+    keywords = { 'Freighter' },
+}
+
+masterPilotDB['riodurant-wat1'] = {
+    name = 'Rio Durant',
+    faction = 'scumandvillainy',
+    limited = 1,
+    ship_type = 'customizedyt1300lightfreighter',
+    slots = { 'Command', 'Talent', 'Missile', 'Crew', 'Crew', 'Gunner', 'Illicit', 'Modification', 'Title' },
+    initiative = 3,
+    texture = 'standard',
+    action_set = { 'F', 'TL', 'B', 'Rot' },
+    keywords = { 'Freighter', 'YT-1300' },
+}
+
+masterPilotDB['jannah-wat1'] = {
+    name = 'Jannah',
+    faction = 'resistance',
+    limited = 1,
+    ship_type = 'resistancetransport',
+    slots = { 'Command', 'Talent', 'Tech', 'Cannon', 'Cannon', 'Torpedo', 'Crew', 'Crew', 'Astromech', 'Modification' },
+    initiative = 5,
+    texture = 'jannah',
+    action_set = { 'F', 'TL' },
+}
+
+masterPilotDB['dj-wat1'] = {
+    name = 'DJ',
+    faction = 'resistance',
+    limited = 1,
+    ship_type = 'resistancetransportpod',
+    slots = { 'Command', 'Tech', 'Crew', 'Illicit', 'Modification' },
+    initiative = 2,
+    texture = 'dj',
+    action_set = { 'F', 'TL', 'BR' },
+}
+
+masterPilotDB['torradoza-wat1'] = {
+    name = 'Torra Doza',
+    faction = 'resistance',
+    limited = 1,
+    ship_type = 'fireball',
+    slots = { 'Command', 'Talent', 'Missile', 'Astromech', 'Illicit', 'Modification', 'Modification', 'Title' },
+    initiative = 3,
+    texture = 'doza',
+    action_set = { 'F', 'E', 'BR' },
+}
+
+masterPilotDB['neradantels-wat1'] = {
+    name = 'Nera Dantels',
+    faction = 'rebelalliance',
+    limited = 1,
+    ship_type = 'asf01bwing',
+    slots = { 'Command', 'Talent', 'Sensor', 'Cannon', 'Cannon', 'Torpedo', 'Modification', 'Title', 'Configuration' },
+    initiative = 3,
+    texture = 'nera',
+    action_set = { 'F', 'TL', 'BR' },
+    arcs = { fixed = { range = 3, type = { 'front' } }, turret = { main = { name = 'Turret', type = { 'singleturret' } } } },
+    keywords = { 'B-wing' },
+}
+
+masterPilotDB['antocmerrick-wat1'] = {
+    name = 'Antoc Merrick',
+    faction = 'rebelalliance',
+    limited = 1,
+    ship_type = 't65xwing',
+    slots = { 'Command', 'Talent', 'Torpedo', 'Astromech', 'Modification', 'Configuration' },
+    initiative = 4,
+    texture = 'merrick',
+    action_set = { 'F', 'TL', 'BR' },
+    keywords = { 'X-wing' },
+}
+
+masterPilotDB['tarfful-wat1'] = {
+    name = 'Tarfful',
+    faction = 'rebelalliance',
+    limited = 1,
+    ship_type = 'auzituckgunship',
+    slots = { 'Command', 'Talent', 'Crew', 'Crew', 'Modification' },
+    initiative = 5,
+    texture = 'tarfful',
+    action_set = { 'F', 'R', 'BR' },
+    keywords = { 'Wookiee' },
+    condition = 'Liberated',
+}
+
+masterPilotDB['rhysdallows-wat1'] = {
+    name = 'Rhys Dallows',
+    faction = 'galacticrepublic',
+    limited = 1,
+    ship_type = 'nabooroyaln1starfighter',
+    slots = { 'Command', 'Talent', 'Sensor', 'Torpedo', 'Astromech', 'Illicit' },
+    initiative = 6,
+    texture = 'yellow',
+    action_set = { 'F', 'TL', 'B', 'BR', 'E' },
+}
+
+masterPilotDB['essaratill-wat1'] = {
+    name = 'Essara Till',
+    faction = 'galacticrepublic',
+    limited = 1,
+    ship_type = 'nabooroyaln1starfighter',
+    slots = { 'Command', 'Talent', 'Talent', 'Sensor', 'Torpedo', 'Astromech' },
+    initiative = 4,
+    texture = 'yellow',
+    action_set = { 'F', 'TL', 'B', 'BR', 'E' },
+}
+
+masterPilotDB['depabillaba-wat1'] = {
+    name = 'Depa Billaba',
+    faction = 'galacticrepublic',
+    limited = 1,
+    ship_type = 'delta7aethersprite',
+    slots = { 'Command', 'Force Power', 'Astromech', 'Configuration', 'Modification' },
+    force = 2,
+    initiative = 3,
+    texture = 'depa',
+    action_set = { 'F', 'E', 'TL', 'BR', 'B' },
+    keywords = { 'Jedi', 'Light Side' },
+}
+
+masterPilotDB['captainsaxton-wat1'] = {
+    name = 'Captain Saxton',
+    faction = 'galacticempire',
+    limited = 1,
+    ship_type = 'tiephphantom',
+    condition = 'Saxton Cloak',
+    slots = { 'Command', 'Talent', 'Sensor', 'Gunner', 'Modification' },
+    charge = 2,
+    initiative = 4,
+    texture = 'blue',
+    action_set = { 'F', 'E', 'BR', 'CL' },
+    keywords = { 'TIE' },
+}
+
+masterPilotDB['carnorjax-wat1'] = {
+    name = 'Carnor Jax',
+    faction = 'galacticempire',
+    limited = 1,
+    ship_type = 'tieininterceptor',
+    slots = { 'Command', 'Talent', 'Modification', 'Modification', 'Configuration' },
+    initiative = 5,
+    texture = 'red',
+    action_set = { 'F', 'E', 'BR', 'B' },
+    keywords = { 'TIE' },
+}
+
+masterPilotDB['captainyorr-wat1'] = {
+    name = 'Captain Yorr',
+    faction = 'galacticempire',
+    limited = 1,
+    ship_type = 'lambdaclasst4ashuttle',
+    slots = { 'Command', 'Sensor', 'Cannon', 'Crew', 'Crew', 'Modification', 'Title' },
+    charge = 2,
+    initiative = 2,
+    texture = 'standard',
+    action_set = { 'F', 'R' },
+}
+
+masterPilotDB['enricpryde-wat1'] = {
+    name = 'Enric Pryde',
+    faction = 'firstorder',
+    limited = 1,
+    ship_type = 'upsilonclasscommandshuttle',
+    slots = { 'Command', 'Sensor', 'Tech', 'Tech', 'Cannon', 'Crew', 'Crew', 'Crew', 'Modification' },
+    initiative = 2,
+    texture = 'standard',
+    action_set = { 'F', 'TL', 'R' },
+}
+
+masterPilotDB['strife-wat1'] = {
+    name = '"Strife"',
+    faction = 'firstorder',
+    limited = 1,
+    ship_type = 'tiesffighter',
+    slots = { 'Command', 'Talent', 'Sensor', 'Tech', 'Missile', 'Gunner', 'Modification' },
+    initiative = 3,
+    texture = 'strife',
+    action_set = { 'F', 'TL', 'E', 'BR', 'Rot' },
+    keywords = { 'TIE' },
+}
+
+masterPilotDB['fn2187-wat1'] = {
+    name = 'FN-2187',
+    faction = 'firstorder',
+    limited = 1,
+    ship_type = 'tiefofighter',
+    slots = { 'Command', 'Tech', 'Modification' },
+    initiative = 1,
+    texture = 'standard',
+    action_set = { 'F', 'TL', 'E', 'BR' },
+    keywords = { 'TIE' },
+}
+
+return masterPilotDB
