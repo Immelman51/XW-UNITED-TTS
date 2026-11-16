@@ -450,13 +450,19 @@ local UNITED_SHIP_GAP = 1.2         -- bas des fiches -> avant des socles
 local UNITED_DIAL_GAP = 0.6         -- arrière des socles -> cadrans
 local UNITED_DIAL_DEPTH = 2.6       -- encombrement d'un cadran (avec son étiquette)
 local UNITED_LEADER_GAP = 0.8       -- cadrans -> fiche du leader
--- Rotation (degrés, autour de l'axe vertical) ajoutée aux vaisseaux et aux
--- cadrans pour qu'ils fassent face à l'aire de jeu (+90 = vers la droite,
--- -90 = vers la gauche)
-local UNITED_FACING_YAW = 90
+-- Orientation des vaisseaux et des cadrans : rotation (degrés, autour de
+-- l'axe vertical) ajoutée à celle de l'ancre (la main du joueur), pour
+-- qu'ils fassent face à l'aire de jeu quel que soit le côté de la table.
+-- (Main du joueur rouge : 0° -> vaisseaux à 180°.)
+local UNITED_FACING_YAW = 180
 
-local function unitedFacing(rot)
-    return Vector(rot.x, (rot.y + UNITED_FACING_YAW) % 360, rot.z)
+local function unitedAnchorYaw(anchor)
+    local rotation = anchor.rotation or { 0, 0, 0 }
+    return tonumber(rotation.y or rotation[2]) or 0
+end
+
+local function unitedFacing(rot, yaw)
+    return Vector(rot.x, yaw % 360, rot.z)
 end
 
 -- Grand panneau de description à l'écran (UI globale, un panneau par
@@ -477,6 +483,49 @@ local function unitedDetailHeight(text)
     return math.max(260, math.min(900, lines * 38 + 150))
 end
 
+local UNITED_DETAIL_ROWS = 3    -- rangées de pictogrammes (UnitedDetail.xml)
+local UNITED_DETAIL_SLOTS = 16  -- emplacements par rangée
+
+-- Remplit une rangée de pictogrammes ; retourne sa hauteur (0 si vide)
+local function unitedFillDetailRow(color, index, row)
+    local items = row and row.items or {}
+    local suffix = "_" .. color
+    for slot = 1, UNITED_DETAIL_SLOTS do
+        local item = items[slot]
+        local imageId = "UDR" .. index .. "I" .. slot .. suffix
+        local textId = "UDR" .. index .. "T" .. slot .. suffix
+        if item ~= nil and item.image then
+            UI.setAttributes(imageId, { image = item.image, preferredWidth = item.w, preferredHeight = item.h,
+                active = "true" })
+            UI.setAttribute(textId, "active", "false")
+        elseif item ~= nil and (item.text or item.space) then
+            local text = item.text or ""
+            local size = item.size or 40
+            UI.setAttributes(textId, {
+                fontSize = size,
+                fontStyle = item.bold and "Bold" or "Normal",
+                color = item.color or "#FFFFFF",
+                preferredWidth = item.space or math.floor(#text * size * 0.62 + 6),
+                preferredHeight = row.height,
+                active = "true",
+            })
+            UI.setValue(textId, text)
+            UI.setAttribute(imageId, "active", "false")
+        else
+            UI.setAttribute(imageId, "active", "false")
+            UI.setAttribute(textId, "active", "false")
+        end
+    end
+    local rowId = "UDRow" .. index .. suffix
+    if #items == 0 then
+        UI.setAttribute(rowId, "active", "false")
+        return 0
+    end
+    UI.setAttribute(rowId, "height", row.height)
+    UI.setAttribute(rowId, "active", "true")
+    return row.height
+end
+
 function unitedShowDetail(params)
     local color = params.color
     if color == nil then
@@ -490,8 +539,20 @@ function unitedShowDetail(params)
     end
     unitedDetailOpen[color] = params.guid
     local text = params.text or ""
+    -- Rangées de pictogrammes (caractéristiques, actions), puis le texte
+    local top = 90
+    local rows = params.rows or {}
+    for index = 1, UNITED_DETAIL_ROWS do
+        local rowId = "UDRow" .. index .. "_" .. color
+        UI.setAttribute(rowId, "offsetXY", "30 -" .. top)
+        local height = unitedFillDetailRow(color, index, rows[index])
+        if height > 0 then
+            top = top + height + 12
+        end
+    end
+    UI.setAttribute("UnitedDetailText_" .. color, "offsetXY", "30 -" .. top)
     UI.setAttributes(panel, {
-        height = unitedDetailHeight(text),
+        height = unitedDetailHeight(text) + top - 90,
         color = (params.bgColor or "#101418") .. "F5",
         outline = params.outlineColor or "#D9A61A",
     })
@@ -1078,7 +1139,7 @@ local function spawnPilotCardAndDial(context, pilot, pilotName, pilotCustomizati
         for _, acc in pairs(accessoryContext.accessories) do
             if acc.name == 'Unassigned Dial' then
                 local dialpos = pilot.UnitedDialPosition or LocalPos(spawnCard, { 0, 1, 13.2 })
-                local dialrot = pilot.UnitedDialPosition and unitedFacing(rot) or rot
+                local dialrot = pilot.UnitedFacing and unitedFacing(rot, pilot.UnitedFacing) or rot
                 local dial = takeSpawnerAccessorySource(accessoryContext, {
                     position = dialpos,
                     rotation = dialrot,
@@ -1153,8 +1214,8 @@ local function spawnCompositeShipBase(context, pilot, pilotName, texture, modelt
         pos = LocalPos(spawnCard, { 0, 0, 10.2 })
     end
     local rot = spawnCard.getRotation()
-    if pilot.UnitedShipPosition then
-        rot = unitedFacing(rot)
+    if pilot.UnitedFacing then
+        rot = unitedFacing(rot, pilot.UnitedFacing)
     end
     local base_prototype = getObjectFromGUID(CompositeBase_GUID)
     local pilotFaction = pilot.Data.Faction or faction
@@ -1702,6 +1763,7 @@ local function spawnSquad(request, pilotCardScript)
                         Pilots[index].UnitedShipPosition = slot.ship
                         Pilots[index].UnitedDialPosition = slot.dial
                         Pilots[index].UnitedMarkerPosition = slot.marker
+                        Pilots[index].UnitedFacing = unitedAnchorYaw(unitedAnchor) + UNITED_FACING_YAW
                     end
                 end
             end

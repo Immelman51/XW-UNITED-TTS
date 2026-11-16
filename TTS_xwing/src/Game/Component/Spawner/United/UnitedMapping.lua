@@ -246,4 +246,57 @@ UnitedMapping.TEXT_ICONS = {
     ["Rarc.png"]        = { FRA = "[Arc droit]", ENG = "[Right Arc]" },
 }
 
+-- Images du squad builder (dépôt xwunited), chargées par TTS depuis GitHub
+UnitedMapping.IMG_BASE = "https://raw.githubusercontent.com/Immelman51/xwunited/main/img/"
+
+-- Images d'action disponibles dans img/ ("Fo W" -> "Fo W.png")
+UnitedMapping.ACTION_IMAGES = {
+    ["Bo R"] = true,
+    ["Bo W"] = true,
+    ["Br R"] = true,
+    ["Br W"] = true,
+    ["Cc R"] = true,
+    ["Cc W"] = true,
+    ["Ck R"] = true,
+    ["Ck W"] = true,
+    ["Co F"] = true,
+    ["Co R"] = true,
+    ["Co W"] = true,
+    ["Ev F"] = true,
+    ["Ev R"] = true,
+    ["Ev W"] = true,
+    ["Fo R"] = true,
+    ["Fo W"] = true,
+    ["Ja R"] = true,
+    ["Ja W"] = true,
+    ["Lo R"] = true,
+    ["Lo W"] = true,
+    ["Ra P"] = true,
+    ["Ra R"] = true,
+    ["Ra W"] = true,
+    ["Re R"] = true,
+    ["Re W"] = true,
+    ["Sl W"] = true,
+    ["Un P"] = true,
+    ["Un R"] = true,
+    ["Un W"] = true,
+}
+
+-- Image de chaque type d'attaque, et texte de secours
+UnitedMapping.ATTACK_IMAGES = {
+    F = "attackF.png", B = "attackB.png", T = "attackT.png", DT = "attackDT.png",
+    BULL = "attackBULL.png", ["180"] = "attack180.png",
+}
+UnitedMapping.ATTACK_LABELS = {
+    F = "F", B = "B", T = "Tur", DT = "DTur", BULL = "Bull", ["180"] = "180",
+}
+
+-- Images des autres caractéristiques
+UnitedMapping.STAT_IMAGES = {
+    agility = "agility.png",
+    hull = "hull.png",
+    shields = "shield.png",
+    force = "forcestat.png",
+}
+
 return UnitedMapping

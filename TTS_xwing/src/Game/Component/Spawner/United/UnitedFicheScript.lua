@@ -29,6 +29,44 @@ local function hexToColor(hex)
     return { r / 255, g / 255, b / 255 }
 end
 
+local function escapeXml(text)
+    return (string.gsub(string.gsub(string.gsub(tostring(text), "&", "&amp;"), "<", "&lt;"), ">", "&gt;"))
+end
+
+-- Rangées de pictogrammes sous le texte (caractéristiques, actions) :
+-- voir UnitedSquad.iconRows
+local function iconRowsXml()
+    local out = {}
+    local y = fiche.textPx or 0
+    for _, row in ipairs(fiche.iconRows or {}) do
+        local items = {}
+        for _, item in ipairs(row.items or {}) do
+            if item.image then
+                table.insert(items, string.format(
+                    '<Image image="%s" preferredWidth="%d" preferredHeight="%d" preserveAspect="true" '
+                    .. 'raycastTarget="false"/>', item.image, item.w, item.h))
+            elseif item.text then
+                local text = escapeXml(item.text)
+                table.insert(items, string.format(
+                    '<Text preferredWidth="%d" preferredHeight="%d" fontSize="%d" fontStyle="%s" color="%s" '
+                    .. 'alignment="MiddleCenter" raycastTarget="false">%s</Text>',
+                    math.floor(#item.text * item.size * 0.62 + 6), row.height, item.size,
+                    item.bold and "Bold" or "Normal", item.color or "#FFFFFF", text))
+            elseif item.space then
+                table.insert(items, string.format('<Panel preferredWidth="%d" preferredHeight="1" '
+                    .. 'raycastTarget="false"/>', item.space))
+            end
+        end
+        table.insert(out, string.format(
+            '<HorizontalLayout rectAlignment="UpperLeft" offsetXY="14 -%d" width="%d" height="%d" spacing="0" '
+            .. 'childAlignment="MiddleLeft" childForceExpandWidth="false" childForceExpandHeight="false" '
+            .. 'raycastTarget="false">%s</HorizontalLayout>',
+            y, fiche.widthPx - 28, row.height, table.concat(items)))
+        y = y + row.height + 8
+    end
+    return table.concat(out)
+end
+
 local function applyFiche()
     if fiche == nil or fiche.unit == nil then
         return
@@ -48,6 +86,8 @@ local function applyFiche()
     -- Pas d'infobulle native : la description s'affiche en grand par un clic
     self.tooltip = false
 
+    -- Fond opaque : le contour est dessiné derrière le panneau et teinterait
+    -- toute la fiche à travers un fond transparent.
     -- L'UI suit l'échelle (non uniforme) de l'objet : on la compense pour
     -- que le texte garde ses proportions.
     local ax = 100 * fiche.k / sx
@@ -57,13 +97,13 @@ local function applyFiche()
 
     local xml = string.format(
         '<Panel id="Fiche" width="%d" height="%d" position="0 0 %.3f" rotation="180 180 %d" scale="%.5f %.5f 1" '
-        .. 'color="%sF2" outline="%s" outlineSize="%d %d" onClick="ficheClick">'
+        .. 'color="%sFF" outline="%s" outlineSize="%d %d" onClick="ficheClick">'
         .. '<Text id="FicheText" raycastTarget="false" rectAlignment="UpperLeft" alignment="UpperLeft" offsetXY="14 -12" '
         .. 'width="%d" height="%d" fontSize="%d" color="%s" horizontalOverflow="Wrap" '
-        .. 'verticalOverflow="Overflow"></Text></Panel>',
+        .. 'verticalOverflow="Overflow"></Text>%s</Panel>',
         fiche.widthPx, fiche.heightPx, z, rotZ, ax, ay,
         bg, outline, outlineSize, outlineSize,
-        fiche.widthPx - 28, fiche.heightPx - 20, fiche.fontSize, text)
+        fiche.widthPx - 28, fiche.textPx or (fiche.heightPx - 20), fiche.fontSize, text, iconRowsXml())
     self.UI.setXml(xml)
     Wait.frames(function()
         Wait.condition(function()
@@ -96,6 +136,7 @@ function ficheClick(player, value, id)
         textColor = fiche.textColor,
         outlineColor = fiche.outlineColor,
         accentColor = fiche.accentColor,
+        rows = fiche.detailRows,
     })
 end
 

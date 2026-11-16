@@ -1,10 +1,10 @@
 -- X-Wing United : données du squad builder intégrées au mod.
 -- FICHIER GÉNÉRÉ AUTOMATIQUEMENT par tools/build_save.py : ne pas modifier à la main.
 -- Source : https://raw.githubusercontent.com/Immelman51/xwunited/main/*.json
--- Généré le : 2026-11-16 22:00
+-- Généré le : 2026-11-16 23:08
 
 local D = { ships = {}, pilots = {}, upgrades = {}, leaders = {}, chassis = {} }
-D.generated = "2026-11-16 22:00"
+D.generated = "2026-11-16 23:08"
 
 D.ships[1] = { name = "T-65 X-wing", chassis = {3}, id = 0, attack = {{"F", 3}}, agility = 2, hull = 4, shields = 2, actions = {{0, "Fo W"}, {0, "Lo W"}, {0, "Br W"}, {0, "Un R"}}, maneuvers = {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 1, 1, 1, 0, 0, 0, 0, 0, 0}, {2, 1, 1, 1, 2, 0, 0, 0, 0, 0}, {2, 2, 2, 2, 2, 0, 0, 0, 3, 3}, {0, 0, 2, 0, 0, 3, 0, 0, 0, 0}}, base = "small" }
 D.ships[2] = { name = "BTL-A4 Y-wing", chassis = {0}, id = 1, attack = {{"F", 2}}, agility = 1, hull = 6, shields = 2, actions = {{0, "Fo W"}, {0, "Lo W"}, {0, "Br R"}, {0, "Un W"}}, maneuvers = {{0, 0, 0, 0, 0, 0}, {0, 1, 1, 1, 0, 0}, {2, 2, 1, 2, 2, 0}, {3, 2, 2, 2, 3, 0}, {0, 0, 3, 0, 0, 3}}, base = "small" }

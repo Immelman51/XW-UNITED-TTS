@@ -343,18 +343,39 @@ end
 -- k : unités de table par pixel (0.013 => fiche de ~5,5 unités de large)
 -- flip : true si le texte apparaît à l'envers pour le joueur
 UnitedSquad.FICHE = {
-    widthPx = 420,
-    fontSize = 18,
-    lineHeight = 23,
-    charsPerLine = 44,
+    widthPx = 500,
+    fontSize = 20,
+    lineHeight = 25,
+    charsPerLine = 47,
     k = 0.013,
     flip = true,
-    titleSize = 28,      -- taille de police du titre (valeur de pilotage + nom)
-    statSize = 26,       -- taille de police de la ligne de caractéristiques
+    titleSize = 32,      -- taille de police du titre (pilote : pilotage + nom ; amélioration : nom)
+    shipOutlineSize = 5, -- épaisseur du cadre aux couleurs du socle (pilotes, améliorations)
     tokenRowPx = 80,     -- hauteur réservée aux jetons posés sur la fiche
+    statIconPx = 40,     -- pictogrammes des caractéristiques
+    statSize = 40,       -- valeurs des caractéristiques
+    actionIconPx = 38,   -- pictogrammes des actions
+    rowWidthPx = 472,    -- largeur utile des rangées de pictogrammes (widthPx - 28)
 }
 
--- Couleurs des caractéristiques (comme sur les cartes officielles)
+-- Réglages propres à la fiche du leader (le reste vient de FICHE)
+UnitedSquad.LEADER_FICHE = {
+    fontSize = 24,
+    lineHeight = 30,
+    charsPerLine = 39,
+    titleSize = 34,
+}
+
+-- Grand panneau affiché par un clic (UI globale)
+UnitedSquad.DETAIL = {
+    statIconPx = 48,
+    statSize = 44,
+    actionIconPx = 52,
+    rowWidthPx = 930,
+    rowSlots = 16,       -- doit correspondre à UNITED_DETAIL_SLOTS (Spawner.lua)
+}
+
+-- Couleurs des valeurs de caractéristiques (comme sur les cartes officielles)
 UnitedSquad.STAT_COLORS = {
     attack = "#FF5A4D",
     agility = "#6EDB5E",
@@ -464,12 +485,12 @@ function UnitedSquad.lineCount(text, charsPerLine)
 end
 
 -- Titre en gros caractères (première ligne de la fiche)
-function UnitedSquad.ficheTitle(text, color)
+function UnitedSquad.ficheTitle(text, color, size)
     local inner = "<b>" .. text .. "</b>"
     if color then
         inner = "<color=" .. color .. ">" .. inner .. "</color>"
     end
-    return "<size=" .. UnitedSquad.FICHE.titleSize .. ">" .. inner .. "</size>"
+    return "<size=" .. (size or UnitedSquad.FICHE.titleSize) .. ">" .. inner .. "</size>"
 end
 
 -- Longueurs visibles de chaque ligne du texte
@@ -483,15 +504,24 @@ local function lineLengths(text)
     return lengths
 end
 
--- opts : description (infobulle), charge, force (jetons posés sur la fiche),
---        owner (nom du vaisseau propriétaire des jetons),
---        style (palette, voir STYLE), outline (couleur du contour, "#RRGGBB")
+-- opts : description (texte affiché en grand par un clic), detailRows
+--        (rangées de pictogrammes du grand panneau), iconRows (rangées de
+--        pictogrammes sous le texte de la fiche), charge, force (jetons
+--        posés sur la fiche), owner (nom du vaisseau propriétaire des jetons),
+--        style (palette, voir STYLE), outline (couleur du contour, "#RRGGBB"),
+--        layout (réglages de police remplaçant ceux de FICHE, voir LEADER_FICHE)
 -- La fiche emporte de quoi recalculer sa hauteur si on change sa largeur
 -- (lines, charsPerLine, lineHeight, extraPx, baseWidthPx) : voir
 -- resizeUnitedFiche dans Spawner.lua, qui n'a pas accès à ce module.
 function UnitedSquad.fiche(title, text, opts)
-    local f = UnitedSquad.FICHE
     opts = opts or {}
+    local f = {}
+    for key, value in pairs(UnitedSquad.FICHE) do
+        f[key] = value
+    end
+    for key, value in pairs(opts.layout or {}) do
+        f[key] = value
+    end
     local style = opts.style or UnitedSquad.STYLE.default
     local charge = opts.charge or 0
     local force = opts.force or 0
@@ -500,28 +530,37 @@ function UnitedSquad.fiche(title, text, opts)
     for _, length in ipairs(lines) do
         lineTotal = lineTotal + math.max(1, math.ceil(length / f.charsPerLine))
     end
-    local extra = 30
-    -- Lignes en plus grande taille (titre, caractéristiques)
+    -- Lignes en plus grande taille (titre)
+    local sizeExtra = 0
     local pos = 1
     while pos <= #text do
         local stop = string.find(text, "\n", pos, true) or (#text + 1)
         local size = tonumber(string.match(string.sub(text, pos, math.min(stop, pos + 12)), "^<size=(%d+)>"))
         if size and size > f.fontSize then
-            extra = extra + (size - f.fontSize) * 1.4
+            sizeExtra = sizeExtra + (size - f.fontSize) * 1.4
         end
         pos = stop + 1
     end
+    local textPx = math.floor(lineTotal * f.lineHeight + sizeExtra + 18)
+    local rowsPx = 0
+    for _, row in ipairs(opts.iconRows or {}) do
+        rowsPx = rowsPx + row.height + 8
+    end
+    local height = math.floor(textPx + rowsPx + 12)
     -- Rangée de jetons en bas des fiches pilote / leader uniquement ; sur les
     -- améliorations, les jetons se placent à droite sans agrandir la fiche
     if opts.tokenRow and charge + force > 0 then
-        extra = extra + f.tokenRowPx
+        height = height + f.tokenRowPx
     end
     return {
         title = title,
         text = text,
         description = opts.description or "",
+        detailRows = opts.detailRows,
+        iconRows = opts.iconRows,
+        textPx = textPx,
         widthPx = f.widthPx,
-        heightPx = math.floor(lineTotal * f.lineHeight + extra),
+        heightPx = height,
         fontSize = f.fontSize,
         k = f.k,
         flip = f.flip,
@@ -533,64 +572,168 @@ function UnitedSquad.fiche(title, text, opts)
         baseWidthPx = f.widthPx,
         charsPerLine = f.charsPerLine,
         lineHeight = f.lineHeight,
-        extraPx = extra,
+        extraPx = height - lineTotal * f.lineHeight,
         bgColor = style.bg,
         textColor = style.text,
         outlineColor = opts.outline or style.accent,
         accentColor = style.accent,
-        outlineSize = UnitedSquad.STYLE.outlineSize,
+        outlineSize = opts.outlineSize or UnitedSquad.STYLE.outlineSize,
     }
 end
 
--- Ligne des caractéristiques, en couleur et en gras : libellés à la taille
--- labelSize, valeurs en plus gros (valueSize)
-local function statLine(info, lang, labelSize, valueSize)
-    local fr = lang ~= "ENG"
-    local c = UnitedSquad.STAT_COLORS
-    local stats = {}
-    local function add(color, label, value)
-        table.insert(stats, "<color=" .. color .. "><size=" .. labelSize .. ">" .. label .. "</size> "
-            .. value .. "</color>")
-    end
-    if info.attackText ~= "" then
-        add(c.attack, fr and "Att" or "Atk", info.attackText)
-    end
-    add(c.agility, "Agi", tostring(info.agility))
-    add(c.hull, fr and "Coque" or "Hull", tostring(info.hull))
-    add(c.shields, fr and "Boucl." or "Shld", tostring(info.shields))
-    if info.force > 0 then
-        add(c.force, "Force", tostring(info.force))
-    end
-    return "<size=" .. valueSize .. "><b>" .. table.concat(stats, "  ") .. "</b></size>"
+-- Rangées de pictogrammes (fiches et grand panneau). Un élément est
+--   { image = url, w = px, h = px }  ou  { text = "...", size = n, color = "#..." }
+--   ou { space = px }
+local function imageUrl(file)
+    return UnitedMapping.IMG_BASE .. string.gsub(file, " ", "%%20")
 end
 
--- Fiche du pilote : valeur de pilotage + nom en titre, caractéristiques bien
--- visibles. Capacités du pilote et du châssis : affichées par un clic (voir
--- pilotDetailText). Les améliorations ont chacune leur fiche, en dessous.
+-- Caractéristiques : valeurs en couleur, sans libellé ; pictogramme
+-- seulement pour le type d'attaque et la Force
+local function statItems(info, iconPx, valueSize)
+    local c = UnitedSquad.STAT_COLORS
+    local items = {}
+    local function icon(file)
+        table.insert(items, { image = imageUrl(file), w = iconPx, h = iconPx })
+        table.insert(items, { space = 4, glue = true })
+    end
+    local function value(text, color)
+        table.insert(items, { text = text, size = valueSize, color = color, bold = true })
+        table.insert(items, { space = math.floor(valueSize * 0.7) })
+    end
+    for _, attack in ipairs(info.attacks) do
+        local file = UnitedMapping.ATTACK_IMAGES[attack.kind]
+        if file then
+            icon(file)
+        else
+            table.insert(items, { text = UnitedMapping.ATTACK_LABELS[attack.kind] or attack.kind,
+                size = math.floor(valueSize * 0.6), color = c.attack, bold = true })
+            table.insert(items, { space = 4, glue = true })
+        end
+        value(tostring(attack.value), c.attack)
+    end
+    value(tostring(info.agility), c.agility)
+    value(tostring(info.hull), c.hull)
+    value(tostring(info.shields), c.shields)
+    if info.force > 0 then
+        icon(UnitedMapping.STAT_IMAGES.force)
+        value(tostring(info.force), c.force)
+    end
+    table.remove(items) -- dernier espace
+    return items
+end
+
+-- Image d'une action ("Fo W") ; repli sur la version blanche, puis sur du texte
+local function actionItem(code, iconPx)
+    code = tostring(code)
+    code = string.upper(string.sub(code, 1, 1)) .. string.lower(string.sub(code, 2, 2)) .. string.sub(code, 3)
+    local images = UnitedMapping.ACTION_IMAGES
+    if images[code] then
+        return { image = imageUrl(code .. ".png"), w = iconPx, h = iconPx }
+    end
+    local white = string.sub(code, 1, 2) .. " W"
+    if images[white] then
+        return { image = imageUrl(white .. ".png"), w = iconPx, h = iconPx }
+    end
+    return { text = "[" .. code .. "]", size = math.floor(iconPx * 0.5), color = "#FFFFFF" }
+end
+
+-- Actions : simples ou liées (action -> flèche -> seconde action)
+local function actionItems(entries, iconPx)
+    local items = {}
+    for index, entry in ipairs(entries) do
+        if index > 1 then
+            table.insert(items, { space = math.floor(iconPx * 0.7) })
+        end
+        table.insert(items, actionItem(entry[2], iconPx))
+        if tonumber(entry[1]) == 1 and entry[3] ~= nil then
+            table.insert(items, { image = imageUrl("fleche.png"), w = math.floor(iconPx / 2), h = iconPx })
+            table.insert(items, actionItem(entry[3], iconPx))
+        end
+    end
+    return items
+end
+
+-- Largeur estimée d'un élément (même calcul que l'affichage)
+local function itemWidth(item)
+    if item.image then
+        return item.w
+    elseif item.space then
+        return item.space
+    end
+    return math.floor(#(item.text or "") * (item.size or 20) * 0.62 + 6)
+end
+
+-- Coupe une rangée trop large en plusieurs, aux espaces entre deux groupes
+-- (maxItems : nombre d'emplacements d'une rangée du grand panneau)
+local function wrapRow(rows, height, items, maxWidth, maxItems)
+    local current, width, lastSpace = {}, 0, nil
+    local function over(item)
+        return width + itemWidth(item) > maxWidth or (maxItems ~= nil and #current >= maxItems)
+    end
+    for _, item in ipairs(items) do
+        if item.space and not item.glue and over(item) then
+            -- l'espace tombe en bout de ligne : on passe à la ligne suivante
+            table.insert(rows, { height = height, items = current })
+            current, width, lastSpace = {}, 0, nil
+        elseif not (item.space and not item.glue) and over(item) and lastSpace ~= nil then
+            local nextItems = {}
+            for i = lastSpace + 1, #current do
+                table.insert(nextItems, current[i])
+            end
+            for i = #current, lastSpace, -1 do
+                table.remove(current, i)
+            end
+            table.insert(rows, { height = height, items = current })
+            current, width, lastSpace = nextItems, 0, nil
+            for _, kept in ipairs(current) do
+                width = width + itemWidth(kept)
+            end
+            table.insert(current, item)
+            width = width + itemWidth(item)
+        else
+            table.insert(current, item)
+            if item.space and not item.glue then
+                lastSpace = #current
+            end
+            width = width + itemWidth(item)
+        end
+    end
+    if #current > 0 then
+        table.insert(rows, { height = height, items = current })
+    end
+end
+
+-- sizes : FICHE (fiche posée sur la table) ou DETAIL (grand panneau)
+local function iconRows(info, sizes)
+    local rows = {}
+    wrapRow(rows, math.max(sizes.statIconPx, sizes.statSize + 6),
+        statItems(info, sizes.statIconPx, sizes.statSize), sizes.rowWidthPx, sizes.rowSlots)
+    if #info.actionEntries > 0 then
+        wrapRow(rows, sizes.actionIconPx, actionItems(info.actionEntries, sizes.actionIconPx), sizes.rowWidthPx,
+            sizes.rowSlots)
+    end
+    return rows
+end
+
+-- Fiche du pilote : valeur de pilotage + nom en titre, vaisseau et points,
+-- puis pictogrammes (caractéristiques, actions : voir iconRows). Capacités
+-- du pilote et du châssis : affichées par un clic (voir pilotDetailText).
+-- Les améliorations ont chacune leur fiche, en dessous.
 local function buildPilotFicheText(info, lang, style)
     local out = {}
     table.insert(out, UnitedSquad.ficheTitle(tostring(info.skill) .. "  " .. info.pilotName, style.accent))
     table.insert(out, info.shipName .. "  ·  " .. tostring(info.points) .. " pts")
-    table.insert(out, statLine({
-        attackText = info.attackText, agility = info.agility, hull = info.hull,
-        shields = info.shields, force = info.ownForce,
-    }, lang, UnitedSquad.FICHE.fontSize, UnitedSquad.FICHE.statSize))
-    if info.charge ~= "" then
-        table.insert(out, info.charge)
-    end
     return table.concat(out, "\n")
 end
 
--- Texte affiché en grand par un clic sur la fiche pilote
+-- Texte affiché en grand par un clic sur la fiche pilote (caractéristiques
+-- et actions sont affichées au-dessus, en pictogrammes)
 local function pilotDetailText(info, lang)
     local fr = lang ~= "ENG"
     local out = {}
     table.insert(out, info.shipName .. "  ·  " .. (fr and "Pilotage " or "Skill ") .. tostring(info.skill)
         .. "  ·  " .. tostring(info.points) .. " pts")
-    table.insert(out, statLine({
-        attackText = info.attackText, agility = info.agility, hull = info.hull,
-        shields = info.shields, force = info.ownForce,
-    }, lang, 28, 36))
     if info.charge ~= "" then
         table.insert(out, info.charge)
     end
@@ -662,6 +805,51 @@ local function buildInfoText(info, lang)
         end
     end
     return table.concat(out, "\n")
+end
+
+-- Attaques { kind = "F", value = 3 } (valeur > 0)
+local function attackList(ship)
+    local list = {}
+    for _, attack in ipairs(type(ship.attack) == "table" and ship.attack or {}) do
+        if type(attack) == "table" and (tonumber(attack[2]) or 0) > 0 then
+            table.insert(list, { kind = tostring(attack[1]), value = tonumber(attack[2]) })
+        end
+    end
+    return list
+end
+
+-- Actions affichées : celles du vaisseau, puis celles ajoutées par les
+-- améliorations (sans doublon)
+local function displayActions(ship, upgrades)
+    local entries, seen = {}, {}
+    local function add(entry)
+        if type(entry) ~= "table" or entry[2] == nil then
+            return
+        end
+        local key = table.concat({ tostring(entry[1]), tostring(entry[2]), tostring(entry[3] or "") }, "|")
+        if not seen[key] then
+            seen[key] = true
+            table.insert(entries, entry)
+        end
+    end
+    for _, entry in ipairs(ship.actions or {}) do
+        add(entry)
+    end
+    for _, upgrade in ipairs(upgrades) do
+        local addData = upgrade.add_Data
+        if type(addData) == "table" then
+            if addData[1] == "add_action" then
+                add(addData[2])
+            else
+                for _, item in ipairs(addData) do
+                    if type(item) == "table" and item[1] == "add_action" then
+                        add(item[2])
+                    end
+                end
+            end
+        end
+    end
+    return entries
 end
 
 local function attackText(ship)
@@ -766,6 +954,7 @@ function UnitedSquad.build(code, data, shipDb)
         -- Améliorations : pas de cartes, mais charges, Force et actions
         local upgradeInfos = {}
         local upgradeFiches = {}
+        local upgradeRecords = {}
         local points = tonumber(pilot.points) or 0
         for _, upgradeId in ipairs(item.entry.upgrades) do
             local upgrade = data.upgrades[upgradeId]
@@ -777,6 +966,7 @@ function UnitedSquad.build(code, data, shipDb)
                 local upgradeForce = tonumber(upgrade.force) or 0
                 force = force + upgradeForce
                 upgradeAddedActions(upgrade, actions)
+                table.insert(upgradeRecords, upgrade)
                 local upgradeInfo = {
                     name = name,
                     slot = tostring(upgrade.slot or ""),
@@ -785,13 +975,14 @@ function UnitedSquad.build(code, data, shipDb)
                 }
                 table.insert(upgradeInfos, upgradeInfo)
                 table.insert(upgradeFiches, UnitedSquad.fiche(name,
-                    "<b>" .. name .. "</b>\n<i>" .. upgradeInfo.slot .. "</i>", {
+                    UnitedSquad.ficheTitle(name) .. "\n<i>" .. upgradeInfo.slot .. "</i>", {
                         description = upgradeDetailText(upgradeInfo),
                         charge = count,
                         force = upgradeForce,
                         owner = pilotName,
                         style = style,
                         outline = outline,
+                        outlineSize = UnitedSquad.FICHE.shipOutlineSize,
                     }))
             end
         end
@@ -811,6 +1002,8 @@ function UnitedSquad.build(code, data, shipDb)
             ability = UnitedSquad.cleanText(localized(pilot, "ability", lang), lang),
             chassis = chassisLines(data, ship, lang),
             upgrades = upgradeInfos,
+            attacks = attackList(ship),
+            actionEntries = displayActions(ship, upgradeRecords),
         }
 
         local textures = model and model.textures or nil
@@ -836,12 +1029,15 @@ function UnitedSquad.build(code, data, shipDb)
             SpawnSpacing = SHIP_SPACING[size] or 4,
             UnitedFiche = UnitedSquad.fiche(pilotName, buildPilotFicheText(info, lang, style), {
                 description = pilotDetailText(info, lang),
+                iconRows = iconRows(info, UnitedSquad.FICHE),
+                detailRows = iconRows(info, UnitedSquad.DETAIL),
                 tokenRow = true,
                 charge = pilotCharge,
                 force = tonumber(pilot.force) or 0,
                 owner = pilotName,
                 style = style,
                 outline = outline,
+                outlineSize = UnitedSquad.FICHE.shipOutlineSize,
             }),
             UnitedUpgradeFiches = upgradeFiches,
             dialSkin = DIAL_SKIN_BASE .. (DIAL_SKINS[skin] or DIAL_SKINS.scumandvillainy),
@@ -893,15 +1089,13 @@ function UnitedSquad.build(code, data, shipDb)
     local fr = lang ~= "ENG"
     local leaderName = localized(leader, "leadername", lang)
     local leaderAbility = UnitedSquad.cleanText(localized(leader, "leaderability", lang), lang)
-    local leaderLines = { UnitedSquad.ficheTitle("Leader : " .. leaderName, style.accent) }
+    local leaderLines = { UnitedSquad.ficheTitle("Leader : " .. leaderName, style.accent,
+        UnitedSquad.LEADER_FICHE.titleSize) }
     if #factions > 0 then
         table.insert(leaderLines, (fr and "Factions : " or "Factions: ") .. table.concat(factions, ", "))
     end
     table.insert(leaderLines, (fr and "Logistique : " or "Logistic: ") .. tostring(tonumber(leader.logistic) or 0)
         .. "  ·  " .. (fr and "Total escadron : " or "Squad total: ") .. tostring(fList.listCost) .. " pts")
-    if leaderCharge > 0 then
-        table.insert(leaderLines, chargeLabel(leaderCharge, leaderRecurring, lang))
-    end
     if leaderAbility ~= "" then
         table.insert(leaderLines, "")
         table.insert(leaderLines, leaderAbility)
@@ -912,6 +1106,7 @@ function UnitedSquad.build(code, data, shipDb)
         lang = lang,
         fiche = UnitedSquad.fiche("Leader : " .. leaderName, table.concat(leaderLines, "\n"), {
             description = leaderAbility,
+            layout = UnitedSquad.LEADER_FICHE,
             tokenRow = true,
             charge = leaderCharge,
             owner = leaderName,
