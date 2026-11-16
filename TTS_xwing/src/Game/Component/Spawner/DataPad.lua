@@ -470,9 +470,15 @@ function unitedReload(obj, playerColor, alt_click)
 end
 
 -- Emplacement des notes (leader + pilotes) : devant la place du joueur,
--- d'après la zone de main de sa couleur. Ajuster UNITED_NOTES_DISTANCE si les
--- notes sont trop près ou trop loin du bord de table.
-UNITED_NOTES_DISTANCE = 17 -- bord haut des fiches, depuis la place du joueur
+-- d'après la zone de main de sa couleur (table standard : main à 40 du
+-- centre, bord de l'aire de jeu 3'x3' à ~23,4 de la main).
+-- UNITED_NOTES_DISTANCE : limite haute du bloc (boucliers / fiches pilote),
+--   juste sous le bord de l'aire de jeu.
+-- UNITED_NOTES_MIN_DISTANCE : limite basse (fiche leader), assez loin de la
+--   zone de main pour que rien n'y tombe ; les fiches sont réduites si le
+--   bloc (pilotes, vaisseaux, cadrans, leader) ne tient pas entre les deux.
+UNITED_NOTES_DISTANCE = 23
+UNITED_NOTES_MIN_DISTANCE = 5
 
 function unitedNotesAnchor(playerColor)
     local player = Player[playerColor]
@@ -489,6 +495,7 @@ function unitedNotesAnchor(playerColor)
         rotation = { 0, hand.rotation.y, 0 },
         right = { hand.right.x, 0, hand.right.z },
         forward = { hand.forward.x, 0, hand.forward.z },
+        maxDepth = UNITED_NOTES_DISTANCE - UNITED_NOTES_MIN_DISTANCE,
     }
 end
 

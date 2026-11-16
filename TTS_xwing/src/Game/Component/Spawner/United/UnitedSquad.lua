@@ -13,8 +13,8 @@ local UnitedSquad = {}
 
 local DEFAULT_LANG = "FRA"
 
--- Couleurs d'identification quand plusieurs vaisseaux du même type sont
--- présents (mêmes valeurs que DataPad.lua).
+-- Couleur de socle de chaque vaisseau (une par vaisseau, dans l'ordre de
+-- l'escadron ; mêmes valeurs que DataPad.lua).
 local TINT_COLORS = {
     [1] = { 1, 0, 0, 1 },        -- Rouge
     [2] = { 1, 1, 0, 1 },        -- Jaune
@@ -25,7 +25,6 @@ local TINT_COLORS = {
     [7] = { 1, 1, 1, 1 },        -- Blanc
     [8] = { 0.5, 0.5, 0.5, 1 },  -- Gris
 }
-local NO_TINT = { 0, 0, 0, 0 }
 
 local DIAL_SKIN_BASE = "http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/dial/skin/1/"
 local DIAL_SKINS = {
@@ -345,14 +344,95 @@ end
 -- flip : true si le texte apparaît à l'envers pour le joueur
 UnitedSquad.FICHE = {
     widthPx = 420,
-    fontSize = 16,
-    lineHeight = 21,
-    charsPerLine = 50,
+    fontSize = 18,
+    lineHeight = 23,
+    charsPerLine = 44,
     k = 0.013,
     flip = true,
-    titleSize = 26,      -- taille de police du titre (valeur de pilotage + nom)
+    titleSize = 28,      -- taille de police du titre (valeur de pilotage + nom)
+    statSize = 26,       -- taille de police de la ligne de caractéristiques
     tokenRowPx = 80,     -- hauteur réservée aux jetons posés sur la fiche
 }
+
+-- Couleurs des caractéristiques (comme sur les cartes officielles)
+UnitedSquad.STAT_COLORS = {
+    attack = "#FF5A4D",
+    agility = "#6EDB5E",
+    hull = "#F5D33D",
+    shields = "#5CC8FF",
+    force = "#C99BFF",
+}
+
+-- Apparence des fiches.
+--   bg     : couleur de fond (fiches et bloc)
+--   text   : couleur du texte
+--   accent : couleur des titres et du contour de la fiche leader
+-- Le contour des fiches pilote / amélioration reprend la couleur du socle
+-- du vaisseau (voir TINT_COLORS).
+-- Palette choisie selon le leader : byLeader[leaderid] en priorité, sinon
+-- byFaction[première faction du leader], sinon default.
+UnitedSquad.STYLE = {
+    outlineSize = 4,
+    default = { bg = "#101418", text = "#FFFFFF", accent = "#D9A61A" },
+    byLeader = {
+        -- [2] = { bg = "#3A1F12", text = "#FCEBD6", accent = "#E07B39" },
+    },
+    byFaction = {
+        -- Rébellion / Nouvelle République
+        Rebel_Alliance           = { bg = "#3A1F12", text = "#FCEBD6", accent = "#E07B39" },
+        Phoenix_Cell             = { bg = "#2E1A2A", text = "#F6E6F0", accent = "#D96A3A" },
+        Partisans                = { bg = "#2A2A1A", text = "#F0EDD8", accent = "#B8AE52" },
+        New_Republic_Patrol      = { bg = "#14263A", text = "#E6F0FA", accent = "#E0A030" },
+        -- Résistance / Premier Ordre
+        Heroes_of_the_Resistance = { bg = "#3A2410", text = "#FFF1DE", accent = "#F08C1E" },
+        First_Order_Vanguard     = { bg = "#140A0A", text = "#F2F2F2", accent = "#D0182E" },
+        First_Order_Specialists  = { bg = "#1A1A1A", text = "#EDEDED", accent = "#E03A3A" },
+        -- Empire
+        Imperial_Academy         = { bg = "#1E2328", text = "#F0F3F5", accent = "#A3B0BB" },
+        Imperial_Elite_Squadrons = { bg = "#101820", text = "#E8F0F8", accent = "#5B8BD6" },
+        Imperial_Remnants        = { bg = "#22201C", text = "#EAE4DA", accent = "#B8A684" },
+        ISB                      = { bg = "#0E1830", text = "#E4ECFA", accent = "#4F7FE0" },
+        -- République / Séparatistes
+        Clone_Army               = { bg = "#2A1414", text = "#FFFFFF", accent = "#E04848" },
+        Jedi_Order               = { bg = "#12243A", text = "#EAF4FF", accent = "#5CBAFF" },
+        Naboo_Defense_Force      = { bg = "#2A2410", text = "#FFF6D8", accent = "#E6C24A" },
+        Separatist_Government    = { bg = "#1A2230", text = "#E6EDF5", accent = "#7B9CC0" },
+        Trade_Federation         = { bg = "#2A2018", text = "#F2E8DA", accent = "#C8945A" },
+        -- Racailles et autres
+        Agents_of_Chaos          = { bg = "#201028", text = "#F0E6F8", accent = "#B060E0" },
+        Colossus                 = { bg = "#10282A", text = "#E2F6F6", accent = "#40C0C0" },
+        Bounty_Hunters_Guild     = { bg = "#2A2214", text = "#F4ECDC", accent = "#D0A858" },
+        Black_Sun                = { bg = "#160E0E", text = "#F5E6E6", accent = "#C02828" },
+        Crime_Syndicates         = { bg = "#1C2414", text = "#EAF2DE", accent = "#98B848" },
+        Hutt_Cartel              = { bg = "#242010", text = "#F2EED6", accent = "#C0A848" },
+        Mandalorian_Clans        = { bg = "#1A2226", text = "#E6EEF0", accent = "#88B0C0" },
+        Pirates_and_Smugglers    = { bg = "#26180E", text = "#F6E8D8", accent = "#D89040" },
+    },
+}
+
+function UnitedSquad.styleForLeader(leader)
+    local style = UnitedSquad.STYLE
+    if leader ~= nil then
+        local byId = style.byLeader[tonumber(leader.leaderid)]
+        if byId then
+            return byId
+        end
+        for _, faction in ipairs(leader.leaderfaction or {}) do
+            if faction ~= "" and style.byFaction[faction] then
+                return style.byFaction[faction]
+            end
+        end
+    end
+    return style.default
+end
+
+-- { r, g, b[, a] } (0..1) -> "#RRGGBB"
+function UnitedSquad.colorHex(c)
+    local function byte(v)
+        return math.max(0, math.min(255, math.floor((tonumber(v) or 0) * 255 + 0.5)))
+    end
+    return string.format("#%02X%02X%02X", byte(c[1]), byte(c[2]), byte(c[3]))
+end
 
 -- Longueur visible (balises exclues), sans motifs Lua (limite de MoonSharp)
 local function visibleLength(line)
@@ -384,32 +464,64 @@ function UnitedSquad.lineCount(text, charsPerLine)
 end
 
 -- Titre en gros caractères (première ligne de la fiche)
-function UnitedSquad.ficheTitle(text)
-    return "<size=" .. UnitedSquad.FICHE.titleSize .. "><b>" .. text .. "</b></size>"
+function UnitedSquad.ficheTitle(text, color)
+    local inner = "<b>" .. text .. "</b>"
+    if color then
+        inner = "<color=" .. color .. ">" .. inner .. "</color>"
+    end
+    return "<size=" .. UnitedSquad.FICHE.titleSize .. ">" .. inner .. "</size>"
+end
+
+-- Longueurs visibles de chaque ligne du texte
+local function lineLengths(text)
+    local lengths, pos = {}, 1
+    while pos <= #text + 1 do
+        local stop = string.find(text, "\n", pos, true) or (#text + 1)
+        table.insert(lengths, visibleLength(string.sub(text, pos, stop - 1)))
+        pos = stop + 1
+    end
+    return lengths
 end
 
 -- opts : description (infobulle), charge, force (jetons posés sur la fiche),
---        owner (nom du vaisseau propriétaire des jetons)
+--        owner (nom du vaisseau propriétaire des jetons),
+--        style (palette, voir STYLE), outline (couleur du contour, "#RRGGBB")
+-- La fiche emporte de quoi recalculer sa hauteur si on change sa largeur
+-- (lines, charsPerLine, lineHeight, extraPx, baseWidthPx) : voir
+-- resizeUnitedFiche dans Spawner.lua, qui n'a pas accès à ce module.
 function UnitedSquad.fiche(title, text, opts)
     local f = UnitedSquad.FICHE
     opts = opts or {}
+    local style = opts.style or UnitedSquad.STYLE.default
     local charge = opts.charge or 0
     local force = opts.force or 0
-    local height = UnitedSquad.lineCount(text, f.charsPerLine) * f.lineHeight + 30
-    if string.find(text, "<size=", 1, true) == 1 then
-        height = height + (f.titleSize - f.fontSize) * 1.4
+    local lines = lineLengths(text)
+    local lineTotal = 0
+    for _, length in ipairs(lines) do
+        lineTotal = lineTotal + math.max(1, math.ceil(length / f.charsPerLine))
+    end
+    local extra = 30
+    -- Lignes en plus grande taille (titre, caractéristiques)
+    local pos = 1
+    while pos <= #text do
+        local stop = string.find(text, "\n", pos, true) or (#text + 1)
+        local size = tonumber(string.match(string.sub(text, pos, math.min(stop, pos + 12)), "^<size=(%d+)>"))
+        if size and size > f.fontSize then
+            extra = extra + (size - f.fontSize) * 1.4
+        end
+        pos = stop + 1
     end
     -- Rangée de jetons en bas des fiches pilote / leader uniquement ; sur les
     -- améliorations, les jetons se placent à droite sans agrandir la fiche
     if opts.tokenRow and charge + force > 0 then
-        height = height + f.tokenRowPx
+        extra = extra + f.tokenRowPx
     end
     return {
         title = title,
         text = text,
         description = opts.description or "",
         widthPx = f.widthPx,
-        heightPx = math.floor(height),
+        heightPx = math.floor(lineTotal * f.lineHeight + extra),
         fontSize = f.fontSize,
         k = f.k,
         flip = f.flip,
@@ -417,30 +529,71 @@ function UnitedSquad.fiche(title, text, opts)
         force = force,
         owner = opts.owner or title,
         tokenRow = opts.tokenRow and true or false,
+        lines = lines,
+        baseWidthPx = f.widthPx,
+        charsPerLine = f.charsPerLine,
+        lineHeight = f.lineHeight,
+        extraPx = extra,
+        bgColor = style.bg,
+        textColor = style.text,
+        outlineColor = opts.outline or style.accent,
+        accentColor = style.accent,
+        outlineSize = UnitedSquad.STYLE.outlineSize,
     }
 end
 
--- Fiche du pilote : valeur de pilotage + nom en titre, sans améliorations
--- (elles ont chacune leur fiche, placée en dessous).
-local function buildPilotFicheText(info, lang)
+-- Ligne des caractéristiques, en couleur et en gras : libellés à la taille
+-- labelSize, valeurs en plus gros (valueSize)
+local function statLine(info, lang, labelSize, valueSize)
+    local fr = lang ~= "ENG"
+    local c = UnitedSquad.STAT_COLORS
+    local stats = {}
+    local function add(color, label, value)
+        table.insert(stats, "<color=" .. color .. "><size=" .. labelSize .. ">" .. label .. "</size> "
+            .. value .. "</color>")
+    end
+    if info.attackText ~= "" then
+        add(c.attack, fr and "Att" or "Atk", info.attackText)
+    end
+    add(c.agility, "Agi", tostring(info.agility))
+    add(c.hull, fr and "Coque" or "Hull", tostring(info.hull))
+    add(c.shields, fr and "Boucl." or "Shld", tostring(info.shields))
+    if info.force > 0 then
+        add(c.force, "Force", tostring(info.force))
+    end
+    return "<size=" .. valueSize .. "><b>" .. table.concat(stats, "  ") .. "</b></size>"
+end
+
+-- Fiche du pilote : valeur de pilotage + nom en titre, caractéristiques bien
+-- visibles. Capacités du pilote et du châssis : affichées par un clic (voir
+-- pilotDetailText). Les améliorations ont chacune leur fiche, en dessous.
+local function buildPilotFicheText(info, lang, style)
+    local out = {}
+    table.insert(out, UnitedSquad.ficheTitle(tostring(info.skill) .. "  " .. info.pilotName, style.accent))
+    table.insert(out, info.shipName .. "  ·  " .. tostring(info.points) .. " pts")
+    table.insert(out, statLine({
+        attackText = info.attackText, agility = info.agility, hull = info.hull,
+        shields = info.shields, force = info.ownForce,
+    }, lang, UnitedSquad.FICHE.fontSize, UnitedSquad.FICHE.statSize))
+    if info.charge ~= "" then
+        table.insert(out, info.charge)
+    end
+    return table.concat(out, "\n")
+end
+
+-- Texte affiché en grand par un clic sur la fiche pilote
+local function pilotDetailText(info, lang)
     local fr = lang ~= "ENG"
     local out = {}
-    table.insert(out, UnitedSquad.ficheTitle(tostring(info.skill) .. "  " .. info.pilotName))
-    table.insert(out, info.shipName .. "  ·  " .. tostring(info.points) .. " pts")
-    local stats = {}
-    if info.attackText ~= "" then
-        table.insert(stats, (fr and "Att " or "Atk ") .. info.attackText)
-    end
-    table.insert(stats, "Agi " .. tostring(info.agility))
-    table.insert(stats, (fr and "Coque " or "Hull ") .. tostring(info.hull))
-    table.insert(stats, (fr and "Boucl. " or "Shld ") .. tostring(info.shields))
-    if info.ownForce > 0 then
-        table.insert(stats, "Force " .. tostring(info.ownForce))
-    end
+    table.insert(out, info.shipName .. "  ·  " .. (fr and "Pilotage " or "Skill ") .. tostring(info.skill)
+        .. "  ·  " .. tostring(info.points) .. " pts")
+    table.insert(out, statLine({
+        attackText = info.attackText, agility = info.agility, hull = info.hull,
+        shields = info.shields, force = info.ownForce,
+    }, lang, 28, 36))
     if info.charge ~= "" then
-        table.insert(stats, info.charge)
+        table.insert(out, info.charge)
     end
-    table.insert(out, table.concat(stats, "  ·  "))
     if info.ability ~= "" then
         table.insert(out, "")
         table.insert(out, info.ability)
@@ -450,6 +603,18 @@ local function buildPilotFicheText(info, lang)
         table.insert(out, "<i>" .. line .. "</i>")
     end
     return table.concat(out, "\n")
+end
+
+-- Texte affiché en grand par un clic sur une fiche d'amélioration
+local function upgradeDetailText(upgradeInfo)
+    local header = "<i>" .. upgradeInfo.slot .. "</i>"
+    if upgradeInfo.charge ~= "" then
+        header = header .. "  ·  " .. upgradeInfo.charge
+    end
+    if upgradeInfo.effect == "" then
+        return header
+    end
+    return header .. "\n\n" .. upgradeInfo.effect
 end
 
 -- Texte affiché dans le panneau d'information du vaisseau
@@ -540,7 +705,6 @@ function UnitedSquad.build(code, data, shipDb)
 
     -- Première passe : résoudre pilotes et vaisseaux, compter les doublons
     local resolved = {}
-    local perShipType = {}
     for index, entry in ipairs(squad.ships) do
         local pilot = data.pilots[entry.pilotId]
         if pilot == nil then
@@ -551,9 +715,9 @@ function UnitedSquad.build(code, data, shipDb)
             return nil, "vaisseau introuvable pour le pilote " .. localized(pilot, "name", lang)
         end
         resolved[index] = { entry = entry, pilot = pilot, ship = ship }
-        perShipType[ship.name] = (perShipType[ship.name] or 0) + 1
     end
 
+    local style = UnitedSquad.styleForLeader(leader)
     local tintIndex = 0
     local usedNames = {}
     local factionSkin = nil
@@ -579,11 +743,11 @@ function UnitedSquad.build(code, data, shipDb)
             pilotName = pilotName .. " " .. tostring(usedNames[pilotName])
         end
 
-        local tint = NO_TINT
-        if perShipType[ship.name] > 1 then
-            tintIndex = tintIndex + 1
-            tint = TINT_COLORS[((tintIndex - 1) % #TINT_COLORS) + 1]
-        end
+        -- Chaque vaisseau a sa couleur de socle : elle sert aussi de contour
+        -- à ses fiches (pilote + améliorations), pour les associer d'un coup d'œil
+        tintIndex = tintIndex + 1
+        local tint = TINT_COLORS[((tintIndex - 1) % #TINT_COLORS) + 1]
+        local outline = UnitedSquad.colorHex(tint)
 
         local size = string.lower(ship.base or (model and model.size) or "small")
         local pilotCharge, pilotRecurring = chargeValue(pilot.charge)
@@ -622,10 +786,12 @@ function UnitedSquad.build(code, data, shipDb)
                 table.insert(upgradeInfos, upgradeInfo)
                 table.insert(upgradeFiches, UnitedSquad.fiche(name,
                     "<b>" .. name .. "</b>\n<i>" .. upgradeInfo.slot .. "</i>", {
-                        description = upgradeInfo.effect,
+                        description = upgradeDetailText(upgradeInfo),
                         charge = count,
                         force = upgradeForce,
                         owner = pilotName,
+                        style = style,
+                        outline = outline,
                     }))
             end
         end
@@ -668,12 +834,14 @@ function UnitedSquad.build(code, data, shipDb)
             Force = 0,
             Energy = 0,
             SpawnSpacing = SHIP_SPACING[size] or 4,
-            UnitedFiche = UnitedSquad.fiche(pilotName, buildPilotFicheText(info, lang), {
-                description = ship.name,
+            UnitedFiche = UnitedSquad.fiche(pilotName, buildPilotFicheText(info, lang, style), {
+                description = pilotDetailText(info, lang),
                 tokenRow = true,
                 charge = pilotCharge,
                 force = tonumber(pilot.force) or 0,
                 owner = pilotName,
+                style = style,
+                outline = outline,
             }),
             UnitedUpgradeFiches = upgradeFiches,
             dialSkin = DIAL_SKIN_BASE .. (DIAL_SKINS[skin] or DIAL_SKINS.scumandvillainy),
@@ -725,7 +893,7 @@ function UnitedSquad.build(code, data, shipDb)
     local fr = lang ~= "ENG"
     local leaderName = localized(leader, "leadername", lang)
     local leaderAbility = UnitedSquad.cleanText(localized(leader, "leaderability", lang), lang)
-    local leaderLines = { UnitedSquad.ficheTitle("Leader : " .. leaderName) }
+    local leaderLines = { UnitedSquad.ficheTitle("Leader : " .. leaderName, style.accent) }
     if #factions > 0 then
         table.insert(leaderLines, (fr and "Factions : " or "Factions: ") .. table.concat(factions, ", "))
     end
@@ -747,6 +915,7 @@ function UnitedSquad.build(code, data, shipDb)
             tokenRow = true,
             charge = leaderCharge,
             owner = leaderName,
+            style = style,
         }),
     }
 

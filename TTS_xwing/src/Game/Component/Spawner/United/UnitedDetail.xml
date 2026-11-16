@@ -1,0 +1,148 @@
+<!-- X-Wing United : grand panneau de description affiché par un clic sur une fiche
+     (un panneau par couleur de joueur, visible de ce joueur seulement).
+     Ouvert par unitedShowDetail (Spawner.lua). Fichier généré : modifier le
+     modèle ci-dessous puis régénérer les 12 panneaux à l'identique. -->
+<Panel id="UnitedDetail_White" visibility="White" active="false" rectAlignment="MiddleCenter"
+       width="1000" height="500" color="#101418F5" outline="#D9A61A" outlineSize="5 5"
+       showAnimation="FadeIn" hideAnimation="FadeOut" onClick="unitedCloseDetail">
+    <Text id="UnitedDetailTitle_White" raycastTarget="false" rectAlignment="UpperLeft" alignment="UpperLeft"
+          offsetXY="30 -22" width="880" height="50" fontSize="36" fontStyle="Bold" color="#D9A61A"
+          horizontalOverflow="Wrap" verticalOverflow="Overflow"></Text>
+    <Text id="UnitedDetailText_White" raycastTarget="false" rectAlignment="UpperLeft" alignment="UpperLeft"
+          offsetXY="30 -90" width="940" height="760" fontSize="28" color="#FFFFFF"
+          horizontalOverflow="Wrap" verticalOverflow="Overflow"></Text>
+    <Button rectAlignment="UpperRight" offsetXY="-14 -14" width="56" height="56" fontSize="32"
+            colors="#00000000|#FFFFFF33|#FFFFFF55|#00000000" textColor="#FFFFFF" onClick="unitedCloseDetail">X</Button>
+</Panel>
+<Panel id="UnitedDetail_Brown" visibility="Brown" active="false" rectAlignment="MiddleCenter"
+       width="1000" height="500" color="#101418F5" outline="#D9A61A" outlineSize="5 5"
+       showAnimation="FadeIn" hideAnimation="FadeOut" onClick="unitedCloseDetail">
+    <Text id="UnitedDetailTitle_Brown" raycastTarget="false" rectAlignment="UpperLeft" alignment="UpperLeft"
+          offsetXY="30 -22" width="880" height="50" fontSize="36" fontStyle="Bold" color="#D9A61A"
+          horizontalOverflow="Wrap" verticalOverflow="Overflow"></Text>
+    <Text id="UnitedDetailText_Brown" raycastTarget="false" rectAlignment="UpperLeft" alignment="UpperLeft"
+          offsetXY="30 -90" width="940" height="760" fontSize="28" color="#FFFFFF"
+          horizontalOverflow="Wrap" verticalOverflow="Overflow"></Text>
+    <Button rectAlignment="UpperRight" offsetXY="-14 -14" width="56" height="56" fontSize="32"
+            colors="#00000000|#FFFFFF33|#FFFFFF55|#00000000" textColor="#FFFFFF" onClick="unitedCloseDetail">X</Button>
+</Panel>
+<Panel id="UnitedDetail_Red" visibility="Red" active="false" rectAlignment="MiddleCenter"
+       width="1000" height="500" color="#101418F5" outline="#D9A61A" outlineSize="5 5"
+       showAnimation="FadeIn" hideAnimation="FadeOut" onClick="unitedCloseDetail">
+    <Text id="UnitedDetailTitle_Red" raycastTarget="false" rectAlignment="UpperLeft" alignment="UpperLeft"
+          offsetXY="30 -22" width="880" height="50" fontSize="36" fontStyle="Bold" color="#D9A61A"
+          horizontalOverflow="Wrap" verticalOverflow="Overflow"></Text>
+    <Text id="UnitedDetailText_Red" raycastTarget="false" rectAlignment="UpperLeft" alignment="UpperLeft"
+          offsetXY="30 -90" width="940" height="760" fontSize="28" color="#FFFFFF"
+          horizontalOverflow="Wrap" verticalOverflow="Overflow"></Text>
+    <Button rectAlignment="UpperRight" offsetXY="-14 -14" width="56" height="56" fontSize="32"
+            colors="#00000000|#FFFFFF33|#FFFFFF55|#00000000" textColor="#FFFFFF" onClick="unitedCloseDetail">X</Button>
+</Panel>
+<Panel id="UnitedDetail_Orange" visibility="Orange" active="false" rectAlignment="MiddleCenter"
+       width="1000" height="500" color="#101418F5" outline="#D9A61A" outlineSize="5 5"
+       showAnimation="FadeIn" hideAnimation="FadeOut" onClick="unitedCloseDetail">
+    <Text id="UnitedDetailTitle_Orange" raycastTarget="false" rectAlignment="UpperLeft" alignment="UpperLeft"
+          offsetXY="30 -22" width="880" height="50" fontSize="36" fontStyle="Bold" color="#D9A61A"
+          horizontalOverflow="Wrap" verticalOverflow="Overflow"></Text>
+    <Text id="UnitedDetailText_Orange" raycastTarget="false" rectAlignment="UpperLeft" alignment="UpperLeft"
+          offsetXY="30 -90" width="940" height="760" fontSize="28" color="#FFFFFF"
+          horizontalOverflow="Wrap" verticalOverflow="Overflow"></Text>
+    <Button rectAlignment="UpperRight" offsetXY="-14 -14" width="56" height="56" fontSize="32"
+            colors="#00000000|#FFFFFF33|#FFFFFF55|#00000000" textColor="#FFFFFF" onClick="unitedCloseDetail">X</Button>
+</Panel>
+<Panel id="UnitedDetail_Yellow" visibility="Yellow" active="false" rectAlignment="MiddleCenter"
+       width="1000" height="500" color="#101418F5" outline="#D9A61A" outlineSize="5 5"
+       showAnimation="FadeIn" hideAnimation="FadeOut" onClick="unitedCloseDetail">
+    <Text id="UnitedDetailTitle_Yellow" raycastTarget="false" rectAlignment="UpperLeft" alignment="UpperLeft"
+          offsetXY="30 -22" width="880" height="50" fontSize="36" fontStyle="Bold" color="#D9A61A"
+          horizontalOverflow="Wrap" verticalOverflow="Overflow"></Text>
+    <Text id="UnitedDetailText_Yellow" raycastTarget="false" rectAlignment="UpperLeft" alignment="UpperLeft"
+          offsetXY="30 -90" width="940" height="760" fontSize="28" color="#FFFFFF"
+          horizontalOverflow="Wrap" verticalOverflow="Overflow"></Text>
+    <Button rectAlignment="UpperRight" offsetXY="-14 -14" width="56" height="56" fontSize="32"
+            colors="#00000000|#FFFFFF33|#FFFFFF55|#00000000" textColor="#FFFFFF" onClick="unitedCloseDetail">X</Button>
+</Panel>
+<Panel id="UnitedDetail_Green" visibility="Green" active="false" rectAlignment="MiddleCenter"
+       width="1000" height="500" color="#101418F5" outline="#D9A61A" outlineSize="5 5"
+       showAnimation="FadeIn" hideAnimation="FadeOut" onClick="unitedCloseDetail">
+    <Text id="UnitedDetailTitle_Green" raycastTarget="false" rectAlignment="UpperLeft" alignment="UpperLeft"
+          offsetXY="30 -22" width="880" height="50" fontSize="36" fontStyle="Bold" color="#D9A61A"
+          horizontalOverflow="Wrap" verticalOverflow="Overflow"></Text>
+    <Text id="UnitedDetailText_Green" raycastTarget="false" rectAlignment="UpperLeft" alignment="UpperLeft"
+          offsetXY="30 -90" width="940" height="760" fontSize="28" color="#FFFFFF"
+          horizontalOverflow="Wrap" verticalOverflow="Overflow"></Text>
+    <Button rectAlignment="UpperRight" offsetXY="-14 -14" width="56" height="56" fontSize="32"
+            colors="#00000000|#FFFFFF33|#FFFFFF55|#00000000" textColor="#FFFFFF" onClick="unitedCloseDetail">X</Button>
+</Panel>
+<Panel id="UnitedDetail_Teal" visibility="Teal" active="false" rectAlignment="MiddleCenter"
+       width="1000" height="500" color="#101418F5" outline="#D9A61A" outlineSize="5 5"
+       showAnimation="FadeIn" hideAnimation="FadeOut" onClick="unitedCloseDetail">
+    <Text id="UnitedDetailTitle_Teal" raycastTarget="false" rectAlignment="UpperLeft" alignment="UpperLeft"
+          offsetXY="30 -22" width="880" height="50" fontSize="36" fontStyle="Bold" color="#D9A61A"
+          horizontalOverflow="Wrap" verticalOverflow="Overflow"></Text>
+    <Text id="UnitedDetailText_Teal" raycastTarget="false" rectAlignment="UpperLeft" alignment="UpperLeft"
+          offsetXY="30 -90" width="940" height="760" fontSize="28" color="#FFFFFF"
+          horizontalOverflow="Wrap" verticalOverflow="Overflow"></Text>
+    <Button rectAlignment="UpperRight" offsetXY="-14 -14" width="56" height="56" fontSize="32"
+            colors="#00000000|#FFFFFF33|#FFFFFF55|#00000000" textColor="#FFFFFF" onClick="unitedCloseDetail">X</Button>
+</Panel>
+<Panel id="UnitedDetail_Blue" visibility="Blue" active="false" rectAlignment="MiddleCenter"
+       width="1000" height="500" color="#101418F5" outline="#D9A61A" outlineSize="5 5"
+       showAnimation="FadeIn" hideAnimation="FadeOut" onClick="unitedCloseDetail">
+    <Text id="UnitedDetailTitle_Blue" raycastTarget="false" rectAlignment="UpperLeft" alignment="UpperLeft"
+          offsetXY="30 -22" width="880" height="50" fontSize="36" fontStyle="Bold" color="#D9A61A"
+          horizontalOverflow="Wrap" verticalOverflow="Overflow"></Text>
+    <Text id="UnitedDetailText_Blue" raycastTarget="false" rectAlignment="UpperLeft" alignment="UpperLeft"
+          offsetXY="30 -90" width="940" height="760" fontSize="28" color="#FFFFFF"
+          horizontalOverflow="Wrap" verticalOverflow="Overflow"></Text>
+    <Button rectAlignment="UpperRight" offsetXY="-14 -14" width="56" height="56" fontSize="32"
+            colors="#00000000|#FFFFFF33|#FFFFFF55|#00000000" textColor="#FFFFFF" onClick="unitedCloseDetail">X</Button>
+</Panel>
+<Panel id="UnitedDetail_Purple" visibility="Purple" active="false" rectAlignment="MiddleCenter"
+       width="1000" height="500" color="#101418F5" outline="#D9A61A" outlineSize="5 5"
+       showAnimation="FadeIn" hideAnimation="FadeOut" onClick="unitedCloseDetail">
+    <Text id="UnitedDetailTitle_Purple" raycastTarget="false" rectAlignment="UpperLeft" alignment="UpperLeft"
+          offsetXY="30 -22" width="880" height="50" fontSize="36" fontStyle="Bold" color="#D9A61A"
+          horizontalOverflow="Wrap" verticalOverflow="Overflow"></Text>
+    <Text id="UnitedDetailText_Purple" raycastTarget="false" rectAlignment="UpperLeft" alignment="UpperLeft"
+          offsetXY="30 -90" width="940" height="760" fontSize="28" color="#FFFFFF"
+          horizontalOverflow="Wrap" verticalOverflow="Overflow"></Text>
+    <Button rectAlignment="UpperRight" offsetXY="-14 -14" width="56" height="56" fontSize="32"
+            colors="#00000000|#FFFFFF33|#FFFFFF55|#00000000" textColor="#FFFFFF" onClick="unitedCloseDetail">X</Button>
+</Panel>
+<Panel id="UnitedDetail_Pink" visibility="Pink" active="false" rectAlignment="MiddleCenter"
+       width="1000" height="500" color="#101418F5" outline="#D9A61A" outlineSize="5 5"
+       showAnimation="FadeIn" hideAnimation="FadeOut" onClick="unitedCloseDetail">
+    <Text id="UnitedDetailTitle_Pink" raycastTarget="false" rectAlignment="UpperLeft" alignment="UpperLeft"
+          offsetXY="30 -22" width="880" height="50" fontSize="36" fontStyle="Bold" color="#D9A61A"
+          horizontalOverflow="Wrap" verticalOverflow="Overflow"></Text>
+    <Text id="UnitedDetailText_Pink" raycastTarget="false" rectAlignment="UpperLeft" alignment="UpperLeft"
+          offsetXY="30 -90" width="940" height="760" fontSize="28" color="#FFFFFF"
+          horizontalOverflow="Wrap" verticalOverflow="Overflow"></Text>
+    <Button rectAlignment="UpperRight" offsetXY="-14 -14" width="56" height="56" fontSize="32"
+            colors="#00000000|#FFFFFF33|#FFFFFF55|#00000000" textColor="#FFFFFF" onClick="unitedCloseDetail">X</Button>
+</Panel>
+<Panel id="UnitedDetail_Grey" visibility="Grey" active="false" rectAlignment="MiddleCenter"
+       width="1000" height="500" color="#101418F5" outline="#D9A61A" outlineSize="5 5"
+       showAnimation="FadeIn" hideAnimation="FadeOut" onClick="unitedCloseDetail">
+    <Text id="UnitedDetailTitle_Grey" raycastTarget="false" rectAlignment="UpperLeft" alignment="UpperLeft"
+          offsetXY="30 -22" width="880" height="50" fontSize="36" fontStyle="Bold" color="#D9A61A"
+          horizontalOverflow="Wrap" verticalOverflow="Overflow"></Text>
+    <Text id="UnitedDetailText_Grey" raycastTarget="false" rectAlignment="UpperLeft" alignment="UpperLeft"
+          offsetXY="30 -90" width="940" height="760" fontSize="28" color="#FFFFFF"
+          horizontalOverflow="Wrap" verticalOverflow="Overflow"></Text>
+    <Button rectAlignment="UpperRight" offsetXY="-14 -14" width="56" height="56" fontSize="32"
+            colors="#00000000|#FFFFFF33|#FFFFFF55|#00000000" textColor="#FFFFFF" onClick="unitedCloseDetail">X</Button>
+</Panel>
+<Panel id="UnitedDetail_Black" visibility="Black" active="false" rectAlignment="MiddleCenter"
+       width="1000" height="500" color="#101418F5" outline="#D9A61A" outlineSize="5 5"
+       showAnimation="FadeIn" hideAnimation="FadeOut" onClick="unitedCloseDetail">
+    <Text id="UnitedDetailTitle_Black" raycastTarget="false" rectAlignment="UpperLeft" alignment="UpperLeft"
+          offsetXY="30 -22" width="880" height="50" fontSize="36" fontStyle="Bold" color="#D9A61A"
+          horizontalOverflow="Wrap" verticalOverflow="Overflow"></Text>
+    <Text id="UnitedDetailText_Black" raycastTarget="false" rectAlignment="UpperLeft" alignment="UpperLeft"
+          offsetXY="30 -90" width="940" height="760" fontSize="28" color="#FFFFFF"
+          horizontalOverflow="Wrap" verticalOverflow="Overflow"></Text>
+    <Button rectAlignment="UpperRight" offsetXY="-14 -14" width="56" height="56" fontSize="32"
+            colors="#00000000|#FFFFFF33|#FFFFFF55|#00000000" textColor="#FFFFFF" onClick="unitedCloseDetail">X</Button>
+</Panel>

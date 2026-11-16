@@ -1,18 +1,33 @@
--- X-Wing United : script posé sur chaque fiche (leader ou pilote).
+-- X-Wing United : script posé sur chaque fiche (leader, pilote, amélioration).
 --
--- La fiche est un bloc TTS standard (BlockSquare) teinté en sombre, dont la
--- taille est ajustée au texte, avec le texte affiché dessus en UI XML.
+-- La fiche est un bloc TTS standard (BlockSquare) teinté, dont la taille est
+-- ajustée au texte, avec le texte affiché dessus en UI XML.
 -- Ce module renvoie le script sous forme de texte (setLuaScript).
 --
 -- Réglages utiles (dans la table "fiche" fournie par UnitedSquad.lua) :
 --   widthPx / heightPx : taille du panneau en pixels d'UI
 --   k                  : unités de table par pixel d'UI (taille du texte)
 --   flip               : true pour retourner le texte de 180°
+--   bgColor / textColor / outlineColor / outlineSize : apparence (voir
+--   UnitedSquad.STYLE)
+--   description        : texte affiché en grand à l'écran par un clic sur la fiche
 
 return [==[
 fiche = nil
 
-local THICKNESS = 0.06 -- épaisseur de la fiche (unités de table)
+local THICKNESS = 0.06    -- épaisseur de la fiche (unités de table)
+
+local DEFAULT_BG = "#101418"
+local DEFAULT_TEXT = "#FFFFFF"
+local DEFAULT_OUTLINE = "#D9A61A"
+
+local function hexToColor(hex)
+    hex = string.gsub(hex or DEFAULT_BG, "#", "")
+    local r = tonumber(string.sub(hex, 1, 2), 16) or 16
+    local g = tonumber(string.sub(hex, 3, 4), 16) or 20
+    local b = tonumber(string.sub(hex, 5, 6), 16) or 24
+    return { r / 255, g / 255, b / 255 }
+end
 
 local function applyFiche()
     if fiche == nil or fiche.unit == nil then
@@ -25,7 +40,13 @@ local function applyFiche()
     local sy = THICKNESS / unit[2]
     local sz = height / unit[3]
     self.setScale({ sx, sy, sz })
-    self.setColorTint({ 0.06, 0.08, 0.09 })
+    local bg = fiche.bgColor or DEFAULT_BG
+    local text = fiche.textColor or DEFAULT_TEXT
+    local outline = fiche.outlineColor or DEFAULT_OUTLINE
+    local outlineSize = fiche.outlineSize or 3
+    self.setColorTint(hexToColor(bg))
+    -- Pas d'infobulle native : la description s'affiche en grand par un clic
+    self.tooltip = false
 
     -- L'UI suit l'échelle (non uniforme) de l'objet : on la compense pour
     -- que le texte garde ses proportions.
@@ -36,12 +57,13 @@ local function applyFiche()
 
     local xml = string.format(
         '<Panel id="Fiche" width="%d" height="%d" position="0 0 %.3f" rotation="180 180 %d" scale="%.5f %.5f 1" '
-        .. 'color="#101418F2" outline="#D9A61A" outlineSize="3 3">'
-        .. '<Text id="FicheText" rectAlignment="UpperLeft" alignment="UpperLeft" offsetXY="14 -12" '
-        .. 'width="%d" height="%d" fontSize="%d" color="#FFFFFF" horizontalOverflow="Wrap" '
+        .. 'color="%sF2" outline="%s" outlineSize="%d %d" onClick="ficheClick">'
+        .. '<Text id="FicheText" raycastTarget="false" rectAlignment="UpperLeft" alignment="UpperLeft" offsetXY="14 -12" '
+        .. 'width="%d" height="%d" fontSize="%d" color="%s" horizontalOverflow="Wrap" '
         .. 'verticalOverflow="Overflow"></Text></Panel>',
         fiche.widthPx, fiche.heightPx, z, rotZ, ax, ay,
-        fiche.widthPx - 28, fiche.heightPx - 20, fiche.fontSize)
+        bg, outline, outlineSize, outlineSize,
+        fiche.widthPx - 28, fiche.heightPx - 20, fiche.fontSize, text)
     self.UI.setXml(xml)
     Wait.frames(function()
         Wait.condition(function()
@@ -52,6 +74,31 @@ local function applyFiche()
     end, 2)
 end
 
+-- Clic gauche : description en grand à l'écran du joueur qui a cliqué
+-- (un second clic sur la même fiche la referme)
+function ficheClick(player, value, id)
+    if fiche == nil or player == nil or player.color == nil then
+        return
+    end
+    if value ~= nil and value ~= "-1" then
+        return
+    end
+    local description = fiche.description or ""
+    if description == "" then
+        return
+    end
+    Global.call("unitedShowDetail", {
+        color = player.color,
+        guid = self.getGUID(),
+        title = fiche.title or "",
+        text = description,
+        bgColor = fiche.bgColor,
+        textColor = fiche.textColor,
+        outlineColor = fiche.outlineColor,
+        accentColor = fiche.accentColor,
+    })
+end
+
 -- Appelé par le Spawner une fois l'objet apparu (échelle 1 à ce moment-là)
 function setFiche(params)
     fiche = params
@@ -60,7 +107,7 @@ function setFiche(params)
         fiche.unit = { size.x, size.y, size.z }
     end
     self.setName(fiche.title or "")
-    -- Infobulle au survol : effet de l'amélioration, capacité du leader...
+    -- Gardée pour la recherche / le menu ; l'infobulle native est coupée
     self.setDescription(fiche.description or "")
     applyFiche()
 end

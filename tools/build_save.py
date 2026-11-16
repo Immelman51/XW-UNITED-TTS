@@ -77,6 +77,11 @@ XML_INCLUDES = {
     "8c3322": ["Ship/CompositeBase.xml"],
 }
 
+# Fichiers XML ajoutés à la fin de l'UI globale (absents du mod d'origine)
+GLOBAL_XML_APPENDS = [
+    "Game/Component/Spawner/United/UnitedDetail.xml",
+]
+
 HEADER = 'function(require, _LOADED, __bundle_register, __bundle_modules)\n'
 REGISTER = re.compile(
     r'__bundle_register\("(?P<name>[^"]+)", function\(require, _LOADED, __bundle_register, __bundle_modules\)\n'
@@ -131,6 +136,20 @@ def patch_xml(xml, includes, label):
             content = f.read().replace("\r\n", "\n").strip("\n")
         xml = xml[:first + len(marker)] + "\n" + content + "\n\n" + xml[second:]
         print(f"  {label} : XML mis à jour   {include}")
+    return xml
+
+
+def append_global_xml(xml, files):
+    for path in files:
+        marker = f"<!-- united {path} -->"
+        with open(os.path.join(SRC, *path.split("/")), encoding="utf-8") as f:
+            content = f.read().replace("\r\n", "\n").strip("\n")
+        first = xml.find(marker)
+        if first >= 0:
+            second = xml.find(marker, first + len(marker))
+            xml = xml[:first] + xml[second + len(marker):] if second >= 0 else xml[:first]
+        xml = xml.rstrip("\n") + f"\n\n{marker}\n{content}\n{marker}\n"
+        print(f"  Global : XML ajouté      {path}")
     return xml
 
 
@@ -220,6 +239,7 @@ def main():
     if "Global" in MODULES:
         save["LuaScript"] = patch_bundle(save["LuaScript"], MODULES["Global"], "Global")
         found.add("Global")
+    save["XmlUI"] = append_global_xml(save.get("XmlUI") or "", GLOBAL_XML_APPENDS)
     for obj in walk(save["ObjectStates"]):
         guid = obj.get("GUID")
         if guid in MODULES and guid != "Global":

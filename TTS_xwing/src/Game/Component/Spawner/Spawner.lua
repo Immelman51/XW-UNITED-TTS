@@ -400,7 +400,8 @@ local function spawnPilotResourceTokens(session, pilot, spawnCard, tokens, hasMo
         end
     end
 
-    if pilot.Shield > 0 then
+    -- X-Wing United : les boucliers sont posés au-dessus de la fiche pilote
+    if pilot.Shield > 0 and pilot.UnitedFiche == nil then
         local shieldValue = pilot.Shield
         while shieldValue > 0 do
             shieldValue = shieldValue - 1
@@ -428,21 +429,115 @@ end
 -- X-Wing United : fiches (leader, pilotes, améliorations) qui remplacent les
 -- cartes. Chaque fiche est un bloc plat portant UnitedFicheScript ; sa taille
 -- dépend de son texte. Les jetons de charge / Force sont posés dessus.
--- Disposition : une colonne par pilote (fiche pilote puis ses améliorations
--- en dessous), la colonne du leader en premier, devant la place du joueur.
+-- Disposition :
+--   - une colonne par pilote (fiche pilote puis ses améliorations en
+--     dessous), toutes sur une seule rangée centrée sur la ligne d'ancrage ;
+--   - les boucliers du pilote sur une ligne juste au-dessus de sa fiche ;
+--   - sous la rangée des fiches, le vaisseau de chaque pilote dans sa
+--     colonne, puis son cadran juste en dessous ;
+--   - la fiche du leader sous les cadrans, sur toute la largeur.
 -- Les positions sont calculées AVANT la création des objets : les fiches
 -- apparaissent directement à leur place, verrouillées (pas de chute).
 local UnitedFicheScript = require("Game.Component.Spawner.United.UnitedFicheScript")
 local UNITED_FICHE_GAP = 0.3        -- espace entre deux fiches
-local UNITED_FICHE_ROW_WIDTH = 36   -- largeur max d'une rangée de colonnes
+local UNITED_FICHE_ROW_WIDTH = 42   -- largeur max de la rangée des pilotes
 local UNITED_FICHE_THICKNESS = 0.06 -- doit correspondre à UnitedFicheScript
 local UNITED_TOKEN_SCALE = 0.75     -- taille des jetons posés sur les fiches
 local UNITED_TOKEN_STEP = 0.8       -- écart entre deux jetons
 local UNITED_TOKEN_DROP = 0.25      -- hauteur de laquelle les jetons sont lâchés
+local UNITED_SHIELD_MARGIN = 0.55   -- distance bord haut de fiche -> boucliers
+local UNITED_SHIP_GAP = 1.2         -- bas des fiches -> avant des socles
+local UNITED_DIAL_GAP = 0.6         -- arrière des socles -> cadrans
+local UNITED_DIAL_DEPTH = 2.6       -- encombrement d'un cadran (avec son étiquette)
+local UNITED_LEADER_GAP = 0.8       -- cadrans -> fiche du leader
+-- Rotation (degrés, autour de l'axe vertical) ajoutée aux vaisseaux et aux
+-- cadrans pour qu'ils fassent face à l'aire de jeu (+90 = vers la droite,
+-- -90 = vers la gauche)
+local UNITED_FACING_YAW = 90
+
+local function unitedFacing(rot)
+    return Vector(rot.x, (rot.y + UNITED_FACING_YAW) % 360, rot.z)
+end
+
+-- Grand panneau de description à l'écran (UI globale, un panneau par
+-- couleur de joueur : voir United/UnitedDetail.xml). Ouvert par un clic
+-- sur une fiche (UnitedFicheScript), refermé par un nouveau clic sur la
+-- même fiche, par la croix ou par un clic sur le panneau.
+local unitedDetailOpen = {}   -- couleur du joueur -> GUID de la fiche affichée
+
+local function unitedDetailHeight(text)
+    local lines, pos = 0, 1
+    while pos <= #text + 1 do
+        local stop = string.find(text, "\n", pos, true) or (#text + 1)
+        local line = string.sub(text, pos, stop - 1)
+        local visible = #(string.gsub(line, "<[^>]*>", ""))
+        lines = lines + math.max(1, math.ceil(visible / 62))
+        pos = stop + 1
+    end
+    return math.max(260, math.min(900, lines * 38 + 150))
+end
+
+function unitedShowDetail(params)
+    local color = params.color
+    if color == nil then
+        return
+    end
+    local panel = "UnitedDetail_" .. color
+    if unitedDetailOpen[color] ~= nil and unitedDetailOpen[color] == params.guid then
+        unitedDetailOpen[color] = nil
+        UI.hide(panel)
+        return
+    end
+    unitedDetailOpen[color] = params.guid
+    local text = params.text or ""
+    UI.setAttributes(panel, {
+        height = unitedDetailHeight(text),
+        color = (params.bgColor or "#101418") .. "F5",
+        outline = params.outlineColor or "#D9A61A",
+    })
+    UI.setAttribute("UnitedDetailTitle_" .. color, "color", params.accentColor or params.outlineColor or "#D9A61A")
+    UI.setAttribute("UnitedDetailText_" .. color, "color", params.textColor or "#FFFFFF")
+    UI.setValue("UnitedDetailTitle_" .. color, params.title or "")
+    UI.setValue("UnitedDetailText_" .. color, text)
+    UI.show(panel)
+end
+
+function unitedCloseDetail(player, value, id)
+    if player == nil or player.color == nil then
+        return
+    end
+    unitedDetailOpen[player.color] = nil
+    UI.hide("UnitedDetail_" .. player.color)
+end
+
+-- Change la largeur d'une fiche (leader sur toute la largeur) et recalcule
+-- sa hauteur ; le nombre de caractères par ligne suit la largeur.
+-- (Même calcul que UnitedSquad.fiche, qui n'est pas chargé dans Global.)
+local function resizeUnitedFiche(fiche, widthPx)
+    if fiche.lines == nil then
+        return
+    end
+    fiche.widthPx = math.floor(widthPx)
+    local charsPerLine = math.max(1, math.floor(fiche.charsPerLine * fiche.widthPx / fiche.baseWidthPx))
+    local lineTotal = 0
+    for _, length in ipairs(fiche.lines) do
+        lineTotal = lineTotal + math.max(1, math.ceil(length / charsPerLine))
+    end
+    fiche.heightPx = math.floor(lineTotal * fiche.lineHeight + fiche.extraPx)
+end
+
+-- Copie : la mise en page modifie la fiche (largeur, échelle)
+local function copyFiche(fiche)
+    local copy = {}
+    for key, value in pairs(fiche) do
+        copy[key] = value
+    end
+    return copy
+end
 
 local function collectUnitedLeader(leader, fiches)
     if leader ~= nil and leader.fiche ~= nil then
-        table.insert(fiches, { fiche = leader.fiche, column = 1 })
+        table.insert(fiches, { fiche = copyFiche(leader.fiche), leader = true })
     end
 end
 
@@ -452,12 +547,16 @@ local function collectUnitedPilotFiches(pilot, fiches)
     end
     local column = 1
     for _, entry in ipairs(fiches) do
-        column = math.max(column, entry.column + 1)
+        if entry.column ~= nil then
+            column = math.max(column, entry.column + 1)
+        end
     end
-    table.insert(fiches, { fiche = pilot.UnitedFiche, column = column })
+    table.insert(fiches, { fiche = copyFiche(pilot.UnitedFiche), column = column, shields = pilot.Shield or 0,
+        size = pilot.Size })
     for _, fiche in ipairs(pilot.UnitedUpgradeFiches or {}) do
-        table.insert(fiches, { fiche = fiche, column = column })
+        table.insert(fiches, { fiche = copyFiche(fiche), column = column })
     end
+    return column
 end
 
 -- Hauteur de la surface (table, tapis...) sous un point
@@ -483,100 +582,222 @@ local function unitedSurfaceY(x, z, fallback)
     return best and best.point.y or fallback
 end
 
--- Calcule centre, taille et position des jetons de chaque fiche
+-- Calcule centre, taille et position des jetons de chaque fiche.
+-- De haut (côté aire de jeu, ligne d'ancrage) en bas (côté joueur) :
+--   boucliers, fiches pilote / améliorations, vaisseaux, cadrans, leader.
+-- Si anchor.maxDepth est fourni, toutes les fiches sont réduites dans la même
+-- proportion pour que le bloc entier tienne dans cette profondeur (sinon le
+-- leader et les cadrans tombent du bord de table / dans la zone de main).
 local function computeUnitedLayout(fiches, anchor)
     local right = Vector(anchor.right[1], anchor.right[2], anchor.right[3]):normalized()
     local forward = Vector(anchor.forward[1], anchor.forward[2], anchor.forward[3]):normalized()
     local origin = Vector(anchor.position[1], 0, anchor.position[3])
 
-    local columns, order = {}, {}
-    for _, entry in ipairs(fiches) do
+    local function size(entry)
         entry.width = entry.fiche.widthPx * entry.fiche.k
         entry.depth = entry.fiche.heightPx * entry.fiche.k
-        local column = columns[entry.column]
-        if column == nil then
-            column = { entries = {}, width = 0, depth = 0 }
-            columns[entry.column] = column
-            table.insert(order, column)
-        end
-        table.insert(column.entries, entry)
-        column.width = math.max(column.width, entry.width)
-        column.depth = column.depth + entry.depth + ((#column.entries > 1) and UNITED_FICHE_GAP or 0)
     end
 
-    -- Rangées : la première a son bord haut sur la ligne d'ancrage, les
-    -- suivantes sont placées au-dessus (vers le centre de la table)
-    local rows, current = {}, { columns = {}, width = 0, depth = 0 }
-    for _, column in ipairs(order) do
-        local needed = (#current.columns > 0) and (current.width + UNITED_FICHE_GAP + column.width) or column.width
-        if #current.columns > 0 and needed > UNITED_FICHE_ROW_WIDTH then
-            table.insert(rows, current)
-            current = { columns = {}, width = 0, depth = 0 }
-            needed = column.width
-        end
-        table.insert(current.columns, column)
-        current.width = needed
-        current.depth = math.max(current.depth, column.depth)
+    local function shieldsPerLine(entry)
+        return math.max(1, math.floor((entry.width - 0.2) / UNITED_TOKEN_STEP) + 1)
     end
-    table.insert(rows, current)
 
-    local rowTop = 0
-    for rowIndex, row in ipairs(rows) do
-        if rowIndex > 1 then
-            rowTop = rowTop + row.depth + UNITED_FICHE_GAP
-        end
-        local left = -row.width / 2
-        for _, column in ipairs(row.columns) do
-            local x = left + column.width / 2
-            local top = rowTop
-            for _, entry in ipairs(column.entries) do
-                local center = origin + right * x + forward * (top - entry.depth / 2)
-                local surface = unitedSurfaceY(center.x, center.z, anchor.surfaceY or 1)
-                entry.surface = surface
-                entry.position = Vector(center.x, surface + UNITED_FICHE_THICKNESS / 2, center.z)
-                entry.tokenPositions = {}
-                local count = (entry.fiche.charge or 0) + (entry.fiche.force or 0)
-                for index = 1, count do
-                    local tokenX, tokenY
-                    if entry.fiche.tokenRow then
-                        -- rangée en bas de la fiche, de gauche à droite
-                        tokenX = x - entry.width / 2 + 0.5 + (index - 1) * UNITED_TOKEN_STEP
-                        tokenY = top - entry.depth + 0.55
-                    else
-                        -- côté droit de la fiche, de droite à gauche
-                        tokenX = x + entry.width / 2 - 0.5 - (index - 1) * UNITED_TOKEN_STEP
-                        tokenY = top - entry.depth / 2
-                    end
-                    local p = origin + right * tokenX + forward * tokenY
-                    table.insert(entry.tokenPositions, Vector(p.x, surface, p.z))
-                end
-                top = top - entry.depth - UNITED_FICHE_GAP
+    -- Colonnes des pilotes (dans l'ordre de l'escadron)
+    local columns, order, leaderEntry = {}, {}, nil
+    for _, entry in ipairs(fiches) do
+        if entry.leader then
+            leaderEntry = entry
+            entry.baseWidthPx = entry.fiche.widthPx
+        else
+            local column = columns[entry.column]
+            if column == nil then
+                column = { entries = {}, id = entry.column }
+                columns[entry.column] = column
+                table.insert(order, column)
             end
-            left = left + column.width + UNITED_FICHE_GAP
+            column.size = column.size or entry.size
+            table.insert(column.entries, entry)
         end
     end
+
+    -- Encombrement fixe (ne dépend pas de l'échelle des fiches) : vaisseaux,
+    -- cadrans et marges
+    local baseDepth = 0
+    for _, column in ipairs(order) do
+        local mm = Dim.mm_baseSize[column.size or "small"] or Dim.mm_baseSize.small
+        baseDepth = math.max(baseDepth, mm * Dim.mm_igu_ratio)
+    end
+    local shipBlock = 0
+    if #order > 0 then
+        shipBlock = UNITED_SHIP_GAP + baseDepth + UNITED_DIAL_GAP + UNITED_DIAL_DEPTH
+        if leaderEntry ~= nil then
+            shipBlock = shipBlock + UNITED_LEADER_GAP
+        end
+    end
+
+    -- Mesure : largeur / profondeur de la rangée des pilotes, bande des
+    -- boucliers au-dessus, profondeur du leader (élargi à toute la rangée)
+    local rowWidth, rowDepth, shieldBand, leaderDepth
+    local function measure()
+        rowWidth, rowDepth, shieldBand, leaderDepth = 0, 0, 0, 0
+        for index, column in ipairs(order) do
+            column.width, column.depth = 0, 0
+            for entryIndex, entry in ipairs(column.entries) do
+                size(entry)
+                column.width = math.max(column.width, entry.width)
+                column.depth = column.depth + entry.depth + ((entryIndex > 1) and UNITED_FICHE_GAP or 0)
+                local shields = entry.shields or 0
+                if shields > 0 then
+                    local lines = math.ceil(shields / shieldsPerLine(entry))
+                    shieldBand = math.max(shieldBand,
+                        UNITED_SHIELD_MARGIN + (lines - 1) * UNITED_TOKEN_STEP + UNITED_TOKEN_STEP / 2)
+                end
+            end
+            rowWidth = rowWidth + column.width + ((index > 1) and UNITED_FICHE_GAP or 0)
+            rowDepth = math.max(rowDepth, column.depth)
+        end
+        if leaderEntry ~= nil then
+            local fiche = leaderEntry.fiche
+            local width = math.max(rowWidth, leaderEntry.baseWidthPx * fiche.k)
+            resizeUnitedFiche(fiche, width / fiche.k)
+            size(leaderEntry)
+            leaderDepth = leaderEntry.depth
+        end
+    end
+
+    local function scaleAll(ratio)
+        for _, entry in ipairs(fiches) do
+            entry.fiche.k = entry.fiche.k * ratio
+        end
+    end
+
+    -- 1) Une seule rangée : si elle dépasse la largeur max, réduction
+    measure()
+    if rowWidth > UNITED_FICHE_ROW_WIDTH then
+        local gaps = UNITED_FICHE_GAP * math.max(0, #order - 1)
+        scaleAll((UNITED_FICHE_ROW_WIDTH - gaps) / (rowWidth - gaps))
+        measure()
+    end
+
+    -- 2) Le bloc entier doit tenir entre l'aire de jeu et le bord de table
+    if anchor.maxDepth ~= nil then
+        for _ = 1, 4 do
+            local total = shieldBand + rowDepth + shipBlock + leaderDepth
+            if total <= anchor.maxDepth + 0.01 then
+                break
+            end
+            local scalable = rowDepth + leaderDepth
+            local room = anchor.maxDepth - shipBlock - shieldBand
+            if scalable <= 0 or room <= 0 then
+                break
+            end
+            scaleAll(math.max(0.3, room / scalable))
+            measure()
+        end
+    end
+
+    local function place(entry, x, top)
+        local center = origin + right * x + forward * (top - entry.depth / 2)
+        local surface = unitedSurfaceY(center.x, center.z, anchor.surfaceY or 1)
+        entry.surface = surface
+        entry.position = Vector(center.x, surface + UNITED_FICHE_THICKNESS / 2, center.z)
+        entry.tokenPositions = {}
+        -- Charges / Force : posées sur la fiche
+        local count = (entry.fiche.charge or 0) + (entry.fiche.force or 0)
+        for index = 1, count do
+            local tokenX, tokenY
+            if entry.fiche.tokenRow then
+                -- rangée en bas de la fiche, de gauche à droite
+                tokenX = x - entry.width / 2 + 0.5 + (index - 1) * UNITED_TOKEN_STEP
+                tokenY = top - entry.depth + 0.55
+            else
+                -- côté droit de la fiche, de droite à gauche
+                tokenX = x + entry.width / 2 - 0.5 - (index - 1) * UNITED_TOKEN_STEP
+                tokenY = top - entry.depth / 2
+            end
+            local p = origin + right * tokenX + forward * tokenY
+            table.insert(entry.tokenPositions, Vector(p.x, surface + UNITED_FICHE_THICKNESS, p.z))
+        end
+        -- Boucliers : ligne(s) centrée(s) juste au-dessus de la fiche pilote
+        -- (la première ligne collée à la fiche, les suivantes vers le haut)
+        local shields = entry.shields or 0
+        local perLine = shieldsPerLine(entry)
+        for index = 1, shields do
+            local line = math.floor((index - 1) / perLine)
+            local inLine = math.min(perLine, shields - line * perLine)
+            local slot = (index - 1) % perLine
+            local tokenX = x + (slot - (inLine - 1) / 2) * UNITED_TOKEN_STEP
+            local tokenY = top + UNITED_SHIELD_MARGIN + line * UNITED_TOKEN_STEP
+            local p = origin + right * tokenX + forward * tokenY
+            local y = unitedSurfaceY(p.x, p.z, surface)
+            table.insert(entry.tokenPositions, Vector(p.x, y, p.z))
+        end
+    end
+
+    -- Rangée des pilotes : centrée, sous la bande des boucliers (la ligne
+    -- d'ancrage est la limite haute du bloc, côté aire de jeu)
+    local rowTop = -shieldBand
+    local left = -rowWidth / 2
+    for _, column in ipairs(order) do
+        local x = left + column.width / 2
+        column.x = x
+        local top = rowTop
+        for _, entry in ipairs(column.entries) do
+            place(entry, x, top)
+            top = top - entry.depth - UNITED_FICHE_GAP
+        end
+        left = left + column.width + UNITED_FICHE_GAP
+    end
+
+    -- Vaisseaux puis cadrans : une rangée chacun, sous la rangée des fiches,
+    -- chaque vaisseau dans la colonne de son pilote
+    local slots = {}
+    local rowBottom = rowTop - rowDepth
+    if #order > 0 then
+        local shipY = rowBottom - UNITED_SHIP_GAP - baseDepth / 2
+        local dialY = rowBottom - UNITED_SHIP_GAP - baseDepth - UNITED_DIAL_GAP - UNITED_DIAL_DEPTH / 2
+        for _, column in ipairs(order) do
+            local ship = origin + right * column.x + forward * shipY
+            local dial = origin + right * column.x + forward * dialY
+            local marker = dial + right * (UNITED_DIAL_DEPTH / 2 + 0.6)
+            local fallback = anchor.surfaceY or 1
+            slots[column.id] = {
+                ship = Vector(ship.x, unitedSurfaceY(ship.x, ship.z, fallback) + 0.5, ship.z),
+                dial = Vector(dial.x, unitedSurfaceY(dial.x, dial.z, fallback) + 0.5, dial.z),
+                marker = Vector(marker.x, unitedSurfaceY(marker.x, marker.z, fallback) + 1, marker.z),
+            }
+        end
+    end
+
+    -- Leader : sous les cadrans, sur toute la largeur (déjà redimensionné
+    -- par measure)
+    if leaderEntry ~= nil then
+        place(leaderEntry, 0, rowBottom - shipBlock)
+    end
+    return slots
 end
 
--- Crée les fiches à leur place, puis les jetons au-dessus, puis :
+-- Ancre par défaut (spectateur, sans place) : fiches devant le DataPad
+local function unitedDefaultAnchor(spawnCard)
+    local origin = LocalPos(spawnCard, { 0, 0, -4 })
+    local r = spawnCard.getTransformRight()
+    local f = spawnCard.getTransformForward()
+    return {
+        position = origin,
+        rotation = spawnCard.getRotation(),
+        right = { r.x, 0, r.z },
+        forward = { -f.x, 0, -f.z },
+    }
+end
+
+-- Crée les fiches à leur place (calculée au préalable par
+-- computeUnitedLayout), puis les jetons au-dessus, puis :
 --   1) dimensionne chaque fiche (setFiche) une fois son script chargé,
 --   2) pose les jetons juste au-dessus de leur fiche et les libère.
-local function spawnUnitedFiches(session, fiches, anchor, spawnCard, tokens)
+local function spawnUnitedFiches(session, fiches, anchor, tokens)
     if #fiches == 0 then
         return
     end
-    if anchor == nil then
-        -- Spectateur : fiches devant le DataPad
-        local origin = LocalPos(spawnCard, { 0, 0, -4 })
-        local r = spawnCard.getTransformRight()
-        local f = spawnCard.getTransformForward()
-        anchor = {
-            position = origin,
-            rotation = spawnCard.getRotation(),
-            right = { r.x, 0, r.z },
-            forward = { -f.x, 0, -f.z },
-        }
-    end
-    computeUnitedLayout(fiches, anchor)
 
     local allTokens = {}
     for _, entry in ipairs(fiches) do
@@ -588,7 +809,9 @@ local function spawnUnitedFiches(session, fiches, anchor, spawnCard, tokens)
             sound = false,
         }))
         object.setLock(true)
-        object.setColorTint({ 0.06, 0.08, 0.09 })
+        local bg = string.gsub(entry.fiche.bgColor or "#101418", "#", "")
+        object.setColorTint({ (tonumber(string.sub(bg, 1, 2), 16) or 16) / 255,
+            (tonumber(string.sub(bg, 3, 4), 16) or 20) / 255, (tonumber(string.sub(bg, 5, 6), 16) or 24) / 255 })
         object.setName(entry.fiche.title or "")
         object.setLuaScript(UnitedFicheScript)
         object.addTag("UnitedFiche")
@@ -602,11 +825,14 @@ local function spawnUnitedFiches(session, fiches, anchor, spawnCard, tokens)
         for _ = 1, entry.fiche.force or 0 do
             table.insert(templates, { tokens.Force, "force_owner" })
         end
+        for _ = 1, entry.shields or 0 do
+            table.insert(templates, { tokens.Shield, "shield_owner", noName = true })
+        end
         for index, template in ipairs(templates) do
             local p = entry.tokenPositions[index]
             -- Créé en hauteur et immobilisé tant que la fiche n'a pas sa taille
             local token = cloneSpawnerToken(session, template[1], { p.x, p.y + 3, p.z }, template[2],
-                entry.fiche.owner, entry.fiche.title)
+                entry.fiche.owner, (not template.noName) and entry.fiche.title or nil)
             token.setLock(true)
             token.setRotation(anchor.rotation)
             token.setScale(token.getScale() * UNITED_TOKEN_SCALE)
@@ -619,8 +845,7 @@ local function spawnUnitedFiches(session, fiches, anchor, spawnCard, tokens)
         for _, entry in ipairs(fiches) do
             for _, token in ipairs(entry.tokens) do
                 local p = token.position
-                token.object.setPositionSmooth({ p.x, entry.surface + UNITED_FICHE_THICKNESS + UNITED_TOKEN_DROP, p.z },
-                    false, true)
+                token.object.setPositionSmooth({ p.x, p.y + UNITED_TOKEN_DROP, p.z }, false, true)
                 token.object.setLock(false)
             end
         end
@@ -696,7 +921,7 @@ local function spawnPilotAccessories(session, pilot, spawnCard, accessoryContext
         end
     end
 
-    local markerPosition = LocalPos(spawnCard, { -1.5, 1, 8.7 })
+    local markerPosition = pilot.UnitedMarkerPosition or LocalPos(spawnCard, { -1.5, 1, 8.7 })
     if pilot.Bomb == true then
         for _, bombDrop in ipairs(cloneAllMatchingSpawnerAccessories(session, accessoryContext, 'Bomb drop token (unassigned)',
             markerPosition, rotation)) do
@@ -852,8 +1077,8 @@ local function spawnPilotCardAndDial(context, pilot, pilotName, pilotCustomizati
     if pilotName ~= '' then
         for _, acc in pairs(accessoryContext.accessories) do
             if acc.name == 'Unassigned Dial' then
-                local dialpos = LocalPos(spawnCard, { 0, 1, 13.2 })
-                local dialrot = rot
+                local dialpos = pilot.UnitedDialPosition or LocalPos(spawnCard, { 0, 1, 13.2 })
+                local dialrot = pilot.UnitedDialPosition and unitedFacing(rot) or rot
                 local dial = takeSpawnerAccessorySource(accessoryContext, {
                     position = dialpos,
                     rotation = dialrot,
@@ -920,12 +1145,17 @@ local function spawnCompositeShipBase(context, pilot, pilotName, texture, modelt
     end
 
     local pos
-    if size == "huge" then
+    if pilot.UnitedShipPosition then
+        pos = pilot.UnitedShipPosition
+    elseif size == "huge" then
         pos = LocalPos(spawnCard, { 0, 0, 13.2 })
     else
         pos = LocalPos(spawnCard, { 0, 0, 10.2 })
     end
     local rot = spawnCard.getRotation()
+    if pilot.UnitedShipPosition then
+        rot = unitedFacing(rot)
+    end
     local base_prototype = getObjectFromGUID(CompositeBase_GUID)
     local pilotFaction = pilot.Data.Faction or faction
     local factionName = factionnames[pilotFaction]
@@ -1207,7 +1437,6 @@ local function spawnPilotBundle(context, pilot, upgradeResult)
     spawnPilotAccessories(session, pilot, spawnCard, accessoryContext, faction, shipBundleResult.shipRotation,
         shipBundleResult.shipPosition)
     spawnPilotResourceTokens(session, pilot, spawnCard, tokens, hasMob)
-    collectUnitedPilotFiches(pilot, context.unitedFiches)
 end
 
 local function isExtendedWidthUpgrade(upgrade)
@@ -1452,8 +1681,31 @@ local function spawnSquad(request, pilotCardScript)
         local CONFIG_CARD_ANCHOR_X = 1.42
         local CONFIG_CARD_SHIFT_X = -1.9
 
+        -- X-Wing United : la disposition (fiches, vaisseaux, cadrans) est
+        -- calculée avant toute création d'objet
         local unitedFiches = {}
-        collectUnitedLeader(listTable.Leader, unitedFiches)
+        local unitedAnchor = listTable.NotesAnchor
+        if listTable.United then
+            unitedAnchor = unitedAnchor or unitedDefaultAnchor(spawnCard)
+            collectUnitedLeader(listTable.Leader, unitedFiches)
+            local pilotColumns = {}
+            for index, pilot in ipairs(Pilots) do
+                if pilot.id ~= '' then
+                    pilotColumns[index] = collectUnitedPilotFiches(pilot, unitedFiches)
+                end
+            end
+            if #unitedFiches > 0 then
+                local slots = computeUnitedLayout(unitedFiches, unitedAnchor)
+                for index, column in pairs(pilotColumns) do
+                    local slot = slots[column]
+                    if slot ~= nil then
+                        Pilots[index].UnitedShipPosition = slot.ship
+                        Pilots[index].UnitedDialPosition = slot.dial
+                        Pilots[index].UnitedMarkerPosition = slot.marker
+                    end
+                end
+            end
+        end
 
         local shipIndex = 1 --Sets index of ship being spawned
 
@@ -1488,7 +1740,6 @@ local function spawnSquad(request, pilotCardScript)
                 spawnPrefix = spawnPrefix,
                 factionnames = factionnames,
                 tokens = tokens,
-                unitedFiches = unitedFiches,
             }, pilot, upgradeResult)
 
 
@@ -1498,7 +1749,7 @@ local function spawnSquad(request, pilotCardScript)
 
         spawnCard.setPosition(LocalPos(spawnCard, { 0, 0, 5.5 }))
 
-        spawnUnitedFiches(session, unitedFiches, listTable.NotesAnchor, spawnCard, tokens)
+        spawnUnitedFiches(session, unitedFiches, unitedAnchor, tokens)
 
         spawnSpawnerRemotes(session, listTable.Remotes, spawnCard, accessoryContext)
 
