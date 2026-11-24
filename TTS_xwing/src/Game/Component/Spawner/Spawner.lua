@@ -1674,7 +1674,7 @@ local function spawnSquad(request, pilotCardScript)
         firstorder = "first-order",
         galacticrepublic = "republic",
         separatistalliance = "separatists",
-        shadowcollective = "shadowcolletive"
+        shadowcollective = "shadowcollective"
     }
 
     local bagPosition = { 15, 15, 0 }
