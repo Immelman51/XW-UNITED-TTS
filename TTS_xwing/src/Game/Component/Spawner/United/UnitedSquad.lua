@@ -340,26 +340,29 @@ end
 -- Fiches posées devant le joueur (voir UnitedFicheScript.lua).
 -- widthPx/fontSize/lineHeight : mise en page en pixels d'UI
 -- charsPerLine : estimation du nombre de caractères par ligne (hauteur)
--- k : unités de table par pixel (0.013 => fiche de ~5,5 unités de large)
+-- k : unités de table par pixel (0.011 => fiche de ~5,5 unités de large ;
+--     le leader a le sien, voir LEADER_FICHE)
 -- flip : true si le texte apparaît à l'envers pour le joueur
 UnitedSquad.FICHE = {
     widthPx = 500,
     fontSize = 20,
     lineHeight = 25,
     charsPerLine = 47,
-    k = 0.013,
+    k = 0.011,
     flip = true,
-    titleSize = 32,      -- taille de police du titre (pilote : pilotage + nom ; amélioration : nom)
+    titleSize = 32,      -- taille de police du titre des améliorations (nom)
+    pilotTitleSize = 43, -- taille de police du titre des pilotes (pilotage + nom)
     shipOutlineSize = 5, -- épaisseur du cadre aux couleurs du socle (pilotes, améliorations)
     tokenRowPx = 80,     -- hauteur réservée aux jetons posés sur la fiche
-    statIconPx = 40,     -- pictogrammes des caractéristiques
-    statSize = 40,       -- valeurs des caractéristiques
-    actionIconPx = 38,   -- pictogrammes des actions
+    statIconPx = 53,     -- pictogrammes des caractéristiques
+    statSize = 53,       -- valeurs des caractéristiques
+    actionIconPx = 51,   -- pictogrammes des actions
     rowWidthPx = 472,    -- largeur utile des rangées de pictogrammes (widthPx - 28)
 }
 
 -- Réglages propres à la fiche du leader (le reste vient de FICHE)
 UnitedSquad.LEADER_FICHE = {
+    k = 0.014625,
     fontSize = 24,
     lineHeight = 30,
     charsPerLine = 39,
@@ -722,7 +725,8 @@ end
 -- Les améliorations ont chacune leur fiche, en dessous.
 local function buildPilotFicheText(info, lang, style)
     local out = {}
-    table.insert(out, UnitedSquad.ficheTitle(tostring(info.skill) .. "  " .. info.pilotName, style.accent))
+    table.insert(out, UnitedSquad.ficheTitle(tostring(info.skill) .. "  " .. info.pilotName, style.accent,
+        UnitedSquad.FICHE.pilotTitleSize))
     table.insert(out, info.shipName .. "  ·  " .. tostring(info.points) .. " pts")
     return table.concat(out, "\n")
 end

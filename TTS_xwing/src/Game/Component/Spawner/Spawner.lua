@@ -440,10 +440,10 @@ end
 -- apparaissent directement à leur place, verrouillées (pas de chute).
 local UnitedFicheScript = require("Game.Component.Spawner.United.UnitedFicheScript")
 local UNITED_FICHE_GAP = 0.3        -- espace entre deux fiches
-local UNITED_FICHE_ROW_WIDTH = 42   -- largeur max de la rangée des pilotes
 local UNITED_FICHE_THICKNESS = 0.06 -- doit correspondre à UnitedFicheScript
 local UNITED_TOKEN_SCALE = 0.75     -- taille des jetons posés sur les fiches
 local UNITED_TOKEN_STEP = 0.8       -- écart entre deux jetons
+local UNITED_TOKEN_MARGIN = 0.5     -- bords bas / droit de fiche -> centre du jeton
 local UNITED_TOKEN_DROP = 0.25      -- hauteur de laquelle les jetons sont lâchés
 local UNITED_SHIELD_MARGIN = 0.55   -- distance bord haut de fiche -> boucliers
 local UNITED_SHIP_GAP = 1.2         -- bas des fiches -> avant des socles
@@ -646,9 +646,6 @@ end
 -- Calcule centre, taille et position des jetons de chaque fiche.
 -- De haut (côté aire de jeu, ligne d'ancrage) en bas (côté joueur) :
 --   boucliers, fiches pilote / améliorations, vaisseaux, cadrans, leader.
--- Si anchor.maxDepth est fourni, toutes les fiches sont réduites dans la même
--- proportion pour que le bloc entier tienne dans cette profondeur (sinon le
--- leader et les cadrans tombent du bord de table / dans la zone de main).
 local function computeUnitedLayout(fiches, anchor)
     local right = Vector(anchor.right[1], anchor.right[2], anchor.right[3]):normalized()
     local forward = Vector(anchor.forward[1], anchor.forward[2], anchor.forward[3]):normalized()
@@ -726,36 +723,9 @@ local function computeUnitedLayout(fiches, anchor)
         end
     end
 
-    local function scaleAll(ratio)
-        for _, entry in ipairs(fiches) do
-            entry.fiche.k = entry.fiche.k * ratio
-        end
-    end
-
-    -- 1) Une seule rangée : si elle dépasse la largeur max, réduction
+    -- Taille fixe : aucune réduction, même si le bloc déborde de la place
+    -- disponible (aire de jeu, zone de main, voisin)
     measure()
-    if rowWidth > UNITED_FICHE_ROW_WIDTH then
-        local gaps = UNITED_FICHE_GAP * math.max(0, #order - 1)
-        scaleAll((UNITED_FICHE_ROW_WIDTH - gaps) / (rowWidth - gaps))
-        measure()
-    end
-
-    -- 2) Le bloc entier doit tenir entre l'aire de jeu et le bord de table
-    if anchor.maxDepth ~= nil then
-        for _ = 1, 4 do
-            local total = shieldBand + rowDepth + shipBlock + leaderDepth
-            if total <= anchor.maxDepth + 0.01 then
-                break
-            end
-            local scalable = rowDepth + leaderDepth
-            local room = anchor.maxDepth - shipBlock - shieldBand
-            if scalable <= 0 or room <= 0 then
-                break
-            end
-            scaleAll(math.max(0.3, room / scalable))
-            measure()
-        end
-    end
 
     local function place(entry, x, top)
         local center = origin + right * x + forward * (top - entry.depth / 2)
@@ -763,19 +733,12 @@ local function computeUnitedLayout(fiches, anchor)
         entry.surface = surface
         entry.position = Vector(center.x, surface + UNITED_FICHE_THICKNESS / 2, center.z)
         entry.tokenPositions = {}
-        -- Charges / Force : posées sur la fiche
+        -- Charges / Force : posées sur la fiche, dans le coin bas droite,
+        -- chaque jeton suivant à gauche du précédent
         local count = (entry.fiche.charge or 0) + (entry.fiche.force or 0)
+        local tokenY = top - entry.depth + math.min(UNITED_TOKEN_MARGIN, entry.depth / 2)
         for index = 1, count do
-            local tokenX, tokenY
-            if entry.fiche.tokenRow then
-                -- rangée en bas de la fiche, de gauche à droite
-                tokenX = x - entry.width / 2 + 0.5 + (index - 1) * UNITED_TOKEN_STEP
-                tokenY = top - entry.depth + 0.55
-            else
-                -- côté droit de la fiche, de droite à gauche
-                tokenX = x + entry.width / 2 - 0.5 - (index - 1) * UNITED_TOKEN_STEP
-                tokenY = top - entry.depth / 2
-            end
+            local tokenX = x + entry.width / 2 - UNITED_TOKEN_MARGIN - (index - 1) * UNITED_TOKEN_STEP
             local p = origin + right * tokenX + forward * tokenY
             table.insert(entry.tokenPositions, Vector(p.x, surface + UNITED_FICHE_THICKNESS, p.z))
         end

@@ -33,6 +33,8 @@ function buildLeaderTable() {
     case 'Yellow':
       chargeImgPath = 'img/chargestat.png';
       break;
+    case '0':
+      break;  
     default:
       console.log(
         'This leader charge configuration has not been programmed in buildLeaderTable(). There might be a mistake in leaders.json.'
@@ -84,7 +86,7 @@ function buildLeaderTable() {
       ],
     },
     layout: LAYOUT_BORDURE_EXTERIEURE,
-    margin: [0, 0, 0, cm(1)],
+    margin: [0, 0, 0, cm(0.5)],
   };
 }
 
@@ -124,16 +126,16 @@ function buildSingleActionCell(action) {
   if (action.type === 'simple') {
     const chemin = `img/${action.code}.png`;
     cheminsImagesActions.push(chemin);
-    return { image: chemin, fit: [cm(0.45), cm(0.45)], alignment: 'center', verticalAlignment: 'center' };
+    return { image: chemin, fit: [cm(0.60), cm(0.60)], alignment: 'center', verticalAlignment: 'center' };
   }
   const chemin1 = `img/${action.code1}.png`;
   const chemin2 = `img/${action.code2}.png`;
   cheminsImagesActions.push(chemin1, 'img/fleche.png', chemin2);
   return {
     columns: [
-      { image: chemin1, fit: [cm(0.45), cm(0.45)] },
-      { image: 'img/fleche.png', fit: [cm(0.2), cm(0.45)], alignment: 'center' },
-      { image: chemin2, fit: [cm(0.45), cm(0.45)] },
+      { image: chemin1, fit: [cm(0.60), cm(0.60)] },
+      { image: 'img/fleche.png', fit: [cm(0.3), cm(0.60)], alignment: 'center' },
+      { image: chemin2, fit: [cm(0.60), cm(0.60)] },
     ],
     columnGap: 1,
     verticalAlignment: 'center',
@@ -270,7 +272,7 @@ function buildUpgradeCell(uid, x, context) {
     case 'droid':
       context.droidEquipped = true;
       break;
-    case 'add_action': {
+    case 'add_action': { //is not used anymore
       const actionToAdd = upgrades[uid]['add_Data'][1];
       if (actionToAdd[0] === 0) {
         context.actionsArray.push({ type: 'simple', code: actionToAdd[1] });
@@ -286,14 +288,40 @@ function buildUpgradeCell(uid, x, context) {
   }
 
   const nbrcharge = upgrades[uid]['charge'][0];
+  console.log(upgrades[uid]['name']);
   for (let j = 0; j < nbrcharge; j++) {
-    columnItems.push({ image: 'img/chargestat.png', width: cm(1.5) });
+    switch (upgrades[uid]['charge'][1]){
+      case "yellow":
+        columnItems.push({ image: 'img/chargestat.png', width: cm(1.5) });
+        break;
+      case "red" : 
+        columnItems.push({ image: 'img/chargestatRed.png', width: cm(1.5) });
+        break;
+      case "" :
+        break;
+      default : 
+        console.log(upgrades[uid]['charge'][1]);
+        columnItems.push({ image: 'img/'+upgrades[uid]['charge'][1]+'.png', width: cm(1.5) }); 
+        break;
+    }  
   }
-  if (upgrades[uid]['charge'][1] === '+') {
-    columnItems.push({ image: 'img/chargeplus.png', width: cm(0.3) });
-  } else if (upgrades[uid]['charge'][1] === '-') {
-    columnItems.push({ image: 'img/chargeminus.png', width: cm(0.3) });
+
+  switch (upgrades[uid]['charge'][1]) {
+    case '+':
+      columnItems.push({ image: 'img/chargeplus.png', width: cm(0.3) });
+      break;
+    case '-':
+      columnItems.push({ image: 'img/chargeminus.png', width: cm(0.3) });
+      break;
+    case '':
+      break;
+    default:
+        console.log(upgrades[uid]['charge'][2]);
+       columnItems.push({ image: 'img/'+upgrades[uid]['charge'][2]+'.png', width: cm(1.5) }); 
+       break;
   }
+
+  
   for (let j = 0; j < upgrades[uid]['force']; j++) {
     columnItems.push({ image: 'img/forcestat.png', width: cm(1.5) });
   }
@@ -459,11 +487,11 @@ function buildPilotTable(x) {
   // -- Charges/force du pilote : maintenant placés APRES le nom du pilote / nom du vaisseau
   const pilotForceIcons = Array.from({ length: pilots[pid]['force'] }, () => ({
     image: 'img/forcestat.png',
-    width: cm(1.5),
+    width: cm(0.75),
   }));
   const pilotChargeIcons = Array.from({ length: pilots[pid]['charge'][0] }, () => ({
     image: 'img/chargestat.png',
-    width: cm(1.5),
+    width: cm(0.75),
   }));
   let pilotChargeEvolutionIcon = null;
   if (pilots[pid]['charge'][1] === '+') pilotChargeEvolutionIcon = { image: 'img/chargeplus.png', width: cm(0.3) };
@@ -708,7 +736,7 @@ function buildDialsContent() {
 // 10. BASES (empreintes au sol) — à la suite des dials
 // ---------------------------------------------------------------------
 /** Largeur d'impression des bases selon leur taille de jeu (mêmes valeurs que l'ancien CSS .large/.medium/.small). */
-const LARGEURS_BASES_CM = { large: 7.2, medium: 5.4, small: 3.4 };
+const LARGEURS_BASES_CM = { large: 7.2, medium: 5.4, small: 3.4, remote : 3.4 };
 /** Nombre de bases affichées côte à côte avant de passer à la ligne suivante.
  * Valeur prudente : avec 2, même 2 bases "large" (7,2cm chacune = 14,4cm)
  * tiennent toujours sur la largeur de page (~19cm). Avec 3, ça déborderait

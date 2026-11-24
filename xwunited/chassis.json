@@ -431,10 +431,10 @@
     "name":"Repulsorlift Stabilizers",
     "id":39,
     "nbrOfEffects": 1,
-    "effect1_FRA":"(Stabilisateurs de Répulseurs) Après avoir révélé une manoeuvre <img class='inline-img' src='img/manTl2.png'> / <img class='inline-img' src='img/manBl2.png'> / <img class='inline-img' src='img/manBr2.png'> / <img class='inline-img' src='img/manTl2.png'>, vous pouvez effectuer cette manoeuvre comme un dérapage, en augmentant sa difficulté. Dans ce cas, recevez 1 jeton contrainte.<div>",
+    "effect1_FRA":"(Stabilisateurs de Répulseurs) Après avoir révélé une manoeuvre <img class='inline-img' src='img/manTl2.png'> / <img class='inline-img' src='img/manBl2.png'> / <img class='inline-img' src='img/manBr2.png'> / <img class='inline-img' src='img/manTr2.png'>, vous pouvez effectuer cette manoeuvre comme un dérapage, en augmentant sa difficulté. Dans ce cas, recevez 1 jeton contrainte.<div>",
     "effect2_FRA": "",
     "effect3_FRA": "",
-    "effect1_ENG":"(Repulsorlift Stabilizers) : After you reveal a <img class='inline-img' src='img/manTl2.png'> / <img class='inline-img' src='img/manBl2.png'> / <img class='inline-img' src='img/manBr2.png'> / <img class='inline-img' src='img/manTl2.png'> maneuver, you may perform that maneuver as a sideslip, increasing its difficulty. If you do, receive 1 strain token.</div>",
+    "effect1_ENG":"(Repulsorlift Stabilizers) : After you reveal a <img class='inline-img' src='img/manTl2.png'> / <img class='inline-img' src='img/manBl2.png'> / <img class='inline-img' src='img/manBr2.png'> / <img class='inline-img' src='img/manTr2.png'> maneuver, you may perform that maneuver as a sideslip, increasing its difficulty. If you do, receive 1 strain token.</div>",
     "effect2_ENG": "",
     "effect3_ENG": ""
 
@@ -653,10 +653,10 @@
  "name":"Intercept Booster",
  "id":59,
  "nbrOfEffects":1,
- "effect1_FRA":"<img class='chargeforceimg' src='img/chargestat.png'><img class='chargeforceimg' src='img/chargestat.png'><img class='chargeforceimg' src='img/chargeminus.png'><div>(Propulseur d'Interception) : Tant que vous avez une charge active, vous pouvez effectuer les actions : <img class='inline-img' src='Sl W.png><img class='inline-img' src='fleche.png><img class='inline-img' src='Lo W.png>Rouge</div>",
+ "effect1_FRA":"<img class='chargeforceimg' src='img/chargestat.png'><img class='chargeforceimg' src='img/chargestat.png'><img class='chargeforceimg' src='img/chargeminus.png'><div>(Propulseur d'Interception) : Tant que vous avez une charge active, vous pouvez effectuer les actions : <img class='inline-img' src='Sl W.png'><img class='inline-img' src='fleche.png'><img class='inline-img' src='Lo W.png'>Rouge</div>",
  "effect2_FRA": "",
  "effect3_FRA": "",
-    "effect1_ENG":"<img class='chargeforceimg' src='img/chargestat.png'><img class='chargeforceimg' src='img/chargestat.png'><img class='chargeforceimg' src='img/chargeminus.png'><div>(Intercept Booster) : While you have an active charge, you may perform the actions: <img class='inline-img' src='Sl W.png><img class='inline-img' src='fleche.png>Red<img class='inline-img' src='Lo W.png></div>",
+    "effect1_ENG":"<img class='chargeforceimg' src='img/chargestat.png'><img class='chargeforceimg' src='img/chargestat.png'><img class='chargeforceimg' src='img/chargeminus.png'><div>(Intercept Booster) : While you have an active charge, you may perform the actions: <img class='inline-img' src='Sl W.png'><img class='inline-img' src='fleche.png'>Red<img class='inline-img' src='Lo W.png'></div>",
     "effect2_ENG": "",
     "effect3_ENG": ""
 },
@@ -674,13 +674,13 @@
 {
  "name":"Shield Struts",
  "id":61,
- "nbrOfEffects":2,
- "effect1_FRA":"(Boucliers Rétractables) En phase système, vous pouvez changer de configuration: ",
- "effect2_FRA": "<img class='inline-img' src='img/charge.png'><div>(Active) Lorsque vous défendez, considérez que vous êtes renforcé.</div>",
- "effect3_FRA": "<img class='inline-img' src='img/charge.png'><div>(Inactive) Lorsque vous attaquez, lancez 2 dés supplémentaires.<div>",
- "effect1_ENG":"(Shield Struts) : ",
- "effect2_ENG":  "<img class='inline-img' src='img/charge.png'><div>(Active) When you defend, consider yourself as reinforced.</div>",
- "effect3_ENG": "<img class='inline-img' src='img/charge.png'> (Inactive) When you attack, roll 2 additional dice."
+ "nbrOfEffects":1,
+ "effect1_FRA":"(Boucliers Rétractables) Lorsque votre manoeuvre révélée est bleue, considérez que vous êtes renforcé.<br>Lorsque votre manoeuvre révélée est rouge, vous lancez 2 dés d'attaque supplémentaires lorsque vous attaquez.",
+ "effect2_FRA": "",
+ "effect3_FRA": "",
+ "effect1_ENG":"(Shield Struts) : When your revealed maneuver is blue, consider yourself as reinforced.<br>When your revealed maneuver is red, roll 2 additional attack dice when you attack.",
+ "effect2_ENG":  "",
+ "effect3_ENG": ""
 
 },
 {

@@ -76,8 +76,8 @@ let cheminsImagesGen = [
                         "img/chargeplus.png",
                         "img/chargestat.png",
                         "img/chargestatRed.png",
-                        "img/forcestat.png",
-                        "img/scenario_point.png"
+                        "img/forcestat.png"
+                        
                         ];
 //used for pdfmake to transform the images in base64 in print_squad_pdfmake.js. Every time I call an image, we have to store it into cheminsImages.
 //All charges and forces img, and the scenario_point img.
@@ -528,7 +528,7 @@ function displayPilot(x){
                 }
                 break;
             
-            case 'add_action' :
+            case 'add_action' : //removed in favour of new actions displayed next to the upgrade
                 console.log("add_action");
                 const actionlist = document.getElementById('actions'+(x));
                 const actionToAdd = upgrades[uid]['add_Data'][1];
@@ -590,10 +590,13 @@ function displayPilot(x){
                 case "red" :
                     newcharge.setAttribute("src","img/chargestatRed.png");
                     break;
-                case "AddCalcAction" :
-                    newcharge.setAttribute("src","img/AddCalcAction.png");
+                case "0" : //no charges to display
                     break;
-                default :
+               // case "AddCalcAction" :
+               //     newcharge.setAttribute("src","img/AddCalcAction.png");
+               //     break;
+                default : //allows to display addxxxAction.png icons when an action is added by the upgrade
+                    newcharge.setAttribute("src","img/"+upgrades[uid]['charge'][1]+".png");
                     break;
             }
             mdivupg.appendChild(newcharge);
@@ -613,8 +616,13 @@ function displayPilot(x){
 
                     mdivupg.appendChild(recurring);
                     break;
-                default :
-                break;
+                case "" :
+                    break;    
+                default : //allows to display linkxxxAction.png when a linked action is added by the upgrade
+                    recurring = document.createElement('img');    
+                    recurring.setAttribute("class","chargeforceimg");
+                    recurring.setAttribute("src","img/"+upgrades[uid]['charge'][2]+".png");
+                    break;
             
         }
         for(j=0; j<nbrforce; j++){

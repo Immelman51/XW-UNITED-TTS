@@ -475,8 +475,8 @@ end
 -- UNITED_NOTES_DISTANCE : limite haute du bloc (boucliers / fiches pilote),
 --   juste sous le bord de l'aire de jeu.
 -- UNITED_NOTES_MIN_DISTANCE : limite basse (fiche leader), assez loin de la
---   zone de main pour que rien n'y tombe ; les fiches sont réduites si le
---   bloc (pilotes, vaisseaux, cadrans, leader) ne tient pas entre les deux.
+--   zone de main pour que rien n'y tombe. Indicatif : les fiches ne sont
+--   pas réduites, le bloc peut donc dépasser cette limite.
 UNITED_NOTES_DISTANCE = 23
 UNITED_NOTES_MIN_DISTANCE = 5
 

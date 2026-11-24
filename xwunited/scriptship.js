@@ -284,14 +284,14 @@ function displayslots(yy) { //crée les menus de slot et contient l'écoute des 
 
 function testListValidity() {
     //Test if the pilots talent slots exceed the skill of the pilot (TAL)
-    for (k=0;k<shipquantity+1;k++){
+    for (k=0;k<shipquantity;k++){ //plop shipquantity+1 
         if(talentEquipped[k]>pilot_list[k]['skill']){
             listValidity=false;
             return;
         }
     }
    //Test if the number of upgrades equipped points exceed the logistic value of the leader
-    if(sumLogisticEquipped>leaders[leaderSelected_id]["logistic"]){
+    if(sumLogisticEquipped>leaders[leaderObjectSelected['leaderid']]["logistic"]){
         listValidity=false;
         return;
     }
@@ -424,7 +424,7 @@ function updateUpgradeCount(yy) { //update the table logistic_Equipped and talen
                     break;
         }
     }
-    let logisticLeaderValue = leaders[leaderSelected_id]["logistic"];
+    let logisticLeaderValue = leaders[leaderObjectSelected['leaderid']]["logistic"];
     logisticCounter.innerHTML = 'LOG<br>'+(logisticLeaderValue-sumLogisticEquipped);
     //We test the list Validity, and if it's not valid, we paint the logistic in red
    
@@ -1404,7 +1404,7 @@ function add_ship() {//fonction qui permet d'ajouter un nouveau vaisseau. S'acti
         logisticEquipped[sQ] = 0;
         talentEquipped[sQ]= 0;
         //We update logisticequipped, the logistic total and the total cost
-        for (h=0 ; h<shipquantity+1 ; h++){
+        for (h=0 ; h<shipquantity ; h++){ //plop shipquantity+1
             updateUpgradeCount(h);
             
         }
@@ -1646,11 +1646,11 @@ addMenuButton.addEventListener('click', add_ship);
 
 
 function hasher(){ //on inscrit dans hash le nombre de vaisseaux (shipquantity+1) on va transformer tous les ids du ship pilote et upgrades séparés par la lettre "z", chaque info différente (pilot, upgrades, modifiers) est séparée par des x, puis chaque vaisseaux différents séparés par ",".
-    hash = String(leaderSelected_id) + ',';
+    hash = String(leaderObjectSelected['leaderid']) + ',';
     
     
     
-    for(i = 0; i<shipquantity+1; i++) {
+    for(i = 0; i<shipquantity; i++) { //plop shipquantity+1
         
         let string_pilot_ID = String(pilot_list[i]['id']);
         hash = hash + string_pilot_ID +"u"; // 
@@ -1695,12 +1695,12 @@ function loadSquadwithCode(e) {
     //we select the leader in the menu, then we add the first ship
     leaderselect = document.getElementById("menu_leader");
     leaderselect.selectedIndex = indexes[0] ;
-    leaderSelected_id = indexes[0];
+    leaderObjectSelected['leaderid'] = indexes[0];
     
     //we have to select the faction manually because, the function to do this is in scriptleader.js
-    let factionval1 = leaders[leaderSelected_id]["leaderfaction"][0];
-    let factionval2 = leaders[leaderSelected_id]["leaderfaction"][1];
-    let factionval3 = leaders[leaderSelected_id]["leaderfaction"][2];
+    let factionval1 = leaders[leaderObjectSelected['leaderid']]["leaderfaction"][0];
+    let factionval2 = leaders[leaderObjectSelected['leaderid']]["leaderfaction"][1];
+    let factionval3 = leaders[leaderObjectSelected['leaderid']]["leaderfaction"][2];
     document.querySelector(".faction1").textContent = factionval1;
     document.getElementById("faction1logo").setAttribute("src",'img/'+factionval1+'mini.png') ;
     document.querySelector(".faction2").textContent = factionval2;
@@ -1764,6 +1764,7 @@ function loadSquadwithCode(e) {
             }
         updateUpgradeCount(l-1);
         update_restricted_List(l-1);
+        getLeaderObject();
             }
         
         }
