@@ -16,7 +16,7 @@ local BLUE_COLOR = "#0026f8"
 local PURPLE_COLOR = "#d000b3"
 local ICON_ON = "#ffffffff"
 local ICON_OFF = "#666666aa"
-local ASSET_BASE_URL = "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/dial/maneuvers/"
+local ASSET_BASE_URL = "https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/dial/maneuvers/"
 
 local ASSET_FILES = {
     Speed0 = "v0.png",

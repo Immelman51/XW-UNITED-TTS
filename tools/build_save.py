@@ -219,6 +219,23 @@ def generate_data_module(use_local):
     print(f"  -> {os.path.relpath(DATA_MODULE, REPO)} ({os.path.getsize(DATA_MODULE) // 1024} Ko)")
 
 
+# Les assets (modèles, textures, socles...) sont servis par ce dépôt et non
+# plus par celui de JohnnyCheese : toutes les URL de la sauvegarde sont
+# réécrites (objets de la table comme scripts embarqués).
+ASSET_URL_RE = re.compile(r"JohnnyCheese/TTS_X-Wing2\.0/(blob/|raw/)?(?:master|[0-9a-f]{40})/")
+ASSET_URL_NEW = r"Immelman51/XW-UNITED-TTS/\1main/"
+
+
+def rewrite_asset_urls(value):
+    if isinstance(value, str):
+        return ASSET_URL_RE.sub(ASSET_URL_NEW, value)
+    if isinstance(value, list):
+        return [rewrite_asset_urls(v) for v in value]
+    if isinstance(value, dict):
+        return {k: rewrite_asset_urls(v) for k, v in value.items()}
+    return value
+
+
 def walk(objects):
     for obj in objects:
         yield obj
@@ -251,6 +268,7 @@ def main():
     if missing:
         sys.exit(f"Objets introuvables dans le mod : {', '.join(sorted(missing))}")
 
+    save = rewrite_asset_urls(save)
     save["SaveName"] = SAVE_NAME
     with open(OUTPUT_SAVE, "w", encoding="utf-8") as f:
         json.dump(save, f, ensure_ascii=False, indent=2)

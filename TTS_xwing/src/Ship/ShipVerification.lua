@@ -4,13 +4,13 @@ ShipVerification = {}
 
 ShipVerification.colliders = {
     small =
-    '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/colliders/Small_base_Collider.obj',
+    '{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/colliders/Small_base_Collider.obj',
     medium =
-    '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/colliders/Medium_base_Collider.obj',
+    '{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/colliders/Medium_base_Collider.obj',
     large =
-    '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/colliders/Large_base_Collider.obj',
+    '{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/colliders/Large_base_Collider.obj',
     huge =
-    '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/colliders/Huge_base_Collider.obj'
+    '{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/colliders/Huge_base_Collider.obj'
 }
 
 ShipVerification.VerifyShipBase = function(ship)

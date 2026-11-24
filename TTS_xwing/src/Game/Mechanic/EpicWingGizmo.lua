@@ -318,7 +318,7 @@ function SetRedSquadron()
     self.setName(wingName)
     local selfParams = self.getCustomObject()
     selfParams.diffuse =
-    "{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/tools/RedSquadron.png"
+    "{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/tools/RedSquadron.png"
     self.setCustomObject(selfParams)
     local newSelf = self.reload()
     self.call('SpawnLastButtons')
@@ -329,7 +329,7 @@ function SetGoldSquadron()
     self.setName(wingName)
     local selfParams = self.getCustomObject()
     selfParams.diffuse =
-    "{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/tools/GoldSquadron.png"
+    "{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/tools/GoldSquadron.png"
     self.setCustomObject(selfParams)
     local newSelf = self.reload()
     self.call('SpawnLastButtons')
@@ -340,7 +340,7 @@ function SetBlueSquadron()
     self.setName(wingName)
     local selfParams = self.getCustomObject()
     selfParams.diffuse =
-    "{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/tools/BlueSquadron.png"
+    "{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/tools/BlueSquadron.png"
     self.setCustomObject(selfParams)
     self.call('SpawnLastButtons')
     local newSelf = self.reload()
@@ -351,7 +351,7 @@ function SetGreenSquadron()
     self.setName(wingName)
     local selfParams = self.getCustomObject()
     selfParams.diffuse =
-    "{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/tools/GreenSquadron.png"
+    "{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/tools/GreenSquadron.png"
     self.setCustomObject(selfParams)
     self.call('SpawnLastButtons')
     local newSelf = self.reload()
@@ -362,7 +362,7 @@ function SetBlackSquadron()
     self.setName(wingName)
     local selfParams = self.getCustomObject()
     selfParams.diffuse =
-    "{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/tools/BlackSquadron.png"
+    "{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/tools/BlackSquadron.png"
     self.setCustomObject(selfParams)
     self.call('SpawnLastButtons')
     local newSelf = self.reload()
@@ -373,7 +373,7 @@ function SetWhiteSquadron()
     self.setName(wingName)
     local selfParams = self.getCustomObject()
     selfParams.diffuse =
-    "{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/tools/WhiteSquadron.png"
+    "{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/tools/WhiteSquadron.png"
     self.setCustomObject(selfParams)
     local newSelf = self.reload()
     self.call('SpawnLastButtons')

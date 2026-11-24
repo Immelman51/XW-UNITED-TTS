@@ -95,14 +95,14 @@ end
 
 ModelDB.colliders = {
     ['small'] = {
-        ['full'] = { '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/colliders/Small_base_Collider.obj' }
+        ['full'] = { '{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/colliders/Small_base_Collider.obj' }
     },
     ['medium'] = {
-        ['full'] = { '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/colliders/Medium_base_Collider.obj' }
+        ['full'] = { '{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/colliders/Medium_base_Collider.obj' }
     },
 
     ['large'] = {
-        ['full'] = { '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/colliders/Large_base_Collider.obj' }
+        ['full'] = { '{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/colliders/Large_base_Collider.obj' }
     }
 }
 
@@ -117,17 +117,17 @@ ModelDB.data = {
     ['Generic'] = {
         ['small'] = {
             ['Generic'] = {
-                meshes = { '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/colliders/Small_base_Collider.obj' }
+                meshes = { '{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/colliders/Small_base_Collider.obj' }
             }
         },
         ['medium'] = {
             ['Generic'] = {
-                meshes = { '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/colliders/Medium_base_Collider.obj' }
+                meshes = { '{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/colliders/Medium_base_Collider.obj' }
             }
         },
         ['large'] = {
             ['Generic'] = {
-                meshes = { '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/colliders/Large_base_Collider.obj' }
+                meshes = { '{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/colliders/Large_base_Collider.obj' }
             }
         }
     },

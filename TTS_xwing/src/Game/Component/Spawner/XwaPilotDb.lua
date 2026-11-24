@@ -696,7 +696,7 @@ xwaPilotDb['themandalorian-armedanddangerous'] = {
         { name = 'Kineso-Switch', charge = 2 },
         { name = 'Calibrated Laser Targeting', charge = 0 }
     },
-    mesh = "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/nabooroyaln1starfighter/MandoN1.obj"
+    mesh = "https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/small/nabooroyaln1starfighter/MandoN1.obj"
 }
 
 xwaPilotDb['theta3-evacuationofdqar'] = {

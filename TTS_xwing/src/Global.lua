@@ -5058,134 +5058,134 @@ RulerModule.meshes = {}
 RulerModule.meshes.smallBase = {}
 RulerModule.meshes.smallBase.scale = { 0.629, 0.629, 0.629 }
 RulerModule.meshes.smallBase.diffuse =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/arctexture.png'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/arctexture.png'
 RulerModule.meshes.smallBase.collider =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/colliders/Small_base_Collider.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/colliders/Small_base_Collider.obj'
 RulerModule.meshes.smallBase.front =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/small_front.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/small_front.obj'
 RulerModule.meshes.smallBase.fullfront =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/small_fullfront.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/small_fullfront.obj'
 RulerModule.meshes.smallBase.rear =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/small_back.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/small_back.obj'
 RulerModule.meshes.smallBase.fullback =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/small_fullback.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/small_fullback.obj'
 RulerModule.meshes.smallBase.sideArc =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/small_side_4.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/small_side_4.obj'
 RulerModule.meshes.smallBase.frontback =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/small_frontback.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/small_frontback.obj'
 RulerModule.meshes.smallBase.leftright =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/small_leftright.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/small_leftright.obj'
 RulerModule.meshes.smallBase.bullseye =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/small_bullseye.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/small_bullseye.obj'
 RulerModule.meshes.smallBase.range = {}
 RulerModule.meshes.smallBase.range[1] =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/small_range_1.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/small_range_1.obj'
 RulerModule.meshes.smallBase.range[2] =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/small_range_2.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/small_range_2.obj'
 RulerModule.meshes.smallBase.range[3] =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/small_range_3.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/small_range_3.obj'
 RulerModule.meshes.smallBase.range[4] =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/small_range_4.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/small_range_4.obj'
 
 
 -- Ruler meshes for medium base JC
 RulerModule.meshes.mediumBase = {}
 RulerModule.meshes.mediumBase.scale = { 0.629, 0.629, 0.629 }
 RulerModule.meshes.mediumBase.diffuse =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/arctexture.png'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/arctexture.png'
 RulerModule.meshes.mediumBase.collider =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/colliders/Medium_base_Collider.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/colliders/Medium_base_Collider.obj'
 RulerModule.meshes.mediumBase.front =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/medium_front.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/medium_front.obj'
 RulerModule.meshes.mediumBase.fullfront =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/medium_fullfront.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/medium_fullfront.obj'
 RulerModule.meshes.mediumBase.rear =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/medium_back.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/medium_back.obj'
 RulerModule.meshes.mediumBase.fullback =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/medium_fullback.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/medium_fullback.obj'
 RulerModule.meshes.mediumBase.sideArc =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/medium_side_4.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/medium_side_4.obj'
 RulerModule.meshes.mediumBase.frontback =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/medium_frontback.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/medium_frontback.obj'
 RulerModule.meshes.mediumBase.leftright =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/medium_leftright.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/medium_leftright.obj'
 RulerModule.meshes.mediumBase.bullseye =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/medium_bullseye.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/medium_bullseye.obj'
 RulerModule.meshes.mediumBase.range = {}
 RulerModule.meshes.mediumBase.range[1] =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/medium_range_1.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/medium_range_1.obj'
 RulerModule.meshes.mediumBase.range[2] =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/medium_range_2.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/medium_range_2.obj'
 RulerModule.meshes.mediumBase.range[3] =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/medium_range_3.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/medium_range_3.obj'
 RulerModule.meshes.mediumBase.range[4] =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/medium_range_4.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/medium_range_4.obj'
 
 RulerModule.meshes.largeBase = {}
 RulerModule.meshes.largeBase.scale = { 0.629, 0.629, 0.629 }
 RulerModule.meshes.largeBase.diffuse =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/arctexture.png'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/arctexture.png'
 RulerModule.meshes.largeBase.collider =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/colliders/Large_base_Collider.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/colliders/Large_base_Collider.obj'
 RulerModule.meshes.largeBase.front =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/large_front.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/large_front.obj'
 RulerModule.meshes.largeBase.fullfront =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/large_fullfront.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/large_fullfront.obj'
 RulerModule.meshes.largeBase.rear =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/large_back.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/large_back.obj'
 RulerModule.meshes.largeBase.fullback =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/large_fullback.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/large_fullback.obj'
 RulerModule.meshes.largeBase.sideArc =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/large_side_4.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/large_side_4.obj'
 RulerModule.meshes.largeBase.frontback =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/large_frontback.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/large_frontback.obj'
 RulerModule.meshes.largeBase.leftright =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/large_leftright.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/large_leftright.obj'
 RulerModule.meshes.largeBase.bullseye =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/large_bullseye.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/large_bullseye.obj'
 RulerModule.meshes.largeBase.range = {}
 RulerModule.meshes.largeBase.range[1] =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/large_range_1.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/large_range_1.obj'
 RulerModule.meshes.largeBase.range[2] =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/large_range_2.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/large_range_2.obj'
 RulerModule.meshes.largeBase.range[3] =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/large_range_3.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/large_range_3.obj'
 RulerModule.meshes.largeBase.range[4] =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/large_range_4.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/large_range_4.obj'
 
 RulerModule.meshes.hugeBase = {}
 RulerModule.meshes.hugeBase.scale = { 0.629, 0.629, 0.629 }
 RulerModule.meshes.hugeBase.diffuse =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/arctexture.png'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/arctexture.png'
 RulerModule.meshes.hugeBase.collider =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/colliders/Huge_base_Collider.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/colliders/Huge_base_Collider.obj'
 RulerModule.meshes.hugeBase.front =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/huge_front.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/huge_front.obj'
 RulerModule.meshes.hugeBase.fullfront =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/huge_fullfront.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/huge_fullfront.obj'
 RulerModule.meshes.hugeBase.rear =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/huge_back.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/huge_back.obj'
 RulerModule.meshes.hugeBase.fullback =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/huge_fullback.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/huge_fullback.obj'
 RulerModule.meshes.hugeBase.sideArc =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/huge_side_4.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/huge_side_4.obj'
 RulerModule.meshes.hugeBase.frontback =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/huge_frontback.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/huge_frontback.obj'
 RulerModule.meshes.hugeBase.leftright =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/huge_leftright.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/huge_leftright.obj'
 RulerModule.meshes.hugeBase.bullseye =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/huge_bullseye.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/huge_bullseye.obj'
 RulerModule.meshes.hugeBase.range = {}
 RulerModule.meshes.hugeBase.range[1] =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/huge_range_1.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/huge_range_1.obj'
 RulerModule.meshes.hugeBase.range[2] =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/huge_range_2.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/huge_range_2.obj'
 RulerModule.meshes.hugeBase.range[3] =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/huge_range_3.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/huge_range_3.obj'
 RulerModule.meshes.hugeBase.range[4] =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/huge_range_15.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/huge_range_15.obj'
 RulerModule.meshes.hugeBase.range[5] =
-'{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/huge_range_5.obj'
+'{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/huge_range_5.obj'
 
 
 -- Avaialble ruler codes:
@@ -5709,7 +5709,7 @@ end
 BombModule.ExpandCluster = function(center)
     local offset = { Dim.Convert_mm_igu(43.5), 0, Dim.Convert_mm_igu(-1.5) }
     local tParams = { type = 'Custom_Token' }
-    local tCustom = { image = 'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/bombs/clustermine-side.png', thickness = 0.1, merge_distance = 5 }
+    local tCustom = { image = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/bombs/clustermine-side.png', thickness = 0.1, merge_distance = 5 }
 
     local t1 = spawnObject(tParams)
     t1.setCustomObject(tCustom)
@@ -5742,11 +5742,11 @@ BombModule.SpawnBlaze = function(center)
     local tParams = { type = 'Custom_Model' }
     local tCustom = {
         mesh =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/tokens/devices/proximity.obj',
+        'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/tokens/devices/proximity.obj',
         diffuse =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/tokens/devices/blaze.png',
+        'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/tokens/devices/blaze.png',
         collider =
-        'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/tokens/devices/proximity-col.obj',
+        'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/tokens/devices/proximity-col.obj',
         convex = true,
         material = 3,
         type = 0

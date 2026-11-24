@@ -10,25 +10,25 @@
 
 -- Table of all images to be cycled through with NextImage()
 imageSet = {
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-01-death-star-over-endor.jpg',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-02-dark-blue-nebula.jpg',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-03-deep-space-starfield.jpg',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-04-animated-purple-nebula.mp4',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-05-animated-spiral-galaxy.mp4',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-06-bespin-sunrise.jpg',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-07-hoth-limb.png',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-08-jakku-destroyed-ships.jpg',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-09-coruscant-night-side.png',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-10-blue-planet-satellite.png',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-11-mustafar.png',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-12-scarif-shield-gate.png',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-13-tatooine-crater-field.png',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-14-purple-star-nebula.png',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-15-death-star-surface.jpg',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-16-death-star-red-moon.jpg',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-17-death-star-surface-blueprint.jpg',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-18-orion-nebula.jpg',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-19-blue-starfield-planets.png',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-01-death-star-over-endor.jpg',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-02-dark-blue-nebula.jpg',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-03-deep-space-starfield.jpg',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-04-animated-purple-nebula.mp4',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-05-animated-spiral-galaxy.mp4',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-06-bespin-sunrise.jpg',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-07-hoth-limb.png',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-08-jakku-destroyed-ships.jpg',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-09-coruscant-night-side.png',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-10-blue-planet-satellite.png',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-11-mustafar.png',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-12-scarif-shield-gate.png',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-13-tatooine-crater-field.png',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-14-purple-star-nebula.png',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-15-death-star-surface.jpg',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-16-death-star-red-moon.jpg',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-17-death-star-surface-blueprint.jpg',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-18-orion-nebula.jpg',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-19-blue-starfield-planets.png',
 }
 
 -- Mat flag for layouts
@@ -147,9 +147,9 @@ end
 rulers = {}
 rulersState = 0
 rulerData = {}
-rulerData.mesh = 'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/rulers/range13.obj'
-rulerData.collider = 'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/rulers/range13.obj'
-rulerData.diffuse = 'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/rulers/range.jpg'
+rulerData.mesh = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/rulers/range13.obj'
+rulerData.collider = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/rulers/range13.obj'
+rulerData.diffuse = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/rulers/range.jpg'
 rulerData.material = 1
 scenario_objects = {}
 
@@ -438,7 +438,7 @@ function SelectBoY()
     BoY_YahooCard.setCustomObject({
         type = 0,
         face = "http://cloud-3.steamusercontent.com/ugc/1867333336886624923/DB28D017E08CB6DB3BD5350A0F11D0C26E302E68/",
-        back = "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/scenarios/back.png",
+        back = "https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/scenarios/back.png",
         sideways = false
     })
     local BoY_AttackRunCard = spawnObject({
@@ -454,7 +454,7 @@ function SelectBoY()
     BoY_AttackRunCard.setCustomObject({
         type = 0,
         face = "http://cloud-3.steamusercontent.com/ugc/1867333336886629434/813352C9B1E17D29442BAEDC09B5706261A335E1/",
-        back = "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/scenarios/back.png",
+        back = "https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/scenarios/back.png",
         sideways = false
     })
     

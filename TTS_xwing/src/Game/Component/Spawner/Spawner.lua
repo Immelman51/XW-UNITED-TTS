@@ -5,7 +5,7 @@ local Decker = require("Game.Component.Spawner.Decker")
 
 local Spawner = {}
 local PILOT_CARD_SCRIPT_URL =
-    "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/TTS_xwing/src/Game/Component/Spawner/PilotCard.lua"
+    "https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/TTS_xwing/src/Game/Component/Spawner/PilotCard.lua"
 local LIMITED_PILOT_BULLET = "•"
 local cachedPilotCardScript = nil
 local pendingSpawnRequests = {}
@@ -88,6 +88,7 @@ local legacyFactionKeys = {
     [5] = "firstorder",
     [6] = "galacticrepublic",
     [7] = "separatistalliance",
+    [8] = "shadowcollective",
     Dum = "dummy",
     Reb = "rebelalliance",
     Imp = "galacticempire",
@@ -96,6 +97,7 @@ local legacyFactionKeys = {
     For = "firstorder",
     Rep = "galacticrepublic",
     Cis = "separatistalliance",
+    Sha = "shadowcollective"
 }
 
 local function normalizeLegacySpawnerList(listTable)
@@ -1084,7 +1086,7 @@ local function spawnPilotCardAndDial(context, pilot, pilotName, pilotCustomizati
             }))
             pilotId.setCustomObject({
                 mesh =
-                '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/models/cardid.obj',
+                '{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/models/cardid.obj',
                 convex = true,
                 material = 1,
                 type = 0
@@ -1223,7 +1225,7 @@ local function spawnCompositeShipBase(context, pilot, pilotName, texture, modelt
         mesh = spawnPrefix .. "bases/pegs/" .. pegtype .. ".obj",
         diffuse = baseDiffuse,
         collider =
-        '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/models/minisculebox.obj',
+        '{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/models/minisculebox.obj',
         convex = true,
         material = 1,
         type = 1
@@ -1237,7 +1239,7 @@ local function spawnCompositeShipBase(context, pilot, pilotName, texture, modelt
             mesh = '{verifycache}' .. pilot.Data.mesh,
             diffuse = texture,
             collider =
-            '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/models/minisculebox.obj',
+            '{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/models/minisculebox.obj',
             convex = true,
             material = 1,
             type = 1
@@ -1288,20 +1290,20 @@ local function shipIdCustomObjectForSize(size)
         material = 1,
         type = 1,
         collider =
-        '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/models/minisculebox.obj',
+        '{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/models/minisculebox.obj',
     }
     if size == "small" then
         customObj.mesh =
-        '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/models/Base_ID_Marker.obj'
+        '{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/models/Base_ID_Marker.obj'
     elseif size == "medium" then
         customObj.mesh =
-        '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/models/Base%20ID%20MED.obj'
+        '{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/models/Base%20ID%20MED.obj'
     elseif size == "large" then
         customObj.mesh =
-        '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/models/Base%20ID%20LAR.obj'
+        '{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/models/Base%20ID%20LAR.obj'
     elseif size == "huge" then
         customObj.mesh =
-        '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/models/Base_ID_HUGE.obj'
+        '{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/models/Base_ID_HUGE.obj'
     end
     return customObj
 end
@@ -1396,7 +1398,7 @@ local function spawnShipIdentifiersAndConfig(context, pilot, pilotCard, tint, mo
             }))
             configToken.setCustomObject({
                 mesh =
-                "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/tokens/flip/flipToken.obj",
+                "https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/tokens/flip/flipToken.obj",
                 diffuse = pilot.Data.Config.Token,
                 type = 5,
                 material = 1,
@@ -1663,7 +1665,7 @@ local function spawnSquad(request, pilotCardScript)
     local Customization = listTable.Customization or {}
     local dialSkin = listTable.factionDial
     local spawnPrefix =
-    "{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/"
+    "{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/"
     local factionnames = {
         rebelalliance = "rebel",
         galacticempire = "empire",
@@ -1671,7 +1673,8 @@ local function spawnSquad(request, pilotCardScript)
         resistance = "resistance",
         firstorder = "first-order",
         galacticrepublic = "republic",
-        separatistalliance = "separatists"
+        separatistalliance = "separatists",
+        shadowcollective = "shadowcolletive"
     }
 
     local bagPosition = { 15, 15, 0 }

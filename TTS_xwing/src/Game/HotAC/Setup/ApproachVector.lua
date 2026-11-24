@@ -5,9 +5,9 @@ ApproachVector = {}
 ApproachVector.__index = ApproachVector
 
 local image_url =
-"https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/HotAC/Table/Approach%20Vector.png"
+"https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/HotAC/Table/Approach%20Vector.png"
 local model_url =
-"https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/HotAC/Table/Approach%20Vector.obj"
+"https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/HotAC/Table/Approach%20Vector.obj"
 
 -- Constructor for the ApproachVectorArea class
 function ApproachVector:new(index, notation)

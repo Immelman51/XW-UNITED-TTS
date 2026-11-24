@@ -226,9 +226,9 @@ function spawnArcVisualizer(type, range)
         snap_to_grid = false
     })
     visualizer.setCustomObject({
-        mesh = "{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/objective_front_range_3.obj",
-        collider = "{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/colliders/minicollider.obj",
-        diffuse = "{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/arctexture.png",
+        mesh = "{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/objective_front_range_3.obj",
+        collider = "{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/colliders/minicollider.obj",
+        diffuse = "{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/arctexture.png",
         material = 3
     })
     visualizer.setColorTint(color(1.0, 0.0, 0.0, 0.5))

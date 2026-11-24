@@ -3935,8 +3935,8 @@ masterPilotDB['jediknight'] = {
     texture = 'knight',
     action_set = { 'F', 'E', 'TL', 'BR', 'B' },
     keywords = { 'Light Side', 'Jedi' },
-    --tint_friendly = {mesh = 'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/Small/delta7aethersprite/Jedi_Delta7_tint.obj',
-    --                texture = 'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships/Small/GRP_Delta7/JediKnight-tint.png',}
+    --tint_friendly = {mesh = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/Small/delta7aethersprite/Jedi_Delta7_tint.obj',
+    --                texture = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships/Small/GRP_Delta7/JediKnight-tint.png',}
 }
 
 masterPilotDB['oddball'] = {
@@ -4749,7 +4749,7 @@ masterPilotDB['yoda'] = {
     texture = 'yoda',
     action_set = { 'F', 'E', 'TL', 'BR', 'B' },
     keywords = { 'Light Side', 'Jedi' },
-    mesh = "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/small/eta2actis/eta2actis-Yoda.obj"
+    mesh = "https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/small/eta2actis/eta2actis-Yoda.obj"
 }
 
 masterPilotDB['jedigeneral'] = {
@@ -5516,8 +5516,8 @@ masterPilotDB['jediknight-delta7baethersprite'] = {
     texture = 'knight',
     action_set = { 'F', 'E', 'TL', 'BR', 'B' },
     keywords = { 'Light Side', 'Jedi' },
-    --tint_friendly = {mesh = 'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/Small/delta7baethersprite/Jedi_Delta7_tint.obj',
-    --                texture = 'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/Small/delta7baethersprite/JediKnight-tint.png',}
+    --tint_friendly = {mesh = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/Small/delta7baethersprite/Jedi_Delta7_tint.obj',
+    --                texture = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/Small/delta7baethersprite/JediKnight-tint.png',}
 }
 
 -- Rogue class starfighter

@@ -2421,7 +2421,7 @@ masterUpgradesDB['azmorigan'] = {
     slot = 'Command',
     remove_slots = { 'Crew' },
     card_back =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/Back_Epic+Crew.png',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/Back_Epic+Crew.png',
     restriction = {
         faction = { ['scumandvillainy'] = true },
         size = { huge = true }
@@ -2433,7 +2433,7 @@ masterUpgradesDB['captainneeda'] = {
     remove_slots = { 'Crew' },
     charge = 4,
     card_back =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/Back_Epic+Crew.png',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/Back_Epic+Crew.png',
     restriction = {
         faction = { ['galacticempire'] = true },
         size = { huge = true }
@@ -2445,7 +2445,7 @@ masterUpgradesDB['carlistrieekan'] = {
     add_action = { 'E' },
     remove_slots = { 'Crew' },
     card_back =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/Back_Epic+Crew.png',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/Back_Epic+Crew.png',
     restriction = {
         faction = { ['rebelalliance'] = true },
         size = { huge = true }
@@ -2456,7 +2456,7 @@ masterUpgradesDB['jandodonna'] = {
     slot = 'Command',
     remove_slots = { 'Crew' },
     card_back =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/Back_Epic+Crew.png',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/Back_Epic+Crew.png',
     restriction = {
         faction = { ['rebelalliance'] = true },
         size = { huge = true }
@@ -2467,7 +2467,7 @@ masterUpgradesDB['raymusantilles'] = {
     slot = 'Command',
     remove_slots = { 'Crew' },
     card_back =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/Back_Epic+Crew.png',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/Back_Epic+Crew.png',
     restriction = {
         faction = { ['rebelalliance'] = true },
         size = { huge = true }
@@ -2478,7 +2478,7 @@ masterUpgradesDB['stalwartcaptain'] = {
     slot = 'Command',
     remove_slots = { 'Crew' },
     card_back =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/Back_Epic+Crew.png',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/Back_Epic+Crew.png',
     restriction = {
         size = { huge = true }
     }
@@ -2523,7 +2523,7 @@ masterUpgradesDB['ioncannonbattery'] = {
     slot = 'Hardpoint',
     dual = true,
     card_back =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/EpicCards/IonCannonBattery(Offline).png',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/EpicCards/IonCannonBattery(Offline).png',
     restriction = {},
     arcs = { turret = { name = 'ion cannon', range = 4, type = { 'singleturret' }, ion = true } }
 }
@@ -2533,7 +2533,7 @@ masterUpgradesDB['targetingbattery'] = {
     slot = 'Hardpoint',
     dual = true,
     card_back =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/EpicCards/TargetingBattery(Offline).png',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/EpicCards/TargetingBattery(Offline).png',
     restriction = {},
     arcs = { turret = { name = 'targeting', range = 5, type = { 'singleturret' } } }
 }
@@ -2543,7 +2543,7 @@ masterUpgradesDB['ordnancetubes'] = {
     slot = 'Hardpoint',
     dual = true,
     card_back =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/EpicCards/OrdnanceTubes(Offline).png',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/EpicCards/OrdnanceTubes(Offline).png',
     restriction = {}
 }
 
@@ -2552,7 +2552,7 @@ masterUpgradesDB['pointdefensebattery'] = {
     slot = 'Hardpoint',
     dual = true,
     card_back =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/EpicCards/PointDefenseBattery(Offline).png',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/EpicCards/PointDefenseBattery(Offline).png',
     restriction = {},
     arcs = { turret = { name = 'point defence', range = 2, type = { 'doubleturret' } } }
 }
@@ -2562,7 +2562,7 @@ masterUpgradesDB['turbolaserbattery'] = {
     slot = 'Hardpoint',
     dual = true,
     card_back =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/EpicCards/TurbolaserBattery(Offline).png',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/EpicCards/TurbolaserBattery(Offline).png',
     restriction = {
         -- TODO: Add restriction energy 5 or higher
     },
@@ -2911,7 +2911,7 @@ masterUpgradesDB['strategiccommander'] = {
     slot = 'Command',
     remove_slots = { 'Crew' },
     card_back =
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/Back_Epic+Crew.png',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/Back_Epic+Crew.png',
     restriction = {
         size = { huge = true }
     }

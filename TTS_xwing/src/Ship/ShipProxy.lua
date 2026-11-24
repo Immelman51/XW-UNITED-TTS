@@ -350,19 +350,19 @@ end
 ShipProxyModule.proxyModels = {
     collider = {
         small =
-        '{verifycache}https://github.com/JohnnyCheese/TTS_X-Wing2.0/raw/master/assets/colliders/Small_base_proxy_collider.obj',
+        '{verifycache}https://github.com/Immelman51/XW-UNITED-TTS/raw/main/assets/colliders/Small_base_proxy_collider.obj',
         medium =
-        '{verifycache}https://github.com/JohnnyCheese/TTS_X-Wing2.0/raw/master/assets/colliders/Medium_base_proxy_collider.obj',
+        '{verifycache}https://github.com/Immelman51/XW-UNITED-TTS/raw/main/assets/colliders/Medium_base_proxy_collider.obj',
         large =
-        '{verifycache}https://github.com/JohnnyCheese/TTS_X-Wing2.0/raw/master/assets/colliders/Large_base_proxy_collider.obj',
+        '{verifycache}https://github.com/Immelman51/XW-UNITED-TTS/raw/main/assets/colliders/Large_base_proxy_collider.obj',
         huge =
-        '{verifycache}https://github.com/JohnnyCheese/TTS_X-Wing2.0/raw/master/assets/colliders/Huge_base_proxy_collider.obj'
+        '{verifycache}https://github.com/Immelman51/XW-UNITED-TTS/raw/main/assets/colliders/Huge_base_proxy_collider.obj'
     },
     model = {
-        small = '{verifycache}https://github.com/JohnnyCheese/TTS_X-Wing2.0/raw/master/assets/ships/proxy/small.obj',
-        medium = '{verifycache}https://github.com/JohnnyCheese/TTS_X-Wing2.0/raw/master/assets/ships/proxy/medium.obj',
-        large = '{verifycache}https://github.com/JohnnyCheese/TTS_X-Wing2.0/raw/master/assets/ships/proxy/large.obj',
-        huge = '{verifycache}https://github.com/JohnnyCheese/TTS_X-Wing2.0/raw/master/assets/ships/proxy/huge.obj',
+        small = '{verifycache}https://github.com/Immelman51/XW-UNITED-TTS/raw/main/assets/ships/proxy/small.obj',
+        medium = '{verifycache}https://github.com/Immelman51/XW-UNITED-TTS/raw/main/assets/ships/proxy/medium.obj',
+        large = '{verifycache}https://github.com/Immelman51/XW-UNITED-TTS/raw/main/assets/ships/proxy/large.obj',
+        huge = '{verifycache}https://github.com/Immelman51/XW-UNITED-TTS/raw/main/assets/ships/proxy/huge.obj',
     },
 }
 

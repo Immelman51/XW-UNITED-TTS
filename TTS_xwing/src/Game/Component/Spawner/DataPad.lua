@@ -40,78 +40,78 @@ validFactions = {
 cardBackDB = {}
 cardBackDB.dummy = ''
 cardBackDB.rebelalliance =
-'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/Rebelback.png'
+'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/Rebelback.png'
 cardBackDB.galacticempire =
-'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/Empireback.png'
+'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/Empireback.png'
 cardBackDB.scumandvillainy =
-'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/Scumback.png'
+'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/Scumback.png'
 cardBackDB.resistance =
-'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/Resback.jpg'
-cardBackDB.firstorder = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/FOback.png'
+'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/Resback.jpg'
+cardBackDB.firstorder = 'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/FOback.png'
 cardBackDB.galacticrepublic =
-'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/REPback.jpg'
+'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/REPback.jpg'
 cardBackDB.separatistalliance =
-'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/CISback.jpg'
+'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/CISback.jpg'
 cardBackDB['Talent'] =
-'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/Eptupgrade.png'  -- EPT
+'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/Eptupgrade.png'  -- EPT
 cardBackDB['Sensor'] =
-'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/systemupg.png'   -- Sensor
+'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/systemupg.png'   -- Sensor
 cardBackDB['Cannon'] =
-'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/Cannonup.png'    -- Cannon
+'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/Cannonup.png'    -- Cannon
 cardBackDB['Cannon Dual'] =
-'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/Cannonup.png'    -- Dule Cannon NEEDS ART
+'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/Cannonup.png'    -- Dule Cannon NEEDS ART
 cardBackDB['Turret'] =
-'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/turrups.png'     -- Turret
+'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/turrups.png'     -- Turret
 cardBackDB['Torpedo'] =
-'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/torpups.png'     -- Torpedo
+'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/torpups.png'     -- Torpedo
 cardBackDB['Missile'] =
-'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/missileupg.png'  -- Missile
+'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/missileupg.png'  -- Missile
 cardBackDB['Missile Dual'] =
-'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/DualMissile.png' -- Dual Missile
+'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/DualMissile.png' -- Dual Missile
 cardBackDB[''] =
 ''                                                                                                            --
 cardBackDB['Crew'] =
-'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/Crew.png'        -- Crew
+'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/Crew.png'        -- Crew
 cardBackDB['Crew Dual'] =
-'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/DualCrew.png'    -- Dual Crew
+'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/DualCrew.png'    -- Dual Crew
 cardBackDB['Astromech'] =
-'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/Astro.png' --Astromech
+'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/Astro.png' --Astromech
 cardBackDB['Payload'] =
-'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/Device.png'       -- Device
+'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/Device.png'       -- Device
 cardBackDB['Payload Dual'] =
-'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/DualDevice.png'   -- DualDevice
+'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/DualDevice.png'   -- DualDevice
 cardBackDB['Illicit'] =
-'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/Illicit.png'      -- Ilicit
+'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/Illicit.png'      -- Ilicit
 cardBackDB['Modification'] =
-'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/Modification.png' -- Modification
+'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/Modification.png' -- Modification
 cardBackDB['Title'] =
-'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/Title.png'        -- Title
+'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/Title.png'        -- Title
 cardBackDB['Gunner'] =
-'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/Gunner.png'       -- Gunner
+'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/Gunner.png'       -- Gunner
 cardBackDB['Force Power'] =
-'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/Force.png'        -- Force Power
+'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/Force.png'        -- Force Power
 cardBackDB['Configuration'] =
-'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/Config.png'       -- Configuration
+'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/Config.png'       -- Configuration
 cardBackDB['Tech'] =
-'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/Tech.jpg'         -- Tech
+'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/Tech.jpg'         -- Tech
 cardBackDB['Relay'] =
-'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/Relay.jpg'        -- Droid (PLACEHOLDER - TO DO)
+'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/Relay.jpg'        -- Droid (PLACEHOLDER - TO DO)
 cardBackDB['Command'] =
-'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/Back_Epic.png'    -- Command
+'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/Back_Epic.png'    -- Command
 cardBackDB['Cargo'] =
-'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/Back_Cargo.png'  -- Cargo
+'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/Back_Cargo.png'  -- Cargo
 cardBackDB['Team'] =
-'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/Back_Staff.png'   -- Team
+'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/Back_Staff.png'   -- Team
 cardBackDB['Hardpoint'] =
-'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/Back_Staff.png'   -- Hardpoint (PlACEHOLDER - TODO)
+'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/Back_Staff.png'   -- Hardpoint (PlACEHOLDER - TODO)
 cardBackDB['Hyperdrive'] =
-'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/Back_Staff.png'   -- Hyperspace ring (PlACEHOLDER - TODO)
+'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/Back_Staff.png'   -- Hyperspace ring (PlACEHOLDER - TODO)
 
 cardBackDB['Weapon Hardpoint'] = cardBackDB['Hardpoint']
 
 
 cardBackDB.mc =
-'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/cardback/ModConfig.jpg' -- mod and config
+'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/cardback/ModConfig.jpg' -- mod and config
 
 
 masterShipDB = require("Game.Component.Spawner.ShipDb")
@@ -1139,13 +1139,13 @@ end
 ]]
 
 dialSkin = {
-    rebelalliance = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/dial/skin/1/Rebel.png',
-    galacticempire = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/dial/skin/1/Empire.png',
-    scumandvillainy = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/dial/skin/1/Scum.png',
-    resistance = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/dial/skin/1/Resistance.png',
-    firstorder = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/dial/skin/1/FO.png',
-    galacticrepublic = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/dial/skin/1/Republic.png',
-    separatistalliance = 'http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/dial/skin/1/CIS.png',
+    rebelalliance = 'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/dial/skin/1/Rebel.png',
+    galacticempire = 'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/dial/skin/1/Empire.png',
+    scumandvillainy = 'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/dial/skin/1/Scum.png',
+    resistance = 'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/dial/skin/1/Resistance.png',
+    firstorder = 'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/dial/skin/1/FO.png',
+    galacticrepublic = 'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/dial/skin/1/Republic.png',
+    separatistalliance = 'http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/dial/skin/1/CIS.png',
 }
 
 function calculateShipIndicators(idTable)

@@ -26,7 +26,7 @@ local TINT_COLORS = {
     [8] = { 0.5, 0.5, 0.5, 1 },  -- Gris
 }
 
-local DIAL_SKIN_BASE = "http://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/dial/skin/1/"
+local DIAL_SKIN_BASE = "http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/dial/skin/1/"
 local DIAL_SKINS = {
     rebelalliance = "Rebel.png",
     galacticempire = "Empire.png",
@@ -35,6 +35,7 @@ local DIAL_SKINS = {
     firstorder = "FO.png",
     galacticrepublic = "Republic.png",
     separatistalliance = "CIS.png",
+    shadowcollective = "Shadow_Collective.png"
 }
 
 -- Espacement horizontal entre deux vaisseaux, selon la taille du socle
@@ -402,35 +403,46 @@ UnitedSquad.STYLE = {
         -- [2] = { bg = "#3A1F12", text = "#FCEBD6", accent = "#E07B39" },
     },
     byFaction = {
-        -- Rébellion / Nouvelle République
-        Rebel_Alliance           = { bg = "#3A1F12", text = "#FCEBD6", accent = "#E07B39" },
-        Phoenix_Cell             = { bg = "#2E1A2A", text = "#F6E6F0", accent = "#D96A3A" },
-        Partisans                = { bg = "#2A2A1A", text = "#F0EDD8", accent = "#B8AE52" },
-        New_Republic_Patrol      = { bg = "#14263A", text = "#E6F0FA", accent = "#E0A030" },
-        -- Résistance / Premier Ordre
-        Heroes_of_the_Resistance = { bg = "#3A2410", text = "#FFF1DE", accent = "#F08C1E" },
-        First_Order_Vanguard     = { bg = "#140A0A", text = "#F2F2F2", accent = "#D0182E" },
-        First_Order_Specialists  = { bg = "#1A1A1A", text = "#EDEDED", accent = "#E03A3A" },
+        -- Rébellion
+        Rebel_Alliance           = { bg = "#b92525", text = "#ffffff", accent = "#ff0303" },
+        Phoenix_Cell             = { bg = "#b92525", text = "#d3a91e", accent = "#ee6a36" },
+        Partisans                = { bg = "#b92525", text = "#4b0d0d", accent = "#ffffff" },
+        
+        -- Résistance
+        Heroes_of_the_Resistance = { bg = "#db7cf8", text = "#FFF1DE", accent = "#da12c9" },
+        New_Republic_Patrol      = { bg = "#db7cf8", text = "#520505", accent = "#c00202" },
+        Colossus                 = { bg = "#db7cf8", text = "#032b05", accent = "#0ee64e" },
+
+        -- Premier Ordre
+        First_Order_Vanguard     = { bg = "#5b0470", text = "#F2F2F2", accent = "#9d06e4" },
+        First_Order_Specialists  = { bg = "#5b0470", text = "#face8b", accent = "#ff970f" },
+        Imperial_Remnants        = { bg = "#5b0470", text = "#92fa89", accent = "#117704" },
+
         -- Empire
-        Imperial_Academy         = { bg = "#1E2328", text = "#F0F3F5", accent = "#A3B0BB" },
-        Imperial_Elite_Squadrons = { bg = "#101820", text = "#E8F0F8", accent = "#5B8BD6" },
-        Imperial_Remnants        = { bg = "#22201C", text = "#EAE4DA", accent = "#B8A684" },
-        ISB                      = { bg = "#0E1830", text = "#E4ECFA", accent = "#4F7FE0" },
-        -- République / Séparatistes
-        Clone_Army               = { bg = "#2A1414", text = "#FFFFFF", accent = "#E04848" },
-        Jedi_Order               = { bg = "#12243A", text = "#EAF4FF", accent = "#5CBAFF" },
-        Naboo_Defense_Force      = { bg = "#2A2410", text = "#FFF6D8", accent = "#E6C24A" },
-        Separatist_Government    = { bg = "#1A2230", text = "#E6EDF5", accent = "#7B9CC0" },
-        Trade_Federation         = { bg = "#2A2018", text = "#F2E8DA", accent = "#C8945A" },
-        -- Racailles et autres
-        Agents_of_Chaos          = { bg = "#201028", text = "#F0E6F8", accent = "#B060E0" },
-        Colossus                 = { bg = "#10282A", text = "#E2F6F6", accent = "#40C0C0" },
-        Bounty_Hunters_Guild     = { bg = "#2A2214", text = "#F4ECDC", accent = "#D0A858" },
-        Black_Sun                = { bg = "#160E0E", text = "#F5E6E6", accent = "#C02828" },
-        Crime_Syndicates         = { bg = "#1C2414", text = "#EAF2DE", accent = "#98B848" },
-        Hutt_Cartel              = { bg = "#242010", text = "#F2EED6", accent = "#C0A848" },
-        Mandalorian_Clans        = { bg = "#1A2226", text = "#E6EEF0", accent = "#88B0C0" },
-        Pirates_and_Smugglers    = { bg = "#26180E", text = "#F6E8D8", accent = "#D89040" },
+        Imperial_Academy         = { bg = "#1c5f02", text = "#F0F3F5", accent = "#03cc25" },
+        Imperial_Elite_Squadrons = { bg = "#1c5f02", text = "#a7c4fc", accent = "#5B8BD6" },        
+        ISB                      = { bg = "#1c5f02", text = "#f3c4ff", accent = "#6900cc" },
+
+        -- République
+        Clone_Army               = { bg = "#11598a", text = "#ffffff", accent = "#04286b" },
+        Jedi_Order               = { bg = "#11598a", text = "#e6b6fc", accent = "#d95cff" },
+        Naboo_Defense_Force      = { bg = "#11598a", text = "#d6c794", accent = "#ebee4b" },
+
+        -- Separatistes
+        Trade_Federation         = { bg = "#803f02", text = "#F2E8DA", accent = "#d47f00" },
+        Separatist_Government    = { bg = "#803f02", text = "#a0b2ff", accent = "#2041d3" },       
+        Agents_of_Chaos          = { bg = "#803f02", text = "#927d94", accent = "#410047" },
+
+        -- Racailles
+        Hutt_Cartel              = { bg = "#fceb00", text = "#ffffff", accent = "#a79c03" },
+        Bounty_Hunters_Guild     = { bg = "#f0c82b", text = "#c0ffba", accent = "#60d149" },
+        Pirates_and_Smugglers    = { bg = "#f0c82b", text = "#e44f4f", accent = "#ff1616" },
+        
+        --Shadow Collective
+        Black_Sun                = { bg = "#e4f3f3", text = "#000000", accent = "#b8b8b8" },
+        Crime_Syndicates         = { bg = "#e4f3f3", text = "#29271a", accent = "#ffe346" },        
+        Mandalorian_Clans        = { bg = "#e4f3f3", text = "#1e2b1b", accent = "#399248" },
+        
     },
 }
 

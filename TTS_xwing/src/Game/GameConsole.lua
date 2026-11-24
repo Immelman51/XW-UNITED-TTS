@@ -843,7 +843,7 @@ function recreateIndicators()
         })
         indicator.setCustomObject({
             mesh =
-            '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/models/randomtile.obj',
+            '{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/models/randomtile.obj',
             convex = true,
             material = 1,
             type = 0

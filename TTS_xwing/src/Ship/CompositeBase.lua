@@ -632,7 +632,7 @@ function SpawnCustomizer()
         type = 0,
         material = 3,
         mesh = data.mesh or
-            'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/models/minisculebox.obj',
+            'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/models/minisculebox.obj',
         diffuse = texture_url,
     })
     local configs = {}

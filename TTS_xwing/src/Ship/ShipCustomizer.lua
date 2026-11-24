@@ -40,8 +40,8 @@ function onLoad(save_state)
       snap_to_grid      = false,
     })
     base.setCustomObject({
-      mesh = 'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/holo.obj',
-      diffuse = 'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/ships-v2/holo.jpg'
+      mesh = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/holo.obj',
+      diffuse = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/holo.jpg'
     })
     base.setName("customization base")
   end

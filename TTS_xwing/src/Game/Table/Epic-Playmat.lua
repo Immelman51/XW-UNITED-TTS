@@ -10,11 +10,11 @@
 
 -- Table of all images to be cycled through with NextImage()
 imageSet = {
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/epic-01-blue-planet-moons.jpg',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/epic-02-death-star-orbit.jpg',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/epic-03-scarif-shield-gate.jpg',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/epic-04-death-star-red-moon-sunrise.jpg',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/epic-05-star-destroyer.jpg',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/epic-01-blue-planet-moons.jpg',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/epic-02-death-star-orbit.jpg',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/epic-03-scarif-shield-gate.jpg',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/epic-04-death-star-red-moon-sunrise.jpg',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/epic-05-star-destroyer.jpg',
 }
 
 -- Mat flag for layouts
@@ -44,9 +44,9 @@ local corrScale = { 0.625, 0.625, 0.625 }
 --local corrScale = { -2.625, 0.625, 0.625 }
 local rulers, rulersState = {}, 0
 local rulerData = {
-    mesh = 'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/rulers/range13.obj',
-    collider = 'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/rulers/range13.obj',
-    diffuse = 'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/rulers/range.jpg',
+    mesh = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/rulers/range13.obj',
+    collider = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/rulers/range13.obj',
+    diffuse = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/rulers/range.jpg',
     material = 1,
 }
 local R = r_sz.height

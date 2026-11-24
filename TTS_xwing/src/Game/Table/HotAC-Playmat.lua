@@ -10,25 +10,25 @@
 
 -- Table of all images to be cycled through with NextImage()
 imageSet = {
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-01-death-star-over-endor.jpg',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-02-dark-blue-nebula.jpg',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-03-deep-space-starfield.jpg',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-04-animated-purple-nebula.mp4',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-05-animated-spiral-galaxy.mp4',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-06-bespin-sunrise.jpg',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-07-hoth-limb.png',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-08-jakku-destroyed-ships.jpg',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-09-coruscant-night-side.png',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-10-blue-planet-satellite.png',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-11-mustafar.png',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-12-scarif-shield-gate.png',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-13-tatooine-crater-field.png',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-14-purple-star-nebula.png',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-15-death-star-surface.jpg',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-16-death-star-red-moon.jpg',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-17-death-star-surface-blueprint.jpg',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-18-orion-nebula.jpg',
-    'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/textures/Mats/standard-19-blue-starfield-planets.png',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-01-death-star-over-endor.jpg',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-02-dark-blue-nebula.jpg',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-03-deep-space-starfield.jpg',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-04-animated-purple-nebula.mp4',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-05-animated-spiral-galaxy.mp4',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-06-bespin-sunrise.jpg',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-07-hoth-limb.png',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-08-jakku-destroyed-ships.jpg',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-09-coruscant-night-side.png',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-10-blue-planet-satellite.png',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-11-mustafar.png',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-12-scarif-shield-gate.png',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-13-tatooine-crater-field.png',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-14-purple-star-nebula.png',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-15-death-star-surface.jpg',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-16-death-star-red-moon.jpg',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-17-death-star-surface-blueprint.jpg',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-18-orion-nebula.jpg',
+    'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/textures/Mats/standard-19-blue-starfield-planets.png',
 }
 
 -- Mat flag for layouts
@@ -57,9 +57,9 @@ local r_sz = { height = 10.83691788, thickness = 0.08344745636, width = 0.553575
 local corrScale = { 0.625, 0.625, 0.625 }
 local rulers, rulersState = {}, 0
 local rulerData = {
-    mesh = 'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/rulers/range13.obj',
-    collider = 'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/rulers/range13.obj',
-    diffuse = 'https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/rulers/range.jpg',
+    mesh = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/rulers/range13.obj',
+    collider = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/rulers/range13.obj',
+    diffuse = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/rulers/range.jpg',
     material = 1,
 }
 local R = r_sz.height

@@ -62,7 +62,7 @@ function ToggleRuler(range)
     }
     local custom = {
         mesh =
-            '{verifycache}https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/DRK1/R' ..
+            '{verifycache}https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/DRK1/R' ..
             tostring(range) .. '.obj',
         collider = 'http://pastebin.com/raw.php?i=UK3Urmw1'
     }

@@ -3,11 +3,11 @@ local Dim = require("Dim")
 local RangeCheck = {}
 
 local RULER_MESH_BASE =
-    "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/bomb_range_"
+    "https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/bomb_range_"
 local MINI_COLLIDER =
-    "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/colliders/minicollider.obj"
+    "https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/colliders/minicollider.obj"
 local BOMB_COLLIDER =
-    "https://raw.githubusercontent.com/JohnnyCheese/TTS_X-Wing2.0/master/assets/Items/arcranges/new/bomb_collider.obj"
+    "https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/arcranges/new/bomb_collider.obj"
 local ANNOUNCEMENT_COLOR = { 1.0, 1.0, 0 }
 
 local function isShipFigurine(obj)
