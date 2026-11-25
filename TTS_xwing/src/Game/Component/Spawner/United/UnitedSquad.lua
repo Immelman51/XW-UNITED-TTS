@@ -38,6 +38,45 @@ local DIAL_SKINS = {
     shadowcollective = "Shadow_Collective.png"
 }
 
+-- Cadrans propres à chaque faction United (assets/Items/dials3d/<fichier>).
+-- Une faction absente de cette table retombe sur le cadran de sa faction
+-- d'origine (DIAL_SKINS ci-dessus).
+local FACTION_DIAL_BASE = "http://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/Items/dials3d/"
+local FACTION_DIALS = {
+    Rebel_Alliance           = "rebel_alliance.png",
+    Phoenix_Cell             = "phoenix_cell.png",
+    Partisans                = "partisans.png",
+    Heroes_of_the_Resistance = "heroes_of_the_resistance.png",
+    New_Republic_Patrol      = "new_republic_patrol.png",
+    Colossus                 = "colossus.png",
+    First_Order_Vanguard     = "first_order_vanguard.png",
+    First_Order_Specialists  = "first_order_specialists.png",
+    Imperial_Remnants        = "imperial_remnants.png",
+    Imperial_Academy         = "imperial_academy.png",
+    Imperial_Elite_Squadrons = "imperial_elite_squadrons.png",
+    ISB                      = "ISB.png",
+    Clone_Army               = "clone_army.png",
+    Jedi_Order               = "jedi_order.png",
+    Naboo_Defense_Force      = "naboo_defense_force.png",
+    Trade_Federation         = "trade_federation.png",
+    Separatist_Government    = "separatist_government.png",
+    Agents_of_Chaos          = "agents_of_chaos.png",
+    Hutt_Cartel              = "hutt_cartel.png",
+    Bounty_Hunters_Guild     = "bounty_hunters_guild.png",
+    Pirates_and_Smugglers    = "pirates_and_smugglers.png",
+    Black_Sun                = "black_sun.png",
+    Crime_Syndicates         = "crime_syndicates.png",
+    Mandalorian_Clans        = "mandalorian_clans.png",
+}
+
+local function dialSkinFor(faction, skin)
+    local file = FACTION_DIALS[faction]
+    if file then
+        return FACTION_DIAL_BASE .. file
+    end
+    return DIAL_SKIN_BASE .. (DIAL_SKINS[skin] or DIAL_SKINS.scumandvillainy)
+end
+
 -- Espacement horizontal entre deux vaisseaux, selon la taille du socle
 local SHIP_SPACING = { small = 4, medium = 5, large = 6, huge = 8 }
 
@@ -420,7 +459,7 @@ UnitedSquad.STYLE = {
 
         -- Empire
         Imperial_Academy         = { bg = "#1c5f02", text = "#F0F3F5", accent = "#03cc25" },
-        Imperial_Elite_Squadrons = { bg = "#1c5f02", text = "#a7c4fc", accent = "#5B8BD6" },        
+        Imperial_Elite_Squadrons = { bg = "#1c5f02", text = "#ca454c", accent = "#5B8BD6" },        
         ISB                      = { bg = "#1c5f02", text = "#f3c4ff", accent = "#6900cc" },
 
         -- République
@@ -1056,7 +1095,7 @@ function UnitedSquad.build(code, data, shipDb)
                 outlineSize = UnitedSquad.FICHE.shipOutlineSize,
             }),
             UnitedUpgradeFiches = upgradeFiches,
-            dialSkin = DIAL_SKIN_BASE .. (DIAL_SKINS[skin] or DIAL_SKINS.scumandvillainy),
+            dialSkin = dialSkinFor(pilot.faction, skin),
             Data = {
                 name = pilotName,
                 xws = "united-" .. tostring(pilot.id),
