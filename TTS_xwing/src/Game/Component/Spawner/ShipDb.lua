@@ -2259,6 +2259,18 @@ masterShipDB['st70assaultship'] = {
     'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/medium/st70assaultship/razorcrest.obj',
 }
 
+-- X-Wing United : Commando Team (modèle sans texture)
+masterShipDB['commandoteam'] = {
+    name = 'Commando Team',
+    hull = 2,
+    shield = 0,
+    size = 'small',
+    agility = 2,
+    factions = { ['scumandvillainy'] = true, ['galacticempire'] = true },
+    arcs = { fixed = { range = 3, type = { 'front' } } },
+    mesh = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/small/commandoteam/commandoteam.obj'
+}
+
 masterShipDB['rogueclassstarfighter'] = {
     name = 'Rogue-Class Starfighter',
     textures = {

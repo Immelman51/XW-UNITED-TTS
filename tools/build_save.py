@@ -59,6 +59,7 @@ MODULES = {
     ],
     "a4dbbf": [  # DataPad
         "Game.Component.Spawner.DataPad",
+        "Game.Component.Spawner.ShipDb",
         "Game.Component.Spawner.United.UnitedMapping",
         "Game.Component.Spawner.United.UnitedData",
         "Game.Component.Spawner.United.UnitedSquad",
