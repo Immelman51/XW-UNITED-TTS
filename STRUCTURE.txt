@@ -1,0 +1,211 @@
+================================================================================
+ XW-UNITED-TTS : à quoi sert chaque fichier et dossier
+================================================================================
+
+Ce dépôt sert à fabriquer une partie Tabletop Simulator (TTS) « X-Wing United
+(dev) ». On part du mod Workshop X-Wing Unified (2486128992), on y injecte les
+scripts Lua de ce dépôt et les données du squad builder X-Wing United, puis on
+écrit une nouvelle sauvegarde TTS.
+
+Règle d'or : après chaque modification du code, relancer
+    python3 tools/build_save.py
+TTS ne lit que la sauvegarde générée, pas les fichiers du dépôt.
+
+
+--------------------------------------------------------------------------------
+ RACINE
+--------------------------------------------------------------------------------
+
+README.md           Guide (en anglais) pour configurer VSCode avec TTS : plugins
+                    Lua recommandés, envoyer/récupérer les scripts, débogueur
+                    MoonSharp.
+TODO.md             Liste des tâches héritées du mod X-Wing d'origine (nettoyage
+                    de code, modes d'IA HotAC à finir, etc.).
+STRUCTURE.txt       Ce fichier.
+modulize.sh         Petit script shell utilitaire : liste les noms de modules
+                    utilisés dans des fichiers et génère les lignes
+                    « local X = require("X") » correspondantes.
+leadercharge.png    Images de référence pour l'affichage des charges (leader /
+pilotcharge.png     pilote). Aucun script ne les utilise directement.
+
+tools/
+  build_save.py     LE script de construction. Il :
+                     1. télécharge les données X-Wing United (ships, pilots,
+                        upgrades, leaders, chassis) depuis GitHub, ou les prend
+                        dans ./xwunited avec l'option --local ;
+                     2. les convertit en module Lua (UnitedDataEmbedded.lua) ;
+                     3. lit le mod Workshop d'origine (jamais modifié), remplace
+                        les modules Lua embarqués par ceux de TTS_xwing/src,
+                        ajoute les nouveaux modules et met à jour l'UI XML ;
+                     4. écrit la sauvegarde « X-Wing United (dev) » dans
+                        le dossier Saves/ de TTS.
+
+older_versions/     Anciennes sauvegardes TTS complètes (Beta.json,
+                    TS_Save_110.json), gardées pour référence / comparaison.
+
+
+--------------------------------------------------------------------------------
+ TTS_lib/   Bibliothèque Lua générique pour TTS (indépendante d'X-Wing)
+--------------------------------------------------------------------------------
+
+ContextMenuTree/    Construction de menus contextuels (clic droit) en arbre.
+CustomEvent/        Système d'événements personnalisés.
+EventSub/           Abonnement / diffusion d'événements entre objets.
+Hotkey/             Gestion des raccourcis clavier TTS.
+ObjType/            Identification du « type » d'un objet TTS (vaisseau,
+                    jeton, carte...).
+SaveManager/        Sauvegarde / restauration de l'état des objets.
+Sequence/           Exécution d'actions en séquence (avec attentes), plus des
+                    plugins pour les clics de boutons et les physics casts.
+Util/               Fonctions utilitaires : maths, chaînes, tables, astuces.
+Vector/             Vecteurs et transformations (position / rotation).
+XmlGui/             Composant de liste déroulante en UI XML.
+README.md           Présentation de la bibliothèque.
+
+
+--------------------------------------------------------------------------------
+ TTS_xwing/   Code du mod X-Wing (base X-Wing Unified + ajouts United)
+--------------------------------------------------------------------------------
+
+LICENSE, README.md  Licence et présentation du mod d'origine.
+
+src/Global.lua      Script global de la table (point d'entrée principal).
+src/Global.xml      Interface UI XML globale (panneaux, boutons à l'écran).
+src/API.lua         Fonctions exposées aux autres objets / scripts.
+src/Dim.lua,
+src/Dimensions.lua  Dimensions du jeu (tailles de socles, gabarits, portées).
+
+src/Device/         Engins largués : bombes (Bomb/), mines (Mine/), engins
+                    distants (Remote/ : sondes, torpilles traqueuses...),
+                    RangeCheck.lua pour mesurer la portée des engins.
+src/Dial/           Cadrans de manœuvre : gestion, menus, boutons, éditeur de
+                    jeux de manœuvres, cadrans non assignés.
+src/Emplacement/    Éléments fixes du décor (tour turbolaser).
+src/Layouts/        Dispositions de la table selon le mode de jeu (Standard,
+                    Epic, HotAC...) et le contrôleur qui les applique.
+src/Marker/         Marqueurs posés sur les vaisseaux : boucliers, charges,
+                    Force, énergie, dégâts critiques, cartes d'état, objectifs
+                    de scénario (Scenario/).
+src/Obstacle/       Obstacles (astéroïdes, nuages de débris/gaz, cargaison...)
+                    et le sac qui les distribue.
+src/Player/         Côté joueur : zones de joueur, commandes de chat,
+                    raccourcis, configuration, annonces, UI contextuelle.
+src/Ship/           Vaisseaux : socles composites, personnalisation, proxys,
+                    vérification, valeurs d'initiative (Initiative/), arcs de
+                    tourelle (Turret/), déploiement (Deploy/), manœuvres
+                    spéciales (Maneuver/).
+src/Token/          Jetons d'état : concentration, évasion, stress, ion,
+                    verrouillage de cible, brouillage, renforcement, etc.
+src/Test/           Tests unitaires (LuaUnit adapté à TTS).
+
+src/Game/           Mécaniques et composants de jeu :
+  GameConsole.*       Console de jeu (gestion des tours / phases).
+  ModLoadCounter.lua,
+  VersionCheck.lua    Suivi du chargement et vérification de version.
+  Mechanic/           Mouvements (Movement/), vérification d'arcs, marqueur
+                      de tour, formations, outils de socle.
+  Table/              Tapis de jeu, gestion de la table, module squad builder.
+  StarForge/          Outil StarForge (création / placement d'éléments).
+  HotAC/              Mode coopératif « Heroes of the Aturi Cluster » : IA
+                      des vaisseaux ennemis, mise en place des missions.
+  Component/
+    Dice/             Dés d'attaque, de défense, de scénario.
+    Playmat/          Tuiles et images de tapis.
+    Template/         Gabarits de manœuvre (tout droit, virage, virage sur
+                      l'aile, vitesses 1 à 5).
+    Support/          Surfaces de support.
+    Spawner/          Création des vaisseaux à partir d'une liste :
+      Spawner.lua       Logique principale de spawn.
+      DataPad.lua       Tablette où l'on colle un code d'escadron.
+      *Db.lua           Bases de données vaisseaux / pilotes / améliorations
+                        (Legacy* = ancien format, Xwa* = format XWA).
+      ModelDB.lua       Modèles 3D associés aux vaisseaux.
+      PilotCard.lua, Decker.lua, BagHandler.lua, SpawnDisk.lua
+                        Cartes de pilote, paquets, sacs et disque de spawn.
+      United/           AJOUTS X-WING UNITED :
+        UnitedData.lua          Chargement des données United (version
+                                embarquée par défaut, bouton « MAJ GitHub »
+                                pour retélécharger en jeu).
+        UnitedDataEmbedded.lua  Données générées par build_save.py.
+                                NE PAS MODIFIER À LA MAIN.
+        UnitedSquad.lua         Convertit un code d'escadron du squad builder
+                                (ex. « 1,155u200u12,4u0,FRA ») en liste de spawn.
+        UnitedMapping.lua       Correspondances données United <-> mod TTS
+                                (modèles 3D, couleurs de faction...).
+                                Fait pour être édité à la main.
+        UnitedFicheScript.lua   Script posé sur chaque fiche (leader, pilote,
+                                amélioration) affichée sur la table.
+        UnitedDetail.xml        Grand panneau de description qui s'ouvre au
+                                clic sur une fiche (un par couleur de joueur).
+
+Note : beaucoup de dossiers de src/ contiennent un README.md qui détaille
+leur contenu.
+
+
+--------------------------------------------------------------------------------
+ xwunited/   Squad builder web X-Wing United (copie du dépôt
+             github.com/Immelman51/xwunited)
+--------------------------------------------------------------------------------
+
+Données (JSON, lues aussi par build_save.py --local) :
+  ships.json          Vaisseaux : actions, manœuvres, stats.
+  chassis.json        Capacités de châssis.
+  pilots.json         Pilotes.
+  upgrades.json       Améliorations.
+  leaders.json        Leaders.
+  README.md           Explication du format des JSON (codes d'actions,
+                      tableau de manœuvres...).
+
+Pages web :
+  index.html, style.css            Page principale du squad builder.
+  scriptship.js, scriptleader.js   Logique du builder (vaisseaux / leaders,
+                                   génération du code d'escadron).
+  print_squad.*                    Page d'impression de l'escadron.
+  print_squad_pdfmake.js,
+  integration_police_xwing.js,
+  xwing-pdf-example.js,
+  xwing_icon_font_map.js           Export PDF (pdfmake) avec la police
+                                   d'icônes X-Wing.
+  faction_cards.*                  Cartes de faction / leaders.
+  generic_upgrades.*               Améliorations génériques.
+  scenario.*                       Page des scénarios.
+  rules_united.*                   Règles X-Wing United.
+  serve.mjs                        Petit serveur local pour tester le site.
+
+Ressources :
+  img/                Icônes (actions, factions, emplacements), images de
+                      pilotes et de scénarios.
+  XWingIcons.ttf      Police d'icônes X-Wing.
+  *.xcf               Fichiers GIMP sources de certaines icônes.
+  IntroductionXWU.pages  Document de présentation (Apple Pages).
+  archive/            Ancienne version de scriptship.js.
+  .vscode/            Raccourci de snippet VSCode.
+  .DS_Store, .gitattributes  Fichiers système macOS / config Git.
+
+
+--------------------------------------------------------------------------------
+ assets/   Ressources graphiques servies depuis ce dépôt (URLs utilisées
+           par le mod dans TTS)
+--------------------------------------------------------------------------------
+
+assetbundles/       Bundles Unity (.unity3d) : polices, console de jeu.
+Cards/              Images de cartes (états, pilotes, errata).
+colliders/          Modèles de collision simplifiés (.obj).
+dial/               Images des cadrans : icônes d'action, manœuvres, faces
+                    révélées par type de manœuvre, habillage.
+events/             Contenus d'événements (Noël 2022).
+FGA/                Ressources pour les joueurs (FGA).
+Fonts/              Polices (Aurebesh, Eurostile, Roboto, dingbats X-Wing...).
+HotAC/              Tout le mode HotAC : campagnes, missions, objectifs, élites
+                    impériales, cartes de talents, terrain, jetons, tapis.
+Items/              Objets de table : dés, tablettes, fiches d'IA, règles de
+                    portée, gabarits d'arc, astéroïdes, paquet de dégâts,
+                    cadrans 3D, jetons, outils, scénarios.
+models/             Modèles 3D (.obj) : règles, consoles, plateaux à dés,
+                    obstacles, éléments Epic et StarForge.
+ships/              Modèles et textures des vaisseaux, rangés par faction
+                    (Rebel, Empire, Scum, CIS, Republic...) et par taille.
+ships-v2/           Nouvelle génération de socles / modèles par taille.
+textures/           Textures : tapis de jeu, fonds de table, dos de cartes,
+                    images de faction, dés, bombes, obstacles.
+UI-images/          Images utilisées dans l'interface (faces de dés).
