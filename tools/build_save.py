@@ -70,6 +70,12 @@ MODULES = {
     "251205": [  # carte de manœuvres
         "Game.Mechanic.Movement.ManeuverCard",
     ],
+    "765252": [  # réserve infinie « Target Locks »
+        "Token.TargetLockBag",
+    ],
+    "1670ba": [  # jeton Target Lock (contenu dans la réserve 765252)
+        "Token.TargetLock",
+    ],
 }
 
 # Fichiers XML inclus (<!-- include X --> ... <!-- include X -->)

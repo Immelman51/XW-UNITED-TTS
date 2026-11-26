@@ -28,6 +28,13 @@ colorTable['Yellow'] = { 1, 1, 0 }
 colorTable['Orange'] = { 1, 0.4, 0 }
 colorTable['Black'] = { 0.2, 0.2, 0.2 }
 
+-- X-Wing United : tous les jetons lock sont bleus ; quand un lock est nommé
+-- d'après un vaisseau, un second jeton noir portant le même nom apparaît à côté.
+LOCK_COLOR = colorTable['Blue']
+TWIN_COLOR = colorTable['Black']
+-- Écart entre le lock bleu et son jumeau noir (mm)
+TWIN_GAP_MM = 30
+
 --[[
 TODO: TargetLocks have an owner and an assigned ship. Perhaps we can handle these behaviors with tags?
 ]]
@@ -50,6 +57,9 @@ function onLoad(save_state)
         if state.text then
             self.UI.setAttribute("IdLabel", "text", state.text)
         end
+    end
+    if not set then
+        self.setColorTint(LOCK_COLOR)
     end
 end
 
@@ -77,17 +87,16 @@ function onUpdate()
 end
 
 -- Set function for external calls
+-- (X-Wing United : la couleur du joueur est ignorée, le lock reste bleu)
 function manualSet(arg)
     set = true
-    if arg.color then
-        self.setColorTint(colorTable[arg.color])
-    end
+    self.setColorTint(LOCK_COLOR)
 end
 
 -- Tint on pick up
 function onPickedUp()
-    if not set and self.held_by_color ~= nil then
-        self.setColorTint(colorTable[self.held_by_color])
+    if not set then
+        self.setColorTint(LOCK_COLOR)
     end
 end
 
@@ -120,14 +129,9 @@ function setOwner(args)
     local ship = args.ship
     self.setName(ship.getName())
     printToAll('Target lock named for ' .. ship.getName(), { 0.2, 0.2, 1 })
+    self.setColorTint(LOCK_COLOR)
     local displayName = true
     if args.player then
-        if Global.call("API_GetPlayerConfig", { player_color = args.player, param_name = "TargetLockColorMode" }) == "ShipColorId" then
-            local ColorId = ship.getTable("Data").ColorId or nil
-            if ColorId and ColorId.a > 0 then
-                self.setColorTint(ColorId)
-            end
-        end
         displayName = Global.call("API_GetPlayerConfig", {
             player_color = args.player,
             param_name =
@@ -139,6 +143,49 @@ function setOwner(args)
     end
     self.setRotationSmooth(ship.getRotation(), false, true)
     set = true
+    spawnTwin(ship)
+end
+
+-- X-Wing United : crée le jumeau noir du lock, au même nom.
+-- On attend que le lock ait fini de bouger (il peut encore glisser depuis la
+-- réserve). Placé à côté du lock, sauf si celui-ci a déjà été assigné à un
+-- autre vaisseau (lock automatique de l'IA HotAC) : le jumeau va alors à côté
+-- du vaisseau qui a pris le lock.
+function spawnTwin(ship)
+    local name = self.getName()
+    local text = self.UI.getAttribute("IdLabel", "text")
+    local gap = Dim.Convert_mm_igu(TWIN_GAP_MM)
+    Wait.condition(function()
+        if self == nil or ship == nil then
+            return
+        end
+        local right = ship.getTransformRight()
+        local pos
+        local assigned = Global.call("getShipTokenIsAssignedTo", { token = self })
+        if assigned ~= nil and assigned ~= ship then
+            local half = ship.getBoundsNormalized().size.x / 2
+            pos = ship.getPosition() + right * (half + gap)
+        else
+            pos = self.getPosition() + right * gap
+        end
+        pos.y = pos.y + 0.3
+        local twin = self.clone({ position = pos })
+        Wait.condition(function()
+            twin.call('setAsTwin', { name = name, text = text, rot = ship.getRotation() })
+        end, function() return twin ~= nil and not twin.spawning end, 5)
+    end, function() return self == nil or not self.isSmoothMoving() end, 5)
+end
+
+-- Appelé sur le jumeau noir juste après sa création. Externally accessible.
+function setAsTwin(args)
+    set = true
+    self.setName(args.name)
+    self.setDescription('')
+    self.setColorTint(TWIN_COLOR)
+    self.UI.setAttribute("IdLabel", "text", args.text or "")
+    if args.rot then
+        self.setRotationSmooth(args.rot, false, true)
+    end
 end
 
 -- Assigns the token to a ship. This is the ship being target locked, and which
