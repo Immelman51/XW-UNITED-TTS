@@ -29,10 +29,14 @@ colorTable['Orange'] = { 1, 0.4, 0 }
 colorTable['Black'] = { 0.2, 0.2, 0.2 }
 
 -- X-Wing United : tous les jetons lock sont bleus ; quand un lock est nommé
--- d'après un vaisseau, un second jeton noir portant le même nom apparaît à côté.
+-- d'après un vaisseau, un second jeton blanc apparaît à côté. Seul ce jumeau
+-- blanc porte le nom (texte noir) ; le jeton bleu reste sans nom affiché.
 LOCK_COLOR = colorTable['Blue']
-TWIN_COLOR = colorTable['Black']
--- Écart entre le lock bleu et son jumeau noir (mm)
+TWIN_COLOR = colorTable['White']
+TWIN_TEXT_COLOR = '#000000'
+-- Est-ce le jumeau blanc ?
+twin = false
+-- Écart entre le lock bleu et son jumeau blanc (mm)
 TWIN_GAP_MM = 30
 
 --[[
@@ -43,6 +47,7 @@ function onSave()
     if set then
         local state = {
             set = set,
+            twin = twin,
             text = self.UI.getAttribute("IdLabel", "text"),
         }
         return JSON.encode(state)
@@ -54,6 +59,10 @@ function onLoad(save_state)
     if save_state ~= '' and save_state ~= 'null' and save_state ~= nil then
         local state = JSON.decode(save_state)
         set = state.set
+        twin = state.twin or false
+        if twin then
+            self.UI.setAttribute("IdLabel", "color", TWIN_TEXT_COLOR)
+        end
         if state.text then
             self.UI.setAttribute("IdLabel", "text", state.text)
         end
@@ -138,22 +147,22 @@ function setOwner(args)
             "TargetLockDisplayName"
         }) == "true"
     end
-    if displayName then
-        self.UI.setAttribute("IdLabel", "text", getIdText(ship.getName()))
-    end
+    -- X-Wing United : le nom n'est jamais affiché sur le jeton bleu, seulement
+    -- sur son jumeau blanc (si l'affichage du nom est activé).
+    self.UI.setAttribute("IdLabel", "text", "")
+    local text = displayName and getIdText(ship.getName()) or ""
     self.setRotationSmooth(ship.getRotation(), false, true)
     set = true
-    spawnTwin(ship)
+    spawnTwin(ship, text)
 end
 
--- X-Wing United : crée le jumeau noir du lock, au même nom.
+-- X-Wing United : crée le jumeau blanc du lock, au même nom.
 -- On attend que le lock ait fini de bouger (il peut encore glisser depuis la
 -- réserve). Placé à côté du lock, sauf si celui-ci a déjà été assigné à un
 -- autre vaisseau (lock automatique de l'IA HotAC) : le jumeau va alors à côté
 -- du vaisseau qui a pris le lock.
-function spawnTwin(ship)
+function spawnTwin(ship, text)
     local name = self.getName()
-    local text = self.UI.getAttribute("IdLabel", "text")
     local gap = Dim.Convert_mm_igu(TWIN_GAP_MM)
     Wait.condition(function()
         if self == nil or ship == nil then
@@ -176,12 +185,14 @@ function spawnTwin(ship)
     end, function() return self == nil or not self.isSmoothMoving() end, 5)
 end
 
--- Appelé sur le jumeau noir juste après sa création. Externally accessible.
+-- Appelé sur le jumeau blanc juste après sa création. Externally accessible.
 function setAsTwin(args)
     set = true
+    twin = true
     self.setName(args.name)
     self.setDescription('')
     self.setColorTint(TWIN_COLOR)
+    self.UI.setAttribute("IdLabel", "color", TWIN_TEXT_COLOR)
     self.UI.setAttribute("IdLabel", "text", args.text or "")
     if args.rot then
         self.setRotationSmooth(args.rot, false, true)

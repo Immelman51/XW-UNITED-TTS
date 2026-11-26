@@ -1,5 +1,5 @@
 function onLoad(save_state)
-    -- X-Wing United : les locks sont toujours bleus (jumeau noir), les
+    -- X-Wing United : les locks sont toujours bleus (jumeau blanc), les
     -- options de couleur ont été retirées.
     self.addContextMenuItem("Display name off",
         function(player_color)
