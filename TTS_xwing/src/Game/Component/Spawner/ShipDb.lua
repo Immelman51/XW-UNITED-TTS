@@ -2259,9 +2259,13 @@ masterShipDB['st70assaultship'] = {
     'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/medium/st70assaultship/razorcrest.obj',
 }
 
--- X-Wing United : Commando Team (modèle sans texture)
+-- X-Wing United : Commando Team (modèle Meshy)
 masterShipDB['commandoteam'] = {
     name = 'Commando Team',
+    textures = {
+        standard =
+        'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/small/commandoteam/Textures/standard.jpg',
+    },
     hull = 2,
     shield = 0,
     size = 'small',
