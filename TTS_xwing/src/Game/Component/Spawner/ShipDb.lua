@@ -2275,6 +2275,201 @@ masterShipDB['commandoteam'] = {
     mesh = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/small/commandoteam/commandoteam.obj'
 }
 
+-- X-Wing United : Zenuas 33 Umbaran Starfighter (modèle Meshy)
+masterShipDB['zenuas33umbaranstarfighter'] = {
+    name = 'Zenuas 33 Umbaran Starfighter',
+    textures = {
+        standard =
+        'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/small/zenuas33umbaranstarfighter/Textures/standard.jpg',
+    },
+    hull = 2,
+    shield = 2,
+    size = 'small',
+    agility = 3,
+    factions = { ['separatistalliance'] = true },
+    arcs = { fixed = { range = 3, type = { 'front' } } },
+    mesh = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/small/zenuas33umbaranstarfighter/zenuas33umbaranstarfighter.obj'
+}
+
+-- X-Wing United : YV-865 Aurore-Class Freighter (modèle Meshy)
+masterShipDB['yv865auroreclassfreighter'] = {
+    name = 'YV-865 Aurore-Class Freighter',
+    textures = {
+        standard =
+        'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/large/yv865auroreclassfreighter/Textures/standard.jpg',
+    },
+    hull = 9,
+    shield = 2,
+    size = 'large',
+    proximity_hider = true,
+    agility = 0,
+    factions = { ['rebelalliance'] = true, ['scumandvillainy'] = true },
+    arcs = { fixed = { range = 3, type = { 'front' } }, turret = { main = { name = 'primary', type = { 'singleturret' } } } },
+    mesh = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/large/yv865auroreclassfreighter/yv865auroreclassfreighter.obj'
+}
+
+-- X-Wing United : Droch-class Boarding Ship (modèle Meshy)
+masterShipDB['drochclassboardingship'] = {
+    name = 'Droch-class Boarding Ship',
+    textures = {
+        standard =
+        'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/small/drochclassboardingship/Textures/standard.jpg',
+    },
+    hull = 3,
+    shield = 1,
+    size = 'small',
+    agility = 2,
+    factions = { ['separatistalliance'] = true },
+    arcs = { turret = { main = { name = 'primary', type = { 'singleturret' } } } },
+    mesh = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/small/drochclassboardingship/drochclassboardingship.obj'
+}
+
+-- X-Wing United : Mankvim-814 Light Interceptor (modèle Meshy)
+masterShipDB['mankvim814lightinterceptor'] = {
+    name = 'Mankvim-814 Light Interceptor',
+    textures = {
+        standard =
+        'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/small/mankvim814lightinterceptor/Textures/standard.jpg',
+    },
+    hull = 2,
+    shield = 1,
+    size = 'small',
+    agility = 3,
+    factions = { ['separatistalliance'] = true },
+    arcs = { fixed = { range = 3, type = { 'front' } } },
+    mesh = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/small/mankvim814lightinterceptor/mankvim814lightinterceptor.obj'
+}
+
+-- X-Wing United : TIE/es Echelon (modèle Meshy)
+masterShipDB['tieesechelon'] = {
+    name = 'TIE/es Echelon',
+    textures = {
+        standard =
+        'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/small/tieesechelon/Textures/standard.jpg',
+    },
+    hull = 5,
+    shield = 1,
+    size = 'small',
+    agility = 1,
+    factions = { ['firstorder'] = true },
+    arcs = { fixed = { range = 3, type = { 'front' } } },
+    mesh = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/small/tieesechelon/tieesechelon.obj'
+}
+
+-- X-Wing United : S-161 'Stinger' XL (modèle Meshy)
+masterShipDB['s161stingerxl'] = {
+    name = 'S-161 \'Stinger\' XL',
+    textures = {
+        standard =
+        'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/large/s161stingerxl/Textures/standard.jpg',
+    },
+    hull = 5,
+    shield = 5,
+    size = 'large',
+    proximity_hider = true,
+    agility = 1,
+    factions = { ['rebelalliance'] = true },
+    arcs = { fixed = { range = 3, type = { 'front' } } },
+    mesh = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/large/s161stingerxl/s161stingerxl.obj'
+}
+
+-- X-Wing United : J-Type Star Skiff (modèle Meshy)
+masterShipDB['jtypestarskiff'] = {
+    name = 'J-Type Star Skiff',
+    textures = {
+        standard =
+        'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/large/jtypestarskiff/Textures/standard.jpg',
+    },
+    hull = 6,
+    shield = 7,
+    size = 'large',
+    proximity_hider = true,
+    agility = 1,
+    factions = { ['galacticrepublic'] = true },
+    arcs = { fixed = { range = 3, type = { 'front' } } },
+    mesh = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/large/jtypestarskiff/jtypestarskiff.obj'
+}
+
+-- X-Wing United : CloakShape Fighter (modèle Meshy)
+masterShipDB['cloakshapefighter'] = {
+    name = 'CloakShape Fighter',
+    textures = {
+        standard =
+        'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/small/cloakshapefighter/Textures/standard.jpg',
+    },
+    hull = 7,
+    shield = 0,
+    size = 'small',
+    agility = 1,
+    factions = { ['galacticrepublic'] = true },
+    arcs = { fixed = { range = 3, type = { 'front' } } },
+    mesh = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/small/cloakshapefighter/cloakshapefighter.obj'
+}
+
+-- X-Wing United : ETA Class Shuttle (modèle Meshy)
+masterShipDB['etaclassshuttle'] = {
+    name = 'ETA Class Shuttle',
+    textures = {
+        standard =
+        'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/small/etaclassshuttle/Textures/standard.jpg',
+    },
+    hull = 4,
+    shield = 2,
+    size = 'small',
+    agility = 2,
+    factions = { ['galacticempire'] = true, ['galacticrepublic'] = true },
+    arcs = { fixed = { range = 3, type = { 'front' } } },
+    mesh = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/small/etaclassshuttle/etaclassshuttle.obj'
+}
+
+-- X-Wing United : HH-87 Starhopper (modèle Meshy)
+masterShipDB['hh87starhopper'] = {
+    name = 'HH-87 Starhopper',
+    textures = {
+        standard =
+        'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/small/hh87starhopper/Textures/standard.jpg',
+    },
+    hull = 3,
+    shield = 2,
+    size = 'small',
+    agility = 2,
+    factions = { ['scumandvillainy'] = true },
+    arcs = { fixed = { range = 3, type = { 'front' } } },
+    mesh = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/small/hh87starhopper/hh87starhopper.obj'
+}
+
+-- X-Wing United : G9 Rigger Freighter (modèle Meshy)
+masterShipDB['g9riggerfreighter'] = {
+    name = 'G9 Rigger Freighter',
+    textures = {
+        standard =
+        'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/medium/g9riggerfreighter/Textures/standard.jpg',
+    },
+    hull = 7,
+    shield = 0,
+    size = 'medium',
+    agility = 1,
+    factions = { ['galacticrepublic'] = true, ['scumandvillainy'] = true },
+    arcs = { fixed = { range = 3, type = { 'front' } } },
+    mesh = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/medium/g9riggerfreighter/g9riggerfreighter.obj'
+}
+
+-- X-Wing United : NB-1H Royal Bomber (modèle Meshy)
+masterShipDB['nb1hroyalbomber'] = {
+    name = 'NB-1H Royal Bomber',
+    textures = {
+        standard =
+        'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/small/nb1hroyalbomber/Textures/standard.jpg',
+    },
+    hull = 4,
+    shield = 2,
+    size = 'small',
+    agility = 2,
+    factions = { ['galacticrepublic'] = true },
+    arcs = { fixed = { range = 3, type = { 'front' } } },
+    mesh = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/small/nb1hroyalbomber/nb1hroyalbomber.obj'
+}
+
 masterShipDB['rogueclassstarfighter'] = {
     name = 'Rogue-Class Starfighter',
     textures = {

@@ -141,25 +141,25 @@ UnitedMapping.SHIP_MODEL = {
     ["Green Ace"]                                 = false, -- pas de modèle 3D (small)
     ["Black Ace"]                                 = false, -- pas de modèle 3D (small)
     ["Ginivex-class Fanblade Starfighter"]        = false, -- pas de modèle 3D (small)
-    ["TIE/es Echelon"]                            = false, -- pas de modèle 3D (small)
+    ["TIE/es Echelon"]                            = 'tieesechelon',
     ["Oubliette Class Transport"]                 = false, -- pas de modèle 3D (large)
     ["Omicron Class Shuttle"]                     = false, -- pas de modèle 3D (large)
     ["RP82 Fighter"]                              = false, -- pas de modèle 3D (small)
     ["Laat/Le Patrol Gunship"]                    = false, -- pas de modèle 3D (small)
-    ["ETA Class Shuttle"]                         = false, -- pas de modèle 3D (small)
-    ["J-Type Star Skiff"]                         = false, -- pas de modèle 3D (large)
-    ["NB-1S Royal Bomber"]                        = false, -- pas de modèle 3D (small)
-    ["CloakShape Fighter"]                        = false, -- pas de modèle 3D (small)
+    ["ETA Class Shuttle"]                         = 'etaclassshuttle',
+    ["J-Type Star Skiff"]                         = 'jtypestarskiff',
+    ["NB-1H Royal Bomber"]                        = 'nb1hroyalbomber',
+    ["CloakShape Fighter"]                        = 'cloakshapefighter',
     ["Scarab-Class Droid Fighter"]                = false, -- pas de modèle 3D (small)
-    ["Zenuas 33 Umbaran Starfighter"]             = false, -- pas de modèle 3D (small)
-    ["Droch-class Boarding Ship"]                 = false, -- pas de modèle 3D (small)
-    ["G9 Rigger Freighter"]                       = false, -- pas de modèle 3D (medium)
-    ["HH-87 Starhopper"]                          = false, -- pas de modèle 3D (small)
+    ["Zenuas 33 Umbaran Starfighter"]             = 'zenuas33umbaranstarfighter',
+    ["Droch-class Boarding Ship"]                 = 'drochclassboardingship',
+    ["G9 Rigger Freighter"]                       = 'g9riggerfreighter',
+    ["HH-87 Starhopper"]                          = 'hh87starhopper',
     ["BTA-NR2-W Y-wing"]                          = 'btanr2ywing-wartime',
-    ["S-161 'Stinger' XL"]                        = false, -- pas de modèle 3D (large)
+    ["S-161 'Stinger' XL"]                        = 's161stingerxl',
     ["Logistic Supply"]                           = false, -- pas de modèle 3D (small)
-    ["YV-865 Aurore-Class Freighter"]             = false, -- pas de modèle 3D (large)
-    ["Mankvim-814 Light Interceptor"]             = false, -- pas de modèle 3D (small)
+    ["YV-865 Aurore-Class Freighter"]             = 'yv865auroreclassfreighter',
+    ["Mankvim-814 Light Interceptor"]             = 'mankvim814lightinterceptor',
 }
 
 -- Actions X-Wing United ("Fo W" -> "Fo") -> codes d'action du mod.
