@@ -2387,7 +2387,7 @@ masterShipDB['jtypestarskiff'] = {
     agility = 1,
     factions = { ['galacticrepublic'] = true },
     arcs = { fixed = { range = 3, type = { 'front' } } },
-    mesh = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/large/jtypestarskiff/jtypestarskiff.obj'
+    mesh = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/large/jtypestarskiff/jtypestarskiff.obj?v=2'
 }
 
 -- X-Wing United : CloakShape Fighter (modèle Meshy)
@@ -2468,7 +2468,7 @@ masterShipDB['nb1hroyalbomber'] = {
     agility = 2,
     factions = { ['galacticrepublic'] = true },
     arcs = { fixed = { range = 3, type = { 'front' } } },
-    mesh = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/small/nb1hroyalbomber/nb1hroyalbomber.obj'
+    mesh = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/small/nb1hroyalbomber/nb1hroyalbomber.obj?v=2'
 }
 
 masterShipDB['rogueclassstarfighter'] = {
