@@ -2411,15 +2411,16 @@ masterShipDB['etaclassshuttle'] = {
     name = 'ETA Class Shuttle',
     textures = {
         standard =
-        'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/small/etaclassshuttle/Textures/standard.jpg',
+        'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/large/etaclassshuttle/Textures/standard.jpg',
     },
     hull = 4,
     shield = 2,
-    size = 'small',
+    size = 'large',
+    proximity_hider = true,
     agility = 2,
     factions = { ['galacticempire'] = true, ['galacticrepublic'] = true },
     arcs = { fixed = { range = 3, type = { 'front' } } },
-    mesh = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/small/etaclassshuttle/etaclassshuttle.obj'
+    mesh = 'https://raw.githubusercontent.com/Immelman51/XW-UNITED-TTS/main/assets/ships-v2/large/etaclassshuttle/etaclassshuttle.obj'
 }
 
 -- X-Wing United : HH-87 Starhopper (modèle Meshy)
