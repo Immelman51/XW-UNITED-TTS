@@ -268,6 +268,47 @@ function UnitedSquad.moveSet(ship)
     return moves
 end
 
+-- Mode de dérapage accordé par le châssis, le pilote ou une amélioration
+-- ("harder", "same" ou nil). "same" l'emporte sur "harder".
+function UnitedSquad.sideslipMode(data, ship, pilot, upgrades)
+    local rules = UnitedMapping.SIDESLIP or {}
+    local mode = nil
+    local function consider(table_, name)
+        local value = name and (table_ or {})[name]
+        if value == "same" or (value == "harder" and mode == nil) then
+            mode = value
+        end
+    end
+    for _, chassisId in ipairs(ship.chassis or {}) do
+        local chassis = data.chassis and data.chassis[tonumber(chassisId)]
+        consider(rules.chassis, chassis and (chassis.name_ENG or chassis.name))
+    end
+    consider(rules.pilots, pilot.name_ENG or pilot.name)
+    for _, upgrade in ipairs(upgrades or {}) do
+        consider(rules.upgrades, upgrade.name_ENG or upgrade.name)
+    end
+    return mode
+end
+
+local HARDER = { b = "w", w = "r", r = "r", p = "p" }
+
+-- Options d'exécution du cadran : chaque virage léger / serré peut être
+-- exécuté normalement ou en dérapage (code du mod suffixé par "z").
+function UnitedSquad.sideslipOptions(moveSet, mode)
+    local options = {}
+    if mode == nil then
+        return options
+    end
+    for _, move in ipairs(moveSet) do
+        local colour, rest = move:match("^([bwrp])([bt][lr]%d)$")
+        if colour then
+            local slipColour = (mode == "harder") and HARDER[colour] or colour
+            options[move] = { move, slipColour .. rest .. "z" }
+        end
+    end
+    return options
+end
+
 local function actionCodesFrom(entry, into)
     -- entry = { 0, "Fo W" } ou { 1, "Fo W", "Br R" }
     if type(entry) ~= "table" then
@@ -1042,6 +1083,8 @@ function UnitedSquad.build(code, data, shipDb)
             end
         end
 
+        local moveSet = UnitedSquad.moveSet(ship)
+
         local info = {
             pilotName = pilotName,
             shipName = ship.name,
@@ -1105,12 +1148,13 @@ function UnitedSquad.build(code, data, shipDb)
                 limited = (tonumber(pilot.max_per_squad) == 1) and 1 or 0,
                 shipId = modelKey or ("united-" .. tostring(ship.id)),
                 initiative = tonumber(pilot.skill) or 0,
-                moveSet = UnitedSquad.moveSet(ship),
+                moveSet = moveSet,
                 Config = nil,
                 mountingPoints = mountingPoints,
                 arcs = arcs,
                 actSet = actions,
-                executeOptions = {},
+                executeOptions = UnitedSquad.sideslipOptions(moveSet,
+                    UnitedSquad.sideslipMode(data, ship, pilot, upgradeRecords)),
                 movethrough = false,
                 ProximityHider = model and model.proximity_hider or false,
                 Faction = skin,

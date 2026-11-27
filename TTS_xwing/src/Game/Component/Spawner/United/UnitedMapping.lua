@@ -199,6 +199,25 @@ UnitedMapping.MANEUVER_COLUMNS = {
 -- Valeur de la matrice -> couleur de la manœuvre
 UnitedMapping.MANEUVER_COLORS = { [1] = "b", [2] = "w", [3] = "r", [4] = "p" }
 
+-- Capacités qui permettent d'exécuter un virage (léger ou serré) en dérapage.
+-- Le cadran propose alors, en plus de la manœuvre normale, sa version
+-- dérapage (panneau d'options au-dessus du cadran au moment d'exécuter).
+-- Clé : nom anglais du châssis / pilote / amélioration.
+-- Valeur : "harder" = difficulté augmentée (bleu -> blanc -> rouge),
+--          "same"   = même difficulté.
+UnitedMapping.SIDESLIP = {
+    chassis = {
+        ["Repulsorlift Stabilizers"]   = "harder",
+        ["Maneuvering Side Thrusters"] = "same",
+    },
+    pilots = {
+        ["Keo Venzee"] = "same",
+    },
+    upgrades = {
+        ["Sickening Maneuver"] = "same",
+    },
+}
+
 -- Arcs de tir X-Wing United ("attack") -> arcs du mod, utilisés uniquement
 -- pour les vaisseaux SANS modèle 3D (les autres gardent les arcs du mod).
 UnitedMapping.FIXED_ARCS = {
