@@ -1157,9 +1157,21 @@ end
 
 -- X-Wing United : combinaisons taille/arc pour lesquelles il existe un socle
 -- par faction United (assets/ships-v2/bases/<taille>/<arc>/<faction>.png).
--- Ajouter une ligne ici quand de nouvelles images sont créées.
+-- Images générées par tools/gen_united_bases.py ; ajouter une ligne ici
+-- quand une nouvelle combinaison est créée (ex. huge).
 local UNITED_BASE_SETS = {
+    ["small/none"] = true,
+    ["small/front"] = true,
     ["small/frontback"] = true,
+    ["small/fullfront"] = true,
+    ["small/bullseye"] = true,
+    ["medium/none"] = true,
+    ["medium/front"] = true,
+    ["medium/frontback"] = true,
+    ["large/none"] = true,
+    ["large/front"] = true,
+    ["large/frontback"] = true,
+    ["large/fullfront"] = true,
 }
 
 local function spawnCompositeShipBase(context, pilot, pilotName, texture, modeltint)
