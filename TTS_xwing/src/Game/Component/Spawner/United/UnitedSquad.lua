@@ -1139,6 +1139,10 @@ function UnitedSquad.build(code, data, shipDb)
             }),
             UnitedUpgradeFiches = upgradeFiches,
             dialSkin = dialSkinFor(pilot.faction, skin),
+            -- Socle propre à la faction United (mêmes noms de fichier que les
+            -- cadrans) ; le Spawner retombe sur le socle classique si l'image
+            -- n'existe pas pour cette taille / cet arc.
+            UnitedBase = FACTION_DIALS[pilot.faction] and FACTION_DIALS[pilot.faction]:gsub("%.png$", "") or nil,
             Data = {
                 name = pilotName,
                 xws = "united-" .. tostring(pilot.id),

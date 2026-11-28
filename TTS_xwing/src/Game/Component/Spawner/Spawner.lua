@@ -1155,6 +1155,13 @@ local function resolvePilotTexture(pilot, pilotCustomization, pilotName)
     return nil
 end
 
+-- X-Wing United : combinaisons taille/arc pour lesquelles il existe un socle
+-- par faction United (assets/ships-v2/bases/<taille>/<arc>/<faction>.png).
+-- Ajouter une ligne ici quand de nouvelles images sont créées.
+local UNITED_BASE_SETS = {
+    ["small/frontback"] = true,
+}
+
 local function spawnCompositeShipBase(context, pilot, pilotName, texture, modeltint)
     local session = context.session
     local spawnCard = context.spawnCard
@@ -1188,6 +1195,9 @@ local function spawnCompositeShipBase(context, pilot, pilotName, texture, modelt
     if factionName == nil then
         print("Missing faction base texture for faction " .. tostring(faction) .. " on " .. tostring(pilotName))
         factionName = factionnames[1]
+    end
+    if pilot.UnitedBase and UNITED_BASE_SETS[size .. "/" .. fixedarc] then
+        factionName = pilot.UnitedBase
     end
     local baseDiffuse = spawnPrefix .. "bases/" .. size .. "/" .. fixedarc .. "/" .. factionName .. ".png"
     local newShip = session:track(base_prototype.clone())
